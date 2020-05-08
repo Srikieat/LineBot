@@ -14,7 +14,7 @@ if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
 		
-		$text = $event['source']['userId'];
+	
 		
 		if ($event['type'] == "follow") 
 		{
@@ -91,4 +91,4 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "my id is ".$text;
+echo "test";
