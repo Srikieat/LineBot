@@ -77,7 +77,7 @@ if (!is_null($events['events'])) {
 				// Build message to reply back
 				$messages = [
 				'type' => 'text',
-				'text' => 'Line นี้เป็นระบบอัตโนมัติ หากต้องการติดต่อพนักงาน โปรดติดต่อที่'
+				'text' => 'Line นี้เป็นระบบอัตโนมัติ <br>หากต้องการติดต่อพนักงาน โปรดติดต่อที่'
 				];	
 			}
 			
