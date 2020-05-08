@@ -64,7 +64,7 @@ if (!is_null($events['events'])) {
 			
 			 $sendMessage = $event['message']['text'];
 			
-			if ($sendMessage = 'ลงทะเบียน')
+			if ($sendMessage == 'ลงทะเบียน')
 			{
 				// Build message to reply back
 				$messages = [
