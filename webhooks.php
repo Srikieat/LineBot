@@ -76,7 +76,7 @@ if (!is_null($events['events'])) {
 				// Build message to reply back
 				$messages = [
 				'type' => 'text',
-				'text' => 'Line นี้เป็นระบบอัตโนมัติ \r\nหากต้องการติดต่อพนักงาน โปรดติดต่อที่ https://lin.ee/6D052q8'
+				'text' => 'Line นี้เป็นระบบอัตโนมัติ'."/n".'หากต้องการติดต่อพนักงาน โปรดติดต่อที่ https://lin.ee/6D052q8'
 				];	
 			}
 			
