@@ -57,7 +57,7 @@ if (!is_null($events['events'])) {
 			
 			
 			// Get text sent
-			$userID = $event['source']['userId'];
+			$userID = $event['source']['displayName'];
 			
 			// Get replyToken
 			$replyToken = $event['replyToken'];
