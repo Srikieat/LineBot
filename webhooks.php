@@ -57,7 +57,7 @@ if (!is_null($events['events'])) {
 			
 			
 			// Get text sent
-			$userID = $event['source']['displayName'];
+			$userID = $event['source']['userID'];
 			
 			// Get replyToken
 			$replyToken = $event['replyToken'];
@@ -65,7 +65,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => $userID
+				'text' => "hello is". $userID
 			];
 			
 
