@@ -9,6 +9,9 @@ $access_token = '0jFIiIq0JnX9WLpNo+ZMNnVKOSP3IYtDwwqLNSwnR3PyIqo+pTSIdJyY0fLkxQE
 $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
+
+header('Content-Type: text/html; charset=utf-8'); 
+
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
 	// Loop through each event
