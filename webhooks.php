@@ -72,7 +72,7 @@ if (!is_null($events['events'])) {
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => ["i am dd".$messages],
+				'messages' => [$messages],
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
@@ -90,4 +90,4 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "I am OK hhh";
+echo "I am OK88";
