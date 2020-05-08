@@ -91,4 +91,4 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "I am OK";
+echo "I am OK gg";
