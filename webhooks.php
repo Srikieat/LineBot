@@ -57,14 +57,14 @@ if (!is_null($events['events'])) {
 			
 			
 			// Get text sent
-			$text = $event['source']['userId'];
+			$userID = $event['source']['userId'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => $text
+				'text' => $userID
 			];
 			
 
