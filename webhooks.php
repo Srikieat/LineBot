@@ -69,7 +69,7 @@ if (!is_null($events['events'])) {
 				// Build message to reply back
 				$messages = [
 				'type' => 'text',
-				'text' => 'okplus.ddns.net/okplus/bot.aspx?r='.$sendMessage.'&u='.$text
+				'text' => 'คลิ๊กลิงค์นี้เพื่อลงเปิดใช้บริการระบบ okplus.ddns.net/okplus/bot.aspx?u='.$text
 				];	
 			}
 			else
