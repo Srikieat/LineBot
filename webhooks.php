@@ -14,6 +14,7 @@ if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
 		
+		$text = $event['source']['userId'];
 		
 		if ($event['type'] == "follow") 
 		{
@@ -64,7 +65,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => $text
+				'text' => "my id is ".$text
 			];
 			
 
@@ -90,4 +91,4 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "I am OK88";
+echo "my id is ".$text;
