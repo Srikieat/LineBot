@@ -27,8 +27,14 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			
 			$messages = [
-				'type' => 'text',
-				'text' => 'ยินดีต้อนรับเข้าสู่ระบบ โอเคพลัส คลิ๊กลิงค์นี้เพื่อลงเปิดใช้บริการระบบ okplus.ddns.net/okplus/bot.aspx?u='.$text
+				{
+           			    "type":"text",
+               			    "text":"ยินดีต้อนรับเข้าสู่ระบบ โอเคพลัส"
+          			},
+          			{
+               				"type":"text",
+               				"text":"คลิ๊กลิงค์นี้เพื่อลงเปิดใช้บริการระบบ okplus.ddns.net/okplus/bot.aspx?u=".$text
+          			}	
 				];	
 			
 			// Make a POST Request to Messaging API to reply to sender
@@ -69,9 +75,19 @@ if (!is_null($events['events'])) {
 			if ($sendMessage == 'ลงทะเบียน')
 			{
 				// Build message to reply back
+				//$messages = [
+				//'type' => 'text',
+				//'text' => 'ยินดีต้อนรับเข้าสู่ระบบ โอเคพลัส คลิ๊กลิงค์นี้เพื่อลงเปิดใช้บริการระบบ okplus.ddns.net/okplus/bot.aspx?u='.$text
+				//];	
 				$messages = [
-				'type' => 'text',
-				'text' => 'ยินดีต้อนรับเข้าสู่ระบบ โอเคพลัส คลิ๊กลิงค์นี้เพื่อลงเปิดใช้บริการระบบ okplus.ddns.net/okplus/bot.aspx?u='.$text
+				{
+           			    "type":"text",
+               			    "text":"ยินดีต้อนรับเข้าสู่ระบบ โอเคพลัส"
+          			},
+          			{
+               				"type":"text",
+               				"text":"คลิ๊กลิงค์นี้เพื่อลงเปิดใช้บริการระบบ okplus.ddns.net/okplus/bot.aspx?u=".$text
+          			}	
 				];	
 			}
 			else
@@ -79,7 +95,7 @@ if (!is_null($events['events'])) {
 				// Build message to reply back
 				$messages = [
 				'type' => 'text',
-				'text' => 'Line นี้เป็นระบบอัตโนมัติ'./n.'หากต้องการติดต่อพนักงาน โปรดติดต่อที่ https://lin.ee/6D052q8'
+				'text' => 'Line นี้เป็นระบบอัตโนมัติ หากต้องการติดต่อพนักงาน โปรดติดต่อที่ https://lin.ee/6D052q8'
 				];	
 			}
 			
