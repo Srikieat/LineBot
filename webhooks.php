@@ -23,11 +23,10 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			
-			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => $text
-			];
+				'text' => 'ยินดีต้อนรับเข้าสู่ระบบ โอเคพลัส คลิ๊กลิงค์นี้เพื่อลงเปิดใช้บริการระบบ okplus.ddns.net/okplus/bot.aspx?u='.$text
+				];	
 			
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
@@ -69,7 +68,7 @@ if (!is_null($events['events'])) {
 				// Build message to reply back
 				$messages = [
 				'type' => 'text',
-				'text' => 'คลิ๊กลิงค์นี้เพื่อลงเปิดใช้บริการระบบ okplus.ddns.net/okplus/bot.aspx?u='.$text
+				'text' => 'ยินดีต้อนรับเข้าสู่ระบบ โอเคพลัส คลิ๊กลิงค์นี้เพื่อลงเปิดใช้บริการระบบ okplus.ddns.net/okplus/bot.aspx?u='.$text
 				];	
 			}
 			else
