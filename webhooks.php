@@ -64,11 +64,24 @@ if (!is_null($events['events'])) {
 			
 			 $sendMessage = $event['message']['text'];
 			
-			// Build message to reply back
-			$messages = [
+			if ($sendMessage = 'ลงทะเบียน')
+			{
+				// Build message to reply back
+				$messages = [
 				'type' => 'text',
 				'text' => 'okplus.ddns.net/okplus/bot.aspx?r='.$sendMessage.'&u='.$text
-			];
+				];	
+			}
+			else
+			{
+				// Build message to reply back
+				$messages = [
+				'type' => 'text',
+				'text' => 'Line นี้เป็นระบบอัตโนมัติ หากต้องการติดต่อพนักงาน โปรดติดต่อที่ https://lin.ee/6D052q8';
+				];	
+			}
+			
+			
 			
 
 			// Make a POST Request to Messaging API to reply to sender
