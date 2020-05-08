@@ -71,7 +71,7 @@ if (!is_null($events['events'])) {
 				// Build message to reply back
 				$messages = [
 				'type' => 'text',
-				'text' => 'ยินดีต้อนรับเข้าสู่ระบบ โอเคพลัส คลิ๊กลิงค์นี้เพื่อลงเปิดใช้บริการระบบ okplus.ddns.net/okplus/bot.aspx?u='.$text
+				'text' => 'คลิ๊กลิงค์นี้เพื่อลงเปิดใช้บริการระบบ okplus.ddns.net/okplus/bot.aspx?u='.$text
 				];	
 				
 			}
