@@ -62,10 +62,12 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			
+			 $sendMessage = $event['message']['text'];
+			
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => "my id is ".$text
+				'text' => "my id is ".$sendMessage
 			];
 			
 
