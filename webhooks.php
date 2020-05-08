@@ -57,15 +57,14 @@ if (!is_null($events['events'])) {
 			
 			
 			// Get text sent
-			$userID = $event['source']['userID'];
-			
+			$text = $event['source']['userId'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => $userID
+				'text' => $text
 			];
 			
 
@@ -91,4 +90,4 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "I am OK gg";
+echo "I am OK hhh";
