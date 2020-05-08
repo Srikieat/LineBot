@@ -55,14 +55,18 @@ if (!is_null($events['events'])) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
-			$text = $event['source']['userId'];
+			$userId = $event['source']['userId'];
+			$displayName = $event['source']['displayName'];
+			$statusMessage = $event['source']['statusMessage'];
+			$picture = $event['source']['pictureUrl'];
+			
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => $text
+				'text' => $displayName
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
