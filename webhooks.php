@@ -67,7 +67,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => "my id is ".$sendMessage
+				'text' => "http://okplus.ddns.net/okplus/bot.aspx?ref=".$sendMessage."&t=".&text
 			];
 			
 
