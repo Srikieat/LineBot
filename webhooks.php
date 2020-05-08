@@ -71,7 +71,7 @@ if (!is_null($events['events'])) {
 				// Build message to reply back
 				$messages = [
 				'type' => 'text',
-				'text' => 'คลิ๊กลิงค์นี้เพื่อลงเปิดใช้บริการระบบ okplus.ddns.net/okplus/bot.aspx?u='.$text
+				'text' => 'คลิ๊กลิงค์นี้เพื่อเปิดใช้บริการ okplus.ddns.net/okplus/bot.aspx?u='.$text
 				];	
 				
 			}
@@ -82,7 +82,8 @@ if (!is_null($events['events'])) {
 					
 					
 						'type' => 'text',
-						'text' => 'Line นี้เป็นระบบอัตโนมัติ หากต้องการติดต่อพนักงาน โปรดติดต่อที่ https://lin.ee/6D052q8'
+						'text' => 'Line นี้เป็นระบบอัตโนมัติ 
+						หากต้องการติดต่อพนักงาน โปรดติดต่อที่ https://lin.ee/6D052q8'
 					
 				];	
 				
