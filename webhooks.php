@@ -27,7 +27,7 @@ if (!is_null($events['events'])) {
 			
 			$messages = [
 				'type' => 'text',
-				'text' => 'ยินดีต้อนรับเข้าสู่ระบบ โอเคพลัส คลิ๊กลิงค์นี้เพื่อลงเปิดใช้บริการระบบ okplus.ddns.net/okplus/bot.aspx?u='.$text
+				'text' => 'ยินดีต้อนรับเข้าสู่ระบบแจ้งเตือนอัตโนมัติ โอเคพลัส'."\n".'คลิ๊กลิงค์นี้เพื่อเปิดใช้บริการระบบ okplus.ddns.net/okplus/bot.aspx?u='.$text
 				];	
 			
 			// Make a POST Request to Messaging API to reply to sender
