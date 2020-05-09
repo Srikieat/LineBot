@@ -11,9 +11,11 @@ $channelSecret = 'df1d8d8ef1b407d1c31c7b1aac6e8027';
 $pushID = 'U44e90a4578cb725ccc9ed09d2cdc18e9';
 
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
+
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 
-$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello world123');
+$msg = $_POST['m'];
+$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($msg);
 $response = $bot->pushMessage($pushID, $textMessageBuilder);
 
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
