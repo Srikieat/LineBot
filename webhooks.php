@@ -27,7 +27,7 @@ if (!is_null($events['events'])) {
 			
 			$messages = [
 				'type' => 'text',
-				'text' => 'ยินดีต้อนรับเข้าสู่ระบบแจ้งเตือนอัตโนมัติ โอเคพลัส'."\n".'คลิ๊กลิงค์นี้เพื่อเปิดใช้บริการระบบ okplus.ddns.net/okplus/bot.aspx?u='.$text
+				'text' => 'ยินดีต้อนรับเข้าสู่ระบบแจ้งเตือนอัตโนมัติ โอเคพลัส'."\n".'คลิ๊กลิงค์นี้เพื่อเปิดใช้บริการระบบ okplus.ddns.net/okplus/OKMO/Bot.aspx?u='.$text
 				];	
 			
 			// Make a POST Request to Messaging API to reply to sender
@@ -70,7 +70,7 @@ if (!is_null($events['events'])) {
 				// Build message to reply back
 				$messages = [
 				'type' => 'text',
-				'text' => 'คลิ๊กลิงค์นี้เพื่อเปิดใช้บริการ okplus.ddns.net/okplus/bot.aspx?u='.$text
+				'text' => 'คลิ๊กลิงค์นี้เพื่อเปิดใช้บริการ okplus.ddns.net/okplus/OKMO/Bot.aspx?u='.$text
 				];	
 				
 			}
