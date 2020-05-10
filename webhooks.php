@@ -37,7 +37,7 @@ if (!is_null($events['events'])) {
                 				'altText' => 'Example buttons template', // 替代文字
                 				'template' => array(
                     						'type' => 'buttons', // 類型 (按鈕)
-		                				'thumbnailImageUrl' => 'https://api.reh.tw/line/bot/example/assets/images/example.jpg', // 圖片網址 <不一定需要>
+		                				'thumbnailImageUrl' => 'https://okplus.co.th/Bot/Images/ImgButtonTemplate.png', // 圖片網址 <不一定需要>
                  						'title' => 'บ.โอเคพลัส จำกัด', // 標題 <不一定需要>
 		                				'text' => 'ยินดีต้อนรับเข้าสู่ระบบ', // 文字
                 						'actions' => array(
