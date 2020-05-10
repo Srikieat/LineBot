@@ -147,7 +147,7 @@ if (!is_null($events['events'])) {
 					
 					
 					 "type" => "flex",
-    "altText" => "Hello Flex Message",
+    "altText" => "ใบเสร็จรับเงิน-ชำระค่างวด",
     "contents" => [
       "type" => "bubble",
       "direction" => "ltr",
@@ -172,7 +172,7 @@ if (!is_null($events['events'])) {
           ],
           [
             "type" => "text",
-            "text" => "Rabbit Line Pay",
+            "text" => "ชำระผ่านทาง โลตัส",
             "size" => "lg",
             "weight" => "bold",
             "color" => "#000000"
@@ -185,7 +185,7 @@ if (!is_null($events['events'])) {
           ],
           [
             "type" => "text",
-            "text" => "Payment complete.",
+            "text" => "ชำระแล้ว 3 งวด ค้าง 0 งวด",
             "margin" => "lg",
             "size" => "lg",
             "color" => "#000000"
@@ -207,13 +207,13 @@ if (!is_null($events['events'])) {
             "contents" => [
               [
                 "type" => "text",
-                "text" => "Merchant",
+                "text" => "ชื่อ",
                 "align" => "start",
                 "color" => "#C3C3C3"
               ],
               [
                 "type" => "text",
-                "text" => "BTS 01",
+                "text" => "ศรีเกียรติ ศรีประวัติกุล",
                 "align" => "end",
                 "color" => "#000000"
               ]
@@ -226,12 +226,12 @@ if (!is_null($events['events'])) {
             "contents" => [
               [
                 "type" => "text",
-                "text" => "New balance",
+                "text" => "ทะเบียนรถ",
                 "color" => "#C3C3C3"
               ],
               [
                 "type" => "text",
-                "text" => "฿ 45.57",
+                "text" => "5กช 452",
                 "align" => "end"
               ]
             ]
