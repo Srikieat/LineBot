@@ -95,13 +95,12 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			
-			 $sendMessage = $event['message']['text'];
+			$sendMessage = $event['message']['text'];
 			
-			if ($sendMessage == 'ลงทะเบียน')
+			switch ($sendMessage) 
 			{
-				// Build message to reply back
-				// start message
-				$messages = [
+  				case "ลงทะเบียน":
+    					$messages = [
 						'type' => 'template', // 訊息類型 (模板)
                 				'altText' => 'ลงทะเบียน', // 替代文字
                 				'template' => array(
@@ -128,15 +127,10 @@ if (!is_null($events['events'])) {
 			                       					   )
 		                					)
 					
-						];	
-						// end message
-			}
-			else
-			{
-
-				
-				
-				$amount = file_get_contents('http://okplus.ddns.net/okplus/web/test.html');
+						];
+    					break;
+  				case "ใบเสร็จ":
+    					$amount = file_get_contents('http://okplus.ddns.net/okplus/web/test.html');
 				
 				// Build message to reply back
 				$messages = [
@@ -259,20 +253,20 @@ if (!is_null($events['events'])) {
         ]
       ]
     ]
+					];
+    					break;
+  
+  				default:
+					$message = 	[
+    								'type' => 'text',
+								'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n".'หากต้องการติดต่อพนักงาน โปรดติดต่อที่ https://lin.ee/6D052q8'	
+							]
 					
-					
-					
-					
-						//'type' => 'text',
-						//'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n".'หากต้องการติดต่อพนักงาน โปรดติดต่อที่ https://lin.ee/6D052q8'	
-					
-					    ];	
-				
-				
 			}
 			
 			
-			header( "location: http://www.ireallyhost.com" );
+			
+			
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
