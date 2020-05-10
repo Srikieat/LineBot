@@ -25,6 +25,12 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			
+			
+			
+			
+			
+			
+			
 			$messages = [
 				'type' => 'text',
 				'text' => 'ยินดีต้อนรับเข้าสู่ระบบแจ้งเตือนอัตโนมัติ โอเคพลัส'."\n".'คลิ๊กลิงค์นี้เพื่อเปิดใช้บริการระบบ okplus.ddns.net/okplus/OKMO/Bot.aspx?u='.$text
@@ -77,13 +83,39 @@ if (!is_null($events['events'])) {
 			else
 			{
 
+				
+				
+				
+				
 				// Build message to reply back
 				$messages = [
 					
 					
-						'type' => 'text',
-						'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n".'หากต้องการติดต่อพนักงาน โปรดติดต่อที่ https://lin.ee/6D052q8'
-					
+							"type": "template",
+	"altText": "Example buttons template",
+	"template": {
+        		"type": "buttons",
+		        "thumbnailImageUrl": "https://api.reh.tw/line/bot/example/assets/images/example.jpg",
+        		"title": "Example Menu",
+		        "text": "Please select",
+        		"actions": [
+            				{
+			        	        "type": "postback",
+				                "label": "Postback example",
+				                "data": "action=buy&itemid=123"
+            				},
+		                        {
+				                "type": "message",
+				                "label": "Message example",
+				                "text": "Message example"
+				         },
+				         {
+				                "type": "uri",
+				                "label": "Uri example",
+				                "uri": "https://github.com/GoneTone/line-example-bot-php"
+				          }
+        				]
+    			}
 				];	
 				
 				
