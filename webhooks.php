@@ -147,7 +147,7 @@ if (!is_null($events['events'])) {
 					
 					
 					 "type" => "flex",
-    "altText" => "ใบเสร็จรับเงิน-ชำระค่างวด",
+    "altText" => "ใบเสร็จรับเงิน-ค่างวด",
     "contents" => [
       "type" => "bubble",
       "direction" => "ltr",
@@ -157,7 +157,7 @@ if (!is_null($events['events'])) {
         "contents" => [
           [
             "type" => "text",
-            "text" => "ใบเสร็จรับเงิน-ชำระค่างวด",
+            "text" => "ใบเสร็จรับเงิน-ค่างวด",
             "size" => "lg",
             "align" => "start",
             "weight" => "bold",
@@ -231,7 +231,7 @@ if (!is_null($events['events'])) {
               ],
               [
                 "type" => "text",
-                "text" => "5กช 452",
+                "text" => "5กช 4552",
                 "align" => "end"
               ]
             ]
