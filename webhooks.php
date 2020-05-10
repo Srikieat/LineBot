@@ -99,10 +99,24 @@ if (!is_null($events['events'])) {
 			
 			
 			// Build message to reply back
-				$messages = [
+			
+			switch ($sendMessage) {
+  case "red":
+    echo "Your favorite color is red!";
+    break;
+  case "blue":
+    echo "Your favorite color is blue!";
+    break;
+  case "green":
+    echo "Your favorite color is green!";
+    break;
+  default:
+    $messages = [
 						'type' => 'text',
 						'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n".'หากต้องการติดต่อพนักงาน โปรดติดต่อที่ https://lin.ee/6D052q8'	
 					    ];	
+}
+				
 			
 					
 							
