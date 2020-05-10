@@ -3,6 +3,21 @@
 require "vendor/autoload.php";
 require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
 
+use LINE\LINEBot;
+use LINE\LINEBot\Constant\ActionType;
+use LINE\LINEBot\Constant\MessageType;
+use LINE\LINEBot\Constant\TemplateType;
+use LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder;
+use LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselTemplateBuilder;
+use LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselColumnTemplateBuilder;
+use LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder;
+use LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder;
+use LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder;
+use LINE\LINEBot\TemplateActionBuilder\Uri\AltUriBuilder;
+use LINE\LINEBot\TemplateActionBuilder\DatetimePickerTemplateActionBuilder;
+use LINE\Tests\LINEBot\Util\DummyHttpClient;
+use PHPUnit\Framework\TestCase;
+
 $access_token = '0jFIiIq0JnX9WLpNo+ZMNnVKOSP3IYtDwwqLNSwnR3PyIqo+pTSIdJyY0fLkxQEBSGB7h1OA/ZlRTeHiYeb6v/B7Xnla6B2RO0oIjXfuLFKLKp5kwGc1ZwyR/Ye2KAAnD+fXr3MR7/eCN6ilzs6CQAdB04t89/1O/w1cDnyilFU=';
 
 // Get POST body content
