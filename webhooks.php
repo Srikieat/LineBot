@@ -157,7 +157,7 @@ if (!is_null($events['events'])) {
         "contents" => [
           [
             "type" => "text",
-            "text" => "Purchase",
+            "text" => "ใบเสร็จรับเงิน-ชำระค่างวด",
             "size" => "lg",
             "align" => "start",
             "weight" => "bold",
@@ -165,7 +165,7 @@ if (!is_null($events['events'])) {
           ],
           [
             "type" => "text",
-            "text" => "฿ 100.00",
+            "text" => "฿ 2,520.00",
             "size" => "3xl",
             "weight" => "bold",
             "color" => "#000000"
