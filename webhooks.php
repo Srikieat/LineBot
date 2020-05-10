@@ -98,24 +98,11 @@ if (!is_null($events['events'])) {
 			 $sendMessage = $event['message']['text'];
 			
 			
-				
-				
-			switch ($sendMessage) {
-						  case "red":
-						    echo "Your favorite color is red!";
-						    break;
-						  case "blue":
-						    echo "Your favorite color is blue!";
-						    break;
-						  case "green":
-						    echo "Your favorite color is green!";
-						    break;
-						  default:
-						    $message = [
+				 $message = [
 							    		'type' => 'text',
 									'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n".'หากต้องการติดต่อพนักงาน โปรดติดต่อที่ https://lin.ee/6D052q8'	
 						    		];
-						}
+			
 			
 			
 			header( "location: http://www.ireallyhost.com" );
