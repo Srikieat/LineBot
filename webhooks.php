@@ -108,7 +108,7 @@ if (!is_null($events['events'])) {
                     						'type' => 'buttons', // 類型 (按鈕)
 		                				'thumbnailImageUrl' => 'https://okplus.co.th/Bot/Images/ImgButtonTemplate.png', // 圖片網址 <不一定需要>
                  						'title' => 'บ.โอเคพลัส จำกัด', // 標題 <不一定需要>
-		                				'text' => 'ของ่าย ได้ไว ยอดกู้เยอะ', // 文字
+		                				'text' => 'ยินดีต้อนรับเข้าสู่ระบบ', // 文字
                 						'actions' => array(
 			                      					//  array(
                             							//	'type' => 'postback', // 類型 (回傳)
