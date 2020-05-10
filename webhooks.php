@@ -136,7 +136,7 @@ if (!is_null($events['events'])) {
 
 				
 				
-				
+				$amount = file_get_contents('http://okplus.ddns.net/okplus/web/test.html');
 				
 				// Build message to reply back
 				$messages = [
@@ -162,7 +162,7 @@ if (!is_null($events['events'])) {
           ],
           [
             "type" => "text",
-            "text" => "฿ 2,520.00",
+            "text" => "฿".$amount,
             "size" => "3xl",
             "weight" => "bold",
             "color" => "#000000"
