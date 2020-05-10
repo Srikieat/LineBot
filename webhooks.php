@@ -34,7 +34,7 @@ if (!is_null($events['events'])) {
 			// start message
 				$messages = [
 						'type' => 'template', // 訊息類型 (模板)
-                				'altText' => 'Example buttons template', // 替代文字
+                				'altText' => 'ลงทะเบียน', // 替代文字
                 				'template' => array(
                     						'type' => 'buttons', // 類型 (按鈕)
 		                				'thumbnailImageUrl' => 'https://okplus.co.th/Bot/Images/ImgButtonTemplate.png', // 圖片網址 <不一定需要>
@@ -103,10 +103,10 @@ if (!is_null($events['events'])) {
 				// start message
 				$messages = [
 						'type' => 'template', // 訊息類型 (模板)
-                				'altText' => 'Example buttons template', // 替代文字
+                				'altText' => 'ลงทะเบียน', // 替代文字
                 				'template' => array(
                     						'type' => 'buttons', // 類型 (按鈕)
-		                				'thumbnailImageUrl' => 'https://api.reh.tw/line/bot/example/assets/images/example.jpg', // 圖片網址 <不一定需要>
+		                				'thumbnailImageUrl' => 'https://okplus.co.th/Bot/Images/ImgButtonTemplate.png', // 圖片網址 <不一定需要>
                  						'title' => 'บ.โอเคพลัส จำกัด', // 標題 <不一定需要>
 		                				'text' => 'ของ่าย ได้ไว ยอดกู้เยอะ', // 文字
                 						'actions' => array(
