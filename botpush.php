@@ -139,7 +139,8 @@ $msg = [
 ];
 $pushID = $_GET['u'];
   //'U44e90a4578cb725ccc9ed09d2cdc18e9';
-$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder([$msg]);
+//$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder([$msg]);
+$textMessageBuilder = $msg
 $response = $bot->pushMessage($pushID, $textMessageBuilder);
 
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
