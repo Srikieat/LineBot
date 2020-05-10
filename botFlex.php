@@ -14,9 +14,8 @@ $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 
-$msg = $_GET['m'];
-$pushID = $_GET['u'];
-  //'U44e90a4578cb725ccc9ed09d2cdc18e9';
+$msg = '123';
+$pushID = 'U44e90a4578cb725ccc9ed09d2cdc18e9';
 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($msg);
 $response = $bot->pushMessage($pushID, $textMessageBuilder);
 
