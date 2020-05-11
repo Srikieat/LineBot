@@ -11,7 +11,12 @@ $messages = [
 										'type' => 'text',
 										'text' => 'Line25 นี้เป็นระบบอัตโนมัติ'."\n".'หากต้องการติดต่อพนักงาน โปรดติดต่อที่ https://lin.ee/6D052q8'	
 									];
-      $post = json_encode($data);
+      
+	$data = [
+				'to' => $id,
+				'messages' => [$messages],
+			];
+			$post = $data;
    
       //$arrayPostData['to'] = $id;
       //$arrayPostData['messages'][0]['type'] = "text";
