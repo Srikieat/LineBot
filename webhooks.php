@@ -186,20 +186,20 @@ if (!is_null($events['events'])) {
           ],
           [
             "type" => "text",
-            "text" => $paymentDetails,
+            "text" => $channel,
             "size" => "lg",
             "weight" => "bold",
             "color" => "#000000"
           ],
           [
             "type" => "text",
-            "text" => "dt",
+            "text" => $dt,
             "size" => "xs",
             "color" => "#B2B2B2"
           ],
           [
             "type" => "text",
-            "text" => "detail",
+            "text" => $detail,
             "margin" => "lg",
             "size" => "lg",
             "color" => "#000000"
@@ -227,7 +227,7 @@ if (!is_null($events['events'])) {
               ],
               [
                 "type" => "text",
-                "text" => "name",
+                "text" => $name,
                 "align" => "end",
                 "color" => "#000000"
               ]
@@ -245,7 +245,7 @@ if (!is_null($events['events'])) {
               ],
               [
                 "type" => "text",
-                "text" => "555",
+                "text" => $plate,
                 "align" => "end"
               ]
             ]
