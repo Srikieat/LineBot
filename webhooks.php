@@ -244,6 +244,30 @@ if (!is_null($events['events'])) {
               ]
             ]
           ],
+		
+		
+		 [
+            "type" => "box",
+            "layout" => "baseline",
+            "margin" => "lg",
+            "contents" => [
+              [
+                "type" => "text",
+                "text" => "เลขที่ใบเสร็จ",
+                "color" => "#C3C3C3"
+              ],
+              [
+                "type" => "text",
+                "text" => $plate,
+                "align" => "end"
+              ]
+            ]
+          ],
+		
+		
+		
+		
+		
           [
             "type" => "separator",
             "margin" => "lg",
