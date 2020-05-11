@@ -147,7 +147,7 @@ if (!is_null($events['events'])) {
 					
 					$amount=$str_arr[0];
 					$channel = $str_arr[1];
-					//$dt = $str_arr[2];
+					$dt = $str_arr[2];
 					//$detail = $str_arr[0];
 					//$name = $str_arr[0];
 					//$plate = = $str_arr[0];
@@ -193,7 +193,7 @@ if (!is_null($events['events'])) {
           ],
           [
             "type" => "text",
-            "text" => "dt",
+            "text" => $dt,
             "size" => "xs",
             "color" => "#B2B2B2"
           ],
