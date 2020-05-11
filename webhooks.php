@@ -239,7 +239,7 @@ if (!is_null($events['events'])) {
               ],
               [
                 "type" => "text",
-                "text" => "jjj",
+                "text" => $plate,
                 "align" => "end"
               ]
             ]
