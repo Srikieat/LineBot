@@ -320,7 +320,7 @@ if (!is_null($events['events'])) {
             "align" => "start",
             "color" => "#0084B6",
             "action" => [
-              "type" => "text",
+              "type" => "url",
               "label" => "View Details",
               "uri" => "https://www.okplus.co.th"
             ]
