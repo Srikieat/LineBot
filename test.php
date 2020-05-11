@@ -1,7 +1,11 @@
 <?php
 
-$string = "1,430:ชำระทาง Big C:14 เมษายน";
-$chunks = split (":", $string);
-echo $chunks[0];
-?>
+   $ip = "123.456.789.000"; // some IP address
+   $iparr = split ("\.", $ip); 
+   
+   print "$iparr[0] <br />";
+   print "$iparr[1] <br />" ;
+   print "$iparr[2] <br />"  ;
+   print "$iparr[3] <br />"  ;
 
+?>
