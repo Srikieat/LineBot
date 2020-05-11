@@ -143,7 +143,10 @@ if (!is_null($events['events'])) {
 					//$name = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentName.aspx');
 					//$plate = = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentPlate.aspx');
 					$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentList.aspx');
-					//$detail = spliti (":", $paymentDetails, 3);
+					$str_arr = explode (":", $paymentDetails);  
+					$amount=$str_arr[0]
+
+					
 				
 				// Build message to reply back
 				$messages = [
@@ -169,7 +172,7 @@ if (!is_null($events['events'])) {
           ],
           [
             "type" => "text",
-            "text" => "฿1234",
+            "text" => "฿".$amount,
             "size" => "3xl",
             "weight" => "bold",
             "color" => "#000000"
