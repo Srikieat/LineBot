@@ -315,12 +315,12 @@ if (!is_null($events['events'])) {
         "contents" => [
           [
             "type" => "text",
-            "text" => "web",
+            "text" => "ชำระค่างวดตรงวันมีส่วนลด 100 บาท",
             "size" => "lg",
             "align" => "start",
             "color" => "#0084B6",
             "action" => [
-              "type" => "uri",
+              "type" => "text",
               "label" => "View Details",
               "uri" => "https://www.okplus.co.th"
             ]
@@ -345,7 +345,7 @@ if (!is_null($events['events'])) {
   				         default:
 							    $messages = [
 										'type' => 'text',
-										'text' => 'Line25 นี้เป็นระบบอัตโนมัติ'."\n".'หากต้องการติดต่อพนักงาน โปรดติดต่อที่ https://lin.ee/6D052q8'	
+										'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n".'หากต้องการติดต่อพนักงาน โปรดติดต่อที่ https://lin.ee/6D052q8'	
 									];	
 				// end case				
 				}
