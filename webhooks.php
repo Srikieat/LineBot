@@ -173,7 +173,7 @@ if (!is_null($events['events'])) {
           ],
           [
             "type" => "text",
-            "text" => "฿",//.$amount,
+            "text" => "฿".$amount,
             "size" => "3xl",
             "weight" => "bold",
             "color" => "#000000"
