@@ -136,7 +136,7 @@ if (!is_null($events['events'])) {
   					 case "ใบเสร็จ":
    							
 					//$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentList.aspx');
-					$paymentDetails = "1,430:ช่องทางการชำระเงิน Big C:14 เมษายน 2563:ชำระค่างวดรถจักรยานยนต์:ราณี สายใจ:8กร 2513:62-0125:62/0789:612334";
+					$paymentDetails = "1,430:ช่องทางการชำระเงิน Big C:14 เมษายน 2563:ชำระค่างวดรถจักรยานยนต์:ราณี สายใจ:8กร 2513";
 					$str_arr = explode (":", $paymentDetails);  
 					
 					$amount=$str_arr[0];
