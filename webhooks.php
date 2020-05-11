@@ -143,7 +143,7 @@ if (!is_null($events['events'])) {
 					$channel = $str_arr[1];
 					$dt = $str_arr[2];
 					$detail = $str_arr[3];
-					//$name = $str_arr[4];
+					$name = $str_arr[4];
 					//$plate = = $str_arr[5];
 					
 
@@ -221,7 +221,7 @@ if (!is_null($events['events'])) {
               ],
               [
                 "type" => "text",
-                "text" => "cc",
+                "text" => $name,
                 "align" => "end",
                 "color" => "#000000"
               ]
