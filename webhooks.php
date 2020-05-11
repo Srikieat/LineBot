@@ -215,7 +215,7 @@ if (!is_null($events['events'])) {
             "contents" => [
               [
                 "type" => "text",
-                "text" => "ชื่อ",
+                "text" => "เลขที่ใบเสร็จรับเงิน",
                 "align" => "start",
                 "color" => "#C3C3C3"
               ],
@@ -234,7 +234,7 @@ if (!is_null($events['events'])) {
             "contents" => [
               [
                 "type" => "text",
-                "text" => "ทะเบียนรถ",
+                "text" => "สัญญาเลขที่",
                 "color" => "#C3C3C3"
               ],
               [
@@ -253,7 +253,24 @@ if (!is_null($events['events'])) {
             "contents" => [
               [
                 "type" => "text",
-                "text" => "เลขที่ใบเสร็จ",
+                "text" => "เลขที่อ้างอิง",
+                "color" => "#C3C3C3"
+              ],
+              [
+                "type" => "text",
+                "text" => $plate,
+                "align" => "end"
+              ]
+            ]
+          ],
+		 [
+            "type" => "box",
+            "layout" => "baseline",
+            "margin" => "lg",
+            "contents" => [
+              [
+                "type" => "text",
+                "text" => "ชื่อ",
                 "color" => "#C3C3C3"
               ],
               [
@@ -264,7 +281,23 @@ if (!is_null($events['events'])) {
             ]
           ],
 		
-		
+		 [
+            "type" => "box",
+            "layout" => "baseline",
+            "margin" => "lg",
+            "contents" => [
+              [
+                "type" => "text",
+                "text" => "ทะเบียนรถ",
+                "color" => "#C3C3C3"
+              ],
+              [
+                "type" => "text",
+                "text" => $plate,
+                "align" => "end"
+              ]
+            ]
+          ],
 		
 		
 		
