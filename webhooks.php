@@ -315,14 +315,14 @@ if (!is_null($events['events'])) {
         "contents" => [
           [
             "type" => "text",
-            "text" => "",
+            "text" => "web",
             "size" => "lg",
             "align" => "start",
             "color" => "#0084B6",
             "action" => [
               "type" => "uri",
               "label" => "View Details",
-              "uri" => ""
+              "uri" => "https://www.okplus.co.th"
             ]
           ]
         ]
