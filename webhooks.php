@@ -135,7 +135,7 @@ if (!is_null($events['events'])) {
    					 break;
   					 case "ใบเสร็จ":
    							
-					
+					$reg = = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentPlate.aspx');
 					$amount = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentAmount.aspx');
 					$channel = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentChannel.aspx');
 					$dt = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentDate.aspx');
