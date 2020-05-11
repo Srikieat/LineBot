@@ -8,9 +8,7 @@
    $id = "U44e90a4578cb725ccc9ed09d2cdc18e9";
    
 //$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentList.aspx');
-					
-
-$paymentDetails = "1,430:ช่องทางการชำระเงิน Big C:14 เมษายน 2563:ชำระแล้ว 4 งวด คงค้าง 0 งวด:ราณี สายใจ:8กร 2513";
+					$paymentDetails = "1,430:Big C:14 เมษายน 2563:ชำระค่างวดรถจักรยานยนต์:ราณี สายใจ:8กร 2513:62RC-06200:62/0147:621478";
 					$str_arr = explode (":", $paymentDetails);  
 					
 					$amount=$str_arr[0];
@@ -19,9 +17,17 @@ $paymentDetails = "1,430:ช่องทางการชำระเงิน 
 					$detail = $str_arr[3];
 					$name = $str_arr[4];
 					$plate = $str_arr[5];
+					$receiptId = $str_arr[6];
+					$contractId = $str_arr[7];
+					$reference = $str_arr[8];
+					
+					
+					
 
-
-$messages = [
+					
+				
+				// Build message to reply back
+				$messages = [
 					
 					
 					
@@ -51,7 +57,7 @@ $messages = [
           ],
           [
             "type" => "text",
-            "text" => $channel,
+            "text" => $name,
             "size" => "lg",
             "weight" => "bold",
             "color" => "#000000"
@@ -86,19 +92,73 @@ $messages = [
             "contents" => [
               [
                 "type" => "text",
-                "text" => "ชื่อ",
+                "text" => "เลขที่ใบเสร็จรับเงิน",
                 "align" => "start",
                 "color" => "#C3C3C3"
               ],
               [
                 "type" => "text",
-                "text" => $name,
+                "text" => $receiptId,
                 "align" => "end",
                 "color" => "#000000"
               ]
             ]
           ],
           [
+            "type" => "box",
+            "layout" => "baseline",
+            "margin" => "lg",
+            "contents" => [
+              [
+                "type" => "text",
+                "text" => "สัญญาเลขที่",
+                "color" => "#C3C3C3"
+              ],
+              [
+                "type" => "text",
+                "text" => $contractId,
+                "align" => "end"
+              ]
+            ]
+          ],
+		
+		
+		 [
+            "type" => "box",
+            "layout" => "baseline",
+            "margin" => "lg",
+            "contents" => [
+              [
+                "type" => "text",
+                "text" => "เลขที่อ้างอิง",
+                "color" => "#C3C3C3"
+              ],
+              [
+                "type" => "text",
+                "text" => $reference,
+                "align" => "end"
+              ]
+            ]
+          ],
+		 [
+            "type" => "box",
+            "layout" => "baseline",
+            "margin" => "lg",
+            "contents" => [
+              [
+                "type" => "text",
+                "text" => "ชำระทาง",
+                "color" => "#C3C3C3"
+              ],
+              [
+                "type" => "text",
+                "text" => $channel,
+                "align" => "end"
+              ]
+            ]
+          ],
+		
+		 [
             "type" => "box",
             "layout" => "baseline",
             "margin" => "lg",
@@ -115,6 +175,9 @@ $messages = [
               ]
             ]
           ],
+		
+		
+		
           [
             "type" => "separator",
             "margin" => "lg",
@@ -128,14 +191,14 @@ $messages = [
         "contents" => [
           [
             "type" => "text",
-            "text" => "View Details",
+            "text" => "จ่ายตรงวัน ลดงวดละ 100 บาท",
             "size" => "lg",
             "align" => "start",
             "color" => "#0084B6",
             "action" => [
               "type" => "uri",
               "label" => "View Details",
-              "uri" => "https://google.co.th/"
+              "uri" => "https://www.okplus.co.th"
             ]
           ]
         ]
@@ -146,6 +209,7 @@ $messages = [
 					
 					
 					    ];	
+					
 
 
 
