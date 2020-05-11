@@ -7,10 +7,8 @@
    //รับ id ของผู้ใช้
    $id = "U44e90a4578cb725ccc9ed09d2cdc18e9";
    
-//$messages = [
-				//						'type' => 'text',
-				//						'text' => 'Line25 นี้เป็นระบบอัตโนมัติ'."\n".'หากต้องการติดต่อพนักงาน โปรดติดต่อที่ https://lin.ee/6D052q8'	
-				//					];
+//$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentList.aspx');
+					
 
 $paymentDetails = "1,430:ช่องทางการชำระเงิน Big C:14 เมษายน 2563:ชำระแล้ว 4 งวด คงค้าง 0 งวด:ราณี สายใจ:8กร 2513";
 					$str_arr = explode (":", $paymentDetails);  
