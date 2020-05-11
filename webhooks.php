@@ -136,7 +136,8 @@ if (!is_null($events['events'])) {
   					 case "ใบเสร็จ":
    							
 					
-					$amount = file_get_contents('http://okplus.ddns.net/okplus/web/test.html');
+					$amount = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentAmount.aspx');
+					$channel = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentChannel.aspx');
 				
 				// Build message to reply back
 				$messages = [
@@ -169,7 +170,7 @@ if (!is_null($events['events'])) {
           ],
           [
             "type" => "text",
-            "text" => "ชำระผ่านทาง โลตัส",
+            "text" => $channel,
             "size" => "lg",
             "weight" => "bold",
             "color" => "#000000"
