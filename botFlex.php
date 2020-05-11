@@ -26,7 +26,7 @@ $messages = [
 					
 					
 						 "type" => "flex",
-    "altText" => "ใบเสร็จรับเงิน-ค่างวด",
+    "altText" => "ใบเสร็จรับเงิน",
     "contents" => [
       "type" => "bubble",
       "direction" => "ltr",
@@ -36,7 +36,7 @@ $messages = [
         "contents" => [
           [
             "type" => "text",
-            "text" => "ใบเสร็จรับเงิน-ค่างวด",
+            "text" => "ใบเสร็จรับเงิน",
             "size" => "lg",
             "align" => "start",
             "weight" => "bold",
