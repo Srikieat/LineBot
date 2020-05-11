@@ -138,6 +138,10 @@ if (!is_null($events['events'])) {
 					
 					$amount = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentAmount.aspx');
 					$channel = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentChannel.aspx');
+					$dt = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentDate.aspx');
+					$detail = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentDetail.aspx');
+					$name = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentName.aspx');
+					$plate = = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentPlate.aspx');
 				
 				// Build message to reply back
 				$messages = [
@@ -177,13 +181,13 @@ if (!is_null($events['events'])) {
           ],
           [
             "type" => "text",
-            "text" => "2019.02.14 21:47 (GMT+0700)",
+            "text" => $dt,
             "size" => "xs",
             "color" => "#B2B2B2"
           ],
           [
             "type" => "text",
-            "text" => "ชำระแล้ว 3 งวด ค้าง 0 งวด",
+            "text" => $detail,
             "margin" => "lg",
             "size" => "lg",
             "color" => "#000000"
@@ -211,7 +215,7 @@ if (!is_null($events['events'])) {
               ],
               [
                 "type" => "text",
-                "text" => "ศรีเกียรติ ศรีประวัติกุล",
+                "text" => $name,
                 "align" => "end",
                 "color" => "#000000"
               ]
@@ -229,7 +233,7 @@ if (!is_null($events['events'])) {
               ],
               [
                 "type" => "text",
-                "text" => "5กช 4552",
+                "text" => $plate,
                 "align" => "end"
               ]
             ]
