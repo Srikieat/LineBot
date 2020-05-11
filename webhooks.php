@@ -275,7 +275,7 @@ if (!is_null($events['events'])) {
             "contents" => [
               [
                 "type" => "text",
-                "text" => "ช่องทางการชำระเงิน",
+                "text" => "ชำระทาง",
                 "color" => "#C3C3C3"
               ],
               [
