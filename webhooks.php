@@ -142,9 +142,9 @@ if (!is_null($events['events'])) {
 					$amount=$str_arr[0];
 					$channel = $str_arr[1];
 					$dt = $str_arr[2];
-					$detail = $str_arr[3];
-					$name = $str_arr[4];
-					$plate = = $str_arr[5];
+					//$detail = $str_arr[3];
+					//$name = $str_arr[4];
+					//$plate = = $str_arr[5];
 					
 
 					
