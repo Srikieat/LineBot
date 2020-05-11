@@ -146,6 +146,7 @@ if (!is_null($events['events'])) {
 					$name = $str_arr[4];
 					$plate = $str_arr[5];
 					$receiptId = $str_arr[6];
+					$contractId = $str_arr[7];
 					
 					
 					
@@ -224,7 +225,7 @@ if (!is_null($events['events'])) {
               ],
               [
                 "type" => "text",
-                "text" => $name,
+                "text" => $receiptId,
                 "align" => "end",
                 "color" => "#000000"
               ]
@@ -242,7 +243,7 @@ if (!is_null($events['events'])) {
               ],
               [
                 "type" => "text",
-                "text" => $plate,
+                "text" => $contractId,
                 "align" => "end"
               ]
             ]
