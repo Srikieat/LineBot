@@ -319,7 +319,7 @@ if (!is_null($events['events'])) {
         "contents" => [
           [
             "type" => "text",
-            "text" => "ชำระตรงวันมีส่วนลดงวดละ 100 บาท",
+            "text" => "จ่ายตรงวัน ลดงวดละ 100 บาท",
             "size" => "lg",
             "align" => "start",
             "color" => "#0084B6",
