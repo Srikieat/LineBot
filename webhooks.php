@@ -144,8 +144,8 @@ if (!is_null($events['events'])) {
 					//$plate = = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentPlate.aspx');
 					$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentList.aspx');
 					$str_arr = explode (":", $paymentDetails);  
-					print($str_arr[0]); 
-					//$amount=$str_arr[0]
+					//print($str_arr[0]); 
+					$amount=$str_arr[0];
 
 					
 				
