@@ -136,12 +136,14 @@ if (!is_null($events['events'])) {
   					 case "ใบเสร็จ":
    							
 					//$reg = = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentDetail.aspx');
-					$amount = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentAmount.aspx');
-					$channel = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentChannel.aspx');
-					$dt = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentDate.aspx');
-					$detail = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentDetail.aspx');
-					$name = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentName.aspx');
+					//$amount = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentAmount.aspx');
+					//$channel = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentChannel.aspx');
+					//$dt = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentDate.aspx');
+					//$detail = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentDetail.aspx');
+					//$name = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentName.aspx');
 					//$plate = = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentPlate.aspx');
+					$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentList.aspx');
+					$detail = spliti (":", $paymentDetails, 3);
 				
 				// Build message to reply back
 				$messages = [
@@ -167,27 +169,27 @@ if (!is_null($events['events'])) {
           ],
           [
             "type" => "text",
-            "text" => "฿".$amount,
+            "text" => "฿1234",
             "size" => "3xl",
             "weight" => "bold",
             "color" => "#000000"
           ],
           [
             "type" => "text",
-            "text" => $channel,
+            "text" => "channel",
             "size" => "lg",
             "weight" => "bold",
             "color" => "#000000"
           ],
           [
             "type" => "text",
-            "text" => $dt,
+            "text" => "dt",
             "size" => "xs",
             "color" => "#B2B2B2"
           ],
           [
             "type" => "text",
-            "text" => $detail,
+            "text" => "detail",
             "margin" => "lg",
             "size" => "lg",
             "color" => "#000000"
@@ -215,7 +217,7 @@ if (!is_null($events['events'])) {
               ],
               [
                 "type" => "text",
-                "text" => $name,
+                "text" => "name",
                 "align" => "end",
                 "color" => "#000000"
               ]
