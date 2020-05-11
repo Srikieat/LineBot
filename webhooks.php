@@ -136,15 +136,15 @@ if (!is_null($events['events'])) {
   					 case "ใบเสร็จ":
    							
 					//$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentList.aspx');
-					$paymentDetails = "1,430:ช่องทางการชำระเงิน Big C:14 เมษายน 2563:ราณี สายใจ:8กร 2513";
+					$paymentDetails = "1,430:ช่องทางการชำระเงิน Big C:14 เมษายน 2563:ชำระแล้ว 4 งวด คงค้าง 0 งวด:ราณี สายใจ:8กร 2513";
 					$str_arr = explode (":", $paymentDetails);  
 					
 					$amount=$str_arr[0];
 					$channel = $str_arr[1];
 					$dt = $str_arr[2];
-					//$detail = $str_arr[3];
-					//$name = $str_arr[4];
-					//$plate = = $str_arr[5];
+					$detail = $str_arr[3];
+					$name = $str_arr[4];
+					$plate = = $str_arr[5];
 					
 
 					
@@ -193,7 +193,7 @@ if (!is_null($events['events'])) {
           ],
           [
             "type" => "text",
-            "text" => "dd",
+            "text" => $detail,
             "margin" => "lg",
             "size" => "lg",
             "color" => "#000000"
@@ -221,7 +221,7 @@ if (!is_null($events['events'])) {
               ],
               [
                 "type" => "text",
-                "text" => "cc",
+                "text" => $name,
                 "align" => "end",
                 "color" => "#000000"
               ]
@@ -239,7 +239,7 @@ if (!is_null($events['events'])) {
               ],
               [
                 "type" => "text",
-                "text" => "ddee",
+                "text" => $plate,
                 "align" => "end"
               ]
             ]
