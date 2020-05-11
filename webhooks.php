@@ -139,7 +139,7 @@ if (!is_null($events['events'])) {
 					$amount = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentAmount.aspx');
 					$channel = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentChannel.aspx');
 					$dt = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentDate.aspx');
-					//$detail = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentDetail.aspx');
+					$detail = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentDetail.aspx');
 					//$name = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentName.aspx');
 					//$plate = = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentPlate.aspx');
 				
@@ -187,7 +187,7 @@ if (!is_null($events['events'])) {
           ],
           [
             "type" => "text",
-            "text" => "detail",
+            "text" => $detail,
             "margin" => "lg",
             "size" => "lg",
             "color" => "#000000"
