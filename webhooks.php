@@ -135,22 +135,16 @@ if (!is_null($events['events'])) {
    					 break;
   					 case "ใบเสร็จ":
    							
-					//$reg = = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentDetail.aspx');
-					//$amount = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentAmount.aspx');
-					//$channel = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentChannel.aspx');
-					//$dt = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentDate.aspx');
-					//$detail = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentDetail.aspx');
-					//$name = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentName.aspx');
-					//$plate = = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentPlate.aspx');
-					$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentList.aspx');
+					//$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentList.aspx');
+					$paymentDetails = "1,430:ช่องทางการชำระเงิน Big C:14 เมษายน 2563:ราณี สายใจ:8กร 2513"
 					$str_arr = explode (":", $paymentDetails);  
 					
 					$amount=$str_arr[0];
 					$channel = $str_arr[1];
 					$dt = $str_arr[2];
-					//$detail = $str_arr[0];
-					//$name = $str_arr[0];
-					//$plate = = $str_arr[0];
+					$detail = $str_arr[3];
+					$name = $str_arr[4];
+					$plate = = $str_arr[5];
 					
 
 					
