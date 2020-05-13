@@ -17,7 +17,7 @@ if (!is_null($events['events'])) {
 	foreach ($events['events'] as $event) {
 		if ($event['type'] == "unfollow") 
 		{
-			$text = $event['source']['userId'];
+			$id = $event['source']['userId'];
 			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/unfollowLine.aspx?u='.$id);
 		}
 	
