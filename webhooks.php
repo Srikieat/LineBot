@@ -15,7 +15,11 @@ $events = json_decode($content, true);
 if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
-		
+		if ($event['type'] == "unfollow") 
+		{
+			$text = $event['source']['userId'];
+			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/unfollowLine.aspx?u='.$id);
+		}
 	
 		
 		if ($event['type'] == "follow") 
