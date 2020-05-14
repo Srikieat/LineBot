@@ -8,10 +8,11 @@
   	// $id = "U44e90a4578cb725ccc9ed09d2cdc18e9";
 	$id= $_GET['u'];
 	$text = $_GET['t'];
-   
+   echo($id);
+echo($text);
 			//$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentList.aspx?u='.$id);
 			//		$paymentDetails = "1,430:Big C:14 เมษายน 2563:ชำระค่างวดรถจักรยานยนต์:ราณี สายใจ:8กร 2513:62RC-06200:62/0147:621478";
-					$str_arr = explode (":", $paymentDetails);  
+					$str_arr = explode (":", $text);  
 					
 					$amount=$str_arr[0];
 					$channel = $str_arr[1];
