@@ -20,7 +20,7 @@ function checkHello($message)
 
     foreach ($arrHelloKeyword as $keyword) 
         {
-            if (strpos($sendMessage,$keyword) !== false) 
+            if (strpos($message,$keyword) !== false) 
              {
                 $isHello = 1;
              }
