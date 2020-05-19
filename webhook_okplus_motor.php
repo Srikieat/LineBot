@@ -78,54 +78,27 @@ if (!is_null($events['events'])) {
 			
 			
 			// Build message to reply back
-			
-			switch ($sendMessage) {
-  				case "ลงทะเบียน":
-   					// start message
-					$messages = [
-						
-						];	
-						// end message
-   					 break;
-  					 case "ใบเสร็จ":
-   							
-					
-					
-					
-					
+            $isHello = false
+            
+            if (strops($text,'สวัสดี') != false)
+            {
+                $isHello = true;
+            }
+            
+            $messages = [
+                'type' => 'text',
+                'text' => 'กรุณารอสักครู่นะค่ะ'	
+            ];	
 
-					
-				
-				// Build message to reply back
-				$messages = [
-					
-					
-					
-					    ];	
-					
-					
-					
-					
-					
-					
-					
-					
-					 break;
-  				         default:
-							    $messages = [
-										'type' => 'text',
-										'text' => 'กรุณารอสักครู่นะค่ะ'	
-									];	
-				// end case				
-				}
-				
-			
-					
-							
+            if ($isHello)
+            {
+                $messages=  [
+                    'type' => 'text',
+                    'text' => 'สนใจรถรุ่นไหนค่ะ'	
+                            ];	
+            }
 			
 			
-			
-		
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
@@ -149,5 +122,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "test";
+
 
