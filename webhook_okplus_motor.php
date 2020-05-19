@@ -10,6 +10,26 @@ $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
 
+function checkHello($message)
+{
+    $isHello = false;
+            
+           
+    $arrHelloKeyword=array("สวัสดี","ทัก","hi");
+    
+
+    foreach ($arrHelloKeyword as $keyword) 
+        {
+            if (strpos($sendMessage,$keyword) !== false) 
+             {
+                $isHello = true;
+             }
+
+        }
+    return $isHello;
+        
+}
+
 
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
@@ -130,25 +150,6 @@ if (!is_null($events['events'])) {
 
 
 
-function checkHello($message)
-{
-    $isHello = false;
-            
-           
-    $arrHelloKeyword=array("สวัสดี","ทัก","hi");
-    
-
-    foreach ($arrHelloKeyword as $keyword) 
-        {
-            if (strpos($sendMessage,$keyword) !== false) 
-             {
-                $isHello = true;
-             }
-
-        }
-    return $isHello;
-        
-}
 
 
 
