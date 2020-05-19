@@ -119,7 +119,7 @@ if (!is_null($events['events'])) {
            //  }
 
         //}
-
+            echo (checkHello($sendMessage));
         if (checkHello($sendMessage))
         {
                 $messages=  [
