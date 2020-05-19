@@ -10,9 +10,9 @@ $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
 echo('1');
-function checkHello($message): boolval
+function checkHello($message)
 {
-    $isHello = false;
+    $isHello = 0;
             
            
     $arrHelloKeyword=array("สวัสดี","ทัก","hi");
@@ -22,7 +22,7 @@ function checkHello($message): boolval
         {
             if (strpos($sendMessage,$keyword) !== false) 
              {
-                $isHello = true;
+                $isHello = 1;
              }
 
         }
