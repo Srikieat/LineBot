@@ -104,7 +104,7 @@ if (!is_null($events['events'])) {
             {
                 $messages=  [
                     'type' => 'text',
-                    'text' => 'สนใจรถรุ่นไหนค่ะ'	
+                    'text' => 'สวัสดีค่ะ\nสนใจรถรุ่นไหนค่ะ'	
                             ];	
             }
 			// Make a POST Request to Messaging API to reply to sender
