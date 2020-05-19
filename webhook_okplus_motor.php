@@ -88,10 +88,10 @@ if (!is_null($events['events'])) {
             $isHello = false;
             
            
-            $arrKeyword=array("สวัสดี","ทัก","hi");
+            $arrHelloKeyword=array("สวัสดี","ทัก","hi");
             
 	
-	        foreach ($arrKeyword as $keyword) 
+	        foreach ($arrHelloKeyword as $keyword) 
 	            {
     	            if (strpos($sendMessage,$keyword) !== false) 
  		            {
@@ -104,9 +104,19 @@ if (!is_null($events['events'])) {
             {
                 $messages=  [
                     'type' => 'text',
-                    'text' => 'สวัสดีค่ะ/nสนใจรถรุ่นไหนค่ะ'	
+                    'text' => 'สวัสดีค่ะ"."\n"."สนใจรถรุ่นไหนค่ะ'	
                             ];	
             }
+
+
+
+
+
+
+
+
+
+
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
