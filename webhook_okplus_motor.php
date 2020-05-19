@@ -120,7 +120,7 @@ if (!is_null($events['events'])) {
 
         //}
 
-        if ($checkHello($sendMessage))
+        if (checkHello($sendMessage))
         {
                 $messages=  [
                     'type' => 'text',
