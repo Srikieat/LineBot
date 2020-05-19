@@ -85,8 +85,23 @@ if (!is_null($events['events'])) {
                 'text' => 'กรุณารอสักครู่นะค่ะ'	
             ];	
 
-            if ($checkHello($sendMessage) == true)
-            {
+            $isHello = false;
+            
+           
+    $arrHelloKeyword=array("สวัสดี","ทัก","hi");
+    
+
+    foreach ($arrHelloKeyword as $keyword) 
+        {
+            if (strpos($sendMessage,$keyword) !== false) 
+             {
+                $isHello = true;
+             }
+
+        }
+
+        if ($isHello)
+        {
                 $messages=  [
                     'type' => 'text',
                     'text' => 'สวัสดีค่ะ'."\n".'สนใจรถรุ่นไหนค่ะ'	
@@ -115,24 +130,9 @@ if (!is_null($events['events'])) {
 
 
 
-function checkHello($message): boolval
+function checkHello($message)
 {
-    $isHello = false;
-            
-           
-    $arrHelloKeyword=array("สวัสดี","ทัก","hi");
     
-
-    foreach ($arrHelloKeyword as $keyword) 
-        {
-            if (strpos($sendMessage,$keyword) !== false) 
-             {
-                $isHello = true;
-             }
-
-        }
-
-        return $isHello;
 }
 
 
