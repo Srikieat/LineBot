@@ -146,6 +146,7 @@ function checkHello($message)
              }
 
         }
+    return $isHello;
         
 }
 
