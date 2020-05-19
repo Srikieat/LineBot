@@ -29,7 +29,7 @@ function checkHello($message)
     return $isHello;
         
 }
-
+echo(checkHello('hi'));
 
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
