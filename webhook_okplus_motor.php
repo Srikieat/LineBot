@@ -132,7 +132,21 @@ if (!is_null($events['events'])) {
 
 function checkHello($message)
 {
+    $isHello = false;
+            
+           
+    $arrHelloKeyword=array("สวัสดี","ทัก","hi");
     
+
+    foreach ($arrHelloKeyword as $keyword) 
+        {
+            if (strpos($sendMessage,$keyword) !== false) 
+             {
+                $isHello = true;
+             }
+
+        }
+        
 }
 
 
