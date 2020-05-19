@@ -85,29 +85,14 @@ if (!is_null($events['events'])) {
                 'text' => 'กรุณารอสักครู่นะค่ะ'	
             ];	
 
-
-            $isHello = false;
-            
-           
-            $arrHelloKeyword=array("สวัสดี","ทัก","hi");
-            
-	
-	        foreach ($arrHelloKeyword as $keyword) 
-	            {
-    	            if (strpos($sendMessage,$keyword) !== false) 
- 		            {
-    		            $isHello = true;
- 		            }
-		
-	            }
-
-            if ($isHello)
+            if ($checkHello($sendMessage) == true)
             {
                 $messages=  [
                     'type' => 'text',
                     'text' => 'สวัสดีค่ะ'."\n".'สนใจรถรุ่นไหนค่ะ'	
                             ];	
             }
+           
 
             $isBlackList  = false;
             $arrBlackListKeyword = array("แบล็คลิสต์","Black","ติดบูโร","เครดิต");
@@ -130,7 +115,25 @@ if (!is_null($events['events'])) {
 
 
 
+function checkHello($message): boolval
+{
+    $isHello = false;
+            
+           
+    $arrHelloKeyword=array("สวัสดี","ทัก","hi");
+    
 
+    foreach ($arrHelloKeyword as $keyword) 
+        {
+            if (strpos($sendMessage,$keyword) !== false) 
+             {
+                $isHello = true;
+             }
+
+        }
+
+        return $isHello;
+}
 
 
 
