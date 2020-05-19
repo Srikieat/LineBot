@@ -85,22 +85,22 @@ if (!is_null($events['events'])) {
                 'text' => 'กรุณารอสักครู่นะค่ะ'	
             ];	
 
-            $isHello = false;
+         //   $isHello = false;
             
            
-    $arrHelloKeyword=array("สวัสดี","ทัก","hi");
+    //$arrHelloKeyword=array("สวัสดี","ทัก","hi");
     
 
-    foreach ($arrHelloKeyword as $keyword) 
-        {
-            if (strpos($sendMessage,$keyword) !== false) 
-             {
-                $isHello = true;
-             }
+    //foreach ($arrHelloKeyword as $keyword) 
+      //  {
+        //    if (strpos($sendMessage,$keyword) !== false) 
+          //   {
+            //    $isHello = true;
+           //  }
 
-        }
+        //}
 
-        if ($isHello)
+        if ($checkHello($sendMessage))
         {
                 $messages=  [
                     'type' => 'text',
