@@ -9,7 +9,7 @@ $access_token = '9qdNZtBI6urLTohgjHLutRo/5gELhmrx7PukSdauW8fsFBwcdN+ozxNH1XVj4kk
 $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
-
+echo('1');
 function checkHello($message)
 {
     $isHello = false;
