@@ -85,6 +85,7 @@ if (!is_null($events['events'])) {
                 'text' => 'กรุณารอสักครู่นะค่ะ'	
             ];	
 
+
             $isHello = false;
             
            
@@ -108,7 +109,24 @@ if (!is_null($events['events'])) {
                             ];	
             }
 
+            $isBlackList  = false;
+            $arrBlackListKeyword = array("แบล็คลิสต์","Black","ติดบูโร","เครดิต");
+            foreach ($arrBlackListKeyword as $keyword) 
+            {
+                if (strpos($sendMessage,$keyword) !== false) 
+                 {
+                    $isHello = true;
+                 }
+    
+            }
 
+        if ($isBlackList)
+        {
+            $messages=  [
+                'type' => 'text',
+                'text' => 'ติดไม่เกินแสน ออกได้ค่ะ มีไฟแนนท์รองรับ'	
+                        ];	
+        }
 
 
 
