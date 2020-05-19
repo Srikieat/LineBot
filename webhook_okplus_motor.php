@@ -88,7 +88,7 @@ if (!is_null($events['events'])) {
             $isHello = false;
             
            
-            if ($sendMessage == 'สวัสดี')
+            if (strpos($sendMessage,'สวัสดี') != false)
             {
                 $isHello = true;
             }
