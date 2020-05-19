@@ -115,7 +115,7 @@ if (!is_null($events['events'])) {
             {
                 if (strpos($sendMessage,$keyword) !== false) 
                  {
-                    $isHello = true;
+                    $isBlackList = true;
                  }
     
             }
