@@ -10,7 +10,7 @@ $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
 echo('1');
-function checkHello($message)
+function checkHello($message): boolval
 {
     $isHello = false;
             
