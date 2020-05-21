@@ -114,14 +114,14 @@ if (!is_null($events['events'])) {
            //  }
 
         //}
-            echo (checkHello($sendMessage));
-        if (checkHello($sendMessage))
-        {
-                $messages=  [
-                    'type' => 'text',
-                    'text' => 'สวัสดีค่ะ'."\n".'สนใจรถรุ่นไหนค่ะ'	
-                            ];	
-            }
+          //  echo (checkHello($sendMessage));
+        // if (checkHello($sendMessage))
+        // {
+        //         $messages=  [
+        //             'type' => 'text',
+        //             'text' => 'สวัสดีค่ะ'."\n".'สนใจรถรุ่นไหนค่ะ'	
+        //                     ];	
+        //     }
            
 
             $isBlackList  = false;
