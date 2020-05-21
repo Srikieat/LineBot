@@ -122,7 +122,7 @@ if (!is_null($events['events'])) {
         //             'text' => 'สวัสดีค่ะ'."\n".'สนใจรถรุ่นไหนค่ะ'	
         //                     ];	
         //     }
-		$dataHello = array("สวัสดี","ทัก","hi","Hi","HI");
+		$dataHello = array("สวัสดี","ทัก","hi","Hi","HI","สอบถาม");
 		
 		if (checkSendMessage($dataHello,$sendMessage) == 1)
 		{
@@ -141,12 +141,46 @@ if (!is_null($events['events'])) {
                 			'text' => 'ติดไม่เกินแสน ออกได้ค่ะ มีไฟแนนท์รองรับ'	
 				        ];	
 		}
+
+		$dataFinance = array("ไฟแนน");
+		
+		if (checkSendMessage($dataFinance,$sendMessage) == 1)
+		{
+			$messages=  [
+							'type' => 'text',
+                			'text' => 'ไฟแนนท์มี กรุงศรี กับ ทีลิสซิ่ง ค่ะ'	
+				        ];	
+		}
             
+		$dataAge = array("อายุ 18","อายุ 19");
+		
+		if (checkSendMessage($dataAge,$sendMessage) == 1)
+		{
+			$messages=  [
+							'type' => 'text',
+                			'text' => 'ต้องรอ อายุ 20 ก่อนค่ะ'	
+				        ];	
+		}
 
-
-
-
-
+		$dataColor = array("สี");
+		
+		if (checkSendMessage($dataColor,$sendMessage) == 1)
+		{
+			$messages=  [
+							'type' => 'text',
+                			'text' => 'มีรถทุกสีค่ะ'	
+				        ];	
+		}
+		$dataPCX = array("pcx","PCX");
+		
+		if (checkSendMessage($dataPCX,$sendMessage) == 1)
+		{
+			$messages=  [
+							'type' => 'text',
+							'text' =>  'รุ่นนี้มีโปร ดาวน์ 4,900'."\n".'ไม่ต้องใช้คนค้ำ'."\n".'ฟรีประกันรถหาย + พรบ + จดทะบียน'."\n".'แถมเสื้อ + หมวก'
+				        ];	
+		}
+	
 
 
 			// Make a POST Request to Messaging API to reply to sender
