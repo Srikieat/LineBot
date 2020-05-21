@@ -122,8 +122,15 @@ if (!is_null($events['events'])) {
         //             'text' => 'สวัสดีค่ะ'."\n".'สนใจรถรุ่นไหนค่ะ'	
         //                     ];	
         //     }
-           
-
+		$data = array("สวัสดี","ทัก","hi");
+		
+		if (checkSendMessage($data,$sendMessage) == 1)
+		{
+			$messages=  [
+				             'type' => 'text',
+				             'text' => 'สวัสดีค่ะ'."\n".'สนใจรถรุ่นไหนค่ะ'	
+				        ];	
+		}
             $isBlackList  = false;
             $arrBlackListKeyword = array("แบล็คลิสต์","Black","ติดบูโร","เครดิต");
             foreach ($arrBlackListKeyword as $keyword) 
