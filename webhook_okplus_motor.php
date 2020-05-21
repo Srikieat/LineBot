@@ -9,27 +9,22 @@ $access_token = '9qdNZtBI6urLTohgjHLutRo/5gELhmrx7PukSdauW8fsFBwcdN+ozxNH1XVj4kk
 $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
-echo('1');
-function checkHello($message)
+
+// user define function
+function checkSendMessage($arrKeyword, $message)
 {
-    $isHello = 0;
-            
-           
-    $arrHelloKeyword=array("สวัสดี","ทัก","hi");
-    
-
-    foreach ($arrHelloKeyword as $keyword) 
+	$isFound =0;
+	foreach ($arrKeyword as $keyword) 
         {
-            if (strpos($message,$keyword) !== false) 
+		if (strpos($message,$keyword) !== false) 
              {
-                $isHello = 1;
+                $isFound = 1;
              }
+         }
+	return $isFound;
 
-        }
-    return $isHello;
-        
 }
-echo(checkHello('hi'));
+// end function
 
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
