@@ -122,33 +122,26 @@ if (!is_null($events['events'])) {
         //             'text' => 'สวัสดีค่ะ'."\n".'สนใจรถรุ่นไหนค่ะ'	
         //                     ];	
         //     }
-		$data = array("สวัสดี","ทัก","hi");
+		$dataHello = array("สวัสดี","ทัก","hi","Hi","HI");
 		
-		if (checkSendMessage($data,$sendMessage) == 1)
+		if (checkSendMessage($dataHello,$sendMessage) == 1)
 		{
 			$messages=  [
 				             'type' => 'text',
 				             'text' => 'สวัสดีค่ะ'."\n".'สนใจรถรุ่นไหนค่ะ'	
 				        ];	
 		}
-            $isBlackList  = false;
-            $arrBlackListKeyword = array("แบล็คลิสต์","Black","ติดบูโร","เครดิต");
-            foreach ($arrBlackListKeyword as $keyword) 
-            {
-                if (strpos($sendMessage,$keyword) !== false) 
-                 {
-                    $isBlackList = true;
-                 }
-    
-            }
 
-        if ($isBlackList)
-        {
-            $messages=  [
-                'type' => 'text',
-                'text' => 'ติดไม่เกินแสน ออกได้ค่ะ มีไฟแนนท์รองรับ'	
-                        ];	
-        }
+		$dataBlackList = array("แบล็คลิสต์","Black","ติดบูโร","เครดิต","bl","BL");
+		
+		if (checkSendMessage($dataBlackList,$sendMessage) == 1)
+		{
+			$messages=  [
+							'type' => 'text',
+                			'text' => 'ติดไม่เกินแสน ออกได้ค่ะ มีไฟแนนท์รองรับ'	
+				        ];	
+		}
+            
 
 
 
