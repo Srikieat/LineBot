@@ -122,25 +122,25 @@ if (!is_null($events['events'])) {
         //             'text' => 'สวัสดีค่ะ'."\n".'สนใจรถรุ่นไหนค่ะ'	
         //                     ];	
         //     }
-		$dataHello = array("สวัสดี","ทัก","hi","Hi","HI","สอบถาม");
+		// $dataHello = array("สวัสดี","ทัก","hi","Hi","HI","สอบถาม");
 		
-		if (checkSendMessage($dataHello,$sendMessage) == 1)
-		{
-			$messages=  [
-				             'type' => 'text',
-				             'text' => 'สวัสดีค่ะ'."\n".'สนใจรถรุ่นไหนค่ะ'	
-				        ];	
-		}
+		// if (checkSendMessage($dataHello,$sendMessage) == 1)
+		// {
+		// 	$messages=  [
+		// 		             'type' => 'text',
+		// 		             'text' => 'สวัสดีค่ะ'."\n".'สนใจรถรุ่นไหนค่ะ'	
+		// 		        ];	
+		// }
 
-		$dataBlackList = array("แบล็คลิสต์","Black","ติดบูโร","เครดิต","bl","BL");
+		// $dataBlackList = array("แบล็คลิสต์","Black","ติดบูโร","เครดิต","bl","BL");
 		
-		if (checkSendMessage($dataBlackList,$sendMessage) == 1)
-		{
-			$messages=  [
-							'type' => 'text',
-                			'text' => 'ติดไม่เกินแสน ออกได้ค่ะ มีไฟแนนท์รองรับ'	
-				        ];	
-		}
+		// if (checkSendMessage($dataBlackList,$sendMessage) == 1)
+		// {
+		// 	$messages=  [
+		// 					'type' => 'text',
+        //         			'text' => 'ติดไม่เกินแสน ออกได้ค่ะ มีไฟแนนท์รองรับ'	
+		// 		        ];	
+		// }
 
 		// $dataFinance = array("ไฟแนน");
 		
