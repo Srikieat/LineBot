@@ -184,6 +184,20 @@ if (!is_null($events['events'])) {
 		}
 
 
+		$dataYamaha= array("ยามา","yama","Yama");
+
+		if (checkSendMessage($dataYamaha,$sendMessage) == 1)
+		{
+		
+				$messages=  [
+								'type' => 'text',
+								'text' => 'ไม่มีค่ะ'	
+							];	
+							$isNeedHelp = 1;
+			
+		}
+
+
 		$dataSlipMonth= array("กี่เดือน");
 
 		if (checkSendMessage($dataSlipMonth,$sendMessage) == 1)
