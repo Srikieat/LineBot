@@ -98,8 +98,7 @@ if (!is_null($events['events'])) {
             $messages = [
                 'type' => 'text',
                 'text' => 'กรุณารอสักครู่นะค่ะ'	
-            ],['type' => 'text',
-			'text' => 'กรุณารอสักครู่นะค่ะ2'	];	
+            		];	
 
         
 		$dataHello = array("สวัสดี","ทัก","hi","Hi","HI","สอบถาม");
