@@ -169,7 +169,7 @@ if (!is_null($events['events'])) {
 
 		
 
-		$dataNoSlip= array("ไม่มีสลิป");
+		$dataNoSlip= array("ไม่มีสลิป","ไม่มีสลิป");
 
 		if (checkSendMessage($dataNoSlip,$sendMessage) == 1)
 		{
@@ -183,7 +183,7 @@ if (!is_null($events['events'])) {
 		}
 
 
-		$dataSlipMonth= array("สลิปกี่เดือน");
+		$dataSlipMonth= array("กี่เดือน");
 
 		if (checkSendMessage($dataSlipMonth,$sendMessage) == 1)
 		{
@@ -196,7 +196,7 @@ if (!is_null($events['events'])) {
 			
 		}
 
-		$dataSalaryCer= array("มีรับรองเงินเดือน");
+		$dataSalaryCer= array("รับรองเงินเดือน");
 		if (checkSendMessage($dataNoHave,$sendMessage) == 1)
 			{
 				$messages=  [
