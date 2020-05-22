@@ -95,6 +95,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
          
             $isNeedHelp = 0;
+			$isMoreMessage = 1;
             $messages = [
                 'type' => 'text',
                 'text' => 'กรุณารอสักครู่นะค่ะ'	
@@ -348,8 +349,9 @@ if (!is_null($events['events'])) {
 		if (checkSendMessage($dataClick,$sendMessage) == 1)
 		{
 			$isNeedHelp = 1;
-			$messages	=  	[
-								
+			$isMoreMessage = 0;
+			$x_messages = array(array
+									(
 				'type' => 'template', // 訊息類型 (模板)
 				'altText' => 'Click125', // 替代文字
 				'template' => array(
@@ -365,9 +367,32 @@ if (!is_null($events['events'])) {
 												 )
 										  )
 							)
-								
-						
-							];
+									),
+								array
+									('type' => 'text',
+								'text' => 'newbike.html'
+									)
+							   );
+//			$messages	=  	[
+//								
+//				'type' => 'template', // 訊息類型 (模板)
+//				'altText' => 'Click125', // 替代文字
+//				'template' => array(
+//							'type' => 'buttons', // 類型 (按鈕)
+//						'thumbnailImageUrl' => 'https://okplus.co.th/images/bike/ClickPromotion1.png', // 圖片網址 <不一定需要>
+//						 'title' => 'Click-i', // 標題 <不一定需要>
+//						'text' => 'รุ่นนี้ฟรีดาวน์ ออกรถ 0 บ'."\n".'ไม่ต้องใช้คนค้ำ'."\n".'ฟรีประกันรถหาย + พรบ + จดทะบียน', // 文字
+//						'actions' => array(
+//											 array(
+//										  'type' => 'message', // 類型 (連結)
+//										  'label' => 'สนใจออกรถออนไลน์', // 標籤 3
+//										  'text' => 'สนใจออกรถ' // 連結網址
+//												 )
+//										  )
+//							)
+//								
+//						
+//							];
 							
 		}
 
@@ -433,14 +458,23 @@ if (!is_null($events['events'])) {
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
-			$cars = array(array('type' => 'text',
-								'text' => 'newbike.html'),array('type' => 'text',
-								'text' => 'newbike.html'));
-			 $data = [
+			
+			if ($isMoreMessage ==0)
+			{
+				$data = [
 			 	'replyToken' => $replyToken,
-				 'messages' => $cars,
-			 	//'messages' => [$messages],
-			 ];
+				 'messages' => $x_messages,
+			 	];	
+				
+			}
+			else
+			{
+				$data = [
+			 	'replyToken' => $replyToken,
+				'messages' => [$messages],
+			 ];	
+			}
+			 
 			
 
 			
