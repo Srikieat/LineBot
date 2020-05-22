@@ -169,7 +169,7 @@ if (!is_null($events['events'])) {
 
 		
 
-		$dataNoSlip= array("ไม่มีสลิป","สลิปไม่มี");
+		$dataNoSlip= array("ไม่มีสลิป","สลิปไม่มี","สลิปเงินเดือนไม่มี",);
 
 		if (checkSendMessage($dataNoSlip,$sendMessage) == 1)
 		{
@@ -277,7 +277,7 @@ if (!is_null($events['events'])) {
 			$messages	=  	[
 								
 				'type' => 'template', // 訊息類型 (模板)
-				'altText' => 'PCX', // 替代文字
+				'altText' => 'Scoopy', // 替代文字
 				'template' => array(
 							'type' => 'buttons', // 類型 (按鈕)
 						'thumbnailImageUrl' => 'https://okplus.co.th/images/bike/SCOOPY.png', // 圖片網址 <不一定需要>
@@ -292,6 +292,76 @@ if (!is_null($events['events'])) {
 										  )
 							)
 								
+						
+							];
+							
+		}
+	
+
+		$dataWave = array("Wave","wave","เวฟ");
+		
+		if (checkSendMessage($dataWave,$sendMessage) == 1)
+		{
+			$isNeedHelp = 1;
+			$messages	=  	[
+								
+				'type' => 'template', // 訊息類型 (模板)
+				'altText' => 'Wave', // 替代文字
+				'template' => array(
+							'type' => 'buttons', // 類型 (按鈕)
+						'thumbnailImageUrl' => 'https://okplus.co.th/images/bike/Wave110.png', // 圖片網址 <不一定需要>
+						 'title' => 'Wave 110, Wave 125', // 標題 <不一定需要>
+						'text' => 'รุ่นนี้ฟรีดาวน์ ออกรถ 0 บ'."\n".'ไม่ต้องใช้คนค้ำ'."\n".'ฟรีประกันรถหาย + พรบ + จดทะบียน', // 文字
+						'actions' => array(
+											 array(
+										  'type' => 'message', // 類型 (連結)
+										  'label' => 'สนใจออกรถออนไลน์', // 標籤 3
+										  'text' => 'สนใจออกรถ' // 連結網址
+												 )
+										  )
+							)
+								
+						
+							];
+							
+		}
+
+		$dataClick = array("Click","click","คลิ");
+		
+		if (checkSendMessage($dataClick,$sendMessage) == 1)
+		{
+			$isNeedHelp = 1;
+			$messages	=  	[
+								
+				'type' => 'template', // 訊息類型 (模板)
+				'altText' => 'Click125', // 替代文字
+				'template' => array(
+							'type' => 'buttons', // 類型 (按鈕)
+						'thumbnailImageUrl' => 'https://okplus.co.th/images/bike/ClickPromotion1.png', // 圖片網址 <不一定需要>
+						 'title' => 'Click-i', // 標題 <不一定需要>
+						'text' => 'รุ่นนี้ฟรีดาวน์ ออกรถ 0 บ'."\n".'ไม่ต้องใช้คนค้ำ'."\n".'ฟรีประกันรถหาย + พรบ + จดทะบียน', // 文字
+						'actions' => array(
+											 array(
+										  'type' => 'message', // 類型 (連結)
+										  'label' => 'สนใจออกรถออนไลน์', // 標籤 3
+										  'text' => 'สนใจออกรถ' // 連結網址
+												 )
+										  )
+							)
+								
+						
+							];
+							
+		}
+
+		$dataPayment = array("ผ่อน");
+		
+		if (checkSendMessage($dataPayment,$sendMessage) == 1)
+		{
+			$isNeedHelp = 1;
+			$messages	=  	[
+								'type' => 'text',
+								'text' => 'ข้อมูลตามเวป เลย ค่ะ'."\n".'https://www.okplus.co.th/mobile/newbike.html'
 						
 							];
 							
