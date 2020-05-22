@@ -189,7 +189,7 @@ if (!is_null($events['events'])) {
 							
 		}
 
-		$dataScoopy = array("scoopy","Scoopy");
+		$dataScoopy = array("scoopy","Scoopy","สกุ");
 		
 		if (checkSendMessage($dataScoopy,$sendMessage) == 1)
 		{
