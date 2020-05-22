@@ -153,7 +153,7 @@ if (!is_null($events['events'])) {
 
 		$dataOnline = array("สนใจ");
 		
-		if (checkSendMessage($dataColor,$sendMessage) == 1)
+		if (checkSendMessage($dataOnline,$sendMessage) == 1)
 		{
 			$messages=  [
 							'type' => 'text',
