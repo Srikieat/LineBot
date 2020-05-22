@@ -309,7 +309,7 @@ if (!is_null($events['events'])) {
 				'altText' => 'Wave', // 替代文字
 				'template' => array(
 							'type' => 'buttons', // 類型 (按鈕)
-						'thumbnailImageUrl' => 'https://okplus.co.th/images/bike/Wave110.png', // 圖片網址 <不一定需要>
+						'thumbnailImageUrl' => 'https://okplus.co.th/images/bike/wave110.png', // 圖片網址 <不一定需要>
 						 'title' => 'Wave 110, Wave 125', // 標題 <不一定需要>
 						'text' => 'รุ่นนี้ฟรีดาวน์ ออกรถ 0 บ'."\n".'ไม่ต้องใช้คนค้ำ'."\n".'ฟรีประกันรถหาย + พรบ + จดทะบียน', // 文字
 						'actions' => array(
