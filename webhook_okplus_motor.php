@@ -169,7 +169,7 @@ if (!is_null($events['events'])) {
 
 		
 
-		$dataNoSlip= array("ไม่มีสลิป","ไม่มีสลิป");
+		$dataNoSlip= array("ไม่มีสลิป","สลิปไม่มี");
 
 		if (checkSendMessage($dataNoSlip,$sendMessage) == 1)
 		{
