@@ -178,11 +178,17 @@ if (!is_null($events['events'])) {
 				                 				      // 'label' => 'สนใจออกรถ', // 標籤 2
 				                   				   //  'text' => 'สนใจออกรถ' // 用戶發送文字
 				                 				   //  ),
-			                        				   array(
-                        				 				'type' => 'uri', // 類型 (連結)
-				                         				'label' => 'ลงทะเบียน', // 標籤 3
-				                         				'uri' => 'http://okplus.ddns.net/okplus/OKMO/Bot.aspx?u='.$text // 連結網址
-				                       				         )
+			                        				//    array(
+                        				 			// 	'type' => 'uri', // 類型 (連結)
+				                         			// 	'label' => 'ลงทะเบียน', // 標籤 3
+				                         			// 	'uri' => 'http://okplus.ddns.net/okplus/OKMO/Bot.aspx?u='.$text // 連結網址
+													   //          )
+													   
+													       array(
+                        				 			 	'type' => 'message', // 類型 (連結)
+				                         			 	'label' => 'สนใจออกรถออนไลน์', // 標籤 3
+				                         			 	'text' => 'สนใจออกรถออนไลน์' // 連結網址
+				                       				          )
 			                       					   )
 		                					)
 					
