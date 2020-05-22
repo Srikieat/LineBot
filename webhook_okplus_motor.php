@@ -167,29 +167,37 @@ if (!is_null($events['events'])) {
 						$isNeedHelp = 1;
 		}
 
-		$dataSlip= array("สลิป","รับรองเงินเดือน");
-
-		if (checkSendMessage($dataSlip,$sendMessage) == 1)
-		{
-			$dataNoHave = array("ไม่มี");
 		
-			if (checkSendMessage($dataNoHave,$sendMessage) == 1)
-			{
+
+		$dataNoSlip= array("ไม่มีสลิป");
+
+		if (checkSendMessage($dataNoSlip,$sendMessage) == 1)
+		{
+		
 				$messages=  [
 								'type' => 'text',
-								'text' => 'ไม่มี ก็ไม่เป็นไรค่ะ'	
+								'text' => 'ไม่มี ไม่เป็นไรค่ะ'	
 							];	
 							$isNeedHelp = 1;
-			}
+			
 		}
 
-		$dataSalaryCer= array("รับรองเงินเดือน","สลิป");
 
-		if (checkSendMessage($dataSalaryCer,$sendMessage) == 1)
+		$dataSlipMonth= array("สลิปกี่เดือน");
+
+		if (checkSendMessage($dataSlipMonth,$sendMessage) == 1)
 		{
-			$dataNoHave = array("มี");
 		
-			if (checkSendMessage($dataNoHave,$sendMessage) == 1)
+				$messages=  [
+								'type' => 'text',
+								'text' => 'เดือนล่าสุดค่ะ'	
+							];	
+							$isNeedHelp = 1;
+			
+		}
+
+		$dataSalaryCer= array("มีรับรองเงินเดือน");
+		if (checkSendMessage($dataNoHave,$sendMessage) == 1)
 			{
 				$messages=  [
 								'type' => 'text',
@@ -197,7 +205,7 @@ if (!is_null($events['events'])) {
 							];	
 							$isNeedHelp = 1;
 			}
-		}
+		
 		
 		
 
