@@ -98,7 +98,8 @@ if (!is_null($events['events'])) {
             $messages = [
                 'type' => 'text',
                 'text' => 'กรุณารอสักครู่นะค่ะ'	
-            ];	
+            ],['type' => 'text',
+			'text' => 'กรุณารอสักครู่นะค่ะ2'	];	
 
         
 		$dataHello = array("สวัสดี","ทัก","hi","Hi","HI","สอบถาม");
@@ -438,7 +439,8 @@ if (!is_null($events['events'])) {
 
 			 $data = [
 			 	'replyToken' => $replyToken,
-			 	'messages' => [['type' => 'text', 'text' => 'test bot'],['type' => 'text', 'text' => 'test bot5']],
+				 //'messages' => [['type' => 'text', 'text' => 'test bot'],['type' => 'text', 'text' => 'test bot2']],
+				 'messages' => [$messages],
 			 ];
 
 			
