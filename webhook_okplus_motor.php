@@ -150,6 +150,16 @@ if (!is_null($events['events'])) {
                 			'text' => 'มีรถทุกสีค่ะ'	
 				        ];	
 		}
+
+		$dataOnline = array("สนใจ");
+		
+		if (checkSendMessage($dataColor,$sendMessage) == 1)
+		{
+			$messages=  [
+							'type' => 'text',
+                			'text' => 'สนใจออกรถ กรุณาส่งเอกสารดังต่อไปนี้'	
+				        ];	
+		}
 		$dataPCX = array("pcx","PCX","Pcx");
 		
 		if (checkSendMessage($dataPCX,$sendMessage) == 1)
