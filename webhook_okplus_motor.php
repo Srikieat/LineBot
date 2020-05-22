@@ -167,6 +167,40 @@ if (!is_null($events['events'])) {
 						$isNeedHelp = 1;
 		}
 
+		$dataSlip= array("สลิป");
+
+		if (checkSendMessage($dataSlip,$sendMessage) == 1)
+		{
+			$dataNoHave = array("ไม่มี");
+		
+			if (checkSendMessage($dataNoHave,$sendMessage) == 1)
+			{
+				$messages=  [
+								'type' => 'text',
+								'text' => 'ไม่มี ก็ไม่เป็นไรค่ะ'	
+							];	
+							$isNeedHelp = 1;
+			}
+		}
+
+		$dataSalaryCer= array("รับรองเงินเดือน");
+
+		if (checkSendMessage($dataSalaryCer,$sendMessage) == 1)
+		{
+			$dataNoHave = array("มี");
+		
+			if (checkSendMessage($dataNoHave,$sendMessage) == 1)
+			{
+				$messages=  [
+								'type' => 'text',
+								'text' => 'ใช้ได้ค่ะ'	
+							];	
+							$isNeedHelp = 1;
+			}
+		}
+		
+		
+
 		$dataOnline = array("สนใจ");
 		
 		if (checkSendMessage($dataOnline,$sendMessage) == 1)
