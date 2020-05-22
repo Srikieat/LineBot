@@ -451,7 +451,7 @@ if (!is_null($events['events'])) {
 			 $data = [
 			 	'replyToken' => $replyToken,
 				 //'messages' => [['type' => 'text', 'text' => 'test bot'],['type' => 'text', 'text' => 'test bot2']],
-				 'messages' => [$messages],
+				 'messages' => $messages,
 			 ];
 
 			
