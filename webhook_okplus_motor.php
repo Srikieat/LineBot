@@ -189,9 +189,9 @@ if (!is_null($events['events'])) {
 							
 		}
 
-		$dataPCX = array("scoopy","Scoopy","สกุ");
+		$dataScoopy = array("scoopy","Scoopy","สกุ");
 		
-		if (checkSendMessage($dataPCX,$sendMessage) == 1)
+		if (checkSendMessage($dataScoopy,$sendMessage) == 1)
 		{
 			
 			$messages	=  	[
