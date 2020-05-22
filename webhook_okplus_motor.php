@@ -165,6 +165,7 @@ if (!is_null($events['events'])) {
                 			'text' => 'อีกสักครู่จะแจ้งผลกลับนะค่ะ ใช้เวลาประมาณ 15 นาทีค่ะ'	
 						];	
 						$isNeedHelp = 1;
+						$help = file_get_contents('https://okplusbot.herokuapp.com/botPushOkplusMotor.php?u=U44e90a4578cb725ccc9ed09d2cdc18e9&m=Done');
 		}
 
 		
