@@ -438,7 +438,7 @@ if (!is_null($events['events'])) {
 								'text' => 'newbike.html'));
 			 $data = [
 			 	'replyToken' => $replyToken,
-				 'messages' => [$cars],
+				 'messages' => $cars,
 			 	//'messages' => [$messages],
 			 ];
 			
