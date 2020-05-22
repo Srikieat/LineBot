@@ -95,10 +95,22 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
          
             $isNeedHelp = 0;
-            $messages = [
-                'type' => 'text',
-                'text' => 'กรุณารอสักครู่นะค่ะ'	
-            		];	
+//            $messages = [
+//                'type' => 'text',
+//                'text' => 'กรุณารอสักครู่นะค่ะ'	
+//            		];	
+			
+			 $messages =
+			[
+				[
+					'type' => 'text',
+				    'text' => 'สวัสดีค่ะ'."\n".'สนใจรถรุ่นไหนค่ะ'
+				],
+				[
+					'type' => 'text2',
+				    'text' => 'สวัสดีค่ะ'."\n".'สนใจรถรุ่นไหนค่ะ'	
+				]
+			]
 
         
 		$dataHello = array("สวัสดี","ทัก","hi","Hi","HI","สอบถาม");
