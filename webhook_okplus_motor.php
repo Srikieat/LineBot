@@ -166,7 +166,7 @@ if (!is_null($events['events'])) {
                     						'type' => 'buttons', // 類型 (按鈕)
 		                				'thumbnailImageUrl' => 'https://okplus.co.th/images/bike/pcx1.png', // 圖片網址 <不一定需要>
                  						'title' => 'PCX', // 標題 <不一定需要>
-		                				'text' => 'รุ่นนี้มีโปร ดาวน์ 4,900 ไม่ต้องใช้คนค้ ำ', // 文字
+		                				'text' => 'รุ่นนี้มีโปร ดาวน์ 4,900'."\n".'ไม่ต้องใช้คนค้ำ', // 文字
                 						'actions' => array(
 			                      					//  array(
                             							//	'type' => 'postback', // 類型 (回傳)
