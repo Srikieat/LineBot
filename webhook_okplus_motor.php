@@ -94,7 +94,7 @@ if (!is_null($events['events'])) {
 			
 			// Build message to reply back
          
-            $isNeedHelp == 0;
+            $isNeedHelp = 0;
             $messages = [
                 'type' => 'text',
                 'text' => 'กรุณารอสักครู่นะค่ะ'	
@@ -109,7 +109,7 @@ if (!is_null($events['events'])) {
 				             'type' => 'text',
 				             'text' => 'สวัสดีค่ะ'."\n".'สนใจรถรุ่นไหนค่ะ'	
 						];	
-						$isNeedHelp == 1;
+						$isNeedHelp = 1;
 		}
 
 		$dataBlackList = array("แบล็คลิสต์","Black","ติดบูโร","เครดิต","bl","BL");
@@ -120,7 +120,7 @@ if (!is_null($events['events'])) {
 							'type' => 'text',
                 			'text' => 'ติดไม่เกินแสน ออกได้ค่ะ มีไฟแนนท์รองรับ'	
 						];	
-						$isNeedHelp == 1;
+						$isNeedHelp = 1;
 		}
 
 		$dataFinance = array("ไฟแนน");
@@ -131,7 +131,7 @@ if (!is_null($events['events'])) {
 							'type' => 'text',
                 			'text' => 'ไฟแนนท์มี กรุงศรี กับ ทีลิสซิ่ง ค่ะ'	
 						];	
-						$isNeedHelp == 1;
+						$isNeedHelp = 1;
 		}
             
 		$dataAge = array("อายุ 18","อายุ 19");
@@ -142,7 +142,7 @@ if (!is_null($events['events'])) {
 							'type' => 'text',
                 			'text' => 'ต้องรอ อายุ 20 ก่อนค่ะ'	
 						];	
-						$isNeedHelp == 1;
+						$isNeedHelp = 1;
 		}
 
 		$dataColor = array("สี");
@@ -153,7 +153,7 @@ if (!is_null($events['events'])) {
 							'type' => 'text',
                 			'text' => 'มีรถทุกสีค่ะ'	
 						];	
-						$isNeedHelp == 1;
+						$isNeedHelp = 1;
 		}
 
 		$dataOnline = array("สนใจ");
@@ -164,13 +164,13 @@ if (!is_null($events['events'])) {
 							'type' => 'text',
                 			'text' => 'สนใจออกรถ กรุณาส่งเอกสารดังต่อไปนี้'	
 						];	
-						$isNeedHelp == 1;
+						$isNeedHelp = 1;
 		}
 		$dataPCX = array("pcx","PCX","Pcx");
 		
 		if (checkSendMessage($dataPCX,$sendMessage) == 1)
 		{
-			$isNeedHelp == 1;
+			$isNeedHelp = 1;
 			$messages	=  	[
 								
 								'type' => 'template', // 訊息類型 (模板)
@@ -199,7 +199,7 @@ if (!is_null($events['events'])) {
 		
 		if (checkSendMessage($dataScoopy,$sendMessage) == 1)
 		{
-			$isNeedHelp == 1;
+			$isNeedHelp = 1;
 			$messages	=  	[
 								
 				'type' => 'template', // 訊息類型 (模板)
@@ -223,12 +223,12 @@ if (!is_null($events['events'])) {
 							
 		}
 	
-if ($isNeedHelp == 0)
-{
-	$messageHelp = $sendMessage;
-	$help = file_get_contents('https://okplusbot.herokuapp.com/botPushOkplusMotor.php?u=U44e90a4578cb725ccc9ed09d2cdc18e9&m='.$messageHelp);
-	
-}
+		if ($isNeedHelp == 0)
+		{
+			$messageHelp = $sendMessage;
+			$help = file_get_contents('https://okplusbot.herokuapp.com/botPushOkplusMotor.php?u=U44e90a4578cb725ccc9ed09d2cdc18e9&m='.$messageHelp);
+			
+		}
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
