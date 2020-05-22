@@ -366,7 +366,7 @@ if (!is_null($events['events'])) {
 							];
 							
 		}
-		$dataShop = array("ไหน");
+		$dataShop = array("ไหน","ร้าน","สาขา");
 		
 		if (checkSendMessage($dataShop,$sendMessage) == 1)
 		{
