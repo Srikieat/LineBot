@@ -201,7 +201,7 @@ if (!is_null($events['events'])) {
 				'template' => array(
 							'type' => 'buttons', // 類型 (按鈕)
 						'thumbnailImageUrl' => 'https://okplus.co.th/images/bike/SCOOPY.png', // 圖片網址 <不一定需要>
-						 'title' => 'Scoopy', // 標題 <不一定需要>
+						 'title' => 'Scoopy-i', // 標題 <不一定需要>
 						'text' => 'รุ่นนี้ฟรีดาวน์ ออกรถ 0 บ'."\n".'ไม่ต้องใช้คนค้ำ'."\n".'ฟรีประกันรถหาย + พรบ + จดทะบียน', // 文字
 						'actions' => array(
 											 array(
