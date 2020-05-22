@@ -368,7 +368,7 @@ if (!is_null($events['events'])) {
 		}
 		$dataShop = array("ไหน");
 		
-		if (checkSendMessage($dataPayment,$sendMessage) == 1)
+		if (checkSendMessage($dataShop,$sendMessage) == 1)
 		{
 			$isNeedHelp = 1;
 			$messages	=  	[
