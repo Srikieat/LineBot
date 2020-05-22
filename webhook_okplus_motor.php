@@ -369,8 +369,9 @@ if (!is_null($events['events'])) {
 							)
 									),
 								array
-									('type' => 'text',
-								'text' => 'newbike.html'
+									(
+										'type' => 'text',
+										'text' => 'สนใจออกรถไหมค่ะ'
 									)
 							   );
 //			$messages	=  	[
