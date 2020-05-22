@@ -167,7 +167,7 @@ if (!is_null($events['events'])) {
 						$isNeedHelp = 1;
 		}
 
-		$dataSlip= array("สลิป");
+		$dataSlip= array("สลิป","รับรองเงินเดือน");
 
 		if (checkSendMessage($dataSlip,$sendMessage) == 1)
 		{
@@ -183,7 +183,7 @@ if (!is_null($events['events'])) {
 			}
 		}
 
-		$dataSalaryCer= array("รับรองเงินเดือน");
+		$dataSalaryCer= array("รับรองเงินเดือน","สลิป");
 
 		if (checkSendMessage($dataSalaryCer,$sendMessage) == 1)
 		{
