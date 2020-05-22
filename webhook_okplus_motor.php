@@ -95,10 +95,10 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
          
             $isNeedHelp = 0;
-//            $messages = [
-//                'type' => 'text',
-//                'text' => 'กรุณารอสักครู่นะค่ะ'	
-//            		];	
+            $messages = [
+                'type' => 'text',
+                'text' => 'กรุณารอสักครู่นะค่ะ'	
+            		];	
 			
 			 $messages =
 			[
@@ -440,17 +440,11 @@ if (!is_null($events['events'])) {
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
-			// $data = [
-			// 	'replyToken' => $replyToken,
-			// 	'messages' => [$messages],
-			// ];
-			//$messages2 = "[['type' => 'text', 'text' => 'test bot'],['type' => 'text', 'text' => 'test bot2']]";
-			$messages2 => "['type' => 'text', 'text' => 'test bot']";
 			 $data = [
 			 	'replyToken' => $replyToken,
-				 //'messages' => [['type' => 'text', 'text' => 'test bot'],['type' => 'text', 'text' => 'test bot2']],
-				 'messages' => [$messages2],
+			 	'messages' => [$messages],
 			 ];
+			
 
 			
 			$post = json_encode($data);
