@@ -105,11 +105,8 @@ if (!is_null($events['events'])) {
 				[
 					'type' => 'text',
 				    'text' => 'สวัสดีค่ะ'."\n".'สนใจรถรุ่นไหนค่ะ'
-				],
-				[
-					'type' => 'text2',
-				    'text' => 'สวัสดีค่ะ'."\n".'สนใจรถรุ่นไหนค่ะ'	
 				]
+				
 			]
 
         
@@ -451,7 +448,7 @@ if (!is_null($events['events'])) {
 			 $data = [
 			 	'replyToken' => $replyToken,
 				 //'messages' => [['type' => 'text', 'text' => 'test bot'],['type' => 'text', 'text' => 'test bot2']],
-				 'messages' => $messages,
+				 'messages' => [$messages],
 			 ];
 
 			
