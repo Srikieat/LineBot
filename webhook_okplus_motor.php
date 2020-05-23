@@ -38,25 +38,7 @@ function checkExactMessage($arrKeyword, $message)
 	return $isFound;
 
 }
-//function getDisplayName($id)
-//{
-//	$access_token = '9qdNZtBI6urLTohgjHLutRo/5gELhmrx7PukSdauW8fsFBwcdN+ozxNH1XVj4kkCNu/T30nl2oITOMvdQ6QlcLOqgO+Ji+JSnH+rRXUtC1Xg5vx32G8vseS4VZ+Mc83SBp2IPpuAzcH+aOBgzgEuhQdB04t89/1O/w1cDnyilFU=';
-//	$url = 'https://api.line.me/v2/bot/profile/'.$id;
-//	$headers = array('Authorization: Bearer ' . $access_token);
-//
-//	$ch = curl_init($url);
-//	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-//	curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-//	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-//	$result = curl_exec($ch);
-//	curl_close($ch);
-//	//echo $result
-//	$profile = json_decode($result, true);
-//	$displayName =  $profile['displayName'];
-//	$pictureUrl = $profile['pictureUrl'];
-//	
-//	return $displayName;
-//}
+
 // end function
 
 // Validate parsed JSON data
@@ -65,8 +47,8 @@ if (!is_null($events['events'])) {
 	foreach ($events['events'] as $event) {
 		if ($event['type'] == "unfollow") 
 		{
-			//$id = $event['source']['userId'];
-			//$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/unfollowLine.aspx?u='.$id);
+			$id = $event['source']['userId'];
+			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/unfollowLine.aspx?u='.$id);
 		}
 	
 		
@@ -84,9 +66,8 @@ if (!is_null($events['events'])) {
 			
 			
 			// start message
-				$messages=  [
-				             'type' => 'text',
-				             'text' => 'สวัสดีค่ะ'."\n".'สนใจรถรุ่นไหนค่ะ'	
+				$messages = [
+						
 						];	
 						// end message
 			
@@ -125,14 +106,14 @@ if (!is_null($events['events'])) {
 			
 			 $sendMessage = $event['message']['text'];
 			
-			//$userName = getDisplayName($text);
+			
 			// Build message to reply back
          
             $isNeedHelp = 0;
 			$isMoreMessage = 1;
             $messages = [
                 'type' => 'text',
-                'text' => 'กรุณารอสักครู่นะค่ะ';	
+                'text' => 'กรุณารอสักครู่นะค่ะ'	
             		];	
 			
 			
@@ -167,7 +148,7 @@ if (!is_null($events['events'])) {
 						$isNeedHelp = 1;
 		}
 		
-		$dataYes = array("ใช่ไหม","ใช่ไไม");
+		$dataYes = array("ใช่ไหม");
 		
 		if (checkSendMessage($dataYes,$sendMessage) == 1)
 		{
@@ -179,7 +160,7 @@ if (!is_null($events['events'])) {
 		}
 			
 		
-		$dataDai = array("ได้ไหม","ได้ไไม");
+		$dataDai = array("ได้ไหม");
 		
 		if (checkSendMessage($dataDai,$sendMessage) == 1)
 		{
@@ -300,55 +281,37 @@ if (!is_null($events['events'])) {
 			}
 		
 		
-		$dataGuarantee= array("ค้ำ");
-		if (checkSendMessage($dataGuarantee,$sendMessage) == 1)
-			{
-				$messages=  [
-								'type' => 'text',
-								'text' => 'ไม่ต้องใช้คนค้ำค่ะ'	
-							];	
-							$isNeedHelp = 1;
-			}
+		
 
 		$dataOnline = array("สนใจ");
 		
 		if (checkSendMessage($dataOnline,$sendMessage) == 1)
 		{
-			
-				$isMoreMessage = 0;
-				$x_messages = array
-									(array
-											(
-												'type' => 'text',
-												'text' => 'สนใจออกรถ กรุณาส่งข้อมูลดังนี้'."\n".
-												'1. บัตรประชาชน '."\n".
-												'2. ที่อยู่ปัจจุบัน '."\n".
-												'3. เบอร์โทรศัพท์ '."\n\n\n".
-												'สำหรับ พนักงานบริษัท'."\n".
-												'1. ที่อยู่ทำงาน '."\n".
-												'2.เบอร์ที่ทำงาน '."\n".
-												'3.ตำแหน่งและอายุงาน '."\n".
-												'4. สลิป (ไม่มีก็ไม่เป็นไร)'."\n\n\n".
-												'สำหรับ อาชีพค้าขาย'."\n".
-												'- ถ่ายรูปสินค้าหรือหน้าร้าน '."\n\n\n".
-												'สำหรับ อาชีพขับวิน'."\n".
-												'- ถ่ายรูปเสื้อวิน '."\n\n\n".
-												'สำหรับ อาชีพรับจ้าง'."\n".
-												'- เบอร์นายจ้างที่ทำงานประจำ '
-											),
-									
-										array
-												(
-										'type' => 'text',
-										'text' => '*** สำคัญมาก***'."\n".'ส่งเสร็จแล้ว พิมพ์ว่า "000" ค่ะ '."\n".
-										'หลังจากนั้นทางร้านจะยื่นเรื่องให้ค่ะ'."\n".
-										'ใช้เวลาประมาณ 15 นาที'	
-												)
-							   );
-			
-		
+			$messages=  [
+							'type' => 'text',
+                			'text' => 'สนใจออกรถ กรุณาส่งข้อมูลดังนี้'."\n".
+							'1. บัตรประชาชน '."\n".
+							'2. ที่อยู่ปัจจุบัน '."\n".
+							'3. เบอร์โทรศัพท์ '."\n\n\n".
+							'สำหรับ พนักงานบริษัท'."\n".
+							'1. ที่อยู่ทำงาน '."\n".
+							'2.เบอร์ที่ทำงาน '."\n".
+							'3.ตำแหน่งและอายุงาน '."\n".
+							'4. สลิป (ไม่มีก็ไม่เป็นไร)'."\n\n\n".
+							'สำหรับ อาชีพค้าขาย'."\n".
+							'- ถ่ายรูปสินค้าหรือหน้าร้าน '."\n\n\n".
+							'สำหรับ อาชีพขับวิน'."\n".
+							'- ถ่ายรูปเสื้อวิน '."\n\n\n".
+							'สำหรับ อาชีพรับจ้าง'."\n".
+							'- เบอร์นายจ้างที่ทำงานประจำ '."\n\n\n".
+
 							
-					
+							
+							'ถ่ายรูปแล้วส่งมาทาง line ได้เลยค่ะ'."\n\n". '*** สำคัญมาก***'."\n".'ส่งเสร็จแล้ว พิมพ์ว่า "000" ค่ะ '."\n".
+							'หลังจากนั้นทางร้านจะยื่นเรื่องให้ค่ะ'."\n".
+							'ใช้เวลาประมาณ 15 นาที'	
+							
+						];	
 						$isNeedHelp = 1;
 		}
 		$dataPCX = array("pcx","PCX","Pcx");
@@ -363,9 +326,9 @@ if (!is_null($events['events'])) {
 				'altText' => 'PCX', // 替代文字
 				'template' => array(
 							'type' => 'buttons', // 類型 (按鈕)
-						'thumbnailImageUrl' => 'https://okplus.co.th/images/bike/pcx3.png', // 圖片網址 <不一定需要>
+						'thumbnailImageUrl' => 'https://okplus.co.th/images/bike/pcx1.png', // 圖片網址 <不一定需要>
 						 'title' => 'PCX', // 標題 <不一定需要>
-						'text' => 'รุ่นนี้ฟรีดาวน์ ออกรถ 0 บ'."\n".'ไม่ต้องใช้คนค้ำ'."\n".'ฟรีประกันรถหาย + พรบ + จดทะบียน', // 文字
+						'text' => 'รุ่นนี้มีโปร ดาวน์ 4,900'."\n".'ไม่ต้องใช้คนค้ำ'."\n".'ฟรีประกันรถหาย + พรบ + จดทะบียน', // 文字
 						'actions' => array(
 											 array(
 										  'type' => 'message', // 類型 (連結)
@@ -528,7 +491,7 @@ if (!is_null($events['events'])) {
 							
 		}
 
-		$dataPayment = array("ผ่อน","ราคา");
+		$dataPayment = array("ผ่อน");
 		
 		if (checkSendMessage($dataPayment,$sendMessage) == 1)
 		{
