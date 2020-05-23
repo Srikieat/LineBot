@@ -24,6 +24,21 @@ function checkSendMessage($arrKeyword, $message)
 	return $isFound;
 
 }
+
+function checkExactMessage($arrKeyword, $message)
+{
+	$isFound =0;
+	foreach ($arrKeyword as $keyword) 
+        {
+		if ($message == $keyword) 
+             {
+                $isFound = 1;
+             }
+         }
+	return $isFound;
+
+}
+
 // end function
 
 // Validate parsed JSON data
@@ -102,7 +117,25 @@ if (!is_null($events['events'])) {
             		];	
 			
 			
-
+		$dataHiReturn = array('พี่คับ','พี่ครับ','พี่คะ','ครับ','คับ','คะ','ค่ะ');
+		if (checkExactMessage($dataHiReturn,$sendMessage) == 1)
+		{
+			$messages=  [
+				             'type' => 'text',
+				             'text' => 'ค่ะ'	
+						];	
+						$isNeedHelp = 1;
+		}	
+		$dataThanks = array("ขอบคุณ");
+		
+		if (checkSendMessage($dataThanks,$sendMessage) == 1)
+		{
+			$messages=  [
+				             'type' => 'text',
+				             'text' => 'ขอบคุณค่ะ'	
+						];	
+						$isNeedHelp = 1;
+		}
         
 		$dataHello = array("สวัสดี","ทัก","hi","Hi","HI","สอบถาม");
 		
