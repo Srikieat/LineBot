@@ -283,7 +283,7 @@ if (!is_null($events['events'])) {
 		
 		
 		$dataGuarantee= array("ค้ำ");
-		if (checkSendMessage($dataNoHave,$sendMessage) == 1)
+		if (checkSendMessage($dataGuarantee,$sendMessage) == 1)
 			{
 				$messages=  [
 								'type' => 'text',
@@ -597,4 +597,4 @@ if (!is_null($events['events'])) {
 	}
 }
 
-  
+
