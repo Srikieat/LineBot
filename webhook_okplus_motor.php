@@ -137,13 +137,34 @@ if (!is_null($events['events'])) {
 						$isNeedHelp = 1;
 		}
         
-		$dataHello = array("สวัสดี","ทัก","hi","Hi","HI","สอบถาม");
+		$dataHello = array("สวัสดี","ทัก","hi","Hi","HI","สอบถาม","ออกรถ");
 		
 		if (checkSendMessage($dataHello,$sendMessage) == 1)
 		{
 			$messages=  [
 				             'type' => 'text',
 				             'text' => 'สวัสดีค่ะ'."\n".'สนใจรถรุ่นไหนค่ะ'	
+						];	
+						$isNeedHelp = 1;
+		}
+				$dataYes = array("ใช่ไหม");
+		
+		if (checkSendMessage($dataHello,$sendMessage) == 1)
+		{
+			$messages=  [
+				             'type' => 'text',
+				             'text' => 'ใช่ค่ะ'	
+						];	
+						$isNeedHelp = 1;
+		}
+			
+				$dataDai = array("ได้ไหม");
+		
+		if (checkSendMessage($dataHello,$sendMessage) == 1)
+		{
+			$messages=  [
+				             'type' => 'text',
+				             'text' => 'ได้ค่ะ'	
 						];	
 						$isNeedHelp = 1;
 		}
