@@ -132,7 +132,7 @@ if (!is_null($events['events'])) {
 			$isMoreMessage = 1;
             $messages = [
                 'type' => 'text',
-                'text' => 'กรุณารอสักครู่นะค่ะ'	
+                'text' => 'กรุณารอสักครู่นะค่ะ'.$userName	
             		];	
 			
 			
