@@ -502,7 +502,7 @@ if (!is_null($events['events'])) {
 							
 		}
 
-		$dataPayment = array("ผ่อน");
+		$dataPayment = array("ผ่อน","ราคา");
 		
 		if (checkSendMessage($dataPayment,$sendMessage) == 1)
 		{
