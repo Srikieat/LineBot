@@ -125,14 +125,14 @@ if (!is_null($events['events'])) {
 			
 			 $sendMessage = $event['message']['text'];
 			
-			$userName = getDisplayName($text);
+			//$userName = getDisplayName($text);
 			// Build message to reply back
          
             $isNeedHelp = 0;
 			$isMoreMessage = 1;
             $messages = [
                 'type' => 'text',
-                'text' => 'กรุณารอสักครู่นะค่ะ '.$userName;	
+                'text' => 'กรุณารอสักครู่นะค่ะ';	
             		];	
 			
 			
