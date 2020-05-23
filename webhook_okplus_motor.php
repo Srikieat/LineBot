@@ -282,7 +282,15 @@ if (!is_null($events['events'])) {
 			}
 		
 		
-		
+		$dataGuarantee= array("ค้ำ");
+		if (checkSendMessage($dataNoHave,$sendMessage) == 1)
+			{
+				$messages=  [
+								'type' => 'text',
+								'text' => 'ไม่ต้องใช้คนค้ำค่ะ'	
+							];	
+							$isNeedHelp = 1;
+			}
 
 		$dataOnline = array("สนใจ");
 		
@@ -337,9 +345,9 @@ if (!is_null($events['events'])) {
 				'altText' => 'PCX', // 替代文字
 				'template' => array(
 							'type' => 'buttons', // 類型 (按鈕)
-						'thumbnailImageUrl' => 'https://okplus.co.th/images/bike/pcx2.png', // 圖片網址 <不一定需要>
+						'thumbnailImageUrl' => 'https://okplus.co.th/images/bike/pcx3.png', // 圖片網址 <不一定需要>
 						 'title' => 'PCX', // 標題 <不一定需要>
-						'text' => 'รุ่นนี้มีโปร ดาวน์ 4,900'."\n".'ไม่ต้องใช้คนค้ำ'."\n".'ฟรีประกันรถหาย + พรบ + จดทะบียน', // 文字
+						'text' => 'รุ่นนี้ฟรีดาวน์ ออกรถ 0 บ'."\n".'ไม่ต้องใช้คนค้ำ'."\n".'ฟรีประกันรถหาย + พรบ + จดทะบียน', // 文字
 						'actions' => array(
 											 array(
 										  'type' => 'message', // 類型 (連結)
