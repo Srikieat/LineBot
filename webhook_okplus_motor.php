@@ -38,25 +38,25 @@ function checkExactMessage($arrKeyword, $message)
 	return $isFound;
 
 }
-//function getDisplayName($id)
-//{
-//	$access_token = '9qdNZtBI6urLTohgjHLutRo/5gELhmrx7PukSdauW8fsFBwcdN+ozxNH1XVj4kkCNu/T30nl2oITOMvdQ6QlcLOqgO+Ji+JSnH+rRXUtC1Xg5vx32G8vseS4VZ+Mc83SBp2IPpuAzcH+aOBgzgEuhQdB04t89/1O/w1cDnyilFU=';
-//	$url = 'https://api.line.me/v2/bot/profile/'.$id;
-//	$headers = array('Authorization: Bearer ' . $access_token);
-//
-//	$ch = curl_init($url);
-//	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-//	curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-//	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-//	$result = curl_exec($ch);
-//	curl_close($ch);
-//	//echo $result
-//	$profile = json_decode($result, true);
-//	$displayName =  $profile['displayName'];
-//	$pictureUrl = $profile['pictureUrl'];
-//	
-//	return $displayName;
-//}
+function getDisplayName($id)
+{
+	$access_token = '9qdNZtBI6urLTohgjHLutRo/5gELhmrx7PukSdauW8fsFBwcdN+ozxNH1XVj4kkCNu/T30nl2oITOMvdQ6QlcLOqgO+Ji+JSnH+rRXUtC1Xg5vx32G8vseS4VZ+Mc83SBp2IPpuAzcH+aOBgzgEuhQdB04t89/1O/w1cDnyilFU=';
+	$url = 'https://api.line.me/v2/bot/profile/'.$id;
+	$headers = array('Authorization: Bearer ' . $access_token);
+
+	$ch = curl_init($url);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+	$result = curl_exec($ch);
+	curl_close($ch);
+	//echo $result
+	$profile = json_decode($result, true);
+	$displayName =  $profile['displayName'];
+	$pictureUrl = $profile['pictureUrl'];
+	
+	return $displayName;
+}
 // end function
 
 // Validate parsed JSON data
@@ -125,7 +125,7 @@ if (!is_null($events['events'])) {
 			
 			 $sendMessage = $event['message']['text'];
 			
-			//$userName = getDisplayName($text);
+			$userName = getDisplayName($text);
 			// Build message to reply back
          
             $isNeedHelp = 0;
