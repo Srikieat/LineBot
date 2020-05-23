@@ -47,8 +47,8 @@ if (!is_null($events['events'])) {
 	foreach ($events['events'] as $event) {
 		if ($event['type'] == "unfollow") 
 		{
-			$id = $event['source']['userId'];
-			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/unfollowLine.aspx?u='.$id);
+			//$id = $event['source']['userId'];
+			//$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/unfollowLine.aspx?u='.$id);
 		}
 	
 		
@@ -66,8 +66,9 @@ if (!is_null($events['events'])) {
 			
 			
 			// start message
-				$messages = [
-						
+				$messages=  [
+				             'type' => 'text',
+				             'text' => 'สวัสดีค่ะ'."\n".'สนใจรถรุ่นไหนค่ะ'	
 						];	
 						// end message
 			
