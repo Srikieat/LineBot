@@ -132,7 +132,7 @@ if (!is_null($events['events'])) {
 			$isMoreMessage = 1;
             $messages = [
                 'type' => 'text',
-                'text' => 'กรุณารอสักครู่นะค่ะ'.$userName	
+                'text' => 'กรุณารอสักครู่นะค่ะ'
             		];	
 			
 			
@@ -571,7 +571,7 @@ if (!is_null($events['events'])) {
 	
 		if ($isNeedHelp == 0)
 		{
-			$messageHelp = $sendMessage;
+			$messageHelp = $userName."\n".$sendMessage;
 			$help = file_get_contents('https://okplusbot.herokuapp.com/botPushOkplusMotor.php?u=U44e90a4578cb725ccc9ed09d2cdc18e9&m='.$messageHelp);
 			
 		}
