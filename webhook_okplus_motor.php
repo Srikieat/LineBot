@@ -147,9 +147,10 @@ if (!is_null($events['events'])) {
 						];	
 						$isNeedHelp = 1;
 		}
-				$dataYes = array("ใช่ไหม");
 		
-		if (checkSendMessage($dataHello,$sendMessage) == 1)
+		$dataYes = array("ใช่ไหม");
+		
+		if (checkSendMessage($dataYes,$sendMessage) == 1)
 		{
 			$messages=  [
 				             'type' => 'text',
@@ -158,9 +159,10 @@ if (!is_null($events['events'])) {
 						$isNeedHelp = 1;
 		}
 			
-				$dataDai = array("ได้ไหม");
 		
-		if (checkSendMessage($dataHello,$sendMessage) == 1)
+		$dataDai = array("ได้ไหม");
+		
+		if (checkSendMessage($dataDai,$sendMessage) == 1)
 		{
 			$messages=  [
 				             'type' => 'text',
@@ -316,28 +318,34 @@ if (!is_null($events['events'])) {
 		
 		if (checkSendMessage($dataPCX,$sendMessage) == 1)
 		{
-			$isNeedHelp = 1;
-			$messages	=  	[
-								
-								'type' => 'template', // 訊息類型 (模板)
-                				'altText' => 'PCX', // 替代文字
-                				'template' => array(
-                    						'type' => 'buttons', // 類型 (按鈕)
-		                				'thumbnailImageUrl' => 'https://okplus.co.th/images/bike/pcx1.png', // 圖片網址 <不一定需要>
-                 						'title' => 'PCX', // 標題 <不一定需要>
-		                				'text' => 'รุ่นนี้มีโปร ดาวน์ 4,900'."\n".'ไม่ต้องใช้คนค้ำ'."\n".'ฟรีประกันรถหาย + พรบ + จดทะบียน', // 文字
-                						'actions' => array(
-			                      					       array(
-                        				 			 	'type' => 'message', // 類型 (連結)
-				                         			 	'label' => 'สนใจออกรถออนไลน์', // 標籤 3
-				                         			 	'text' => 'สนใจออกรถ' // 連結網址
-				                       				          )
-			                       					   )
-		                					)
-					
-								
-						
-							];
+				$isNeedHelp = 1;
+			$isMoreMessage = 0;
+			$x_messages = array(array
+									(
+				'type' => 'template', // 訊息類型 (模板)
+				'altText' => 'PCX', // 替代文字
+				'template' => array(
+							'type' => 'buttons', // 類型 (按鈕)
+						'thumbnailImageUrl' => 'https://okplus.co.th/images/bike/pcx1.png', // 圖片網址 <不一定需要>
+						 'title' => 'PCX', // 標題 <不一定需要>
+						'text' => 'รุ่นนี้มีโปร ดาวน์ 4,900'."\n".'ไม่ต้องใช้คนค้ำ'."\n".'ฟรีประกันรถหาย + พรบ + จดทะบียน', // 文字
+						'actions' => array(
+											 array(
+										  'type' => 'message', // 類型 (連結)
+										  'label' => 'สนใจออกรถออนไลน์', // 標籤 3
+										  'text' => 'สนใจออกรถ' // 連結網址
+												 )
+										  )
+							)
+									),
+								array
+									(
+										'type' => 'text',
+										'text' => 'สนใจออกรถไหมค่ะ'
+									)
+							   );
+			
+		
 							
 		}
 
@@ -345,9 +353,11 @@ if (!is_null($events['events'])) {
 		
 		if (checkSendMessage($dataScoopy,$sendMessage) == 1)
 		{
+			
 			$isNeedHelp = 1;
-			$messages	=  	[
-								
+			$isMoreMessage = 0;
+			$x_messages = array(array
+									(
 				'type' => 'template', // 訊息類型 (模板)
 				'altText' => 'Scoopy', // 替代文字
 				'template' => array(
@@ -363,9 +373,16 @@ if (!is_null($events['events'])) {
 												 )
 										  )
 							)
-								
-						
-							];
+									),
+								array
+									(
+										'type' => 'text',
+										'text' => 'สนใจออกรถไหมค่ะ'
+									)
+							   );
+			
+			
+		
 							
 		}
 	
@@ -374,15 +391,18 @@ if (!is_null($events['events'])) {
 		
 		if (checkSendMessage($dataWave,$sendMessage) == 1)
 		{
+			
+			
 			$isNeedHelp = 1;
-			$messages	=  	[
-								
+			$isMoreMessage = 0;
+			$x_messages = array(array
+									(
 				'type' => 'template', // 訊息類型 (模板)
 				'altText' => 'Wave', // 替代文字
 				'template' => array(
 							'type' => 'buttons', // 類型 (按鈕)
 						'thumbnailImageUrl' => 'https://okplus.co.th/images/bike/wave110.png', // 圖片網址 <不一定需要>
-						 'title' => 'Wave 110, Wave 125', // 標題 <不一定需要>
+						 'title' => 'Wave-i', // 標題 <不一定需要>
 						'text' => 'รุ่นนี้ฟรีดาวน์ ออกรถ 0 บ'."\n".'ไม่ต้องใช้คนค้ำ'."\n".'ฟรีประกันรถหาย + พรบ + จดทะบียน', // 文字
 						'actions' => array(
 											 array(
@@ -392,9 +412,17 @@ if (!is_null($events['events'])) {
 												 )
 										  )
 							)
-								
-						
-							];
+									),
+								array
+									(
+										'type' => 'text',
+										'text' => 'สนใจออกรถไหมค่ะ'
+									)
+							   );
+			
+			
+			
+		
 							
 		}
 
