@@ -149,7 +149,7 @@ if (!is_null($events['events'])) {
 			$distance = distance($lat, $long, 13.7100786, 100.6110613, "K");
 			$messages=  [
 				             'type' => 'text',
-				             'text' => $lat."\n".$long
+				             'text' => $lat
 						];	
 						// end message
 			
