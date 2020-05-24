@@ -57,6 +57,32 @@ function getDisplayName($id)
 	
 	return $displayName;
 }
+
+function distance($lat1, $lon1, $lat2, $lon2, $unit) 
+{
+	
+//echo distance(13.709404, 100.611131, 13.7100786, 100.6110613, "K") . " km<br>";
+  if (($lat1 == $lat2) && ($lon1 == $lon2)) {
+    return 0;
+  }
+  else {
+    $theta = $lon1 - $lon2;
+    $dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) +  cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));
+    $dist = acos($dist);
+    $dist = rad2deg($dist);
+    $miles = $dist * 60 * 1.1515;
+    $unit = strtoupper($unit);
+
+    if ($unit == "K") {
+      return ($miles * 1.609344);
+    } else if ($unit == "N") {
+      return ($miles * 0.8684);
+    } else {
+      return $miles;
+    }
+  }
+}
+
 // end function
 
 // Validate parsed JSON data
@@ -491,11 +517,30 @@ if (!is_null($events['events'])) {
 										  )
 							)
 									),
-								array
-									(
-										'type' => 'text',
-										'text' => 'สนใจออกรถไหมค่ะ'
-									)
+								
+								array(
+							'type' => 'text',
+							'text' =>'ปัจจุบันลูกค้าพักอยู่ที่ไหนค่ะ (กดปุ่มข้างล่างเพิ่อระบุที่อยู่)',
+							'quickReply' => 
+									array(
+												'items'=>[array(
+																'types'=>'action',
+													'action'=>array(
+																		'type'=>'location',
+																		'label'=>'i am location'
+																	)
+																)
+										  ]
+										  
+										  )
+				)
+								
+								
+								//array
+								//	(
+								//		'type' => 'text',
+								//		'text' => 'สนใจออกรถไหมค่ะ'
+								//	)
 							   );
 //			$messages	=  	[
 //								
