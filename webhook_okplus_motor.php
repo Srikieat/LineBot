@@ -355,7 +355,7 @@ if (!is_null($events['events'])) {
 					
 						$isNeedHelp = 1;
 		}
-		$dataPCX = array("pcx","PCX","Pcx","พี","ซี");
+		$dataPCX = array("pcx","PCX","Pcx","ซี");
 		
 		if (checkSendMessage($dataPCX,$sendMessage) == 1)
 		{
