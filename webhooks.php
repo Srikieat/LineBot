@@ -56,7 +56,7 @@ if (!is_null($events['events'])) {
 				                   				//     'text' => 'Message example' // 用戶發送文字
 				                 				//     ),
 			                        				   array(
-                        				 				'type' => 'uri', // 類型 (連結)
+                        				 				'type' => 'location', // 類型 (連結)
 				                         				'label' => 'ลงทะเบียน', // 標籤 3
 				                         				'uri' => 'http://okplus.ddns.net/okplus/OKMO/Bot.aspx?u='.$text // 連結網址
 				                       				         )
