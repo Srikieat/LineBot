@@ -143,8 +143,8 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			
-			$lat = $event['latitude'];
-			$long = $event['longitude'];
+			$lat = $event['message']['latitude'];
+			$long = $event['message']['longitude'];
 			
 			$distance = distance($lat, $long, 13.7100786, 100.6110613, "K");
 			$messages=  [
