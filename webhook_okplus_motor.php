@@ -147,7 +147,7 @@ if (!is_null($events['events'])) {
 			$long = $event['longitude'];
 			$messages=  [
 				             'type' => 'text',
-				             'text' => $lat.$long
+				             'text' => '222'
 						];	
 						// end message
 			
