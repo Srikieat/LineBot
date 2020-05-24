@@ -139,9 +139,13 @@ if (!is_null($events['events'])) {
 				
 		if ($event['type'] == 'location')
 		{
-				$lat = $event['latitude'];
-				$long = $event['longitude'];
-				$messages=  [
+			$text = $event['source']['userId'];
+			// Get replyToken
+			$replyToken = $event['replyToken'];
+			
+			$lat = $event['latitude'];
+			$long = $event['longitude'];
+			$messages=  [
 				             'type' => 'text',
 				             'text' => $lat.$long
 						];	
