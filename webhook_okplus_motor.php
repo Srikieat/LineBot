@@ -137,7 +137,34 @@ if (!is_null($events['events'])) {
 			echo "Your ID is : ".$result . "\r\n";
 		}
 				
-		
+		if ($event['type'] == 'location')
+		{
+				$lat = $event['latitude'];
+				$long = $event['longitude'];
+				$messages=  [
+				             'type' => 'text',
+				             'text' => $lat.$long
+						];	
+						// end message
+			
+			// Make a POST Request to Messaging API to reply to sender
+			$url = 'https://api.line.me/v2/bot/message/reply';
+			$data = [
+				'replyToken' => $replyToken,
+				'messages' => [$messages],
+			];
+			$post = json_encode($data);
+			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+
+			$ch = curl_init($url);
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+			$result = curl_exec($ch);
+			curl_close($ch);
+		}
 		
 		
 		// Reply only when message sent is in 'text' format
@@ -520,7 +547,7 @@ if (!is_null($events['events'])) {
 								
 								array(
 							'type' => 'text',
-							'text' =>'ปัจจุบันลูกค้าพักอยู่ที่ไหนค่ะ (กดปุ่มข้างล่างเพิ่อระบุที่อยู่)',
+							'text' =>'ปัจจุบันลูกค้าพักอยู่ที่ไหนค่ะ (กดปุ่มข้างล่างนี้เพิ่อระบุที่อยู่)',
 							'quickReply' => 
 									array(
 												'items'=>[array(
