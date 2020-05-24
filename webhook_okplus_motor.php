@@ -311,16 +311,7 @@ if (!is_null($events['events'])) {
 			}
 
 			
-			$dataReply= array("reply");
-		if (checkSendMessage($dataReply,$sendMessage) == 1)
-			{
-				$messages=  [
-								'type' => 'text',
-								'text' => 'Hello Quick reply'	
-								
-							];	
-							$isNeedHelp = 1;
-			}
+			
 		
 
 		$dataOnline = array("สนใจ");
@@ -430,7 +421,7 @@ if (!is_null($events['events'])) {
 										'text' => 'สนใจออกรถไหมค่ะ'
 									)
 							   );
-			
+		
 			
 		
 							
