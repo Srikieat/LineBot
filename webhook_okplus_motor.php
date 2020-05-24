@@ -438,11 +438,22 @@ if (!is_null($events['events'])) {
 										  )
 							)
 									),
-								array
-									(
-										'type' => 'text',
-										'text' => 'สนใจออกรถไหมค่ะ'
-									)
+								array(
+							'type' => 'text',
+							'text' =>'ปัจจุบันลูกค้าพักอยู่ที่ไหนค่ะ (กดปุ่มข้างล่างนี้เพิ่อระบุที่อยู่)',
+							'quickReply' => 
+									array(
+												'items'=>[array(
+																'types'=>'action',
+													'action'=>array(
+																		'type'=>'location',
+																		'label'=>'ระบุที่อยู่'
+																	)
+																)
+										  ]
+										  
+										  )
+				)
 							   );
 			
 		
@@ -474,11 +485,22 @@ if (!is_null($events['events'])) {
 										  )
 							)
 									),
-								array
-									(
-										'type' => 'text',
-										'text' => 'สนใจออกรถไหมค่ะ'
-									)
+								array(
+							'type' => 'text',
+							'text' =>'ปัจจุบันลูกค้าพักอยู่ที่ไหนค่ะ (กดปุ่มข้างล่างนี้เพิ่อระบุที่อยู่)',
+							'quickReply' => 
+									array(
+												'items'=>[array(
+																'types'=>'action',
+													'action'=>array(
+																		'type'=>'location',
+																		'label'=>'ระบุที่อยู่'
+																	)
+																)
+										  ]
+										  
+										  )
+				)
 							   );
 		
 			
@@ -513,11 +535,22 @@ if (!is_null($events['events'])) {
 										  )
 							)
 									),
-								array
-									(
-										'type' => 'text',
-										'text' => 'สนใจออกรถไหมค่ะ'
-									)
+								array(
+							'type' => 'text',
+							'text' =>'ปัจจุบันลูกค้าพักอยู่ที่ไหนค่ะ (กดปุ่มข้างล่างนี้เพิ่อระบุที่อยู่)',
+							'quickReply' => 
+									array(
+												'items'=>[array(
+																'types'=>'action',
+													'action'=>array(
+																		'type'=>'location',
+																		'label'=>'ระบุที่อยู่'
+																	)
+																)
+										  ]
+										  
+										  )
+				)
 							   );
 			
 			
@@ -569,32 +602,8 @@ if (!is_null($events['events'])) {
 				)
 								
 								
-								//array
-								//	(
-								//		'type' => 'text',
-								//		'text' => 'สนใจออกรถไหมค่ะ'
-								//	)
 							   );
-//			$messages	=  	[
-//								
-//				'type' => 'template', // 訊息類型 (模板)
-//				'altText' => 'Click125', // 替代文字
-//				'template' => array(
-//							'type' => 'buttons', // 類型 (按鈕)
-//						'thumbnailImageUrl' => 'https://okplus.co.th/images/bike/ClickPromotion1.png', // 圖片網址 <不一定需要>
-//						 'title' => 'Click-i', // 標題 <不一定需要>
-//						'text' => 'รุ่นนี้ฟรีดาวน์ ออกรถ 0 บ'."\n".'ไม่ต้องใช้คนค้ำ'."\n".'ฟรีประกันรถหาย + พรบ + จดทะบียน', // 文字
-//						'actions' => array(
-//											 array(
-//										  'type' => 'message', // 類型 (連結)
-//										  'label' => 'สนใจออกรถออนไลน์', // 標籤 3
-//										  'text' => 'สนใจออกรถ' // 連結網址
-//												 )
-//										  )
-//							)
-//								
-//						
-//							];
+
 							
 		}
 
