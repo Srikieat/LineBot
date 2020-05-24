@@ -148,8 +148,8 @@ if (!is_null($events['events'])) {
 			
 			$distance = distance($lat, $long, 13.7100786, 100.6110613, "K");
 			$messages=  [
-				             'type' => 'text',
-				             'text' => $distance
+								'type' => 'text',
+								'text' => 'ขอบคุณค่ะ'.\n".'สนใจออกรถไหมค่ะ'
 						];	
 						// end message
 			
