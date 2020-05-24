@@ -593,12 +593,27 @@ if (!is_null($events['events'])) {
 			}
 			else
 			{
+				
+				$myArr = [array(
+							'type' => 'text',
+							'text' =>'quickreply',
+							'quickReply' => 
+									array(
+												'items'=>[array(
+																'types'=>'action',
+													'action'=>array(
+																		'type'=>'location',
+																		'label'=>'i am location'
+																	)
+																)
+										  ]
+										  
+										  )
+				)];
 				$data = [
-				'to'=>$text,
-			 	'replyToken' => $replyToken,
-				//'messages' => [$messages],
-					'messages' => '[{"type":"text","text":"quickreply","quickReply":{"items":[{"types":"action","action":{"type":"location","label":"i am location"}}]}}]';
-			 ];	
+				'to'=>'555',
+	'messages' => $myArr
+	];
 			}
 			 
 			
