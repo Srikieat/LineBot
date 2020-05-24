@@ -315,6 +315,8 @@ if (!is_null($events['events'])) {
 		if (checkSendMessage($dataReply,$sendMessage) == 1)
 			{
 				$messages=  [
+								'type' => 'text',
+								'text' => 'Hello Quick reply'	
 								
 							];	
 							$isNeedHelp = 1;
