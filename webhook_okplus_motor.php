@@ -527,7 +527,7 @@ if (!is_null($events['events'])) {
 																'types'=>'action',
 													'action'=>array(
 																		'type'=>'location',
-																		'label'=>'i am location'
+																		'label'=>'ระบุที่'
 																	)
 																)
 										  ]
