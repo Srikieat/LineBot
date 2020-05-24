@@ -310,6 +310,29 @@ if (!is_null($events['events'])) {
 							$isNeedHelp = 1;
 			}
 
+			
+			$dataReply= array("reply");
+		if (checkSendMessage($dataReply,$sendMessage) == 1)
+			{
+				$messages=  [
+								'type' => 'text',
+								'text' => 'Hello Quick reply'	
+								'quickReply' =>
+					   								array(
+                        				 				'items' => array(
+																			'type' => 'action'
+																			'action' => array(
+																								'type'=>'location'
+																								'label'=>'location'
+																								)
+																		), // 類型 (連結)
+				                         				
+				                       				         )
+							];	
+							$isNeedHelp = 1;
+			}
+		
+
 		$dataOnline = array("สนใจ");
 		
 		if (checkSendMessage($dataOnline,$sendMessage) == 1)
