@@ -612,7 +612,7 @@ if (!is_null($events['events'])) {
 				)];
 				$data = [
 					'replyToken' => $replyToken,
-				'to'=>'555',
+				
 	'messages' => $myArr
 	];
 			}
