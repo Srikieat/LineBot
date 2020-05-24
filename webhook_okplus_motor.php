@@ -570,7 +570,34 @@ if (!is_null($events['events'])) {
 							
 		}
 
-
+			$dataLocation = array("location");
+			if (checkSendMessage($dataLocation,$sendMessage) == 1)
+		{
+			$isNeedHelp = 1;
+				$isMoreMessage=0;
+				
+			$x_messages = [array(
+							'type' => 'text',
+							'text' =>'quickreply',
+							'quickReply' => 
+									array(
+												'items'=>[array(
+																'types'=>'action',
+													'action'=>array(
+																		'type'=>'location',
+																		'label'=>'i am location'
+																	)
+																)
+										  ]
+										  
+										  )
+				)];
+				
+					
+				
+				
+							
+		}
 	
 	
 		if ($isNeedHelp == 0)
@@ -593,29 +620,10 @@ if (!is_null($events['events'])) {
 			}
 			else
 			{
-				
-				
-				$myArr = [array(
-							'type' => 'text',
-							'text' =>'quickreply',
-							'quickReply' => 
-									array(
-												'items'=>[array(
-																'types'=>'action',
-													'action'=>array(
-																		'type'=>'location',
-																		'label'=>'i am location'
-																	)
-																)
-										  ]
-										  
-										  )
-				)];
 				$data = [
-					'replyToken' => $replyToken,
-				
-	'messages' =>$myArr
-	];
+			 	'replyToken' => $replyToken,
+				'messages' => [$messages],
+			 	];	
 			}
 			 
 			
