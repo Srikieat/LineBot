@@ -145,7 +145,7 @@ if (!is_null($events['events'])) {
 						];	
 						$isNeedHelp = 1;
 		}	
-		$dataThanks = array("ขอบคุณ");
+		$dataThanks = array("ขอบคุณ","ได้ค่ะ","ได้คับ","ได้ครับ","ได้คะ");
 		
 		if (checkSendMessage($dataThanks,$sendMessage) == 1)
 		{
@@ -570,7 +570,7 @@ if (!is_null($events['events'])) {
 							
 		}
 
-			$dataLocation = array("location");
+			$dataLocation = array("lo","Lo");
 			if (checkSendMessage($dataLocation,$sendMessage) == 1)
 		{
 			$isNeedHelp = 1;
