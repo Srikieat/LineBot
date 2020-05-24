@@ -596,7 +596,7 @@ if (!is_null($events['events'])) {
 				$data = [
 			 	'replyToken' => $replyToken,
 				//'messages' => [$messages],
-					'messages' => [{"type":"text","text":"quickreply","quickReply":{"items":[{"types":"action","action":{"type":"location","label":"i am location"}}]}}],
+					'messages' => [{"type":"text","text":"quickreply","quickReply":{"items":[{"types":"action","action":{"type":"location","label":"i am location"}}]}}];
 			 ];	
 			}
 			 
