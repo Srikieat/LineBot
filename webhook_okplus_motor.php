@@ -594,6 +594,7 @@ if (!is_null($events['events'])) {
 			else
 			{
 				
+				
 				$myArr = [array(
 							'type' => 'text',
 							'text' =>'quickreply',
@@ -613,7 +614,7 @@ if (!is_null($events['events'])) {
 				$data = [
 					'replyToken' => $replyToken,
 				
-	'messages' => $myArr
+	'messages' =>[ $myArr]
 	];
 			}
 			 
