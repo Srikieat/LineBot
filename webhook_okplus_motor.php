@@ -262,9 +262,9 @@ if (!is_null($events['events'])) {
 		}
 
 
-		$dataYamaha= array("ยามา","yama","Yama");
+		$dataNoProduct= array("ยามา","yama","Yama","Ad","ad","ฟอร","For","za","for");
 
-		if (checkSendMessage($dataYamaha,$sendMessage) == 1)
+		if (checkSendMessage($dataNoProduct,$sendMessage) == 1)
 		{
 		
 				$messages=  [
