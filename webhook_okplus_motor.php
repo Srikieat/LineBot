@@ -149,7 +149,7 @@ if (!is_null($events['events'])) {
 			$distance = distance($lat, $long, 13.7100786, 100.6110613, "K");
 			$messages=  [
 				             'type' => 'text',
-				             'text' => $distance
+				             'text' => $lat."\n".$long
 						];	
 						// end message
 			
@@ -560,7 +560,7 @@ if (!is_null($events['events'])) {
 																'types'=>'action',
 													'action'=>array(
 																		'type'=>'location',
-																		'label'=>'ระบุที่'
+																		'label'=>'ระบุที่อยู่'
 																	)
 																)
 										  ]
