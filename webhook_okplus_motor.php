@@ -137,7 +137,7 @@ if (!is_null($events['events'])) {
 			echo "Your ID is : ".$result . "\r\n";
 		}
 				
-		if ($event['type'] == 'location')
+		if ($event['message']['type'] == 'location')
 		{
 			$text = $event['source']['userId'];
 			// Get replyToken
