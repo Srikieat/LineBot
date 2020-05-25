@@ -188,7 +188,10 @@ if (!is_null($events['events'])) {
 			
 			$userName = getDisplayName($text);
 			// Build message to reply back
-         
+		 
+			
+			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorLastMessage.aspx?u='.$id.'&m='.$sendMessage);
+
             $isNeedHelp = 0;
 			$isMoreMessage = 1;
             $messages = [
@@ -305,6 +308,7 @@ if (!is_null($events['events'])) {
 						];	
 						$isNeedHelp = 1;
 						$help = file_get_contents('https://okplusbot.herokuapp.com/botPushOkplusMotor.php?u=U44e90a4578cb725ccc9ed09d2cdc18e9&m=Done');
+						$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetState.aspx?u='.$id.'&s=3');
 		}
 
 		
@@ -379,7 +383,7 @@ if (!is_null($events['events'])) {
 		
 		if (checkSendMessage($dataOnline,$sendMessage) == 1)
 		{
-			
+				$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetState.aspx?u='.$id.'&s=2');
 				$isMoreMessage = 0;
 				$x_messages = array
 									(array
@@ -420,6 +424,8 @@ if (!is_null($events['events'])) {
 		
 		if (checkSendMessage($dataPCX,$sendMessage) == 1)
 		{
+			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetState.aspx?u='.$id.'&s=1');
+
 				$isNeedHelp = 1;
 			$isMoreMessage = 0;
 			$x_messages = array(array
@@ -466,7 +472,7 @@ if (!is_null($events['events'])) {
 		
 		if (checkSendMessage($dataScoopy,$sendMessage) == 1)
 		{
-			
+			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetState.aspx?u='.$id.'&s=1');
 			$isNeedHelp = 1;
 			$isMoreMessage = 0;
 			$x_messages = array(array
@@ -516,7 +522,7 @@ if (!is_null($events['events'])) {
 		if (checkSendMessage($dataWave,$sendMessage) == 1)
 		{
 			
-			
+			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetState.aspx?u='.$id.'&s=1');
 			$isNeedHelp = 1;
 			$isMoreMessage = 0;
 			$x_messages = array(array
@@ -565,6 +571,7 @@ if (!is_null($events['events'])) {
 		
 		if (checkSendMessage($dataClick,$sendMessage) == 1)
 		{
+			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetState.aspx?u='.$id.'&s=1');
 			$isNeedHelp = 1;
 			$isMoreMessage = 0;
 			$x_messages = array(array
