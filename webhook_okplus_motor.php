@@ -142,6 +142,7 @@ if (!is_null($events['events'])) {
 		if ($event['message']['type'] == 'location')
 		{
 			$text = $event['source']['userId'];
+			$id = $event['source']['userId'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			
