@@ -85,13 +85,25 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit)
 
 // end function
 
+
+$id = 'U44e90a4578cb725ccc9ed09d2cdc18e9';
+$Info = file_get_contents('http://okplus.ddns.net/okplus/bot/OkplusMotorGetInfo.aspx?u='.$id);
+
+$str_arr = explode (";", $Info);  
+		
+$state=$str_arr[0];
+$lastMessage= $str_arr[1];
+$lastMessageDT = $str_arr[2];
+$distance = $str_arr[3];
+
+echo ($Info);
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
 	// Loop through each event
 
 			$id = $event['source']['userId'];
 			$Info = file_get_contents('http://okplus.ddns.net/okplus/bot/OkplusMotorGetInfo.aspx?u='.$id);
-			
+		
 			$str_arr = explode (";", $Info);  
 					
 			$state=$str_arr[0];
