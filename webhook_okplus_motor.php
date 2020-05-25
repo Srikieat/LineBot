@@ -248,6 +248,17 @@ if (!is_null($events['events'])) {
 						];	
 						$isNeedHelp = 1;
 		}
+
+		$dataMoreDown = array("ถ้าดาว","เพิ่มดาว","ดาวเพิ่ม");
+		
+		if (checkSendMessage($dataMoreDown,$sendMessage) == 1)
+		{
+			$messages=  [
+				             'type' => 'text',
+				             'text' => 'ไม่สามารถคิดให้ได้ค่ะ'	
+						];	
+						$isNeedHelp = 1;
+		}
 		
 		$dataYes = array("ใช่ไหม","ใช่ไไม");
 		
