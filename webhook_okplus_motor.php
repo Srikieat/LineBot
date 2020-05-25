@@ -274,6 +274,18 @@ if (!is_null($events['events'])) {
 				                         				'label' => 'PCX', // 標籤 3
 				                         				'text' => 'PCX' // 連結網址
 				                       				         )
+											 			,
+			                        				   array(
+                        				 				'type' => 'message', // 類型 (連結)
+				                         				'label' => 'QBIX', // 標籤 3
+				                         				'text' => 'QBIX' // 連結網址
+				                       				         )
+											 			,
+			                        				   array(
+                        				 				'type' => 'message', // 類型 (連結)
+				                         				'label' => 'GRAND FILANO', // 標籤 3
+				                         				'text' => 'GRAND FILANO' // 連結網址
+				                       				         )
 			                       					   )
 		                					)	
 						
@@ -497,6 +509,8 @@ if (!is_null($events['events'])) {
 					
 						$isNeedHelp = 1;
 		}
+			
+			
 		$dataPCX = array("pcx","PCX","Pcx","ซี");
 		
 		if (checkSendMessage($dataPCX,$sendMessage) == 1)
@@ -639,6 +653,104 @@ if (!is_null($events['events'])) {
 							   );
 			
 			
+			
+		
+							
+		}
+			
+			
+			$dataQbix = array("Qbix");
+		
+		if (checkSendMessage($dataQbix,$sendMessage) == 1)
+		{
+			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetState.aspx?u='.$id.'&s=1');
+
+				$isNeedHelp = 1;
+			$isMoreMessage = 0;
+			$x_messages = array(array
+									(
+				'type' => 'template', // 訊息類型 (模板)
+				'altText' => 'QBIX', // 替代文字
+				'template' => array(
+							'type' => 'buttons', // 類型 (按鈕)
+						'thumbnailImageUrl' => 'https://okplus.co.th/images/bike/QBIX.png', // 圖片網址 <不一定需要>
+						 'title' => 'QBIX', // 標題 <不一定需要>
+						'text' => 'รุ่นนี้ฟรีดาวน์ ออกรถ 0 บ'."\n".'ไม่ต้องใช้คนค้ำ'."\n".'ฟรีประกันรถหาย + พรบ + จดทะบียน', // 文字
+						'actions' => array(
+											 array(
+										  'type' => 'message', // 類型 (連結)
+										  'label' => 'สนใจออกรถออนไลน์', // 標籤 3
+										  'text' => 'สนใจออกรถ' // 連結網址
+												 )
+										  )
+							)
+									),
+								array(
+							'type' => 'text',
+							'text' =>'ปัจจุบันลูกค้าพักอยู่ที่ไหนค่ะ (กดปุ่มข้างล่างนี้เพิ่อระบุที่อยู่)',
+							'quickReply' => 
+									array(
+												'items'=>[array(
+																'types'=>'action',
+													'action'=>array(
+																		'type'=>'location',
+																		'label'=>'ระบุที่อยู่'
+																	)
+																)
+										  ]
+										  
+										  )
+				)
+							   );
+			
+		
+							
+		}
+			
+			
+			$dataFilano = array("Filano");
+		
+		if (checkSendMessage($dataFilano,$sendMessage) == 1)
+		{
+			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetState.aspx?u='.$id.'&s=1');
+
+				$isNeedHelp = 1;
+			$isMoreMessage = 0;
+			$x_messages = array(array
+									(
+				'type' => 'template', // 訊息類型 (模板)
+				'altText' => 'Grand Filano', // 替代文字
+				'template' => array(
+							'type' => 'buttons', // 類型 (按鈕)
+						'thumbnailImageUrl' => 'https://okplus.co.th/images/bike/filanoPromotion1.png', // 圖片網址 <不一定需要>
+						 'title' => 'Grand Filano', // 標題 <不一定需要>
+						'text' => 'รุ่นนี้ฟรีดาวน์ ออกรถ 0 บ'."\n".'ไม่ต้องใช้คนค้ำ'."\n".'ฟรีประกันรถหาย + พรบ + จดทะบียน', // 文字
+						'actions' => array(
+											 array(
+										  'type' => 'message', // 類型 (連結)
+										  'label' => 'สนใจออกรถออนไลน์', // 標籤 3
+										  'text' => 'สนใจออกรถ' // 連結網址
+												 )
+										  )
+							)
+									),
+								array(
+							'type' => 'text',
+							'text' =>'ปัจจุบันลูกค้าพักอยู่ที่ไหนค่ะ (กดปุ่มข้างล่างนี้เพิ่อระบุที่อยู่)',
+							'quickReply' => 
+									array(
+												'items'=>[array(
+																'types'=>'action',
+													'action'=>array(
+																		'type'=>'location',
+																		'label'=>'ระบุที่อยู่'
+																	)
+																)
+										  ]
+										  
+										  )
+				)
+							   );
 			
 		
 							
