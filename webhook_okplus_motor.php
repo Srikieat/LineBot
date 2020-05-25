@@ -733,7 +733,7 @@ if (!is_null($events['events'])) {
 			{
 				$data = [
 			 	'replyToken' => $replyToken,
-				'messages' => [$Info],
+				'messages' => [$message]
 			 	];	
 			}
 			 
