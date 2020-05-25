@@ -91,8 +91,8 @@ if (!is_null($events['events'])) {
 	foreach ($events['events'] as $event) {
 		if ($event['type'] == "unfollow") 
 		{
-			//$id = $event['source']['userId'];
-			//$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/unfollowLine.aspx?u='.$id);
+			$id = $event['source']['userId'];
+			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorUnfollow.aspx?u='.$id);
 		}
 	
 		
@@ -103,7 +103,9 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			
-			
+			$id = $event['source']['userId'];
+			$userName = getDisplayName($text);
+			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorFollow.aspx?u='.$id.'&n='.$userName);
 			
 			
 			
