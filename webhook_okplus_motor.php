@@ -247,7 +247,7 @@ if (!is_null($events['events'])) {
                 				'altText' => 'OKPLUS MOTOR', // 替代文字
                 				'template' => array(
                     						'type' => 'buttons', // 類型 (按鈕)
-		                				'thumbnailImageUrl' => 'https://okplus.co.th/images/bike/001.png', // 圖片網址 <不一定需要>
+		                				'thumbnailImageUrl' => 'http://okplus.co.th/images/newbike_front.png', // 圖片網址 <不一定需要>
                  						'title' => 'OKPLUS MOTOR', // 標題 <不一定需要>
 		                				'text' => 'สวัสดีค่ะ'."\n".'สนใจรถรุ่นไหนค่ะ', // 文字
                 						'actions' => array(
