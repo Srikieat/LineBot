@@ -243,8 +243,51 @@ if (!is_null($events['events'])) {
 		{
 			$messages=  [
 				             'type' => 'text',
-				             'text' => 'สวัสดีค่ะ'."\n".'สนใจรถรุ่นไหนค่ะ'	
-						];	
+				             'type' => 'template', // 訊息類型 (模板)
+                				'altText' => 'ลงทะเบียน', // 替代文字
+                				'template' => array(
+                    						'type' => 'buttons', // 類型 (按鈕)
+		                				'thumbnailImageUrl' => 'https://okplus.co.th/images/bike/0.png', // 圖片網址 <不一定需要>
+                 						'title' => 'สวัสดีค่ะ', // 標題 <不一定需要>
+		                				'text' => 'สนใจรถรุ่นไหนค่ะ', // 文字
+                						'actions' => array(
+			                      					  
+			                       					 array(
+                            								'type' => 'message', // 類型 (訊息)
+				                 				       'label' => 'Scoopy-i', // 標籤 2
+				                   				     'text' => 'Scoopy' // 用戶發送文字
+				                 				     ),
+			                        				   array(
+                        				 				'type' => 'message', // 類型 (連結)
+				                         				'label' => 'Wave', // 標籤 3
+				                         				'text' => 'Wave' // 連結網址
+				                       				         )
+			                       					   ,
+			                        				   array(
+                        				 				'type' => 'message', // 類型 (連結)
+				                         				'label' => 'Click', // 標籤 3
+				                         				'text' => 'Click' // 連結網址
+				                       				         )
+			                       					   ,
+			                        				   array(
+                        				 				'type' => 'message', // 類型 (連結)
+				                         				'label' => 'PCX', // 標籤 3
+				                         				'text' => 'PCX' // 連結網址
+				                       				         )
+			                       					   )
+		                					)	
+						
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			];	
 						$isNeedHelp = 1;
 		}
 		
@@ -315,7 +358,7 @@ if (!is_null($events['events'])) {
 						$isNeedHelp = 1;
 		}
 			
-		$dataDocument = array("เอกสาร");
+		$dataDocument = array("เอกสาร","หลักฐาน");
 		
 		if (checkSendMessage($dataDocument,$sendMessage) == 1)
 		{
