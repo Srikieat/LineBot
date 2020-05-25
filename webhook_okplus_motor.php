@@ -86,21 +86,7 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit)
 // end function
 
 
-$id = 'U44e90a4578cb725ccc9ed09d2cdc18e9';
-$Info = file_get_contents('http://okplus.ddns.net/okplus/bot/OkplusMotorGetInfo.aspx?u='.$id);
 
-$str_arr = explode (";", $Info);  
-		
-$state=$str_arr[0];
-$lastMessage= $str_arr[1];
-$lastMessageDT = $str_arr[2];
-$distance = $str_arr[3];
-
-echo ($Info."<br>");
-echo ($state."<br>");
-echo ($lastMessage."<br>");
-echo ($lastMessageDT."<br>");
-echo ($distance."<br>");
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
 	// Loop through each event
@@ -227,7 +213,7 @@ if (!is_null($events['events'])) {
 			$isMoreMessage = 1;
             $messages = [
                 'type' => 'text',
-                'text' => 'กรุณารอสักครู่นะค่ะ'
+                'text' => 'กรุณารอสักครู่นะค่ะ'.$state
             		];	
 			
 			
