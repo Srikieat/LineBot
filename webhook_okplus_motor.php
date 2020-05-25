@@ -91,15 +91,7 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit)
 if (!is_null($events['events'])) {
 	// Loop through each event
 
-			$id = $event['source']['userId'];
-			$Info = file_get_contents('http://okplus.ddns.net/okplus/bot/OkplusMotorGetInfo.aspx?u='.$id);
-		
-			$str_arr = explode (";", $Info);  
-					
-			$state=$str_arr[0];
-			$lastMessage= $str_arr[1];
-			$lastMessageDT = $str_arr[2];
-			$distance = $str_arr[3];
+			
 			
 	foreach ($events['events'] as $event) {
 		if ($event['type'] == "unfollow") 
@@ -207,6 +199,15 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 		 
 			
+			$Info = file_get_contents('http://okplus.ddns.net/okplus/bot/OkplusMotorGetInfo.aspx?u='.$id);
+		
+			$str_arr = explode (";", $Info);  
+					
+			$state=$str_arr[0];
+			$lastMessage= $str_arr[1];
+			$lastMessageDT = $str_arr[2];
+			$distance = $str_arr[3];
+
 			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorLastMessage.aspx?u='.$id.'&m='.$sendMessage);
 
             $isNeedHelp = 0;
