@@ -96,7 +96,11 @@ $lastMessage= $str_arr[1];
 $lastMessageDT = $str_arr[2];
 $distance = $str_arr[3];
 
-echo ($Info);
+echo ($Info."<br>");
+echo ($state."<br>");
+echo ($lastMessage."<br>");
+echo ($lastMessageDT."<br>");
+echo ($distance."<br>");
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
 	// Loop through each event
