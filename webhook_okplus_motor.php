@@ -244,12 +244,12 @@ if (!is_null($events['events'])) {
 			$messages=  [
 				             'type' => 'text',
 				             'type' => 'template', // 訊息類型 (模板)
-                				'altText' => 'ลงทะเบียน', // 替代文字
+                				'altText' => 'OKPLUS MOTOR', // 替代文字
                 				'template' => array(
                     						'type' => 'buttons', // 類型 (按鈕)
-		                				'thumbnailImageUrl' => 'https://okplus.co.th/images/bike/0.png', // 圖片網址 <不一定需要>
-                 						'title' => 'สวัสดีค่ะ', // 標題 <不一定需要>
-		                				'text' => 'สนใจรถรุ่นไหนค่ะ', // 文字
+		                				'thumbnailImageUrl' => 'https://okplus.co.th/images/bike/001.png', // 圖片網址 <不一定需要>
+                 						'title' => 'OKPLUS MOTOR', // 標題 <不一定需要>
+		                				'text' => 'สวัสดีค่ะ'."\n".'สนใจรถรุ่นไหนค่ะ', // 文字
                 						'actions' => array(
 			                      					  
 			                       					 array(
