@@ -181,6 +181,7 @@ if (!is_null($events['events'])) {
 			
 			// Get text sent
 			$text = $event['source']['userId'];
+			$id = $event['source']['userId'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			
