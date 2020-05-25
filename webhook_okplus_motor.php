@@ -149,6 +149,8 @@ if (!is_null($events['events'])) {
 			$long = $event['message']['longitude'];
 			
 			$distance = distance($lat, $long, 13.7100786, 100.6110613, "K");
+
+			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetDistance.aspx?u='.$id.'&d='.$distance);
 			$messages=  [
 								'type' => 'text',
 								'text' => 'ขอบคุณค่ะ'."\n".'สนใจออกรถไหมค่ะ'
