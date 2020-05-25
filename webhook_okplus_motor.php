@@ -274,6 +274,11 @@ if (!is_null($events['events'])) {
 				                         				'label' => 'PCX', // 標籤 3
 				                         				'text' => 'PCX' // 連結網址
 				                       				         )
+											, array(
+                        				 				'type' => 'message', // 類型 (連結)
+				                         				'label' => 'QBIX', // 標籤 3
+				                         				'text' => 'QBIX' // 連結網址
+				                       				         )
 											 		
 			                       					   )
 		                					)	
