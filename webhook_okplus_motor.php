@@ -214,7 +214,7 @@ if (!is_null($events['events'])) {
 			$isMoreMessage = 1;
             $messages = [
                 'type' => 'text',
-                'text' => 'กรุณารอสักครู่นะค่ะ'.$state
+                'text' => 'กรุณารอสักครู่นะค่ะ'
             		];	
 			
 			
