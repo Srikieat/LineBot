@@ -91,7 +91,15 @@ function distance($lat1, $lon1, $lat2, $lon2, $unit)
 if (!is_null($events['events'])) {
 	// Loop through each event
 
-			
+			$id = $event['source']['userId'];
+			$Info = file_get_contents('http://okplus.ddns.net/okplus/bot/OkplusMotorGetInfo.aspx?u='.$id);
+		
+			$str_arr = explode (";", $Info);  
+					
+			$state=$str_arr[0];
+			$lastMessage= $str_arr[1];
+			$lastMessageDT = $str_arr[2];
+			$distance = $str_arr[3];
 			
 	foreach ($events['events'] as $event) {
 		if ($event['type'] == "unfollow") 
@@ -199,26 +207,17 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 		 
 			
-			$Info = file_get_contents('http://okplus.ddns.net/okplus/bot/OkplusMotorGetInfo.aspx?u='.$id);
-		
-			$str_arr = explode (";", $Info);  
-					
-			$state=$str_arr[0];
-			$lastMessage= $str_arr[1];
-			$lastMessageDT = $str_arr[2];
-			$distance = $str_arr[3];
-
 			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorLastMessage.aspx?u='.$id.'&m='.$sendMessage);
 
             $isNeedHelp = 0;
 			$isMoreMessage = 1;
             $messages = [
                 'type' => 'text',
-                'text' => 'กรุณารอสักครู่นะค่ะ'
+                'text' => 'กรุณารอสักครู่นะค่ะ'.$state
             		];	
 			
 			
-		$dataHiReturn = array('พี่คับ','พี่ครับ','พี่คะ','ครับ','คับ','คะ','ค่ะ');
+		$dataHiReturn = array('พี่คับ','พี่ครับ','พี่คะ','ครับ','คับ','คะ','ค่ะ','งั้น');
 		if (checkExactMessage($dataHiReturn,$sendMessage) == 1)
 		{
 			$messages=  [
@@ -245,17 +244,6 @@ if (!is_null($events['events'])) {
 			$messages=  [
 				             'type' => 'text',
 				             'text' => 'สวัสดีค่ะ'."\n".'สนใจรถรุ่นไหนค่ะ'	
-						];	
-						$isNeedHelp = 1;
-		}
-
-		$dataMoreDown = array("ถ้าดาว","เพิ่มดาว","ดาวน์เพิ่ม","ดาวเพิ่ม");
-		
-		if (checkSendMessage($dataMoreDown,$sendMessage) == 1)
-		{
-			$messages=  [
-				             'type' => 'text',
-				             'text' => 'กรุณาติดต่อ 02 115 9962, 091 575 3685 เพิ่มสอบถามข้อมูลค่ะ'	
 						];	
 						$isNeedHelp = 1;
 		}
@@ -326,6 +314,23 @@ if (!is_null($events['events'])) {
 						];	
 						$isNeedHelp = 1;
 		}
+			
+		$dataDocument = array("เอกสาร");
+		
+		if (checkSendMessage($dataDocument,$sendMessage) == 1)
+		{
+			$messages=  [
+							'type' => 'text',
+                			'text' => 'เอกสารที่ต้องนำมาด้วย'."\n".
+										'1. บัตรประชาชน'."\n".
+										'2. สลิปเงินเดือน เดิอนล่าสุด (ถ้ามี)'."\n".
+										'3. บัตรพนักงาน (ถ้ามี)'."\n".
+										'4. หนังสือรับรองเงินเดือน (ถ้ามี)'	
+						];	
+						$isNeedHelp = 1;
+		}
+			
+			
 
 		$dataComplete = array("000");
 		
@@ -772,4 +777,3 @@ if (!is_null($events['events'])) {
 }
 
 
-  
