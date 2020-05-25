@@ -249,7 +249,7 @@ if (!is_null($events['events'])) {
 						$isNeedHelp = 1;
 		}
 
-		$dataMoreDown = array("ถ้าดาว","เพิ่มดาว","ดาวเพิ่ม");
+		$dataMoreDown = array("ถ้าดาว","เพิ่มดาว","ดาวน์เพิ่ม","ดาวเพิ่ม");
 		
 		if (checkSendMessage($dataMoreDown,$sendMessage) == 1)
 		{
