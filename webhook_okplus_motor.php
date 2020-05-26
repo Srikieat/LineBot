@@ -254,7 +254,7 @@ if (!is_null($events['events'])) {
 		{
 				$messages = [
                 'type' => 'text',
-                'text' => 'State กรุณารอสักครู่นะค่ะ'.$state
+                'text' => 'ขอบคุณค่ะ'."\n".'สนใจออกรถไหมค่ะ'
             		];		
 		}
 			
