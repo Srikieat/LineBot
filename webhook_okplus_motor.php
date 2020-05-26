@@ -247,7 +247,7 @@ if (!is_null($events['events'])) {
 			$isMoreMessage = 1;
             $messages = [
                 'type' => 'text',
-                'text' => 'กรุณารอสักครู่นะค่ะ'.$state
+                'text' => 'กรุณารอสักครู่นะค่ะ'
             		];	
 			
 		if ($state == "1")
@@ -445,7 +445,8 @@ if (!is_null($events['events'])) {
 						];	
 						$isNeedHelp = 1;
 						$skipAnswer  = 1;
-						$help = file_get_contents('https://okplusbot.herokuapp.com/botPushOkplusMotor.php?u=U44e90a4578cb725ccc9ed09d2cdc18e9&m=Done');
+			
+						$help = file_get_contents('https://okplusbot.herokuapp.com/botPushOkplusMotor.php?u=U44e90a4578cb725ccc9ed09d2cdc18e9&m=Done:'.$userName);
 						$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetState.aspx?u='.$id.'&s=3');
 		}
 
