@@ -259,10 +259,18 @@ if (!is_null($events['events'])) {
             		];		
 		}
 			
-			$skipAnswer  = 1;
+		$skipAnswer  = 1;
+		
 		if ($state == "2")
 		{
 			$skipAnswer = 0;
+		}
+		
+		
+			
+		if ($state == "5")
+		{
+			exit();
 		}
 			
 		$dataHiReturn = array('พี่คับ','พี่ครับ','พี่คะ','ครับ','คับ','คะ','ค่ะ','งั้น');
@@ -369,16 +377,18 @@ if (!is_null($events['events'])) {
 						$skipAnswer  = 1;
 		}
 
-		$dataBlackList = array("แบล็คลิสต์","Black","ติดบูโร","เครดิต","bl","BL","ติด");
+		$dataBlackList = array("แบล็คลิสต์","Black","ติดบูโร","เครดิต","bl","BL","ติด","คืน","ยึด","ค้าง");
 		
 		if (checkSendMessage($dataBlackList,$sendMessage) == 1)
 		{
 			$messages=  [
 							'type' => 'text',
-                			'text' => 'ติดไม่เกินแสน ออกได้ค่ะ มีไฟแนนท์รองรับ'	
+                			//'text' => 'ติดไม่เกินแสน ออกได้ค่ะ มีไฟแนนท์รองรับ'	
+							'text' => 'เสียใจด้วย ติดแบบนี้ออกรถไม่ได้ค่ะ'	
 						];	
-						$isNeedHelp = 1;
+						$isNeedHelp = 0;
 						$skipAnswer  = 1;
+						$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetState.aspx?u='.$id.'&s=5');
 		}
 
 		$dataFinance = array("ไฟแนน");
