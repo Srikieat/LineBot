@@ -250,7 +250,7 @@ if (!is_null($events['events'])) {
                 'text' => 'กรุณารอสักครู่นะค่ะ'.$state
             		];	
 			
-		if ($state == 1)
+		if ($state == "1")
 		{
 				$messages = [
                 'type' => 'text',
