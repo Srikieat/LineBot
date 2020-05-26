@@ -259,6 +259,12 @@ if (!is_null($events['events'])) {
             		];		
 		}
 			
+			$skipAnswer  = 1;
+		if ($state == "2")
+		{
+			$skipAnswer = 0;
+		}
+			
 		$dataHiReturn = array('พี่คับ','พี่ครับ','พี่คะ','ครับ','คับ','คะ','ค่ะ','งั้น');
 		if (checkExactMessage($dataHiReturn,$sendMessage) == 1)
 		{
@@ -267,6 +273,7 @@ if (!is_null($events['events'])) {
 				             'text' => 'ค่ะ'	
 						];	
 						$isNeedHelp = 1;
+						$skipAnswer  = 1;
 		}	
 		$dataThanks = array("ขอบคุณ","ได้ค่ะ","ได้คับ","ได้ครับ","ได้คะ");
 		
@@ -277,6 +284,7 @@ if (!is_null($events['events'])) {
 				             'text' => 'ขอบคุณค่ะ'	
 						];	
 						$isNeedHelp = 1;
+						$skipAnswer  = 1;
 		}
         
 		$dataHello = array("สวัสดี","ทัก","hi","Hi","HI","สอบถาม","ออกรถ");
@@ -333,6 +341,7 @@ if (!is_null($events['events'])) {
 			
 			];	
 						$isNeedHelp = 1;
+						$skipAnswer  = 1;
 		}
 		
 		$dataYes = array("ใช่ไหม","ใช่ไไม");
@@ -344,6 +353,7 @@ if (!is_null($events['events'])) {
 				             'text' => 'ใช่ค่ะ'	
 						];	
 						$isNeedHelp = 1;
+						$skipAnswer  = 1;
 		}
 			
 		
@@ -356,9 +366,10 @@ if (!is_null($events['events'])) {
 				             'text' => 'ได้ค่ะ'	
 						];	
 						$isNeedHelp = 1;
+						$skipAnswer  = 1;
 		}
 
-		$dataBlackList = array("แบล็คลิสต์","Black","ติดบูโร","เครดิต","bl","BL");
+		$dataBlackList = array("แบล็คลิสต์","Black","ติดบูโร","เครดิต","bl","BL","ติด");
 		
 		if (checkSendMessage($dataBlackList,$sendMessage) == 1)
 		{
@@ -367,6 +378,7 @@ if (!is_null($events['events'])) {
                 			'text' => 'ติดไม่เกินแสน ออกได้ค่ะ มีไฟแนนท์รองรับ'	
 						];	
 						$isNeedHelp = 1;
+						$skipAnswer  = 1;
 		}
 
 		$dataFinance = array("ไฟแนน");
@@ -378,6 +390,7 @@ if (!is_null($events['events'])) {
                 			'text' => 'ไฟแนนท์มี กรุงศรี กับ ทีลิสซิ่ง ค่ะ'	
 						];	
 						$isNeedHelp = 1;
+						$skipAnswer  = 1;
 		}
             
 		$dataAge = array("อายุ 18","อายุ 19");
@@ -389,6 +402,7 @@ if (!is_null($events['events'])) {
                 			'text' => 'ต้องรอ อายุ 20 ก่อนค่ะ'	
 						];	
 						$isNeedHelp = 1;
+						$skipAnswer  = 1;
 		}
 
 		$dataColor = array("สี");
@@ -400,6 +414,7 @@ if (!is_null($events['events'])) {
                 			'text' => 'มีรถทุกสีค่ะ'	
 						];	
 						$isNeedHelp = 1;
+						$skipAnswer  = 1;
 		}
 			
 		$dataDocument = array("เอกสาร","หลักฐาน");
@@ -415,6 +430,7 @@ if (!is_null($events['events'])) {
 										'4. หนังสือรับรองเงินเดือน (ถ้ามี)'	
 						];	
 						$isNeedHelp = 1;
+						$skipAnswer  = 1;
 		}
 			
 			
@@ -428,6 +444,7 @@ if (!is_null($events['events'])) {
                 			'text' => 'อีกสักครู่จะแจ้งผลกลับนะค่ะ ใช้เวลาประมาณ 15 นาทีค่ะ'	
 						];	
 						$isNeedHelp = 1;
+						$skipAnswer  = 1;
 						$help = file_get_contents('https://okplusbot.herokuapp.com/botPushOkplusMotor.php?u=U44e90a4578cb725ccc9ed09d2cdc18e9&m=Done');
 						$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetState.aspx?u='.$id.'&s=3');
 		}
@@ -444,6 +461,7 @@ if (!is_null($events['events'])) {
 								'text' => 'ไม่มี ไม่เป็นไรค่ะ'	
 							];	
 							$isNeedHelp = 1;
+							$skipAnswer  = 1;
 			
 		}
 
@@ -458,6 +476,7 @@ if (!is_null($events['events'])) {
 								'text' => 'ไม่มีค่ะ'	
 							];	
 							$isNeedHelp = 1;
+							$skipAnswer  = 1;
 			
 		}
 
@@ -472,6 +491,7 @@ if (!is_null($events['events'])) {
 								'text' => 'เดือนล่าสุดค่ะ'	
 							];	
 							$isNeedHelp = 1;
+							$skipAnswer  = 1;
 			
 		}
 
@@ -483,6 +503,7 @@ if (!is_null($events['events'])) {
 								'text' => 'ใช้ได้ค่ะ'	
 							];	
 							$isNeedHelp = 1;
+							$skipAnswer  = 1;
 			}
 		
 		
@@ -494,6 +515,7 @@ if (!is_null($events['events'])) {
 								'text' => 'ไม่ต้องใช้คนค้ำค่ะ'	
 							];	
 							$isNeedHelp = 1;
+							$skipAnswer  = 1;
 			}
 
 			
@@ -540,6 +562,7 @@ if (!is_null($events['events'])) {
 							
 					
 						$isNeedHelp = 1;
+						$skipAnswer  = 1;
 		}
 			
 			
@@ -550,6 +573,7 @@ if (!is_null($events['events'])) {
 			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetState.aspx?u='.$id.'&s=1');
 
 				$isNeedHelp = 1;
+				$skipAnswer  = 1;
 			$isMoreMessage = 0;
 			$x_messages = array(array
 									(
@@ -597,6 +621,7 @@ if (!is_null($events['events'])) {
 		{
 			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetState.aspx?u='.$id.'&s=1');
 			$isNeedHelp = 1;
+			$skipAnswer  = 1;
 			$isMoreMessage = 0;
 			$x_messages = array(array
 									(
@@ -647,6 +672,7 @@ if (!is_null($events['events'])) {
 			
 			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetState.aspx?u='.$id.'&s=1');
 			$isNeedHelp = 1;
+			$skipAnswer  = 1;
 			$isMoreMessage = 0;
 			$x_messages = array(array
 									(
@@ -698,6 +724,7 @@ if (!is_null($events['events'])) {
 			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetState.aspx?u='.$id.'&s=1');
 
 				$isNeedHelp = 1;
+			$skipAnswer  = 1;
 			$isMoreMessage = 0;
 			$x_messages = array(array
 									(
@@ -747,6 +774,7 @@ if (!is_null($events['events'])) {
 			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetState.aspx?u='.$id.'&s=1');
 
 				$isNeedHelp = 1;
+			$skipAnswer  = 1;
 			$isMoreMessage = 0;
 			$x_messages = array(array
 									(
@@ -794,6 +822,7 @@ if (!is_null($events['events'])) {
 		{
 			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetState.aspx?u='.$id.'&s=1');
 			$isNeedHelp = 1;
+			$skipAnswer  = 1;
 			$isMoreMessage = 0;
 			$x_messages = array(array
 									(
@@ -841,6 +870,7 @@ if (!is_null($events['events'])) {
 		if (checkSendMessage($dataPayment,$sendMessage) == 1)
 		{
 			$isNeedHelp = 1;
+			$skipAnswer  = 1;
 			$messages	=  	[
 								'type' => 'text',
 								'text' => 'ข้อมูลตามเวป เลย ค่ะ'."\n".'https://www.okplus.co.th/mobile/newbike.html'
@@ -854,6 +884,7 @@ if (!is_null($events['events'])) {
 		if (checkSendMessage($dataPayment,$sendMessage) == 1)
 		{
 			$isNeedHelp = 1;
+			$skipAnswer  = 1;
 			$messages	=  	[
 								'type' => 'text',
 								'text' => 'ข้อมูลตามเวป เลย ค่ะ'."\n".'https://www.okplus.co.th/mobile/newbike.html'
@@ -866,6 +897,7 @@ if (!is_null($events['events'])) {
 		if (checkSendMessage($dataShop,$sendMessage) == 1)
 		{
 			$isNeedHelp = 1;
+			$skipAnswer  = 1;
 			$messages	=  	[
 								'type' => 'text',
 								'text' => 'ชื่อ ร้านสามชัยกรุงเทพ'."\n".
@@ -891,6 +923,7 @@ if (!is_null($events['events'])) {
 			if (checkSendMessage($dataLocation,$sendMessage) == 1)
 		{
 			$isNeedHelp = 1;
+				$skipAnswer  = 1;
 				$isMoreMessage=0;
 				
 			$x_messages = [array(
@@ -946,20 +979,32 @@ if (!is_null($events['events'])) {
 			
 
 			
-			$post = json_encode($data);
-			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+			
+			
+			if ($skipAnswer  == 1)
+			{
+				$post = json_encode($data);
+			
+				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
-			$ch = curl_init($url);
-			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-			$result = curl_exec($ch);
-			curl_close($ch);
+				$ch = curl_init($url);
+				curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+				curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+				curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+				curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+				$result = curl_exec($ch);	
+				curl_close($ch);
+				echo "Reply : " .$result . "\r\n";
 
-			echo "Reply : " .$result . "\r\n";
+			}
+				
+			
+			
+
+			
 		}
 	}
 }
- 
+
+
