@@ -250,6 +250,13 @@ if (!is_null($events['events'])) {
                 'text' => 'กรุณารอสักครู่นะค่ะ'.$state
             		];	
 			
+		if ($state == 1)
+		{
+				$messages = [
+                'type' => 'text',
+                'text' => 'State กรุณารอสักครู่นะค่ะ'.$state
+            		];		
+		}
 			
 		$dataHiReturn = array('พี่คับ','พี่ครับ','พี่คะ','ครับ','คับ','คะ','ค่ะ','งั้น');
 		if (checkExactMessage($dataHiReturn,$sendMessage) == 1)
