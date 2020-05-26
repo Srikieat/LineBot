@@ -252,6 +252,7 @@ if (!is_null($events['events'])) {
 			
 		if ($state == "1")
 		{
+				$isNeedHelp = 1;
 				$messages = [
                 'type' => 'text',
                 'text' => 'ขอบคุณค่ะ'."\n".'สนใจออกรถไหมค่ะ'
