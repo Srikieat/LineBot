@@ -1,5 +1,9 @@
 <?php // callback.php
 
+
+// release note
+// version 2 : check location morethan 5 reject
+
 require "vendor/autoload.php";
 require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
 
@@ -191,11 +195,26 @@ if (!is_null($events['events'])) {
 			$distance = distance($lat, $long, 13.7100786, 100.6110613, "K");
 
 			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetDistance.aspx?u='.$id.'&d='.$distance);
-			$messages=  [
+			
+			if (intval($distance) > 5)
+			{
+				$messages=  [
+							'type' => 'text',
+                			//'text' => 'ติดไม่เกินแสน ออกได้ค่ะ มีไฟแนนท์รองรับ'	
+							'text' => 'ลูกค้าอยู่นอกเขต ไม่สามารถออกได้ค่ะ'	
+						];	
+						$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetState.aspx?u='.$id.'&s=5');
+			}
+			else
+			{
+				$messages=  [
 								'type' => 'text',
 								'text' => 'ขอบคุณค่ะ'."\n".'สนใจออกรถไหมค่ะ'
 						];	
 						// end message
+					$help = file_get_contents('https://okplusbot.herokuapp.com/botPushOkplusMotor.php?u=U44e90a4578cb725ccc9ed09d2cdc18e9&m=LocationPass:'.$userName);
+			}
+			
 			
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
@@ -389,6 +408,31 @@ if (!is_null($events['events'])) {
 						$isNeedHelp = 0;
 						$skipAnswer  = 1;
 						$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetState.aspx?u='.$id.'&s=5');
+		}
+			
+		
+		
+		$dataFarLocation = array("ราม","สมุทร","ปาก");
+		
+		if (checkSendMessage($dataFarLocation,$sendMessage) == 1)
+		{
+			$messages=  [
+							'type' => 'text',
+                			//'text' => 'ติดไม่เกินแสน ออกได้ค่ะ มีไฟแนนท์รองรับ'	
+							'text' => 'ลูกค้าอยู่นอกเขต ไม่สามารถออกได้ค่ะ'	
+						];	
+						$isNeedHelp = 0;
+						$skipAnswer  = 1;
+						$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetState.aspx?u='.$id.'&s=5');
+		}
+
+			$dataPassLocation = array("อ่อนนุช","พัฒนาการ");
+		
+		if (checkSendMessage($dataPassLocation,$sendMessage) == 1)
+		{
+			
+				$help = file_get_contents('https://okplusbot.herokuapp.com/botPushOkplusMotor.php?u=U44e90a4578cb725ccc9ed09d2cdc18e9&m=LocationPass:'.$userName);
+		
 		}
 
 		$dataFinance = array("ไฟแนน");
