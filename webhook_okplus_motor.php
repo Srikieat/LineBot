@@ -413,7 +413,7 @@ if (!is_null($events['events'])) {
 			
 		
 		
-		$dataFarLocation = array("ราม","สมุทร","ปาก");
+		$dataFarLocation = array("ราม","สมุทร","ปาก","ลาด");
 		
 		if (checkSendMessage($dataFarLocation,$sendMessage) == 1)
 		{
@@ -427,7 +427,7 @@ if (!is_null($events['events'])) {
 						$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetState.aspx?u='.$id.'&s=5');
 		}
 
-			$dataPassLocation = array("อ่อนนุช","พัฒนาการ");
+			$dataPassLocation = array("อ่อนนุช","พัฒนาการ","บางนา","พึ่งมี","สุขุม","พระราม","เอกมัย","บางจาก");
 		
 		if (checkSendMessage($dataPassLocation,$sendMessage) == 1)
 		{
