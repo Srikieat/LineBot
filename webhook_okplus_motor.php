@@ -1,6 +1,5 @@
 <?php // callback.php
 
-
 // release note
 // version 2 : check location morethan 5 reject
 
@@ -195,6 +194,9 @@ if (!is_null($events['events'])) {
 			$distance = distance($lat, $long, 13.7100786, 100.6110613, "K");
 
 			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetDistance.aspx?u='.$id.'&d='.$distance);
+			
+			
+			$userName = getDisplayName($id);
 			
 			if (intval($distance) > 5)
 			{
