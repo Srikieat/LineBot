@@ -2,6 +2,7 @@
 
 // release note
 // version 2 : check location morethan 5 reject
+// version 3 : check black list then reject 29/5/2563
 
 require "vendor/autoload.php";
 require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
@@ -179,6 +180,10 @@ if (!is_null($events['events'])) {
 
 			echo "Your ID is : ".$result . "\r\n";
 		}
+		
+		
+		
+		// LOCATION
 				
 		if ($event['message']['type'] == 'location')
 		{
@@ -210,10 +215,11 @@ if (!is_null($events['events'])) {
 			{
 				$messages=  [
 								'type' => 'text',
-								'text' => 'ขอบคุณค่ะ'."\n".'สนใจออกรถไหมค่ะ'
+								'text' => 'ขอบคุณค่ะ'."\n".'ลูกค้ามีประวัติค้างชำระบัตรเครดิต ติดแบล็คลิส หรือ คืนรถจักรยานยนต์ บ้างไหมค่ะ'
 						];	
 						// end message
 					$help = file_get_contents('https://okplusbot.herokuapp.com/botPushOkplusMotor.php?u=U44e90a4578cb725ccc9ed09d2cdc18e9&m=LocationPass:'.$userName);
+					$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetState.aspx?u='.$id.'&s=4');
 			}
 			
 			
@@ -265,10 +271,7 @@ if (!is_null($events['events'])) {
 
             $isNeedHelp = 0;
 			$isMoreMessage = 1;
-            $messages = [
-                'type' => 'text',
-                'text' => 'กรุณารอสักครู่นะค่ะ'
-            		];	
+         
 			
 		if ($state == "1")
 		{
@@ -281,13 +284,15 @@ if (!is_null($events['events'])) {
 			
 		$skipAnswer  = 1;
 		
+			
+		// wait for documents so no reply 
 		if ($state == "2")
 		{
 			$skipAnswer = 0;
 		}
 		
 		
-			
+		// reject customer	
 		if ($state == "5")
 		{
 			exit();
@@ -432,7 +437,13 @@ if (!is_null($events['events'])) {
 		if (checkSendMessage($dataPassLocation,$sendMessage) == 1)
 		{
 			
-				$help = file_get_contents('https://okplusbot.herokuapp.com/botPushOkplusMotor.php?u=U44e90a4578cb725ccc9ed09d2cdc18e9&m=LocationPass:'.$userName);
+					$messages=  [
+								'type' => 'text',
+								'text' => 'ขอบคุณค่ะ'."\n".'ลูกค้ามีประวัติค้างชำระบัตรเครดิต ติดแบล็คลิส หรือ คืนรถจักรยานยนต์ บ้างไหมค่ะ'
+						];	
+						// end message
+					$help = file_get_contents('https://okplusbot.herokuapp.com/botPushOkplusMotor.php?u=U44e90a4578cb725ccc9ed09d2cdc18e9&m=LocationPass:'.$userName);
+					$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetState.aspx?u='.$id.'&s=4');
 		
 		}
 
@@ -1004,14 +1015,39 @@ if (!is_null($events['events'])) {
 				
 							
 		}
+			
+				// check blacklist
+		if ($state== "4")
+		{
+			$dataCheckBlackList = array("ไม่");
+			if (checkSendMessage($dataLocation,$sendMessage) == 1)
+			{
+				$isMoreMessage =1
+				$skipAnswer  = 1
+				$isNeedHelp = 0
+				 $messages = [
+                'type' => 'text',
+                'text' => 'สนใจออกรถไหมค่ะ'
+            		];	
+			}
+			
+		}
+			
+			
 	
 	
 		if ($isNeedHelp == 0)
 		{
-			$messageHelp = $userName.":".$sendMessage.":".$isNeedHelp;
+			$messageHelp = $userName.":".$sendMessage;
 			$help = file_get_contents('https://okplusbot.herokuapp.com/botPushOkplusMotor.php?u=U44e90a4578cb725ccc9ed09d2cdc18e9&m='.$messageHelp);
+			   $messages = [
+                'type' => 'text',
+                'text' => 'กรุณารอสักครู่นะค่ะ'
+            		];	
 			
 		}
+			
+		
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
