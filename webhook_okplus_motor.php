@@ -179,6 +179,9 @@ if (!is_null($events['events'])) {
 
 			echo "Your ID is : ".$result . "\r\n";
 		}
+		
+		
+		
 				
 		if ($event['message']['type'] == 'location')
 		{
@@ -210,10 +213,11 @@ if (!is_null($events['events'])) {
 			{
 				$messages=  [
 								'type' => 'text',
-								'text' => 'ขอบคุณค่ะ'."\n".'สนใจออกรถไหมค่ะ'
+								'text' => 'ขอบคุณค่ะ'."\n".'ลูกค้ามีประวัติค้างชำระบัตรเครดิต ติดแบล็คลิส หรือ คืนรถจักรยานยนต์ บ้างไหมค่ะ'
 						];	
 						// end message
 					$help = file_get_contents('https://okplusbot.herokuapp.com/botPushOkplusMotor.php?u=U44e90a4578cb725ccc9ed09d2cdc18e9&m=LocationPass:'.$userName);
+					$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetState.aspx?u='.$id.'&s=4');
 			}
 			
 			
