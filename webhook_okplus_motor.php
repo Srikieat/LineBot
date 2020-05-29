@@ -1018,7 +1018,7 @@ if (!is_null($events['events'])) {
 			{
 				$isMoreMessage =1;
 				$skipAnswer  = 1;
-				$isNeedHelp = 0;
+				$isNeedHelp = 1;
 				 $messages = [
                 'type' => 'text',
                 'text' => 'สนใจออกรถไหมค่ะ'
@@ -1035,7 +1035,7 @@ if (!is_null($events['events'])) {
 			$help = file_get_contents('https://okplusbot.herokuapp.com/botPushOkplusMotor.php?u=U44e90a4578cb725ccc9ed09d2cdc18e9&m='.$messageHelp);
 			   $messages = [
                 'type' => 'text',
-                'text' => 'กรุณารอสักครู่นะค่ะ'
+                'text' => 'กรุณารอสักครู่นะค่ะ'.$state
             		];	
 			
 		}
