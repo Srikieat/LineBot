@@ -1014,7 +1014,7 @@ if (!is_null($events['events'])) {
 		if ($state== "4")
 		{
 			$dataCheckBlackList = array("ไม่");
-			if (checkSendMessage($dataLocation,$sendMessage) == 1)
+			if (checkSendMessage($dataCheckBlackList,$sendMessage) == 1)
 			{
 				$isMoreMessage =1;
 				$skipAnswer  = 1;
