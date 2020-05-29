@@ -2,6 +2,7 @@
 
 // release note
 // version 2 : check location morethan 5 reject
+// version 3 : check black list then reject 29/5/2563
 
 require "vendor/autoload.php";
 require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
@@ -410,7 +411,7 @@ if (!is_null($events['events'])) {
 			$messages=  [
 							'type' => 'text',
                 			//'text' => 'ติดไม่เกินแสน ออกได้ค่ะ มีไฟแนนท์รองรับ'	
-							'text' => 'เสียใจด้วย ติดแบบนี้ออกรถไม่ได้ค่ะ'	
+							'text' => 'เสียใจด้วย ลูกค้าติดประวัติผ่อนไม่ดี (ฺBlackList) ไม่สามารถออกรถได้ค่ะ'	
 						];	
 						$isNeedHelp = 1;
 						$skipAnswer  = 1;
