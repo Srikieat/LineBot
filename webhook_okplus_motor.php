@@ -285,13 +285,15 @@ if (!is_null($events['events'])) {
 			
 		$skipAnswer  = 1;
 		
+		// wait for document
 		if ($state == "2")
 		{
 			$skipAnswer = 0;
+			$isNeedHelp = 1;
 		}
 		
 		
-			
+		// reject customer
 		if ($state == "5")
 		{
 			exit();
