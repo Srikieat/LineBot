@@ -1004,9 +1004,27 @@ if (!is_null($events['events'])) {
 				
 							
 		}
+			
+				
+		// check blacklist
+		if ($state== "4")
+		{
+			$dataCheckBlackList = array("ไม่");
+			if (checkSendMessage($dataCheckBlackList,$sendMessage) == 1)
+			{
+				$isMoreMessage =1
+				$skipAnswer  = 1
+				$isNeedHelp = 1
+				 $messages = [
+                'type' => 'text',
+                'text' => 'สนใจออกรถไหมค่ะ'
+            		];	
+			}
+			
+		}
 	
 	
-			if ($isNeedHelp == 0)
+		if ($isNeedHelp == 0)
 		{
 			$messageHelp = $userName.":".$sendMessage;
 			$help = file_get_contents('https://okplusbot.herokuapp.com/botPushOkplusMotor.php?u=U44e90a4578cb725ccc9ed09d2cdc18e9&m='.$messageHelp);
