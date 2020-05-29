@@ -1009,7 +1009,23 @@ if (!is_null($events['events'])) {
 							
 		}
 			
-				
+			
+		// check blacklist
+		if ($state== "4")
+		{
+			$dataCheckBlackList = array("ไม่");
+			if (checkSendMessage($dataLocation,$sendMessage) == 1)
+			{
+				$isMoreMessage =1;
+				$skipAnswer  = 1;
+				$isNeedHelp = 0;
+				 $messages = [
+                'type' => 'text',
+                'text' => 'สนใจออกรถไหมค่ะ'
+            		];	
+			}
+			
+		}
 		
 	
 	
