@@ -412,7 +412,7 @@ if (!is_null($events['events'])) {
                 			//'text' => 'ติดไม่เกินแสน ออกได้ค่ะ มีไฟแนนท์รองรับ'	
 							'text' => 'เสียใจด้วย ติดแบบนี้ออกรถไม่ได้ค่ะ'	
 						];	
-						$isNeedHelp = 0;
+						$isNeedHelp = 1;
 						$skipAnswer  = 1;
 						$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetState.aspx?u='.$id.'&s=5');
 		}
@@ -437,7 +437,16 @@ if (!is_null($events['events'])) {
 		
 		if (checkSendMessage($dataPassLocation,$sendMessage) == 1)
 		{
-			
+						$isNeedHelp = 1;
+						$skipAnswer  = 1;
+						
+						$messages=  [
+								'type' => 'text',
+								'text' => 'ขอบคุณค่ะ'."\n".'ลูกค้ามีประวัติค้างชำระบัตรเครดิต ติดแบล็คลิส หรือ คืนรถจักรยานยนต์ บ้างไหมค่ะ'
+						];	
+						// end message
+					$help = file_get_contents('https://okplusbot.herokuapp.com/botPushOkplusMotor.php?u=U44e90a4578cb725ccc9ed09d2cdc18e9&m=LocationPass:'.$userName);
+					$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetState.aspx?u='.$id.'&s=4');
 				$help = file_get_contents('https://okplusbot.herokuapp.com/botPushOkplusMotor.php?u=U44e90a4578cb725ccc9ed09d2cdc18e9&m=LocationPass:'.$userName);
 		
 		}
