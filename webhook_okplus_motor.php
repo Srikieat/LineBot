@@ -307,6 +307,29 @@ if (!is_null($events['events'])) {
 			$isNeedHelp = 1;
 		}
 		
+			// check blacklist
+		if ($state== "4")
+		{
+			$dataCheckBlackList = array("ไม่");
+			if (checkSendMessage($dataCheckBlackList,$sendMessage) == 1)
+			{
+				$isMoreMessage =1;
+				$skipAnswer  = 1;
+				$isNeedHelp = 1;
+				 $messages = [
+                'type' => 'text',
+                'text' => 'สนใจออกรถไหมค่ะ'
+            		];	
+			}
+			else
+			{
+				$isMoreMessage =1;
+				$skipAnswer  = 1;
+				$isNeedHelp = 0;
+
+			}
+			
+		}
 		
 		// reject customer
 		if ($state == "5")
@@ -1036,29 +1059,7 @@ if (!is_null($events['events'])) {
 		}
 			
 			
-		// check blacklist
-		if ($state== "4")
-		{
-			$dataCheckBlackList = array("ไม่");
-			if (checkSendMessage($dataCheckBlackList,$sendMessage) == 1)
-			{
-				$isMoreMessage =1;
-				$skipAnswer  = 1;
-				$isNeedHelp = 1;
-				 $messages = [
-                'type' => 'text',
-                'text' => 'สนใจออกรถไหมค่ะ'
-            		];	
-			}
-			else
-			{
-				$isMoreMessage =1;
-				$skipAnswer  = 1;
-				$isNeedHelp = 0;
-
-			}
-			
-		}
+		
 		
 	
 	
