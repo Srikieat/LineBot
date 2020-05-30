@@ -441,7 +441,7 @@ if (!is_null($events['events'])) {
 						$skipAnswer  = 1;
 		}
 
-		$dataBlackList = array("แบล็คลิสต์","Black","ติดบูโร","เครดิต","bl","BL","ติด","คืน","ยึด","ค้าง");
+		$dataBlackList = array("แบล็คลิสต์","Black","ติดบูโร","เครดิต","bl","BL","คืน","ยึด","ค้าง");
 		
 		if (checkSendMessage($dataBlackList,$sendMessage) == 1)
 		{
@@ -1001,7 +1001,7 @@ if (!is_null($events['events'])) {
 							];
 							
 		}
-		$dataShop = array("ไหน","ร้าน","สาขา","รับรถ");
+		$dataShop = array("ไหน","ร้าน","สาขา","รับรถ","เบอร์","ติดต่อ");
 		
 		if (checkSendMessage($dataShop,$sendMessage) == 1)
 		{
