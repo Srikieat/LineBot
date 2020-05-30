@@ -1,8 +1,18 @@
 <?php // callback.php
 
+// state
+//0 follow
+//1 รุ่น
+//2 location
+//4 check blacklist
+//3 สนใจ
+//5 reject
+
+
 // release note
 // version 2 : check location morethan 5 reject
 // version 3 : check black list then reject 29/5/2563
+// version 4 : fix check black list 30/5/2563
 
 require "vendor/autoload.php";
 require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
@@ -280,9 +290,13 @@ if (!is_null($events['events'])) {
 				$isNeedHelp = 1;
 				$messages = [
                 'type' => 'text',
-                'text' => 'ขอบคุณค่ะ'."\n".'สนใจออกรถไหมค่ะ'
-            		];		
+               	'text' => 'ขอบคุณค่ะ'."\n".'ลูกค้ามีประวัติค้างชำระบัตรเครดิต ติดแบล็คลิส หรือ คืนรถจักรยานยนต์ บ้างไหมค่ะ'
+            		];
+				$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetState.aspx?u='.$id.'&s=4');
 		}
+			
+			
+			
 			
 		$skipAnswer  = 1;
 		
@@ -448,7 +462,7 @@ if (!is_null($events['events'])) {
 						// end message
 					$help = file_get_contents('https://okplusbot.herokuapp.com/botPushOkplusMotor.php?u=U44e90a4578cb725ccc9ed09d2cdc18e9&m=LocationPass:'.$userName);
 					$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetState.aspx?u='.$id.'&s=4');
-				$help = file_get_contents('https://okplusbot.herokuapp.com/botPushOkplusMotor.php?u=U44e90a4578cb725ccc9ed09d2cdc18e9&m=LocationPass:'.$userName);
+				
 		
 		}
 
@@ -1035,6 +1049,13 @@ if (!is_null($events['events'])) {
                 'type' => 'text',
                 'text' => 'สนใจออกรถไหมค่ะ'
             		];	
+			}
+			else
+			{
+				$isMoreMessage =1;
+				$skipAnswer  = 1;
+				$isNeedHelp = 0;
+
 			}
 			
 		}
