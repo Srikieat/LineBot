@@ -695,6 +695,21 @@ if (!is_null($events['events'])) {
 						'text' => 'รุ่นนี้ฟรีดาวน์ ออกรถ 0 บ'."\n".'ไม่ต้องใช้คนค้ำ'."\n".'ฟรีประกันรถหาย + พรบ + จดทะบียน', // 文字
 						'actions' => array(
 											 array(
+                            								'type' => 'message', // 類型 (訊息)
+				                 				       'label' => 'ราคา 95,000', // 標籤 2
+				                   				     'text' => '0' // 用戶發送文字
+				                 				     ),
+							 					array(
+                            								'type' => 'message', // 類型 (訊息)
+				                 				       'label' => '4,215 * 36', // 標籤 2
+				                   				     'text' => '0' // 用戶發送文字
+				                 				     ),
+							 					array(
+                            								'type' => 'message', // 類型 (訊息)
+				                 				       'label' => '4,755 * 30', // 標籤 2
+				                   				     'text' => '0' // 用戶發送文字
+				                 				     ),
+											 array(
 										  'type' => 'message', // 類型 (連結)
 										  'label' => 'สนใจออกรถออนไลน์', // 標籤 3
 										  'text' => 'สนใจออกรถ' // 連結網址
@@ -742,6 +757,21 @@ if (!is_null($events['events'])) {
 						 'title' => 'Scoopy-i', // 標題 <不一定需要>
 						'text' => 'รุ่นนี้ฟรีดาวน์ ออกรถ 0 บ'."\n".'ไม่ต้องใช้คนค้ำ'."\n".'ฟรีประกันรถหาย + พรบ + จดทะบียน', // 文字
 						'actions' => array(
+											  array(
+                            								'type' => 'message', // 類型 (訊息)
+				                 				       'label' => 'ราคา 47,000', // 標籤 2
+				                   				     'text' => '0' // 用戶發送文字
+				                 				     ),
+							 					array(
+                            								'type' => 'message', // 類型 (訊息)
+				                 				       'label' => '2,590 * 36', // 標籤 2
+				                   				     'text' => '0' // 用戶發送文字
+				                 				     ),
+							 					array(
+                            								'type' => 'message', // 類型 (訊息)
+				                 				       'label' => '3,345 * 24', // 標籤 2
+				                   				     'text' => '0' // 用戶發送文字
+				                 				     ),
 											 array(
 										  'type' => 'message', // 類型 (連結)
 										  'label' => 'สนใจออกรถออนไลน์', // 標籤 3
@@ -862,6 +892,21 @@ if (!is_null($events['events'])) {
 						 'title' => 'QBIX', // 標題 <不一定需要>
 						'text' => 'รุ่นนี้ฟรีดาวน์ ออกรถ 0 บ'."\n".'ไม่ต้องใช้คนค้ำ'."\n".'ฟรีประกันรถหาย + พรบ + จดทะบียน', // 文字
 						'actions' => array(
+											  array(
+                            								'type' => 'message', // 類型 (訊息)
+				                 				       'label' => 'ราคา 56,000', // 標籤 2
+				                   				     'text' => '0' // 用戶發送文字
+				                 				     ),
+							 					array(
+                            								'type' => 'message', // 類型 (訊息)
+				                 				       'label' => '3,110 * 36', // 標籤 2
+				                   				     'text' => '0' // 用戶發送文字
+				                 				     ),
+							 					array(
+                            								'type' => 'message', // 類型 (訊息)
+				                 				       'label' => '4,015 * 24', // 標籤 2
+				                   				     'text' => '0' // 用戶發送文字
+				                 				     ),
 											 array(
 										  'type' => 'message', // 類型 (連結)
 										  'label' => 'สนใจออกรถออนไลน์', // 標籤 3
@@ -913,6 +958,21 @@ if (!is_null($events['events'])) {
 						'text' => 'รุ่นนี้ฟรีดาวน์ ออกรถ 0 บ'."\n".'ไม่ต้องใช้คนค้ำ'."\n".'ฟรีประกันรถหาย + พรบ + จดทะบียน', // 文字
 						'actions' => array(
 											 array(
+                            								'type' => 'message', // 類型 (訊息)
+				                 				       'label' => 'ราคา 56,000', // 標籤 2
+				                   				     'text' => '0' // 用戶發送文字
+				                 				     ),
+							 					array(
+                            								'type' => 'message', // 類型 (訊息)
+				                 				       'label' => '3,110 * 36', // 標籤 2
+				                   				     'text' => '0' // 用戶發送文字
+				                 				     ),
+							 					array(
+                            								'type' => 'message', // 類型 (訊息)
+				                 				       'label' => '4,015 * 24', // 標籤 2
+				                   				     'text' => '0' // 用戶發送文字
+				                 				     ),
+											 array(
 										  'type' => 'message', // 類型 (連結)
 										  'label' => 'สนใจออกรถออนไลน์', // 標籤 3
 										  'text' => 'สนใจออกรถ' // 連結網址
@@ -953,13 +1013,28 @@ if (!is_null($events['events'])) {
 			$x_messages = array(array
 									(
 				'type' => 'template', // 訊息類型 (模板)
-				'altText' => 'Click125', // 替代文字
+				'altText' => 'Click 125', // 替代文字
 				'template' => array(
 							'type' => 'buttons', // 類型 (按鈕)
 						'thumbnailImageUrl' => 'https://okplus.co.th/images/bike/ClickPromotion1.png', // 圖片網址 <不一定需要>
 						 'title' => 'Click-i', // 標題 <不一定需要>
 						'text' => 'รุ่นนี้ฟรีดาวน์ ออกรถ 0 บ'."\n".'ไม่ต้องใช้คนค้ำ'."\n".'ฟรีประกันรถหาย + พรบ + จดทะบียน', // 文字
 						'actions' => array(
+											  array(
+                            								'type' => 'message', // 類型 (訊息)
+				                 				       'label' => 'ราคา 53,000', // 標籤 2
+				                   				     'text' => '0' // 用戶發送文字
+				                 				     ),
+							 					array(
+                            								'type' => 'message', // 類型 (訊息)
+				                 				       'label' => '2,790 * 36', // 標籤 2
+				                   				     'text' => '0' // 用戶發送文字
+				                 				     ),
+							 					array(
+                            								'type' => 'message', // 類型 (訊息)
+				                 				       'label' => '3,605 * 24', // 標籤 2
+				                   				     'text' => '0' // 用戶發送文字
+				                 				     ),
 											 array(
 										  'type' => 'message', // 類型 (連結)
 										  'label' => 'สนใจออกรถออนไลน์', // 標籤 3
