@@ -338,16 +338,7 @@ if (!is_null($events['events'])) {
 			exit();
 		}
 			
-		$dataHiReturn = array('พี่คับ','พี่ครับ','พี่คะ','ครับ','คับ','คะ','ค่ะ','งั้น');
-		if (checkExactMessage($dataHiReturn,$sendMessage) == 1)
-		{
-			$messages=  [
-				             'type' => 'text',
-				             'text' => 'ค่ะ'	
-						];	
-						$isNeedHelp = 1;
-						$skipAnswer  = 1;
-		}	
+	
 		$dataThanks = array("ขอบคุณ","ได้ค่ะ","ได้คับ","ได้ครับ","ได้คะ");
 		
 		if (checkSendMessage($dataThanks,$sendMessage) == 1)
@@ -502,7 +493,7 @@ if (!is_null($events['events'])) {
 						$skipAnswer  = 1;
 		}
             
-		$dataAge = array("อายุ 18","อายุ 19");
+		$dataAge = array("อายุ 18","อายุ 19","อายุ19","อายุ18");
 		
 		if (checkSendMessage($dataAge,$sendMessage) == 1)
 		{
@@ -1310,7 +1301,17 @@ if (!is_null($events['events'])) {
 			
 			
 		
-		
+		$dataHiReturn = array('พี่คับ','พี่ครับ','พี่คะ','ครับ','คับ','คะ','ค่ะ','งั้น');
+		if (checkExactMessage($dataHiReturn,$sendMessage) == 1)
+		{
+			$messages=  [
+				             'type' => 'text',
+				             'text' => 'ค่ะ'	
+						];	
+						$isNeedHelp = 1;
+						$skipAnswer  = 1;
+						$state = "258";
+		}	
 	
 	
 		if ($isNeedHelp == 0)
