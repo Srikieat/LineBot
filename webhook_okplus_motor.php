@@ -360,7 +360,7 @@ if (!is_null($events['events'])) {
 						$skipAnswer  = 1;
 		}
         
-		$dataHello = array("สวัสดี","ทัก","hi","Hi","HI","สอบถาม","ออกรถ","0");
+		$dataHello = array("สวัสดี","ทัก","hi","Hi","HI","สอบถาม","ออกรถ");
 		
 		if (checkSendMessage($dataHello,$sendMessage) == 1)
 		{
@@ -698,17 +698,17 @@ if (!is_null($events['events'])) {
 											 array(
                             								'type' => 'message', // 類型 (訊息)
 				                 				       'label' => 'ราคา 95,000', // 標籤 2
-				                   				     'text' => '0' // 用戶發送文字
+				                   				     'text' => 'สอบถาม' // 用戶發送文字
 				                 				     ),
 							 					array(
                             								'type' => 'message', // 類型 (訊息)
 				                 				       'label' => '4,215 * 36', // 標籤 2
-				                   				     'text' => '0' // 用戶發送文字
+				                   				     'text' => 'สอบถาม' // 用戶發送文字
 				                 				     ),
 							 					array(
                             								'type' => 'message', // 類型 (訊息)
 				                 				       'label' => '4,755 * 30', // 標籤 2
-				                   				     'text' => '0' // 用戶發送文字
+				                   				     'text' => 'สอบถาม' // 用戶發送文字
 				                 				     ),
 											 array(
 										  'type' => 'message', // 類型 (連結)
@@ -761,17 +761,17 @@ if (!is_null($events['events'])) {
 											  array(
                             								'type' => 'message', // 類型 (訊息)
 				                 				       'label' => 'ราคา 47,000', // 標籤 2
-				                   				     'text' => '0' // 用戶發送文字
+				                   				     'text' => 'สอบถาม' // 用戶發送文字
 				                 				     ),
 							 					array(
                             								'type' => 'message', // 類型 (訊息)
 				                 				       'label' => '2,590 * 36', // 標籤 2
-				                   				     'text' => '0' // 用戶發送文字
+				                   				     'text' => 'สอบถาม' // 用戶發送文字
 				                 				     ),
 							 					array(
                             								'type' => 'message', // 類型 (訊息)
 				                 				       'label' => '3,345 * 24', // 標籤 2
-				                   				     'text' => '0' // 用戶發送文字
+				                   				     'text' => 'สอบถาม' // 用戶發送文字
 				                 				     ),
 											 array(
 										  'type' => 'message', // 類型 (連結)
@@ -827,17 +827,17 @@ if (!is_null($events['events'])) {
 												 array(
                             								'type' => 'message', // 類型 (訊息)
 				                 				       'label' => 'ราคา 44,000', // 標籤 2
-				                   				     'text' => '0' // 用戶發送文字
+				                   				     'text' => 'สอบถาม' // 用戶發送文字
 				                 				     ),
 							 					array(
                             								'type' => 'message', // 類型 (訊息)
 				                 				       'label' => '2,455 * 36', // 標籤 2
-				                   				     'text' => '0' // 用戶發送文字
+				                   				     'text' => 'สอบถาม' // 用戶發送文字
 				                 				     ),
 							 					array(
                             								'type' => 'message', // 類型 (訊息)
 				                 				       'label' => '3,170 * 24', // 標籤 2
-				                   				     'text' => '0' // 用戶發送文字
+				                   				     'text' => 'สอบถาม' // 用戶發送文字
 				                 				     ),
 											 array(
 										  'type' => 'message', // 類型 (連結)
@@ -897,17 +897,17 @@ if (!is_null($events['events'])) {
 												 array(
                             								'type' => 'message', // 類型 (訊息)
 				                 				       'label' => 'ราคา 53,000', // 標籤 2
-				                   				     'text' => '0' // 用戶發送文字
+				                   				     'text' => 'สอบถาม' // 用戶發送文字
 				                 				     ),
 							 					array(
                             								'type' => 'message', // 類型 (訊息)
 				                 				       'label' => '2,930 * 36', // 標籤 2
-				                   				     'text' => '0' // 用戶發送文字
+				                   				     'text' => 'สอบถาม' // 用戶發送文字
 				                 				     ),
 							 					array(
                             								'type' => 'message', // 類型 (訊息)
 				                 				       'label' => '3,780 * 24', // 標籤 2
-				                   				     'text' => '0' // 用戶發送文字
+				                   				     'text' => 'สอบถาม' // 用戶發送文字
 				                 				     ),
 											 array(
 										  'type' => 'message', // 類型 (連結)
@@ -966,17 +966,17 @@ if (!is_null($events['events'])) {
 											  array(
                             								'type' => 'message', // 類型 (訊息)
 				                 				       'label' => 'ราคา 56,000', // 標籤 2
-				                   				     'text' => '0' // 用戶發送文字
+				                   				     'text' => 'สอบถาม' // 用戶發送文字
 				                 				     ),
 							 					array(
                             								'type' => 'message', // 類型 (訊息)
 				                 				       'label' => '3,110 * 36', // 標籤 2
-				                   				     'text' => '0' // 用戶發送文字
+				                   				     'text' => 'สอบถาม' // 用戶發送文字
 				                 				     ),
 							 					array(
                             								'type' => 'message', // 類型 (訊息)
 				                 				       'label' => '4,015 * 24', // 標籤 2
-				                   				     'text' => '0' // 用戶發送文字
+				                   				     'text' => 'สอบถาม' // 用戶發送文字
 				                 				     ),
 											 array(
 										  'type' => 'message', // 類型 (連結)
@@ -1031,17 +1031,17 @@ if (!is_null($events['events'])) {
 											 array(
                             								'type' => 'message', // 類型 (訊息)
 				                 				       'label' => 'ราคา 56,000', // 標籤 2
-				                   				     'text' => '0' // 用戶發送文字
+				                   				     'text' => 'สอบถาม' // 用戶發送文字
 				                 				     ),
 							 					array(
                             								'type' => 'message', // 類型 (訊息)
 				                 				       'label' => '3,110 * 36', // 標籤 2
-				                   				     'text' => '0' // 用戶發送文字
+				                   				     'text' => 'สอบถาม' // 用戶發送文字
 				                 				     ),
 							 					array(
                             								'type' => 'message', // 類型 (訊息)
 				                 				       'label' => '4,015 * 24', // 標籤 2
-				                   				     'text' => '0' // 用戶發送文字
+				                   				     'text' => 'สอบถาม' // 用戶發送文字
 				                 				     ),
 											 array(
 										  'type' => 'message', // 類型 (連結)
@@ -1108,17 +1108,17 @@ if (!is_null($events['events'])) {
 											  array(
                             								'type' => 'message', // 類型 (訊息)
 				                 				       'label' => 'ราคา 53,000', // 標籤 2
-				                   				     'text' => '0' // 用戶發送文字
+				                   				     'text' => 'สอบถาม' // 用戶發送文字
 				                 				     ),
 							 					array(
                             								'type' => 'message', // 類型 (訊息)
 				                 				       'label' => '2,790 * 36', // 標籤 2
-				                   				     'text' => '0' // 用戶發送文字
+				                   				     'text' => 'สอบถาม' // 用戶發送文字
 				                 				     ),
 							 					array(
                             								'type' => 'message', // 類型 (訊息)
 				                 				       'label' => '3,605 * 24', // 標籤 2
-				                   				     'text' => '0' // 用戶發送文字
+				                   				     'text' => 'สอบถาม' // 用戶發送文字
 				                 				     ),
 											 array(
 										  'type' => 'message', // 類型 (連結)
@@ -1178,17 +1178,17 @@ if (!is_null($events['events'])) {
 											  array(
                             								'type' => 'message', // 類型 (訊息)
 				                 				       'label' => 'ราคา 59,000', // 標籤 2
-				                   				     'text' => '0' // 用戶發送文字
+				                   				     'text' => 'สอบถาม' // 用戶發送文字
 				                 				     ),
 							 					array(
                             								'type' => 'message', // 類型 (訊息)
 				                 				       'label' => '3,035 * 36', // 標籤 2
-				                   				     'text' => '0' // 用戶發送文字
+				                   				     'text' => 'สอบถาม' // 用戶發送文字
 				                 				     ),
 							 					array(
                             								'type' => 'message', // 類型 (訊息)
 				                 				       'label' => '4,000 * 24', // 標籤 2
-				                   				     'text' => '0' // 用戶發送文字
+				                   				     'text' => 'สอบถาม' // 用戶發送文字
 				                 				     ),
 											 array(
 										  'type' => 'message', // 類型 (連結)
