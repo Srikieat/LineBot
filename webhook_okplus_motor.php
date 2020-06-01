@@ -786,17 +786,27 @@ if (!is_null($events['events'])) {
 			$x_messages = array(array
 									(
 				'type' => 'template', // 訊息類型 (模板)
-				'altText' => 'Wave', // 替代文字
+				'altText' => 'Wave 110i', // 替代文字
 				'template' => array(
 							'type' => 'buttons', // 類型 (按鈕)
 						'thumbnailImageUrl' => 'https://okplus.co.th/images/bike/wave110.png', // 圖片網址 <不一定需要>
-						 'title' => 'Wave-i', // 標題 <不一定需要>
+						 'title' => 'Wave 110i', // 標題 <不一定需要>
 						'text' => 'รุ่นนี้ฟรีดาวน์ ออกรถ 0 บ'."\n".'ไม่ต้องใช้คนค้ำ'."\n".'ฟรีประกันรถหาย + พรบ + จดทะบียน', // 文字
 						'actions' => array(
 												 array(
                             								'type' => 'message', // 類型 (訊息)
 				                 				       'label' => 'ราคา 44,000', // 標籤 2
-				                   				     'text' => 'Message example' // 用戶發送文字
+				                   				     'text' => '' // 用戶發送文字
+				                 				     ),
+							 					array(
+                            								'type' => 'message', // 類型 (訊息)
+				                 				       'label' => '2,455 * 36', // 標籤 2
+				                   				     'text' => '' // 用戶發送文字
+				                 				     ),
+							 					array(
+                            								'type' => 'message', // 類型 (訊息)
+				                 				       'label' => '3,170 * 24', // 標籤 2
+				                   				     'text' => '' // 用戶發送文字
 				                 				     ),
 											 array(
 										  'type' => 'message', // 類型 (連結)
