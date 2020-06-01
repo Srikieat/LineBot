@@ -796,17 +796,17 @@ if (!is_null($events['events'])) {
 												 array(
                             								'type' => 'message', // 類型 (訊息)
 				                 				       'label' => 'ราคา 44,000', // 標籤 2
-				                   				     'text' => '' // 用戶發送文字
+				                   				     'text' => '0' // 用戶發送文字
 				                 				     ),
 							 					array(
                             								'type' => 'message', // 類型 (訊息)
 				                 				       'label' => '2,455 * 36', // 標籤 2
-				                   				     'text' => '' // 用戶發送文字
+				                   				     'text' => '0' // 用戶發送文字
 				                 				     ),
 							 					array(
                             								'type' => 'message', // 類型 (訊息)
 				                 				       'label' => '3,170 * 24', // 標籤 2
-				                   				     'text' => '' // 用戶發送文字
+				                   				     'text' => '0' // 用戶發送文字
 				                 				     ),
 											 array(
 										  'type' => 'message', // 類型 (連結)
