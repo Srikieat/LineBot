@@ -13,6 +13,7 @@
 // version 2 : check location morethan 5 reject
 // version 3 : check black list then reject 29/5/2563
 // version 4 : fix check black list 30/5/2563
+// version 5 : add price and payment info 1/6/2563
 
 require "vendor/autoload.php";
 require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
@@ -359,7 +360,7 @@ if (!is_null($events['events'])) {
 						$skipAnswer  = 1;
 		}
         
-		$dataHello = array("สวัสดี","ทัก","hi","Hi","HI","สอบถาม","ออกรถ");
+		$dataHello = array("สวัสดี","ทัก","hi","Hi","HI","สอบถาม","ออกรถ","0");
 		
 		if (checkSendMessage($dataHello,$sendMessage) == 1)
 		{
