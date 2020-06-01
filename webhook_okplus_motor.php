@@ -873,6 +873,76 @@ if (!is_null($events['events'])) {
 		}
 			
 			
+			
+			$dataWave125 = array("Wave125","wave125","เวฟ125","เวป 125","Wave 125","wave 125","เวฟ 125","เวป 125");
+		
+		if (checkSendMessage($dataWave125,$sendMessage) == 1)
+		{
+			
+			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetState.aspx?u='.$id.'&s=1');
+			$isNeedHelp = 1;
+			$skipAnswer  = 1;
+			$isMoreMessage = 0;
+			$x_messages = array(array
+									(
+				'type' => 'template', // 訊息類型 (模板)
+				'altText' => 'Wave 125i', // 替代文字
+				'template' => array(
+							'type' => 'buttons', // 類型 (按鈕)
+						'thumbnailImageUrl' => 'https://okplus.co.th/images/bike/wave110.png', // 圖片網址 <不一定需要>
+						 'title' => 'Wave 125i', // 標題 <不一定需要>
+						'text' => 'รุ่นนี้ฟรีดาวน์ ออกรถ 0 บ'."\n".'ไม่ต้องใช้คนค้ำ'."\n".'ฟรีประกันรถหาย + พรบ + จดทะบียน', // 文字
+						'actions' => array(
+												 array(
+                            								'type' => 'message', // 類型 (訊息)
+				                 				       'label' => 'ราคา 53,000', // 標籤 2
+				                   				     'text' => '0' // 用戶發送文字
+				                 				     ),
+							 					array(
+                            								'type' => 'message', // 類型 (訊息)
+				                 				       'label' => '2,930 * 36', // 標籤 2
+				                   				     'text' => '0' // 用戶發送文字
+				                 				     ),
+							 					array(
+                            								'type' => 'message', // 類型 (訊息)
+				                 				       'label' => '3,780 * 24', // 標籤 2
+				                   				     'text' => '0' // 用戶發送文字
+				                 				     ),
+											 array(
+										  'type' => 'message', // 類型 (連結)
+										  'label' => 'สนใจออกรถออนไลน์', // 標籤 3
+										  'text' => 'สนใจออกรถ' // 連結網址
+												 )
+							
+										  )
+							)
+									),
+								array(
+							'type' => 'text',
+							'text' =>'ปัจจุบันลูกค้าพักอยู่ที่ไหนค่ะ (กดปุ่มข้างล่างนี้เพิ่อระบุที่อยู่)',
+							'quickReply' => 
+									
+									array(
+												'items'=>[array(
+																'types'=>'action',
+													'action'=>array(
+																		'type'=>'location',
+																		'label'=>'ระบุที่อยู่'
+																	)
+																)
+										  ]
+										  
+										  )
+				)
+							   );
+			
+			
+			
+		
+							
+		}
+			
+			
 			$dataQbix = array("Qbix");
 		
 		if (checkSendMessage($dataQbix,$sendMessage) == 1)
@@ -1010,73 +1080,7 @@ if (!is_null($events['events'])) {
 			
 			
 			
-			$dataClick150 = array("Click150","click150","Click 150","click 150","คลิก 150","คลิก150","คลิ้ก150","คลิ้ก 150","คลิ๊ก150","คลิ๊ก 150");
 		
-		if (checkSendMessage($dataClick150,$sendMessage) == 1)
-		{
-			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetState.aspx?u='.$id.'&s=1');
-			$isNeedHelp = 1;
-			$skipAnswer  = 1;
-			$isMoreMessage = 0;
-			$x_messages = array(array
-									(
-				'type' => 'template', // 訊息類型 (模板)
-				'altText' => 'Click 150', // 替代文字
-				'template' => array(
-							'type' => 'buttons', // 類型 (按鈕)
-						'thumbnailImageUrl' => 'https://okplus.co.th/images/bike/ClickPromotion1.png', // 圖片網址 <不一定需要>
-						 'title' => 'Click 150i', // 標題 <不一定需要>
-						'text' => 'รุ่นนี้ฟรีดาวน์ ออกรถ 0 บ'."\n".'ไม่ต้องใช้คนค้ำ'."\n".'ฟรีประกันรถหาย + พรบ + จดทะบียน', // 文字
-						'actions' => array(
-											  array(
-                            								'type' => 'message', // 類型 (訊息)
-				                 				       'label' => 'ราคา 59,000', // 標籤 2
-				                   				     'text' => '0' // 用戶發送文字
-				                 				     ),
-							 					array(
-                            								'type' => 'message', // 類型 (訊息)
-				                 				       'label' => '3,035 * 36', // 標籤 2
-				                   				     'text' => '0' // 用戶發送文字
-				                 				     ),
-							 					array(
-                            								'type' => 'message', // 類型 (訊息)
-				                 				       'label' => '4,000 * 24', // 標籤 2
-				                   				     'text' => '0' // 用戶發送文字
-				                 				     ),
-											 array(
-										  'type' => 'message', // 類型 (連結)
-										  'label' => 'สนใจออกรถออนไลน์', // 標籤 3
-										  'text' => 'สนใจออกรถ' // 連結網址
-												 )
-										  )
-							)
-									),
-								
-								array(
-							'type' => 'text',
-							'text' =>'ปัจจุบันลูกค้าพักอยู่ที่ไหนค่ะ (กดปุ่มข้างล่างนี้เพิ่อระบุที่อยู่)',
-							'quickReply' => 
-									array(
-												'items'=>[array(
-																'types'=>'action',
-													'action'=>array(
-																		'type'=>'location',
-																		'label'=>'ระบุที่อยู่'
-																	)
-																)
-										  ]
-										  
-										  )
-				)
-								
-								
-							   );
-
-							
-		}
-
-			
-			
 			
 			
 			
@@ -1146,6 +1150,79 @@ if (!is_null($events['events'])) {
 
 							
 		}
+			
+			
+			
+			
+			
+			
+				$dataClick150 = array("Click150","click150","Click 150","click 150","คลิก 150","คลิก150","คลิ้ก150","คลิ้ก 150","คลิ๊ก150","คลิ๊ก 150");
+		
+		if (checkSendMessage($dataClick150,$sendMessage) == 1)
+		{
+			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetState.aspx?u='.$id.'&s=1');
+			$isNeedHelp = 1;
+			$skipAnswer  = 1;
+			$isMoreMessage = 0;
+			$x_messages = array(array
+									(
+				'type' => 'template', // 訊息類型 (模板)
+				'altText' => 'Click 150', // 替代文字
+				'template' => array(
+							'type' => 'buttons', // 類型 (按鈕)
+						'thumbnailImageUrl' => 'https://okplus.co.th/images/bike/ClickPromotion1.png', // 圖片網址 <不一定需要>
+						 'title' => 'Click 150i', // 標題 <不一定需要>
+						'text' => 'รุ่นนี้ฟรีดาวน์ ออกรถ 0 บ'."\n".'ไม่ต้องใช้คนค้ำ'."\n".'ฟรีประกันรถหาย + พรบ + จดทะบียน', // 文字
+						'actions' => array(
+											  array(
+                            								'type' => 'message', // 類型 (訊息)
+				                 				       'label' => 'ราคา 59,000', // 標籤 2
+				                   				     'text' => '0' // 用戶發送文字
+				                 				     ),
+							 					array(
+                            								'type' => 'message', // 類型 (訊息)
+				                 				       'label' => '3,035 * 36', // 標籤 2
+				                   				     'text' => '0' // 用戶發送文字
+				                 				     ),
+							 					array(
+                            								'type' => 'message', // 類型 (訊息)
+				                 				       'label' => '4,000 * 24', // 標籤 2
+				                   				     'text' => '0' // 用戶發送文字
+				                 				     ),
+											 array(
+										  'type' => 'message', // 類型 (連結)
+										  'label' => 'สนใจออกรถออนไลน์', // 標籤 3
+										  'text' => 'สนใจออกรถ' // 連結網址
+												 )
+										  )
+							)
+									),
+								
+								array(
+							'type' => 'text',
+							'text' =>'ปัจจุบันลูกค้าพักอยู่ที่ไหนค่ะ (กดปุ่มข้างล่างนี้เพิ่อระบุที่อยู่)',
+							'quickReply' => 
+									array(
+												'items'=>[array(
+																'types'=>'action',
+													'action'=>array(
+																		'type'=>'location',
+																		'label'=>'ระบุที่อยู่'
+																	)
+																)
+										  ]
+										  
+										  )
+				)
+								
+								
+							   );
+
+							
+		}
+
+			
+			
 
 		
 		if (checkSendMessage($dataPayment,$sendMessage) == 1)
