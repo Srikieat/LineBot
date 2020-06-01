@@ -43,12 +43,14 @@ function checkSendMessage($arrKeyword, $message)
 function checkExactMessage($arrKeyword, $message)
 {
 	$isFound =0;
+        foreach ($arrKeyword as $keyword) 
         {
 		if ($message == $arrKeyword) 
              {
                 $isFound = 1;
              }
-         }
+		}
+         
 	return $isFound;
 
 }
