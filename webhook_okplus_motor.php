@@ -3,9 +3,9 @@
 // state
 //0 follow
 //1 รุ่น
-//2 location
+//2 สนใจ
 //4 check blacklist
-//3 สนใจ
+//3 000
 //5 reject
 
 
@@ -793,11 +793,17 @@ if (!is_null($events['events'])) {
 						 'title' => 'Wave-i', // 標題 <不一定需要>
 						'text' => 'รุ่นนี้ฟรีดาวน์ ออกรถ 0 บ'."\n".'ไม่ต้องใช้คนค้ำ'."\n".'ฟรีประกันรถหาย + พรบ + จดทะบียน', // 文字
 						'actions' => array(
+												 array(
+                            								'type' => 'message', // 類型 (訊息)
+				                 				       'label' => 'ราคา 44,000', // 標籤 2
+				                   				     'text' => 'Message example' // 用戶發送文字
+				                 				     ),
 											 array(
 										  'type' => 'message', // 類型 (連結)
 										  'label' => 'สนใจออกรถออนไลน์', // 標籤 3
 										  'text' => 'สนใจออกรถ' // 連結網址
 												 )
+							
 										  )
 							)
 									),
@@ -805,6 +811,7 @@ if (!is_null($events['events'])) {
 							'type' => 'text',
 							'text' =>'ปัจจุบันลูกค้าพักอยู่ที่ไหนค่ะ (กดปุ่มข้างล่างนี้เพิ่อระบุที่อยู่)',
 							'quickReply' => 
+									
 									array(
 												'items'=>[array(
 																'types'=>'action',
