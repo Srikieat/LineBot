@@ -14,6 +14,7 @@
 // version 3 : check black list then reject 29/5/2563
 // version 4 : fix check black list 30/5/2563
 // version 5 : add price and payment info 1/6/2563
+// version 6 : fix blacklist 4/5/2563
 
 require "vendor/autoload.php";
 require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
@@ -330,7 +331,7 @@ if (!is_null($events['events'])) {
 				$isMoreMessage =1;
 				$skipAnswer  = 1;
 				$isNeedHelp = 0;
-				$state = "0031";
+			
 				$sendMessage = "BlackList";
 
 			}
@@ -354,7 +355,7 @@ if (!is_null($events['events'])) {
 						];	
 						$isNeedHelp = 1;
 						$skipAnswer  = 1;
-						$state = "0032";
+					
 		}
         
 		$dataHello = array("สวัสดี","ทัก","hi","Hi","HI","สอบถาม","ออกรถ");
@@ -446,7 +447,7 @@ if (!is_null($events['events'])) {
 			$messages=  [
 							'type' => 'text',
                 			//'text' => 'ติดไม่เกินแสน ออกได้ค่ะ มีไฟแนนท์รองรับ'	
-							'text' => 'เสียใจด้วย ลูกค้าติดประวัติผ่อนไม่ดี (ฺBlackList) ไม่สามารถออกรถได้ค่ะ'	
+							'text' => 'เสียใจด้วย ลูกค้าติดประวัติผ่อนไม่ดี (BlackList) ไม่สามารถออกรถได้ค่ะ'	
 						];	
 						$isNeedHelp = 1;
 						$skipAnswer  = 1;
