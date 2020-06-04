@@ -353,6 +353,7 @@ if (!is_null($events['events'])) {
 						];	
 						$isNeedHelp = 1;
 						$skipAnswer  = 1;
+			$state = "0032";
 		}
         
 		$dataHello = array("สวัสดี","ทัก","hi","Hi","HI","สอบถาม","ออกรถ");
