@@ -331,6 +331,7 @@ if (!is_null($events['events'])) {
 				$skipAnswer  = 1;
 				$isNeedHelp = 0;
 				$state = "0031";
+				$sendMessage = "BlackList";
 
 			}
 			
@@ -353,7 +354,7 @@ if (!is_null($events['events'])) {
 						];	
 						$isNeedHelp = 1;
 						$skipAnswer  = 1;
-			$state = "0032";
+						$state = "0032";
 		}
         
 		$dataHello = array("สวัสดี","ทัก","hi","Hi","HI","สอบถาม","ออกรถ");
