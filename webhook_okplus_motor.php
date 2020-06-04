@@ -341,6 +341,7 @@ if (!is_null($events['events'])) {
 					$isNeedHelp = 0;
 					$state = "0041";
 				}
+			}
 			
 		}
 		
