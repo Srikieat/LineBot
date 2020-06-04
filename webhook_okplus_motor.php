@@ -328,13 +328,19 @@ if (!is_null($events['events'])) {
 			}
 			else
 			{
-				$isMoreMessage =1;
-				$skipAnswer  = 1;
-				$isNeedHelp = 0;
-			
-				$sendMessage = "BlackList";
-
-			}
+				$dataCheckHave = array("มี");
+				if (checkSendMessage($dataCheckHave,$sendMessage) == 1)
+				{
+					$sendMessage = "BlackList";
+					$state = "0031";
+				}
+				else
+				{
+					$isMoreMessage =1;
+					$skipAnswer  = 1;
+					$isNeedHelp = 0;
+					$state = "0041";
+				}
 			
 		}
 		
