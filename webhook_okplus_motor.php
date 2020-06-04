@@ -323,12 +323,14 @@ if (!is_null($events['events'])) {
                 'type' => 'text',
                 'text' => 'สนใจออกรถไหมค่ะ'
             		];	
+				$state = "0021";
 			}
 			else
 			{
 				$isMoreMessage =1;
 				$skipAnswer  = 1;
 				$isNeedHelp = 0;
+				$state = "0031";
 
 			}
 			
