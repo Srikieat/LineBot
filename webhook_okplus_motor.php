@@ -1366,6 +1366,12 @@ if (!is_null($events['events'])) {
 			$arr_id=$str_arr[0];
 			$arr_cmd = $str_arr[1];
 			$help = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetState.aspx?u='.$arr_id.'&s=5');
+			$isNeedHelp == 1;
+			
+			 $messages = [
+                'type' => 'text',
+                'text' => 'Command Completed:'.$arr_cmd
+            		];	
 			
 		}	
 	
