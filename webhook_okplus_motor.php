@@ -1355,6 +1355,19 @@ if (!is_null($events['events'])) {
 						$skipAnswer  = 1;
 						$state = "258";
 		}	
+			
+			
+		// set command
+			
+		$dataCommand = array('set5');
+		if (checkSendMessage($dataHiReturn,$sendMessage) == 1)
+		{
+			$str_arr = explode (":", $sendMessage); 
+			$arr_id=$str_arr[0];
+			$arr_cmd = $str_arr[1];
+			$help = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetState.aspx?u='.$arr_id.'&s=5);
+			
+		}	
 	
 	
 		if ($isNeedHelp == 0)
