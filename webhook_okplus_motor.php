@@ -15,6 +15,7 @@
 // version 4 : fix check black list 30/5/2563
 // version 5 : add price and payment info 1/6/2563
 // version 6 : fix blacklist 4/5/2563
+// version 7 : moreDown 5/5/2563
 
 require "vendor/autoload.php";
 require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
@@ -1265,6 +1266,34 @@ if (!is_null($events['events'])) {
 			$messages	=  	[
 								'type' => 'text',
 								'text' => 'ชื่อ ร้านสามชัยกรุงเทพ'."\n".
+								'โทร: 02 115 9962 , 091 575 3685'."\n".
+								'เวลาทำการ'."\n".
+								'จันทร์ - เสาร์  8.30 - 18.00 '."\n".
+								'อาทิตย์ 8.30 - 14.00'."\n\n\n".
+								
+								
+								'ร้านอยู่ระหว่างอ่อนนุช 16 กับ 18'."\n".
+								'ตรงข้ามปั้มบางจาก ติดกับ ธ.กรุงเทพ'."\n\n\n".
+								
+								'แผนที่ https://goo.gl/maps/hXwBwZp8PZqyZdep8'."\n\n\n".
+								
+								'มาถึงร้านแล้วติดต่อฝ่ายขาย ชื่อ นะ ค่ะ'."\n".
+								'แจ้งว่ามาจาก อินเตอร์เน็ต'
+						
+							];
+							
+		}
+			
+			$dataMoreDown = array("ถ้าดาวน์","ดาวน์เพิ่ม","ถ้าผมดาวน์","7000","8000","5000","9000","10000","12000","15000","20000","3000","6000","หมื่น");
+		
+		if (checkSendMessage($dataMoreDown,$sendMessage) == 1)
+		{
+			$isNeedHelp = 1;
+			$skipAnswer  = 1;
+			$messages	=  	[
+								'type' => 'text',
+								'text' => 'รบกวนสอบถามข้อมูลเพิ่มเติมที่'."\n".
+								'ชื่อ ร้านสามชัยกรุงเทพ'."\n".
 								'โทร: 02 115 9962 , 091 575 3685'."\n".
 								'เวลาทำการ'."\n".
 								'จันทร์ - เสาร์  8.30 - 18.00 '."\n".
