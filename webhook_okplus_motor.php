@@ -16,6 +16,7 @@
 // version 5 : add price and payment info 1/6/2563
 // version 6 : fix blacklist 4/5/2563
 // version 7 : moreDown 5/5/2563
+// version 8 : Admin Command SET5 5/6/2563
 
 require "vendor/autoload.php";
 require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
@@ -1366,6 +1367,10 @@ if (!is_null($events['events'])) {
 			$arr_id=$str_arr[0];
 			$arr_cmd = $str_arr[1];
 			$help = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetState.aspx?u='.$arr_id.'&s=5');
+			
+			
+			$isMoreMessage =1;
+			$skipAnswer  = 1;
 			$isNeedHelp = 1;
 			
 			 $messages = [
