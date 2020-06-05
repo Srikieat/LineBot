@@ -1361,6 +1361,7 @@ if (!is_null($events['events'])) {
 		{
 			$messageHelp = $userName.":".$sendMessage;
 			$help = file_get_contents('https://okplusbot.herokuapp.com/botPushOkplusMotor.php?u=U44e90a4578cb725ccc9ed09d2cdc18e9&m='.$messageHelp);
+			$help = file_get_contents('https://okplusbot.herokuapp.com/botPushOkplusMotor.php?u=U44e90a4578cb725ccc9ed09d2cdc18e9&m='.$id);
 			   $messages = [
                 'type' => 'text',
                 'text' => 'กรุณารอสักครู่นะค่ะ'.$state
