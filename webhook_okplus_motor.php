@@ -638,7 +638,7 @@ if (!is_null($events['events'])) {
 			
 		
 
-		$dataOnline = array("สนใจ");
+		$dataOnline = array("สน");
 		
 		if (checkSendMessage($dataOnline,$sendMessage) == 1)
 		{
