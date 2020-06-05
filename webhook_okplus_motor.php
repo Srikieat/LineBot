@@ -550,7 +550,7 @@ if (!is_null($events['events'])) {
 			
 			
 
-		$dataComplete = array("000");
+		$dataComplete = array("999");
 		
 		if (checkSendMessage($dataComplete,$sendMessage) == 1)
 		{
@@ -668,7 +668,7 @@ if (!is_null($events['events'])) {
 										array
 												(
 										'type' => 'text',
-										'text' => '*** สำคัญมาก***'."\n".'ส่งเสร็จแล้ว พิมพ์ว่า "000" ค่ะ '."\n".
+										'text' => '*** สำคัญมาก***'."\n".'ส่งเสร็จแล้ว พิมพ์ว่า "999" ค่ะ '."\n".
 										'หลังจากนั้นทางร้านจะยื่นเรื่องให้ค่ะ'."\n".
 										'ใช้เวลาประมาณ 15 นาที'	
 												)
