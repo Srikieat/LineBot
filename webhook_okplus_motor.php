@@ -271,6 +271,14 @@ if (!is_null($events['events'])) {
 			 $sendMessage = $event['message']['text'];
 			
 			$userName = getDisplayName($text);
+			
+			
+			
+			$setInitial = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorFollow.aspx?u='.$id.'&n='.$userName);
+			
+			$setLastMessage = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorLastMessage.aspx?u='.$id.'&m='.$sendMessage);
+						
+			
 			// Build message to reply back
 		 	
 			$Info = file_get_contents('http://okplus.ddns.net/okplus/bot/OkplusMotorGetInfo.aspx?u='.$id);
@@ -282,7 +290,7 @@ if (!is_null($events['events'])) {
 			$lastMessageDT = $str_arr[2];
 			$distance = $str_arr[3];
 			
-			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorLastMessage.aspx?u='.$id.'&m='.$sendMessage);
+			
 
             $isNeedHelp = 0;
 			$isMoreMessage = 1;
@@ -1441,6 +1449,6 @@ if (!is_null($events['events'])) {
 			
 		}
 	}
-} 
+}
 
 
