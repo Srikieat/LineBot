@@ -138,7 +138,7 @@ if (!is_null($events['events'])) {
 				                 				//     ),
 			                        				   array(
                         				 				'type' => 'uri', // 類型 (連結)
-				                         				'label' => 'นัดชำระค่างวด', // 標籤 3
+				                         				'label' => 'ดำเนินการ', // 標籤 3
 				                         				'uri' => 'http://okplus.ddns.net/okplus/OKMO/BotAppint.aspx?u='.$text // 連結網址
 				                       				         )
 			                       					   )
