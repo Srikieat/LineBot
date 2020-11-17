@@ -211,7 +211,8 @@ if (!is_null($events['events'])) {
 							
 							 $messages = 	[
 												'type' => 'text',
-								 				'text' => 'ชื่อ : '	.$name .."\n".'เลขที่สัญญา่ : '$contractId.."\n".'นัดวันที่ : '  $dt
+								 				'text' => 'test';
+								 				//'text' => 'ชื่อ : '	.$name .."\n".'เลขที่สัญญา่ : '$contractId.."\n".'นัดวันที่ : '  $dt
 											];	
 						}
 						
