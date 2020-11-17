@@ -116,8 +116,25 @@ if (!is_null($events['events'])) {
 			switch ($sendMessage) {
 				case "นัดชำระค่างวด":
 					
-					// start message
-					$messages = [
+					// check register or not
+					//$isRegister = file_get_contents('http://okplus.ddns.net/okplus/bot/CheckRegister.aspx?u='.$id);
+					//$str_arr = explode (":", $paymentDetails);  
+					
+					//$isRegister=$str_arr[0];
+					$isRegister = "-1";
+					
+					if ($isRegister === "-1")
+					{
+						 $messages = [
+										'type' => 'text',
+										'text' => 'ท่านยังไม่ได้ลงทะเบียนในระบบ กรุณาลงทะเบียน'	
+									];	
+					}
+					
+					if ($isRegister === "1")
+					{
+						// start message
+						$messages = [
 						'type' => 'template', // 訊息類型 (模板)
                 				'altText' => 'นัดชำระค่างวด', // 替代文字
                 				'template' => array(
@@ -146,6 +163,8 @@ if (!is_null($events['events'])) {
 					
 						];	
 						// end message
+					}
+					
 					
 					break;
   				case "ลงทะเบียน":
