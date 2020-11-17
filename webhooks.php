@@ -115,7 +115,7 @@ if (!is_null($events['events'])) {
 			
 			switch ($sendMessage) {
 					
-				case "test":
+				case "Test":
 					$isRegister = file_get_contents('http://okplus.ddns.net/okplus/bot/CheckRegister.aspx?u='.$text);
 					$xxxx = substr($isRegister, 0, 1);
 					   $messages = [
@@ -130,6 +130,7 @@ if (!is_null($events['events'])) {
 					$isRegister = file_get_contents('http://okplus.ddns.net/okplus/bot/CheckRegister.aspx?u='.$text);
 			
 					//$isRegister = "0";
+					$isRegister = substr($isRegister, 0, 1);
 					
 					if ($isRegister === "0")
 					{
