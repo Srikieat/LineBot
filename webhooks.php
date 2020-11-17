@@ -174,14 +174,14 @@ if (!is_null($events['events'])) {
 						{
 							   $messages = [
 										'type' => 'text',
-										'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n".'หากต้องการติดต่อพนักงาน โปรดติดต่อที่ https://lin.ee/6D052q8'	
+										'text' => 'ชื่อ : '	. $name
 									];	
 						}
 						
 						if ($isAppoint == "0")
 						{
 							 //start message
-					$messages = [
+							$messages = [
 						'type' => 'template', // 訊息類型 (模板)
                 				'altText' => 'นัดชำระค่างวด', // 替代文字
                 				'template' => array(
