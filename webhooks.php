@@ -118,10 +118,10 @@ if (!is_null($events['events'])) {
 				case "Test":
 					$isRegister = "1:srikieat:12/45263:16April2020;";
 					$pos = strpos($isRegister, ";");
-					//$xxxx = substr($isRegister, 0, $pos);
+					$xxxx = substr($isRegister, 0, 31);
 					   $messages = [
 										'type' => 'text',
-										'text' => $pos	
+										'text' => $xxxx	
 									];	
 					break;
 				case "นัดชำระค่างวด":
