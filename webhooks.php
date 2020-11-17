@@ -118,7 +118,7 @@ if (!is_null($events['events'])) {
 				case "Test":
 					$isRegister = "1:srikieat:12/45263:16April2020;";
 					$pos = strpos($isRegister, ";");
-					$xxxx = substr($isRegister, 0, 31);
+					$xxxx = substr($isRegister, 0, $pos);
 					   $messages = [
 										'type' => 'text',
 										'text' => $xxxx	
