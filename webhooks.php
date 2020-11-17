@@ -201,8 +201,8 @@ if (!is_null($events['events'])) {
 			                       					   )
 		                					)
 					
-						];	
-						// end message
+									];	
+									// end message
 							
 						}
 							
@@ -211,7 +211,7 @@ if (!is_null($events['events'])) {
 							
 							 $messages = 	[
 												'type' => 'text',
-								 				'text' => 'test';
+								 				'text' => 'test'
 								 				//'text' => 'ชื่อ : '	.$name .."\n".'เลขที่สัญญา่ : '$contractId.."\n".'นัดวันที่ : '  $dt
 											];	
 						}
