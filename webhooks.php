@@ -123,7 +123,7 @@ if (!is_null($events['events'])) {
 					//$isRegister=$str_arr[0];
 					$isRegister = "-1";
 					
-					if ($isRegister === "-1")
+					if ($isRegister === "1")
 					{
 						
 						$messages = [
