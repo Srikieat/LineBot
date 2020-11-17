@@ -116,9 +116,10 @@ if (!is_null($events['events'])) {
 			switch ($sendMessage) {
 					
 				case "test":
+					$isRegister = file_get_contents('http://okplus.ddns.net/okplus/bot/CheckRegister.aspx?u='.$text);
 					   $messages = [
 										'type' => 'text',
-										'text' => 'test'	
+										'text' => $isRegister	
 									];	
 					break;
 				case "นัดชำระค่างวด":
