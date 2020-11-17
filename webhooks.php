@@ -118,12 +118,10 @@ if (!is_null($events['events'])) {
 					
 					// check register or not
 					//$isRegister = file_get_contents('http://okplus.ddns.net/okplus/bot/CheckRegister.aspx?u='.$id);
-					//$str_arr = explode (":", $paymentDetails);  
-					
-					//$isRegister=$str_arr[0];
+			
 					$isRegister = "1";
 					
-					if ($isRegister === "-1")
+					if ($isRegister === "0")
 					{
 						
 						$messages = [
@@ -161,8 +159,9 @@ if (!is_null($events['events'])) {
 						
 						
 						// check already appointment
-						//$serverData = file_get_contents('http://okplus.ddns.net/okplus/bot/CheckRegister.aspx?u='.$id);
-						$serverData = "1:srikieat:12/45263:16April2020";
+						//$serverData = file_get_contents('http://okplus.ddns.net/okplus/bot/CheckAppointment.aspx?u='.$id);
+						//$serverData = "1:srikieat:12/45263:16April2020";
+						$serverData = "0:0:0:0";
 						$str_arr = explode (":", $serverData); 
 						
 						$isAppoint = $str_arr[0];
