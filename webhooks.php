@@ -158,7 +158,16 @@ if (!is_null($events['events'])) {
 					}
 					if ($isRegister === "1")
 					{
-						// start message
+						
+						
+						// check already appointment
+						//$serverData = file_get_contents('http://okplus.ddns.net/okplus/bot/CheckRegister.aspx?u='.$id);
+						$serverData = "1;srikieat;12/45263;16April2020";
+						$str_arr = explode (":", $serverData); 
+						
+						
+						
+						 //start message
 					$messages = [
 						'type' => 'template', // 訊息類型 (模板)
                 				'altText' => 'นัดชำระค่างวด', // 替代文字
