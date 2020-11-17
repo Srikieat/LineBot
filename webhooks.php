@@ -116,65 +116,8 @@ if (!is_null($events['events'])) {
 			switch ($sendMessage) {
 				case "นัดชำระค่างวด":
 					
-					// check register or not
-					//$isRegister = file_get_contents('http://okplus.ddns.net/okplus/bot/CheckRegister.aspx?u='.$id);
-					//$str_arr = explode (":", $paymentDetails);  
-					
-					//$isRegister=$str_arr[0];
-					$isRegister = "1";
-					
-					if ($isRegister === "-1")
-					{
-						
-						$messages = [
-						'type' => 'template', // 訊息類型 (模板)
-                				'altText' => 'ลงทะเบียน', // 替代文字
-                				'template' => array(
-                    						'type' => 'buttons', // 類型 (按鈕)
-		                				'thumbnailImageUrl' => 'https://okplus.co.th/Bot/Images/ImgButtonTemplate.png', // 圖片網址 <不一定需要>
-                 						'title' => 'บ.โอเคพลัส จำกัด', // 標題 <不一定需要>
-		                				'text' => 'ท่านยังไม่ได้ลงทะเบียนในระบบ กรุณาลงทะเบียน', // 文字
-                						'actions' => array(
-			                      					//  array(
-                            							//	'type' => 'postback', // 類型 (回傳)
-				                 				//       'label' => 'Postback example', // 標籤 1
-				                   				//     'data' => 'action=buy&itemid=123' // 資料
-                        			  				//    ),
-			                       					// array(
-                            							//	'type' => 'message', // 類型 (訊息)
-				                 				//       'label' => 'Message example', // 標籤 2
-				                   				//     'text' => 'Message example' // 用戶發送文字
-				                 				//     ),
-			                        				   array(
-                        				 				'type' => 'uri', // 類型 (連結)
-				                         				'label' => 'ลงทะเบียน', // 標籤 3
-				                         				'uri' => 'http://okplus.ddns.net/okplus/OKMO/Bot.aspx?u='.$text // 連結網址
-				                       				         )
-			                       					   )
-		                					)
-					
-						];	
-						
-					}
-					
-					if ($isRegister === "1")
-					{
-						
-						// check already appointment
-						//$serverData = file_get_contents('http://okplus.ddns.net/okplus/bot/CheckRegister.aspx?u='.$id);
-						//$serverData = "1;srikieat;12/45263;16April2020";
-						//$str_arr = explode (":", $serverData); 
-						
-						//$isAppoint = $str_arr[0];
-						//$name=$str_arr[1];
-						//$contractId = $str_arr[2];
-						//$dt = $str_arr[3];
-						
-						//if ($isAppoint == "0")
-						//{
-							// still not appoint : can do appointment
-							// start message
-						$messages = [
+					// start message
+					$messages = [
 						'type' => 'template', // 訊息類型 (模板)
                 				'altText' => 'นัดชำระค่างวด', // 替代文字
                 				'template' => array(
@@ -201,24 +144,8 @@ if (!is_null($events['events'])) {
 			                       					   )
 		                					)
 					
-									];	
-									// end message
-							
-						}
-							
-						//if ($isAppoint == "1")
-						//{
-							
-							// $messages = 	[
-								//				'type' => 'text',
-								 //				'text' => 'test'
-								 				//'text' => 'ชื่อ : '	.$name .."\n".'เลขที่สัญญา่ : '$contractId.."\n".'นัดวันที่ : '  $dt
-									//		];	
-						//}
-						
-						
-					}
-					
+						];	
+						// end message
 					
 					break;
   				case "ลงทะเบียน":
