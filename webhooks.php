@@ -114,12 +114,20 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			
 			switch ($sendMessage) {
+					
+				case "test":
+					   $messages = [
+										'type' => 'text',
+										'text' => 'test'	
+									];	
+					break;
 				case "นัดชำระค่างวด":
 					
 					// check register or not
-					//$isRegister = file_get_contents('http://okplus.ddns.net/okplus/bot/CheckRegister.aspx?u='.$text);
+					
+					$isRegister = file_get_contents('http://okplus.ddns.net/okplus/bot/CheckRegister.aspx?u='.$text);
 			
-					$isRegister = "0";
+					//$isRegister = "0";
 					
 					if ($isRegister === "0")
 					{
