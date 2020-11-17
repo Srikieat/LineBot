@@ -162,7 +162,7 @@ if (!is_null($events['events'])) {
 						
 						// check already appointment
 						//$serverData = file_get_contents('http://okplus.ddns.net/okplus/bot/CheckRegister.aspx?u='.$id);
-						$serverData = "1;srikieat;12/45263;16April2020";
+						$serverData = "1:srikieat:12/45263:16April2020";
 						$str_arr = explode (":", $serverData); 
 						
 						$isAppoint = $str_arr[0];
