@@ -159,7 +159,21 @@ if (!is_null($events['events'])) {
 					
 					if ($isRegister === "1")
 					{
-						// start message
+						
+						// check already appointment
+						//$serverData = file_get_contents('http://okplus.ddns.net/okplus/bot/CheckRegister.aspx?u='.$id);
+						$serverData = "1:srikieat:12/45263:16April2020";
+						$str_arr = explode (":", $serverData); 
+						
+						$isAppoint = $str_arr[0];
+						$name=$str_arr[1];
+						$contractId = $str_arr[2];
+						$dt = $str_arr[3];
+						
+						if ($isAppoint == "0")
+						{
+							// still not appoint : can do appointment
+							// start message
 						$messages = [
 						'type' => 'template', // 訊息類型 (模板)
                 				'altText' => 'นัดชำระค่างวด', // 替代文字
@@ -189,6 +203,19 @@ if (!is_null($events['events'])) {
 					
 						];	
 						// end message
+							
+						}
+							
+						if ($isAppoint == "1")
+						{
+							
+							 $messages = 	[
+												'type' => 'text',
+								 				'text' => 'ชื่อ : '	.$name .."\n".'เลขที่สัญญา่ : '$contractId.."\n".'นัดวันที่ : '  $dt
+											];	
+						}
+						
+						
 					}
 					
 					
