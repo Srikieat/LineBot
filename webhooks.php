@@ -174,6 +174,9 @@ if (!is_null($events['events'])) {
 						$serverData = file_get_contents('http://okplus.ddns.net/okplus/bot/CheckAppointment.aspx?u='.$text);
 						//$serverData = "1:srikieat:12/45263:16April2020";
 						//$serverData = "0:0:0:0";
+						$pos = strpos($serverData, ";");
+						$serverData = substr($serverData, 0, $pos);
+						
 						$str_arr = explode (":", $serverData); 
 						
 						$isAppoint = $str_arr[0];
