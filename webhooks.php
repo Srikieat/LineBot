@@ -116,12 +116,12 @@ if (!is_null($events['events'])) {
 			switch ($sendMessage) {
 					
 				case "Test":
-					$isRegister = "1:srikieat:12/45263:16April2020;"
+					$isRegister = "1:srikieat:12/45263:16April2020;";
 					$pos = strpos($isRegister, ";");
-					$xxxx = substr($isRegister, 0, $pos);
+					//$xxxx = substr($isRegister, 0, $pos);
 					   $messages = [
 										'type' => 'text',
-										'text' => $xxxx	
+										'text' => $pos	
 									];	
 					break;
 				case "นัดชำระค่างวด":
