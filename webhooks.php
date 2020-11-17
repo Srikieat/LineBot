@@ -121,9 +121,9 @@ if (!is_null($events['events'])) {
 					//$str_arr = explode (":", $paymentDetails);  
 					
 					//$isRegister=$str_arr[0];
-					$isRegister = "-1";
+					$isRegister = "1";
 					
-					if ($isRegister === "1")
+					if ($isRegister === "-1")
 					{
 						
 						$messages = [
