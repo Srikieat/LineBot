@@ -165,9 +165,22 @@ if (!is_null($events['events'])) {
 						$serverData = "1;srikieat;12/45263;16April2020";
 						$str_arr = explode (":", $serverData); 
 						
+						$isAppoint = $str_arr[0];
+						$name=$str_arr[1];
+						$contractId = $str_arr[2];
+						$dt = $str_arr[3];
 						
+						if ($isAppoint == "1")
+						{
+							   $messages = [
+										'type' => 'text',
+										'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n".'หากต้องการติดต่อพนักงาน โปรดติดต่อที่ https://lin.ee/6D052q8'	
+									];	
+						}
 						
-						 //start message
+						if ($isAppoint == "0")
+						{
+							 //start message
 					$messages = [
 						'type' => 'template', // 訊息類型 (模板)
                 				'altText' => 'นัดชำระค่างวด', // 替代文字
@@ -197,6 +210,9 @@ if (!is_null($events['events'])) {
 					
 						];	
 						// end message
+						}
+						
+						
 					}
 					
 					
