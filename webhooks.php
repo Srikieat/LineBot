@@ -116,8 +116,9 @@ if (!is_null($events['events'])) {
 			switch ($sendMessage) {
 					
 				case "Test":
-					$isRegister = file_get_contents('http://okplus.ddns.net/okplus/bot/CheckRegister.aspx?u='.$text);
-					$xxxx = substr($isRegister, 0, 1);
+					$isRegister = "1:srikieat:12/45263:16April2020;"
+					$pos = strpos($isRegister, ";");
+					$xxxx = substr($isRegister, 0, $pos);
 					   $messages = [
 										'type' => 'text',
 										'text' => $xxxx	
