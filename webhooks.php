@@ -127,7 +127,7 @@ if (!is_null($events['events'])) {
 					{
 						 $messages = [
 										'type' => 'text',
-										'text' => 'ท่านยังไม่ได้ลงทะเบียนในระบบ กรุณาลงทะเบียน'	
+										'text' => 'ท่านยังไม่ได้ลงทะเบียนในระบบ'."\n".'กรุณาลงทะเบียนที่นี่ http://okplus.ddns.net/okplus/OKMO/Bot.aspx?u='.$text 
 									];	
 					}
 					
