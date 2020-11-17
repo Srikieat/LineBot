@@ -117,9 +117,9 @@ if (!is_null($events['events'])) {
 				case "นัดชำระค่างวด":
 					
 					// check register or not
-					$isRegister = file_get_contents('http://okplus.ddns.net/okplus/bot/CheckRegister.aspx?u='.$text);
+					//$isRegister = file_get_contents('http://okplus.ddns.net/okplus/bot/CheckRegister.aspx?u='.$text);
 			
-					//$isRegister = "1";
+					$isRegister = "0";
 					
 					if ($isRegister === "0")
 					{
