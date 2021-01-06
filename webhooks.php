@@ -158,7 +158,30 @@ if (!is_null($events['events'])) {
 			
 			switch ($sendMessage) {
 					
+					case "สายด่วน":
+					
+					$isRegister = "1:srikieat:12/45263:16April2020;";
+					$pos = strpos($isRegister, ";");
+					$xxxx = substr($isRegister, 0, $pos);
+					   $messages = [
+										'type' => 'text',
+										'text' => 'เบอร์โทรติดต่อ : 023311798 023311799'	
+									];	
+					break;
+					
+					
 				case "ยอดปิดบัญชี":
+					
+					$isRegister = "1:srikieat:12/45263:16April2020;";
+					$pos = strpos($isRegister, ";");
+					$xxxx = substr($isRegister, 0, $pos);
+					   $messages = [
+										'type' => 'text',
+										'text' => 'ขออภัย ยังใช้งานไม่ได้'	
+									];	
+					break;
+					
+						case "ค่างวดคงเหลือ":
 					
 					$isRegister = "1:srikieat:12/45263:16April2020;";
 					$pos = strpos($isRegister, ";");
