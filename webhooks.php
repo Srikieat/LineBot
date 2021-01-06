@@ -24,6 +24,11 @@ $events = json_decode($content, true);
 if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
+		
+		
+	
+		
+		
 		if ($event['type'] == "unfollow") 
 		{
 			$id = $event['source']['userId'];
@@ -98,9 +103,26 @@ if (!is_null($events['events'])) {
 				
 		
 		
-		
+		// detect image
+		//
+		if ($event['type'] == 'message' && $event['message']['type'] == 'image') {
+			
+				// Get text sent
+			$text = $event['source']['userId'];
+			// Get replyToken
+			$replyToken = $event['replyToken'];
+			
+			// reply message
+			 $messages = [
+										'type' => 'text',
+										'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n".'หากต้องการติดต่อพนักงาน โปรดติดต่อที่ https://lin.ee/6D052q8'	
+									];	
+			
+		}
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
+			
+			
 			
 			
 			// Get text sent
