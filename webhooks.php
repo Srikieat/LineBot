@@ -158,6 +158,17 @@ if (!is_null($events['events'])) {
 			
 			switch ($sendMessage) {
 					
+				case "ยอดปิดบัญชี":
+					
+					$isRegister = "1:srikieat:12/45263:16April2020;";
+					$pos = strpos($isRegister, ";");
+					$xxxx = substr($isRegister, 0, $pos);
+					   $messages = [
+										'type' => 'text',
+										'text' => 'ขออภัย ยังใช้งานไม่ได้'	
+									];	
+					break;
+					
 				case "Test":
 					$isRegister = "1:srikieat:12/45263:16April2020;";
 					$pos = strpos($isRegister, ";");
