@@ -176,6 +176,16 @@ if (!is_null($events['events'])) {
 					//$isRegister = "0";
 					$isRegister = substr($isRegister, 0, 1);
 					
+					if ($isRegister === "2")
+					{
+						// ลูกค้าลงทะเบียนแล้ว รอลงสัญญาในระบบ	
+					  $messages = [
+										'type' => 'text',
+										'text' => 'ยังไม่สามารถทำงานได้ ระบบกำลังตรวจสอบข้อมูลอยู่'
+									];	
+						
+					}
+					
 					if ($isRegister === "0")
 					{
 						
