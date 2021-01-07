@@ -242,7 +242,7 @@ if (!is_null($events['events'])) {
           ],
           [
             "type" => "text",
-            "text" => "ชำระค่างวดมาแล้ว " .$noPaid. " งวด คงเหลือ " . $noRemain . " งวด",
+            "text" => "ชำระแล้ว " .$noPaid. " งวด คงเหลือ " . $noRemain . " งวด",
             "margin" => "lg",
             "size" => "lg",
             "color" => "#000000"
@@ -330,41 +330,7 @@ if (!is_null($events['events'])) {
             ]
           ],
 		
-		 [
-            "type" => "box",
-            "layout" => "baseline",
-            "margin" => "lg",
-            "contents" => [
-              [
-                "type" => "text",
-                "text" => "ชำระมาแล้ว",
-                "color" => "#C3C3C3"
-              ],
-              [
-                "type" => "text",
-                "text" => $noPaid,
-                "align" => "end"
-              ]
-            ]
-          ],
-		
-		 [
-            "type" => "box",
-            "layout" => "baseline",
-            "margin" => "lg",
-            "contents" => [
-              [
-                "type" => "text",
-                "text" => "คงเหลือ",
-                "color" => "#C3C3C3"
-              ],
-              [
-                "type" => "text",
-                "text" => $noRemain,
-                "align" => "end"
-              ]
-            ]
-          ],
+	
 			
 			 [
             "type" => "box",
