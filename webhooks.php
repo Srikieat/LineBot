@@ -177,7 +177,7 @@ if (!is_null($events['events'])) {
 					$xxxx = substr($isRegister, 0, $pos);
 					   $messages = [
 										'type' => 'text',
-										'text' => 'ขออภัย ยังใช้งานไม่ได้'	
+										'text' => 'ขออภัย ยังใช้งานไม่ได้ค่ะ'	
 									];	
 					break;
 					
