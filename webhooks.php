@@ -183,7 +183,7 @@ if (!is_null($events['events'])) {
 					
 						case "ค่างวดคงเหลือ":
 					
-					$paymentDetails = "63/0516:นาย นิคม สมบรูณ์:621401:10000.00:3กน 6787:ZOOMER-X:1,240:12:6:6:3 กรกฎาคม 2020:7 มกราคม 2021";
+					$paymentDetails = "63/0516:นาย นิคม สมบรูณ์:621401:10,000:3กน 6787:ZOOMER-X:1,240:12:6:6:3 กรกฎาคม 2020:26 ธันวาคม 2020";
 					$str_arr = explode (":", $paymentDetails);  
 					
 					$contractId=$str_arr[0];
