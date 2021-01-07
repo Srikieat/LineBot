@@ -238,7 +238,205 @@ if (!is_null($events['events'])) {
 					
 						if ($isRegister === "1")
 						{
-							
+									$paymentDetails = "63/0516:นาย นิคม สมบรูณ์:621401:10,000:3กน 6787:ZOOMER-X:1,240:12:6:6:3 กรกฎาคม 2020:26 ธันวาคม 2020";
+									$str_arr = explode (":", $paymentDetails);  
+
+									$contractId=$str_arr[0];
+									$name = $str_arr[1];
+									$reference = $str_arr[2];
+									$loan = $str_arr[3];
+									$plate = $str_arr[4];
+									$model = $str_arr[5];
+									$payment = $str_arr[6];
+									$noPayment = $str_arr[7];
+									$noPaid = $str_arr[8];
+									$noRemain = $str_arr[9];
+									$firstDt = $str_arr[10];
+									$lastDt = $str_arr[11];
+					
+									$messages = [
+					
+					
+					
+						 "type" => "flex",
+    "altText" => "ค่างวดคงเหลือ",
+    "contents" => [
+      "type" => "bubble",
+      "direction" => "ltr",
+      "header" => [
+        "type" => "box",
+        "layout" => "vertical",
+        "contents" => [
+          [
+            "type" => "text",
+            "text" => "ยอดกู้",
+            "size" => "lg",
+            "align" => "start",
+            "weight" => "bold",
+            "color" => "#009813"
+          ],
+          [
+            "type" => "text",
+            "text" => "฿".$loan,
+            "size" => "3xl",
+            "weight" => "bold",
+            "color" => "#000000"
+          ],
+          [
+            "type" => "text",
+            "text" => $name,
+            "size" => "lg",
+            "weight" => "bold",
+            "color" => "#000000"
+          ],
+          [
+            "type" => "text",
+            "text" => $plate,
+            "size" => "xs",
+            "color" => "#B2B2B2"
+          ],
+          [
+            "type" => "text",
+            "text" => "ชำระแล้ว " .$noPaid. " งวด คงเหลือ " . $noRemain . " งวด",
+            "margin" => "lg",
+            "size" => "lg",
+            "color" => "#000000"
+          ]
+        ]
+      ],
+      "body" => [
+        "type" => "box",
+        "layout" => "vertical",
+        "contents" => [
+          [
+            "type" => "separator",
+            "color" => "#C3C3C3"
+          ],
+          [
+            "type" => "box",
+            "layout" => "baseline",
+            "margin" => "lg",
+            "contents" => [
+              [
+                "type" => "text",
+                "text" => "เลขที่สัญญา",
+                "align" => "start",
+                "color" => "#C3C3C3"
+              ],
+              [
+                "type" => "text",
+                "text" => $contractId,
+                "align" => "end",
+                "color" => "#000000"
+              ]
+            ]
+          ],
+          [
+            "type" => "box",
+            "layout" => "baseline",
+            "margin" => "lg",
+            "contents" => [
+              [
+                "type" => "text",
+                "text" => "ค่างวดงวดละ",
+                "color" => "#C3C3C3"
+              ],
+              [
+                "type" => "text",
+                "text" => $payment,
+                "align" => "end"
+              ]
+            ]
+          ],
+		
+		
+		 [
+            "type" => "box",
+            "layout" => "baseline",
+            "margin" => "lg",
+            "contents" => [
+              [
+                "type" => "text",
+                "text" => "จำนวนงวด",
+                "color" => "#C3C3C3"
+              ],
+              [
+                "type" => "text",
+                "text" => $noPayment,
+                "align" => "end"
+              ]
+            ]
+          ],
+		 [
+            "type" => "box",
+            "layout" => "baseline",
+            "margin" => "lg",
+            "contents" => [
+              [
+                "type" => "text",
+                "text" => "ชำระงวแรกวันที่",
+                "color" => "#C3C3C3"
+              ],
+              [
+                "type" => "text",
+                "text" => $firstDt,
+                "align" => "end"
+              ]
+            ]
+          ],
+		
+	
+			
+			 [
+            "type" => "box",
+            "layout" => "baseline",
+            "margin" => "lg",
+            "contents" => [
+              [
+                "type" => "text",
+                "text" => "ชำระล่าสุดวันที่",
+                "color" => "#C3C3C3"
+              ],
+              [
+                "type" => "text",
+                "text" => $lastDt,
+                "align" => "end"
+              ]
+            ]
+          ],
+		
+          [
+            "type" => "separator",
+            "margin" => "lg",
+            "color" => "#C3C3C3"
+          ]
+        ]
+      ],
+      "footer" => [
+        "type" => "box",
+        "layout" => "horizontal",
+        "contents" => [
+          [
+            "type" => "text",
+            "text" => "จ่ายตรงวัน ลดงวดละ 100 บาท",
+            "size" => "lg",
+            "align" => "start",
+            "color" => "#0084B6",
+            "action" => [
+              "type" => "uri",
+              "label" => "View Details",
+              "uri" => "https://www.okplus.co.th"
+            ]
+          ]
+        ]
+      ]
+    ]
+					
+					
+					
+					
+					    ];	
+					
 						}
 					
 			
