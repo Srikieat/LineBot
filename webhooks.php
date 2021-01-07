@@ -242,7 +242,7 @@ if (!is_null($events['events'])) {
           ],
           [
             "type" => "text",
-            "text" => "ชำระค่งวดมาแล้ว " .$noPaid. " งวด",
+            "text" => "ชำระค่างวดมาแล้ว " .$noPaid. " งวด คงเหลือ " . $noRemain . " งวด",
             "margin" => "lg",
             "size" => "lg",
             "color" => "#000000"
