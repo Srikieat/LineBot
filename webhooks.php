@@ -183,25 +183,28 @@ if (!is_null($events['events'])) {
 					
 						case "ค่างวดคงเหลือ":
 					
-					$paymentDetails = "1,430:Big C:14 เมษายน 2563:ชำระค่างวดรถจักรยานยนต์:ราณี สายใจ:8กร 2513:62RC-06200:62/0147:621478";
+					$paymentDetails = "63/0516:นาย นิคม สมบรูณ์:621401:10000.00:3กน 6787:ZOOMER-X:1,240:12:6:6:3 กรกฎาคม 2020:7 มกราคม 2021";
 					$str_arr = explode (":", $paymentDetails);  
 					
-					$amount=$str_arr[0];
-					$channel = $str_arr[1];
-					$dt = $str_arr[2];
-					$detail = $str_arr[3];
-					$name = $str_arr[4];
-					$plate = $str_arr[5];
-					$receiptId = $str_arr[6];
-					$contractId = $str_arr[7];
-					$reference = $str_arr[8];
+					$contractId=$str_arr[0];
+					$name = $str_arr[1];
+					$reference = $str_arr[2];
+					$loan = $str_arr[3];
+					$plate = $str_arr[4];
+					$model = $str_arr[5];
+					$payment = $str_arr[6];
+					$noPayment = $str_arr[7];
+					$noPaid = $str_arr[8];
+					$noRemain = $str_arr[9];
+					$firstDt = $str_arr[10];
+					$lastDt = $str_arr[11];
 					
 						$messages = [
 					
 					
 					
 						 "type" => "flex",
-    "altText" => "ใบเสร็จรับเงิน",
+    "altText" => "ค่างวดคงเหลือ",
     "contents" => [
       "type" => "bubble",
       "direction" => "ltr",
@@ -211,7 +214,7 @@ if (!is_null($events['events'])) {
         "contents" => [
           [
             "type" => "text",
-            "text" => "ใบเสร็จรับเงิน",
+            "text" => "ยอดกู้",
             "size" => "lg",
             "align" => "start",
             "weight" => "bold",
@@ -219,7 +222,7 @@ if (!is_null($events['events'])) {
           ],
           [
             "type" => "text",
-            "text" => "฿".$amount,
+            "text" => "฿".$loan,
             "size" => "3xl",
             "weight" => "bold",
             "color" => "#000000"
@@ -233,13 +236,13 @@ if (!is_null($events['events'])) {
           ],
           [
             "type" => "text",
-            "text" => $dt,
+            "text" => $plate,
             "size" => "xs",
             "color" => "#B2B2B2"
           ],
           [
             "type" => "text",
-            "text" => $detail,
+            "text" => "รายละเอียดการชำระค่างวด",
             "margin" => "lg",
             "size" => "lg",
             "color" => "#000000"
@@ -261,13 +264,13 @@ if (!is_null($events['events'])) {
             "contents" => [
               [
                 "type" => "text",
-                "text" => "เลขที่ใบเสร็จรับเงิน",
+                "text" => "เลขที่สัญญา",
                 "align" => "start",
                 "color" => "#C3C3C3"
               ],
               [
                 "type" => "text",
-                "text" => $receiptId,
+                "text" => $contractId,
                 "align" => "end",
                 "color" => "#000000"
               ]
@@ -280,12 +283,12 @@ if (!is_null($events['events'])) {
             "contents" => [
               [
                 "type" => "text",
-                "text" => "สัญญาเลขที่",
+                "text" => "ค่างวดงวดละ",
                 "color" => "#C3C3C3"
               ],
               [
                 "type" => "text",
-                "text" => $contractId,
+                "text" => $payment,
                 "align" => "end"
               ]
             ]
@@ -299,12 +302,12 @@ if (!is_null($events['events'])) {
             "contents" => [
               [
                 "type" => "text",
-                "text" => "เลขที่อ้างอิง",
+                "text" => "จำนวนงวด",
                 "color" => "#C3C3C3"
               ],
               [
                 "type" => "text",
-                "text" => $reference,
+                "text" => $noPayment,
                 "align" => "end"
               ]
             ]
@@ -316,12 +319,12 @@ if (!is_null($events['events'])) {
             "contents" => [
               [
                 "type" => "text",
-                "text" => "ชำระทาง",
+                "text" => "ชำระงวแรกวันที่",
                 "color" => "#C3C3C3"
               ],
               [
                 "type" => "text",
-                "text" => $channel,
+                "text" => $firstDt,
                 "align" => "end"
               ]
             ]
@@ -334,18 +337,52 @@ if (!is_null($events['events'])) {
             "contents" => [
               [
                 "type" => "text",
-                "text" => "ทะเบียนรถ",
+                "text" => "ชำระมาแล้ว",
                 "color" => "#C3C3C3"
               ],
               [
                 "type" => "text",
-                "text" => $plate,
+                "text" => $noPaid,
                 "align" => "end"
               ]
             ]
           ],
 		
-		
+		 [
+            "type" => "box",
+            "layout" => "baseline",
+            "margin" => "lg",
+            "contents" => [
+              [
+                "type" => "text",
+                "text" => "คงเหลือ",
+                "color" => "#C3C3C3"
+              ],
+              [
+                "type" => "text",
+                "text" => $noRemain,
+                "align" => "end"
+              ]
+            ]
+          ],
+			
+			 [
+            "type" => "box",
+            "layout" => "baseline",
+            "margin" => "lg",
+            "contents" => [
+              [
+                "type" => "text",
+                "text" => "ชำระล่าสุดวันที่",
+                "color" => "#C3C3C3"
+              ],
+              [
+                "type" => "text",
+                "text" => $lastDt,
+                "align" => "end"
+              ]
+            ]
+          ],
 		
           [
             "type" => "separator",
