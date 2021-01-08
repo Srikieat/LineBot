@@ -107,6 +107,16 @@ if (!is_null($events['events'])) {
 		//
 		if ($event['type'] == 'message' && $event['message']['type'] == 'image') {
 			
+			 if ($array['events'][0]['message']['type'] == 'video') {
+        $F_TYPE = "mp4";
+
+    }
+    if ($array['events'][0]['message']['type'] == 'image') {
+        $F_TYPE = "png";
+
+    }
+			
+			
 				// Get text sent
 			$text = $event['source']['userId'];
 			// Get replyToken
