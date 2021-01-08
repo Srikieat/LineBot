@@ -113,17 +113,17 @@ if (!is_null($events['events'])) {
 		//	$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);	
 		//	$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channel_secret]);
 			
-			 if ($array['events'][0]['message']['type'] == 'video') 
-			 	{
-        			$F_TYPE = "mp4";
-    			}
+		//	 if ($array['events'][0]['message']['type'] == 'video') 
+			 //	{
+        	//		$F_TYPE = "mp4";
+    		//	}
 			
-    		if ($array['events'][0]['message']['type'] == 'image') 
-			{
+    	//	if ($array['events'][0]['message']['type'] == 'image') 
+		//	{
         			$F_TYPE = "png";
-			}
+		//	}
 
-    		$message_id = $array['events'][0]['message']['id'];
+    		//$message_id = $array['events'][0]['message']['id'];
 
     //		$response = $bot->getMessageContent($message_id);
 //$date_file = date("Y-m-d-H-i-s");
@@ -141,7 +141,7 @@ if (!is_null($events['events'])) {
 		
 		   $messages = [
 										'type' => 'text',
-										'text' => $F_TYPE	
+										'text' => '5252'	
 									];	
 			
 			$url = 'https://api.line.me/v2/bot/message/reply';
