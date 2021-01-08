@@ -283,7 +283,7 @@ if (!is_null($events['events'])) {
           ],
           [
             "type" => "text",
-            "text" => "ยอดปิดบัญชี ณ วันที่" .$date,
+            "text" => "ยอดปิดบัญชี ณ วันที่ " .$date,
             "margin" => "lg",
             "size" => "lg",
             "color" => "#000000"
