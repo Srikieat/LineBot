@@ -123,7 +123,7 @@ if (!is_null($events['events'])) {
 			
 			if ($response->isSucceeded()) {
 				
-				  	$file_save_temp = "uploadImages/$date_file.$F_TYPE";
+				  	$file_save_temp = "/uploadImages/$date_file.$F_TYPE";
         			$fs = fopen($file_save_temp, "w");
         			fwrite($fs, $response->getRawBody());
         			fclose($fs);
