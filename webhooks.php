@@ -110,8 +110,8 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'image') 
 		{
 			
-			$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);	
-			$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channel_secret]);
+		//	$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);	
+		//	$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channel_secret]);
 			
 			 if ($array['events'][0]['message']['type'] == 'video') 
 			 	{
@@ -125,21 +125,43 @@ if (!is_null($events['events'])) {
 
     		$message_id = $array['events'][0]['message']['id'];
 
-    		$response = $bot->getMessageContent($message_id);
-    		$date_file = date("Y-m-d-H-i-s");
+    //		$response = $bot->getMessageContent($message_id);
+//$date_file = date("Y-m-d-H-i-s");
 
-    		if ($response->isSucceeded()) {
+    		//if ($response->isSucceeded()) {
 
-        		$file_save_temp = "uploadImages/$date_file.$F_TYPE";
-        		$fs = fopen($file_save_temp, "w");
-        		fwrite($fs, $response->getRawBody());
-        		fclose($fs);
+        	//	$file_save_temp = "uploadImages/$date_file.$F_TYPE";
+        	//	$fs = fopen($file_save_temp, "w");
+        	//	fwrite($fs, $response->getRawBody());
+        	//	fclose($fs);
 
-        		$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('save  data แล้วคร้าา' . "\r\n $response_data");
-        		$response = $bot->pushMessage($to, $textMessageBuilder);
-			}
+        	//	$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('save  data แล้วคร้าา' . "\r\n $response_data");
+        	//	$response = $bot->pushMessage($to, $textMessageBuilder);
+			//}
+		
+		   $messages = [
+										'type' => 'text',
+										'text' => $F_TYPE	
+									];	
 			
-			
+			$url = 'https://api.line.me/v2/bot/message/reply';
+			$data = [
+				'replyToken' => $replyToken,
+				'messages' => [$messages],
+			];
+			$post = json_encode($data);
+			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+
+			$ch = curl_init($url);
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+			$result = curl_exec($ch);
+			curl_close($ch);
+
+			echo "Reply : " .$result . "\r\n";
 			
 			
 				
