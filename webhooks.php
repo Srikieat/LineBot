@@ -20,8 +20,6 @@ $content = file_get_contents('php://input');
 $events = json_decode($content, true);
 
 
-$array = json_decode(json_encode($content), true);
-
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
 	// Loop through each event
@@ -107,43 +105,22 @@ if (!is_null($events['events'])) {
 		
 		// detect image
 		//
-		if ($event['type'] == 'message' && $event['message']['type'] == 'image') 
-		{
+		if ($event['type'] == 'message' && $event['message']['type'] == 'image') {
 			
-		//	$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);	
-		//	$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channel_secret]);
+				// Get text sent
+			$text = $event['source']['userId'];
+			// Get replyToken
+			$replyToken = $event['replyToken'];
 			
-		//	 if ($array['events'][0]['message']['type'] == 'video') 
-			 //	{
-        	//		$F_TYPE = "mp4";
-    		//	}
-			
-    	//	if ($array['events'][0]['message']['type'] == 'image') 
-		//	{
-        			$F_TYPE = "png";
-		//	}
-
-    		//$message_id = $array['events'][0]['message']['id'];
-
-    //		$response = $bot->getMessageContent($message_id);
-//$date_file = date("Y-m-d-H-i-s");
-
-    		//if ($response->isSucceeded()) {
-
-        	//	$file_save_temp = "uploadImages/$date_file.$F_TYPE";
-        	//	$fs = fopen($file_save_temp, "w");
-        	//	fwrite($fs, $response->getRawBody());
-        	//	fclose($fs);
-
-        	//	$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('save  data แล้วคร้าา' . "\r\n $response_data");
-        	//	$response = $bot->pushMessage($to, $textMessageBuilder);
-			//}
-		
-		   $messages = [
+			// reply message
+			 $messages = [
 										'type' => 'text',
-										'text' => '5252'	
+										'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
 									];	
 			
+			
+			
+				// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
@@ -162,9 +139,6 @@ if (!is_null($events['events'])) {
 			curl_close($ch);
 
 			echo "Reply : " .$result . "\r\n";
-			
-			
-				
 		}
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
