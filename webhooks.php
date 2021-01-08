@@ -124,7 +124,7 @@ if (!is_null($events['events'])) {
 			if ($response->isSucceeded()) {
 				
 				
-					$temp = basename($path);
+					$temp = basename(dirname(__FILE__));
 				
 				
 					//$dir = new DirectoryIterator(dirname(__FILE__));
