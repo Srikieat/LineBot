@@ -118,7 +118,7 @@ if (!is_null($events['events'])) {
 			
 			$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channel_secret]);
 			
-			// $response = $bot->getMessageContent($message_id);
+			$response = $bot->getMessageContent($message_id);
 				// Get text sent
 			$text = $event['source']['userId'];
 			// Get replyToken
