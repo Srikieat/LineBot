@@ -172,13 +172,239 @@ if (!is_null($events['events'])) {
 					
 				case "ยอดปิดบัญชี":
 					
-					$isRegister = "1:srikieat:12/45263:16April2020;";
-					$pos = strpos($isRegister, ";");
-					$xxxx = substr($isRegister, 0, $pos);
-					   $messages = [
+						// check register or not
+					
+					$isRegister = file_get_contents('http://okplus.ddns.net/okplus/bot/CheckRegister.aspx?u='.$text);
+			
+					//$isRegister = "0";
+					$isRegister = substr($isRegister, 0, 1);
+					
+					if ($isRegister === "2")
+					{
+						// ลูกค้าลงทะเบียนแล้ว รอลงสัญญาในระบบ	
+					  $messages = [
 										'type' => 'text',
-										'text' => 'ขออภัย ยังใช้งานไม่ได้ค่ะ'	
+										'text' => 'ลงทะเบียนสำเร็จแล้ว แต่ระบบยังตรวจสอบข้อมูลอยู่'."\n"."\n".'(รหัสอ้างอิง:'.$text.')'
 									];	
+						
+					}
+					
+					if ($isRegister === "0")
+					{
+						
+						$messages = [
+						'type' => 'template', // 訊息類型 (模板)
+                				'altText' => 'ลงทะเบียน', // 替代文字
+                				'template' => array(
+                    						'type' => 'buttons', // 類型 (按鈕)
+		                				'thumbnailImageUrl' => 'https://okplus.co.th/Bot/Images/ImgButtonTemplate.png', // 圖片網址 <不一定需要>
+                 						'title' => 'บ.โอเคพลัส จำกัด', // 標題 <不一定需要>
+		                				'text' => 'ท่านยังไม่ได้ลงทะเบียนในระบบ กรุณาลงทะเบียน', // 文字
+                						'actions' => array(
+			                      					//  array(
+                            							//	'type' => 'postback', // 類型 (回傳)
+				                 				//       'label' => 'Postback example', // 標籤 1
+				                   				//     'data' => 'action=buy&itemid=123' // 資料
+                        			  				//    ),
+			                       					// array(
+                            							//	'type' => 'message', // 類型 (訊息)
+				                 				//       'label' => 'Message example', // 標籤 2
+				                   				//     'text' => 'Message example' // 用戶發送文字
+				                 				//     ),
+			                        				   array(
+                        				 				'type' => 'uri', // 類型 (連結)
+				                         				'label' => 'ลงทะเบียน', // 標籤 3
+				                         				'uri' => 'http://okplus.ddns.net/okplus/OKMO/Bot.aspx?u='.$text // 連結網址
+				                       				         )
+			                       					   )
+		                					)
+					
+						];	
+						
+					}
+					
+						if ($isRegister === "1")
+						{
+									$paymentDetails = "63/0457:นาย นิคม สมบรูณ์:621401:10,000:3กน 6787:ZOOMER-X:2,370:12:3 มิถุนายน 2020:24,583.00";
+									$str_arr = explode (":", $paymentDetails);  
+
+									$contractId=$str_arr[0];
+									$name = $str_arr[1];
+									$reference = $str_arr[2];
+									$loan = $str_arr[3];
+									$plate = $str_arr[4];
+									$model = $str_arr[5];
+									$payment = $str_arr[6];
+									$noPayment = $str_arr[7];
+									$firstDt = $str_arr[8];
+									$closeAmount = $str_arr[9];
+									$date = date('d/m/Y', time());
+					
+									$messages = [
+					
+					
+					
+						 "type" => "flex",
+    "altText" => "ยอดปิดบัญชี",
+    "contents" => [
+      "type" => "bubble",
+      "direction" => "ltr",
+      "header" => [
+        "type" => "box",
+        "layout" => "vertical",
+        "contents" => [
+          [
+            "type" => "text",
+            "text" => "ยอดปิดบัญชี",
+            "size" => "lg",
+            "align" => "start",
+            "weight" => "bold",
+            "color" => "#009813"
+          ],
+          [
+            "type" => "text",
+            "text" => "฿".$closeAmount,
+            "size" => "3xl",
+            "weight" => "bold",
+            "color" => "#000000"
+          ],
+          [
+            "type" => "text",
+            "text" => $name,
+            "size" => "lg",
+            "weight" => "bold",
+            "color" => "#000000"
+          ],
+          [
+            "type" => "text",
+            "text" => $plate,
+            "size" => "xs",
+            "color" => "#B2B2B2"
+          ],
+          [
+            "type" => "text",
+            "text" => "ยอดปิดบัญชี ณ วันที่" .$date,
+            "margin" => "lg",
+            "size" => "lg",
+            "color" => "#000000"
+          ]
+        ]
+      ],
+      "body" => [
+        "type" => "box",
+        "layout" => "vertical",
+        "contents" => [
+          [
+            "type" => "separator",
+            "color" => "#C3C3C3"
+          ],
+          [
+            "type" => "box",
+            "layout" => "baseline",
+            "margin" => "lg",
+            "contents" => [
+              [
+                "type" => "text",
+                "text" => "เลขที่สัญญา",
+                "align" => "start",
+                "color" => "#C3C3C3"
+              ],
+              [
+                "type" => "text",
+                "text" => $contractId,
+                "align" => "end",
+                "color" => "#000000"
+              ]
+            ]
+          ],
+          [
+            "type" => "box",
+            "layout" => "baseline",
+            "margin" => "lg",
+            "contents" => [
+              [
+                "type" => "text",
+                "text" => "ค่างวดงวดละ",
+                "color" => "#C3C3C3"
+              ],
+              [
+                "type" => "text",
+                "text" => $payment,
+                "align" => "end"
+              ]
+            ]
+          ],
+		
+		
+		 [
+            "type" => "box",
+            "layout" => "baseline",
+            "margin" => "lg",
+            "contents" => [
+              [
+                "type" => "text",
+                "text" => "จำนวนงวด",
+                "color" => "#C3C3C3"
+              ],
+              [
+                "type" => "text",
+                "text" => $noPayment,
+                "align" => "end"
+              ]
+            ]
+          ],
+		 [
+            "type" => "box",
+            "layout" => "baseline",
+            "margin" => "lg",
+            "contents" => [
+              [
+                "type" => "text",
+                "text" => "ชำระงวแรกวันที่",
+                "color" => "#C3C3C3"
+              ],
+              [
+                "type" => "text",
+                "text" => $firstDt,
+                "align" => "end"
+              ]
+            ]
+          ],
+				
+          [
+            "type" => "separator",
+            "margin" => "lg",
+            "color" => "#C3C3C3"
+          ]
+        ]
+      ],
+      "footer" => [
+        "type" => "box",
+        "layout" => "horizontal",
+        "contents" => [
+          [
+            "type" => "text",
+            "text" => "ยอดปิดบัญชี ยังไม่หักส่วนลด โปรดติดต่อพนักงาน เพื่อสอบถามรายะเอียด",
+            "size" => "lg",
+            "align" => "start",
+            "color" => "#0084B6",
+            "action" => [
+              "type" => "uri",
+              "label" => "View Details",
+              "uri" => "https://www.okplus.co.th"
+            ]
+          ]
+        ]
+      ]
+    ]
+					
+					
+					
+					
+					    ];	
+					
+						}
+					
 					break;
 					
 						case "ค่างวดคงเหลือ":
@@ -238,7 +464,7 @@ if (!is_null($events['events'])) {
 					
 						if ($isRegister === "1")
 						{
-									$paymentDetails = "63/0516:นาย นิคม สมบรูณ์:621401:10,000:3กน 6787:ZOOMER-X:1,240:12:6:6:3 กรกฎาคม 2020:26 ธันวาคม 2020";
+									$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentDetail.aspx?u='.$text);;
 									$str_arr = explode (":", $paymentDetails);  
 
 									$contractId=$str_arr[0];
