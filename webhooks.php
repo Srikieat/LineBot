@@ -116,7 +116,7 @@ if (!is_null($events['events'])) {
 			
 			$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 			
-			//$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channel_secret]);
+			$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channel_secret]);
 			
 			// $response = $bot->getMessageContent($message_id);
 				// Get text sent
