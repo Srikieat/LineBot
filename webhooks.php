@@ -119,6 +119,13 @@ if (!is_null($events['events'])) {
 			$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channel_secret]);
 			
 			$response = $bot->getMessageContent($message_id);
+			
+			
+			if ($response->isSucceeded()) {
+				
+				$temp = 'hello';
+				
+			}
 				// Get text sent
 			$text = $event['source']['userId'];
 			// Get replyToken
@@ -127,7 +134,7 @@ if (!is_null($events['events'])) {
 			// reply message
 			 $messages = [
 										'type' => 'text',
-										'text' => '111'.$text.'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
+										'text' => '111'.$temp.'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
 									];	
 			
 			
