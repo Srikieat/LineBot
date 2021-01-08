@@ -108,12 +108,8 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'image') 
 		{
 			
-			
-			
-			
-			
-			
-			
+			$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);	
+			$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channel_secret]);
 			
 			 if ($array['events'][0]['message']['type'] == 'video') 
 			 	{
