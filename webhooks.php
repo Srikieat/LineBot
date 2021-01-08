@@ -119,9 +119,14 @@ if (!is_null($events['events'])) {
 			$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channel_secret]);
 			
 			$response = $bot->getMessageContent($message_id);
-			
+			$date_file = date("Y-m-d-H-i-s");
 			
 			if ($response->isSucceeded()) {
+				
+				  	$file_save_temp = "uploadImages/$date_file.$F_TYPE";
+        			$fs = fopen($file_save_temp, "w");
+        			fwrite($fs, $response->getRawBody());
+        			fclose($fs);
 				
 				$temp = 'hello';
 				
