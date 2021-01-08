@@ -107,14 +107,11 @@ if (!is_null($events['events'])) {
 		//
 		if ($event['type'] == 'message' && $event['message']['type'] == 'image') {
 			
-			 if ($array['events'][0]['message']['type'] == 'video') {
-        $F_TYPE = "mp4";
+			
+   
+        	$F_TYPE = "png";
 
-    }
-    if ($array['events'][0]['message']['type'] == 'image') {
-        $F_TYPE = "png";
-
-    }
+ 
 			
 			
 				// Get text sent
