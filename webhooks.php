@@ -369,7 +369,7 @@ if (!is_null($events['events'])) {
             "contents" => [
               [
                 "type" => "text",
-                "text" => "ชำระงวแรกวันที่",
+                "text" => "ชำระงวดแรกวันที่",
                 "color" => "#C3C3C3"
               ],
               [
@@ -611,7 +611,7 @@ if (!is_null($events['events'])) {
             "contents" => [
               [
                 "type" => "text",
-                "text" => "ชำระงวแรกวันที่",
+                "text" => "ชำระงวดแรกวันที่",
                 "color" => "#C3C3C3"
               ],
               [
