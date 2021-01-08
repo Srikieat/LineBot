@@ -225,7 +225,8 @@ if (!is_null($events['events'])) {
 					
 						if ($isRegister === "1")
 						{
-									$paymentDetails = "63/0457:นาย นิคม สมบรูณ์:621401:10,000:3กน 6787:ZOOMER-X:2,370:12:3 มิถุนายน 2020:24,583.00";
+									//$paymentDetails = "63/0457:นาย นิคม สมบรูณ์:621401:10,000:3กน 6787:ZOOMER-X:2,370:12:3 มิถุนายน 2020:24,583";
+									$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getClosePayment.aspx?u='.$text);;
 									$str_arr = explode (":", $paymentDetails);  
 
 									$contractId=$str_arr[0];
@@ -472,6 +473,8 @@ if (!is_null($events['events'])) {
 					
 						if ($isRegister === "1")
 						{
+									//$paymentDetails = "63/0516:นาย นิคม สมบรูณ์:621401:10,000:3กน 6787:ZOOMER-X:1,240:12:6:6:3 กรกฎาคม 2020:26 ธันวาคม 2020";
+							
 									$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentDetail.aspx?u='.$text);;
 									$str_arr = explode (":", $paymentDetails);  
 
