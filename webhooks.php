@@ -125,6 +125,13 @@ if (!is_null($events['events'])) {
 				
 				
 					$temp = dirname(__FILE__);
+				
+				
+					$dir = new DirectoryIterator(dirname(__FILE__));
+					foreach ($dir as $fileinfo) {
+    						$fileinfo->getFilename() . "\n";
+						
+						
 				  	$file_save_temp = "/uploadImages/$date_file.$F_TYPE";
         			$fs = fopen($file_save_temp, "w");
         			fwrite($fs, $response->getRawBody());
@@ -141,7 +148,7 @@ if (!is_null($events['events'])) {
 			// reply message
 			 $messages = [
 										'type' => 'text',
-										'text' => '111'.$temp.'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
+										'text' => '111'.$fileinfo.'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
 									];	
 			
 			
