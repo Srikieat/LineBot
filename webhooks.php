@@ -113,7 +113,7 @@ if (!is_null($events['events'])) {
 
  			$message_id = $event['message']['id'];
 			
-			
+			 $response = $bot->getMessageContent($message_id);
 				// Get text sent
 			$text = $event['source']['userId'];
 			// Get replyToken
