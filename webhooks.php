@@ -290,9 +290,9 @@ if (!is_null($events['events'])) {
           ],
 			  [
             "type" => "text",
-            "text" => "ยังไม่หักส่วนลด",
+            "text" => "ยอดตามระบบ ยังไม่หักส่วนลด",
             "margin" => "lg",
-            "size" => "lg",
+            "size" => "xs",
             "color" => "#000000"
           ]
         ]
