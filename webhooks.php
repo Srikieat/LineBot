@@ -287,14 +287,15 @@ if (!is_null($events['events'])) {
             "margin" => "lg",
             "size" => "lg",
             "color" => "#000000"
-          ],
-			  [
-            "type" => "text",
-            "text" => "ยอดตามระบบ ยังไม่หักส่วนลด",
-            "margin" => "lg",
-            "size" => "xs",
-            "color" => "#000000"
           ]
+			//,
+			//  [
+            //"type" => "text",
+            //"text" => "ยอดตามระบบ",
+            //"margin" => "lg",
+            //"size" => "xs",
+            //"color" => "#000000"
+          //]
         ]
       ],
       "body" => [
@@ -391,7 +392,7 @@ if (!is_null($events['events'])) {
         "contents" => [
           [
             "type" => "text",
-            "text" => "ยอดปิดบัญชี ยังไม่หักส่วนลด โปรดติดต่อพนักงาน เพื่อสอบถามรายะเอียด",
+            "text" => "",
             "size" => "lg",
             "align" => "start",
             "color" => "#0084B6",
