@@ -392,7 +392,7 @@ if (!is_null($events['events'])) {
         "contents" => [
           [
             "type" => "text",
-            "text" => "",
+            "text" => "ddd",
             "size" => "lg",
             "align" => "start",
             "color" => "#0084B6",
