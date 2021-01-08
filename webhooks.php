@@ -287,7 +287,7 @@ if (!is_null($events['events'])) {
             "margin" => "lg",
             "size" => "lg",
             "color" => "#000000"
-          ]
+          ],
 			  [
             "type" => "text",
             "text" => "ยังไม่หักส่วนลด",
