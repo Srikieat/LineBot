@@ -109,7 +109,7 @@ if (!is_null($events['events'])) {
 			
 			
    
-        	$F_TYPE = "png";
+        	// IMXX
 
  			$message_id = $event['message']['id'];
 			
@@ -141,7 +141,7 @@ if (!is_null($events['events'])) {
 				
 				
 					$messages = [
-						 {
+						 
           type: "template",
           altText: "This is an image carousel template",
           template: {
@@ -162,8 +162,8 @@ if (!is_null($events['events'])) {
                   label: "Cony",
                   uri: "https://developers.line.biz"
                 }
-              }
-					
+			  }
+				]
 						];	
 					$data = [
 						'to' => $pushID,
