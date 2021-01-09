@@ -149,7 +149,7 @@ if (!is_null($events['events'])) {
                         							//	array(
                             					//			'imageUrl' => 'hhttps://okplusbot.herokuapp.com/uploadImages/test.jpg', //圖片網址
                             				//				'action' => array
-																(
+											//					(
 										//					'type' => 'postback', //類型 (回傳)
 										//					'label' => 'Pb example', //標籤
 										//					'data' => 'action=buy&itemid=123' //資料
