@@ -171,7 +171,7 @@ if (!is_null($events['events'])) {
                                 'uri' => 'https://github.com/GoneTone/line-example-bot-php' //連結網址
                             )
 						)
-    
+    )
 						];	
 					$data = [
 						'to' => $pushID,
