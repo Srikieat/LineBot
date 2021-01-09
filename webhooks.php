@@ -141,28 +141,36 @@ if (!is_null($events['events'])) {
 				
 				
 					$messages = [
-						 		'type' => 'template', // 訊息類型 (模板)
-                				'altText' => 'ลงทะเบียน', // 替代文字
-                				'template' => array(
-                    							'type' => 'image_carousel',
-		                						'columns' => array(
-																	'imageUrl' => 'https://example.com/bot/images/item1.jpg'
-																	'action' => array (
-																						 'type' => 'message',
-																						'label' => 'helle',
-																						'text' => 'hello'
-																						)
-																	
-																	
-												
-																	)
-                 								
-		                						
-                								
-									
-			                       					   			
-									
-		                							)
+						 		 'type' => 'template', //訊息類型 (模板)
+                					'altText' => 'Example image carousel template', //替代文字
+                					'template' => array(
+                    					'type' => 'image_carousel', //類型 (圖片輪播)
+                    					'columns' => array(
+                        								array(
+                            								'imageUrl' => 'https://api.reh.tw/line/bot/example/assets/images/example_1-1.jpg', //圖片網址
+                            								'action' => array
+																(
+															'type' => 'postback', //類型 (回傳)
+															'label' => 'Pb example', //標籤
+															'data' => 'action=buy&itemid=123' //資料
+                            									)
+                        									),
+                        array(
+                            'imageUrl' => 'https://api.reh.tw/line/bot/example/assets/images/example_1-1.jpg', //圖片網址
+                            'action' => array(
+                                'type' => 'message', //類型 (訊息)
+                                'label' => 'Msg example', //標籤
+                                'text' => 'Message example' //用戶發送文字
+                            )
+                        ),
+                        array(
+                            'imageUrl' => 'https://api.reh.tw/line/bot/example/assets/images/example_1-1.jpg', //圖片網址
+                            'action' => array(
+                                'type' => 'uri', //類型 (連結)
+                                'label' => 'Uri example', //標籤
+                                'uri' => 'https://github.com/GoneTone/line-example-bot-php' //連結網址
+                            )
+						)
     
 						];	
 					$data = [
