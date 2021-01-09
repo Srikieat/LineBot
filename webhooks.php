@@ -124,24 +124,10 @@ if (!is_null($events['events'])) {
 			
 			
 			if ($response->isSucceeded()) {
-				
+					// save image
 					$dataBinary = $response->getRawBody();
-					$fileFullSavePath = 'test.jpg';
+					$fileFullSavePath = 'uploadImages/test.jpg';
 					file_put_contents($fileFullSavePath,$dataBinary);
-					$temp = basename(dirname(__FILE__));
-				
-				
-					//$dir = new DirectoryIterator(dirname(__FILE__));
-					//foreach ($dir as $fileinfo) {
-    				//		$fileinfo->getFilename() . "\n";
-						
-						
-				  	$file_save_temp = $date_file.$F_TYPE;
-        			$fs = fopen($file_save_temp, "w");
-        			fwrite($fs, $response->getRawBody());
-        			fclose($fs);
-				
-				
 				
 			}
 				// Get text sent
