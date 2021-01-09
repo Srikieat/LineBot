@@ -788,10 +788,9 @@ if (!is_null($events['events'])) {
 			
 					break;
 					
-				case "Test":
-					$isRegister = "1:srikieat:12/45263:16April2020;";
-					$pos = strpos($isRegister, ";");
-					$xxxx = substr($isRegister, 0, $pos);
+				case "myid":
+					
+					$xxxx = $id = $event['source']['userId'];
 					   $messages = [
 										'type' => 'text',
 										'text' => $xxxx	
