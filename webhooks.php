@@ -121,9 +121,13 @@ if (!is_null($events['events'])) {
 			$response = $bot->getMessageContent($message_id);
 			$date_file = date("Y-m-d-H-i-s");
 			
+			
+			
 			if ($response->isSucceeded()) {
 				
-				
+					$dataBinary = $response->getRawBody();
+					$fileFullSavePath = 'test.jpg';
+					file_put_contents($fileFullSavePath,$dataBinary);
 					$temp = basename(dirname(__FILE__));
 				
 				
