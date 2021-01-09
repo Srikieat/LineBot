@@ -172,6 +172,7 @@ if (!is_null($events['events'])) {
                             )
 						)
     )
+										)
 						];	
 					$data = [
 						'to' => $pushID,
