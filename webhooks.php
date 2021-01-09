@@ -126,7 +126,7 @@ if (!is_null($events['events'])) {
 			if ($response->isSucceeded()) {
 					// save image
 					$dataBinary = $response->getRawBody();
-					$fileFullSavePath = 'uploadImages/test.jpg';
+					$fileFullSavePath = 'uploadImages/'.$date_file = date("Y-m-d-H-i-s").'.jpg';
 					file_put_contents($fileFullSavePath,$dataBinary);
 				
 				
@@ -164,7 +164,7 @@ if (!is_null($events['events'])) {
                        //     )
                        // ),
                         array(
-                            'imageUrl' => 'https://okplusbot.herokuapp.com/uploadImages/test.jpg', //圖片網址
+                            'imageUrl' => 'https://okplusbot.herokuapp.com/'.$fileFullSavePath, //圖片網址
                             'action' => array(
                                 'type' => 'message', //類型 (連結)
                                 'label' => '50/1234', //標籤
