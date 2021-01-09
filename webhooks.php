@@ -129,7 +129,23 @@ if (!is_null($events['events'])) {
 					$fileFullSavePath = 'uploadImages/'.$date_file = date("Y-m-d-H-i-s").'.jpg';
 					file_put_contents($fileFullSavePath,$dataBinary);
 				
+					$id = $event['source']['userId'];
 				
+				
+					$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getClosePayment.aspx?u='.$id);;
+									$str_arr = explode (":", $paymentDetails);  
+
+									$contractId=$str_arr[0];
+									$name = $str_arr[1];
+									$reference = $str_arr[2];
+									$loan = $str_arr[3];
+									$plate = $str_arr[4];
+									$model = $str_arr[5];
+									$payment = $str_arr[6];
+									$noPayment = $str_arr[7];
+									$firstDt = $str_arr[8];
+									$closeAmount = $str_arr[9];
+									$date = date('d/m/Y', time());
 				
 					 $accessToken = "0jFIiIq0JnX9WLpNo+ZMNnVKOSP3IYtDwwqLNSwnR3PyIqo+pTSIdJyY0fLkxQEBSGB7h1OA/ZlRTeHiYeb6v/B7Xnla6B2RO0oIjXfuLFKLKp5kwGc1ZwyR/Ye2KAAnD+fXr3MR7/eCN6ilzs6CQAdB04t89/1O/w1cDnyilFU=";
 					//copy ข้อความ Channel access token ตอนที่ตั้งค่า
@@ -167,8 +183,8 @@ if (!is_null($events['events'])) {
                             'imageUrl' => 'https://okplusbot.herokuapp.com/'.$fileFullSavePath, //圖片網址
                             'action' => array(
                                 'type' => 'message', //類型 (連結)
-                                'label' => '50/1234', //標籤
-                                'text' => '50/1234' //連結網址
+                                'label' => $contractId, //標籤
+                                'text' => $contractId //連結網址
                             )
 						)
     )
