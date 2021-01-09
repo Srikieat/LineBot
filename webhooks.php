@@ -129,6 +129,16 @@ if (!is_null($events['events'])) {
 					$fileFullSavePath = 'uploadImages/test.jpg';
 					file_put_contents($fileFullSavePath,$dataBinary);
 				
+				
+
+					//$msg = $_GET['m'];
+					//$pushID = $_GET['u'];
+					$pushID = 'U44e90a4578cb725ccc9ed09d2cdc18e9';
+					$msg = 'สวัสดี ศรีเกียรติ';
+					$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($msg);
+					$response = $bot->pushMessage($pushID, $textMessageBuilder);
+
+				
 			}
 				// Get text sent
 			$text = $event['source']['userId'];
