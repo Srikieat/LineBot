@@ -158,7 +158,7 @@ if (!is_null($events['events'])) {
 				
 					$messages = [
 						 		 'type' => 'template', //訊息類型 (模板)
-                					'altText' => 'Example image carousel template', //替代文字
+                					'altText' => 'ลูกค้าส่งสลิป', //替代文字
                 					'template' => array(
                     					'type' => 'image_carousel', //類型 (圖片輪播)
                     					'columns' => array(
@@ -223,7 +223,8 @@ if (!is_null($events['events'])) {
 			// reply message
 			 $messages = [
 										'type' => 'text',
-										'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
+										//'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
+				 						'text' => 'ขอบคุณค่ะ'
 									];	
 			
 			
