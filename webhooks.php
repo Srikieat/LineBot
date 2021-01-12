@@ -153,9 +153,12 @@ if (!is_null($events['events'])) {
    					$arrayHeader = array();
    					$arrayHeader[] = "Content-Type: application/json";
    					$arrayHeader[] = "Authorization: Bearer {$accessToken}";
-					//$pushID = 'Uf55473a52212b163dd7508653ec5bbd8';
-				
-					$pushID = 'U44e90a4578cb725ccc9ed09d2cdc18e9';
+					
+					// Bow lek
+					$pushID = 'Uf55473a52212b163dd7508653ec5bbd8';
+					
+					//srikieat
+					//$pushID = 'U44e90a4578cb725ccc9ed09d2cdc18e9';
 					
 				
 				
@@ -792,7 +795,7 @@ if (!is_null($events['events'])) {
 			
 					break;
 					
-				case "myid":
+				case "Myid":
 					
 					$xxxx = $id = $event['source']['userId'];
 					   $messages = [
