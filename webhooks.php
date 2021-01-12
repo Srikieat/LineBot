@@ -126,8 +126,8 @@ if (!is_null($events['events'])) {
 			if ($response->isSucceeded()) {
 					// save image
 					$dataBinary = $response->getRawBody();
-					//$fileFullSavePath = 'uploadImages/'.$date_file = date("Y-m-d-H-i-s").'.jpg';
-					$fileFullSavePath = 'uploadImages/test.jpg';
+					$fileFullSavePath = 'uploadImages/'.$date_file = date("Y-m-d-H-i-s").'.jpg';
+					//$fileFullSavePath = 'uploadImages/test.jpg';
 					file_put_contents($fileFullSavePath,$dataBinary);
 				
 					$id = $event['source']['userId'];
