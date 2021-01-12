@@ -187,7 +187,7 @@ if (!is_null($events['events'])) {
                             'action' => array(
                                 'type' => 'message', //類型 (連結)
                                 'label' => $contractId, //標籤
-                                'text' => $contractId //連結網址
+                                'text' => $date_file //連結網址
                             )
 						)
     )
