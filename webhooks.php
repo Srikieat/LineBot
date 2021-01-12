@@ -186,8 +186,8 @@ if (!is_null($events['events'])) {
                             'imageUrl' => 'https://okplusbot.herokuapp.com/'.$fileFullSavePath, //圖片網址
                             'action' => array(
                                 'type' => 'message', //類型 (連結)
-                                'label' => $fileFullSavePath, //標籤
-                                'text' => $fileFullSavePath //連結網址
+                                'label' =>'123', //標籤
+                                'text' => '123' //連結網址
                             )
 						)
     )
