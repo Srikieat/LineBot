@@ -132,7 +132,7 @@ if (!is_null($events['events'])) {
 				
 					$id = $event['source']['userId'];
 				
-				
+					$urlImage = 'https://okplusbot.herokuapp.com/'.$fileFullSavePath;
 					$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getClosePayment.aspx?u='.$id);;
 									$str_arr = explode (":", $paymentDetails);  
 
@@ -183,7 +183,7 @@ if (!is_null($events['events'])) {
                        //     )
                        // ),
                         array(
-                            'imageUrl' => 'https://okplusbot.herokuapp.com/'.$fileFullSavePath, //圖片網址
+                            'imageUrl' => $urlImage , //圖片網址
                             'action' => array(
                                 'type' => 'message', //類型 (連結)
                                 'label' => $contractId, //標籤
