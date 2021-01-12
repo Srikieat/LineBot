@@ -119,8 +119,8 @@ if (!is_null($events['events'])) {
 			$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channel_secret]);
 			
 			$response = $bot->getMessageContent($message_id);
-			$date_file = date("Y-m-d-H-i-s");
-			
+			//$date_file = date("Y-m-d-H-i-s");
+			$date_file = uniqid();
 			
 			
 			if ($response->isSucceeded()) {
@@ -186,8 +186,8 @@ if (!is_null($events['events'])) {
                             'imageUrl' => 'https://okplusbot.herokuapp.com/'.$fileFullSavePath, //圖片網址
                             'action' => array(
                                 'type' => 'message', //類型 (連結)
-                                'label' => $date_file, //標籤
-                                'text' => $date_file //連結網址
+                                'label' => $contractId, //標籤
+                                'text' => $contractId //連結網址
                             )
 						)
     )
