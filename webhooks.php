@@ -126,7 +126,8 @@ if (!is_null($events['events'])) {
 			if ($response->isSucceeded()) {
 					// save image
 					$dataBinary = $response->getRawBody();
-					$fileFullSavePath = 'uploadImages/'.$date_file = date("Y-m-d-H-i-s").'.jpg';
+					//$fileFullSavePath = 'uploadImages/'.$date_file = date("Y-m-d-H-i-s").'.jpg';
+					$fileFullSavePath = 'uploadImages/test.jpg';
 					file_put_contents($fileFullSavePath,$dataBinary);
 				
 					$id = $event['source']['userId'];
@@ -152,7 +153,9 @@ if (!is_null($events['events'])) {
    					$arrayHeader = array();
    					$arrayHeader[] = "Content-Type: application/json";
    					$arrayHeader[] = "Authorization: Bearer {$accessToken}";
-					$pushID = 'Uf55473a52212b163dd7508653ec5bbd8';
+					//$pushID = 'Uf55473a52212b163dd7508653ec5bbd8';
+				
+					$pushID = 'U44e90a4578cb725ccc9ed09d2cdc18e9';
 					
 				
 				
@@ -183,8 +186,8 @@ if (!is_null($events['events'])) {
                             'imageUrl' => 'https://okplusbot.herokuapp.com/'.$fileFullSavePath, //圖片網址
                             'action' => array(
                                 'type' => 'message', //類型 (連結)
-                                'label' => $contractId, //標籤
-                                'text' => $contractId //連結網址
+                                'label' => $fileFullSavePath, //標籤
+                                'text' => $fileFullSavePath //連結網址
                             )
 						)
     )
