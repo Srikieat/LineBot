@@ -278,8 +278,8 @@ if (!is_null($events['events'])) {
 					
 					 $messages = [
 										'type' => 'image',
-										'originalContentUrl' => 'http://okplus.ddns.net/okplus/Tempimages/reg.jpg',
-    									'previewImageUrl' => 'http://okplus.ddns.net/okplus/Tempimages/reg.jpg'
+										'originalContentUrl' => 'https://www.okplus.co.th/images/main2.jpg',
+    									'previewImageUrl' => 'https://www.okplus.co.th/images/main2.jpg'
 
 									];	
 					
