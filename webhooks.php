@@ -273,6 +273,18 @@ if (!is_null($events['events'])) {
 			
 			switch ($sendMessage) {
 					
+				// send image to customer	
+				case "สำเนารถ":
+					
+					 $messages = [
+										'type' => 'image',
+										'originalContentUrl' => 'http://okplus.ddns.net/okplus/Tempimages/reg.jpg',
+    									'previewImageUrl' => 'http://okplus.ddns.net/okplus/Tempimages/reg.jpg'
+
+									];	
+					
+					break;
+					
 					case "สายด่วน":
 					
 					$isRegister = "1:srikieat:12/45263:16April2020;";
