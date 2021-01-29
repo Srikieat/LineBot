@@ -273,13 +273,14 @@ if (!is_null($events['events'])) {
 			
 			switch ($sendMessage) {
 					
-				// send image to customer	
+				// send image to customer	URL must be https
+				// car copy	
 				case "สำเนารถ":
 					
 					 $messages = [
 										'type' => 'image',
-										'originalContentUrl' => 'https://www.okplus.co.th/images/main2.jpg',
-    									'previewImageUrl' => 'https://www.okplus.co.th/images/main2.jpg'
+										'originalContentUrl' => 'http://www.okplus.co.th/RegCopy/132563776786646137.jpg',
+    									'previewImageUrl' => 'https://whttp://www.okplus.co.th/RegCopy/132563776786646137.jpg'
 
 									];	
 					
