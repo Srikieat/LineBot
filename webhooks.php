@@ -309,23 +309,23 @@ if (!is_null($events['events'])) {
 
 									];	
 									
-						if ($completeProcess === "1")
-						{
-						$messages = [
-										'type' => 'image',
-										'originalContentUrl' => 'https://www.okplus.co.th/RegCopy/' + $fileName + '.jpg',
-    									'previewImageUrl' => 'https://www.okplus.co.th/RegCopy/' + $fileName + '.jpg'
+					//	if ($completeProcess === "1")
+					//	{
+					//	$messages = [
+						//				'type' => 'image',
+							//			'originalContentUrl' => 'https://www.okplus.co.th/RegCopy/' + $fileName + '.jpg',
+    							//		'previewImageUrl' => 'https://www.okplus.co.th/RegCopy/' + $fileName + '.jpg'
 
-									];		
-						}
-						else
-						{
-							$messages = [
-										'type' => 'text',
-										'text' => 'ระบบไม่สามารถทำงานได้ โปรดติดต่อเจ้าหน้าที่'
+							//		];		
+					//	}
+				//		else
+					//	{
+						//	$messages = [
+							//			'type' => 'text',
+								//		'text' => 'ระบบไม่สามารถทำงานได้ โปรดติดต่อเจ้าหน้าที่'
 
-									];	
-						}
+								//	];	
+					//	}
 						 
 						
 						
