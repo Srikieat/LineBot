@@ -294,7 +294,7 @@ if (!is_null($events['events'])) {
 						
 					}
 					
-					if ($isRegister === "0")
+					if ($isRegister === "1")
 					{
 						
 							$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getRegCopy.aspx?u='.$text);;
