@@ -303,9 +303,11 @@ if (!is_null($events['events'])) {
 									$completeProcess=$str_arr[0];
 									$fileName = $str_arr[1];
 						
+						$imageUrl = 'https://www.okplus.co.th/RegCopy/' + $fileName + '.jpg'
+						
 						$messages = [
 										'type' => 'text',
-										'text' => $paymentDetails
+										'text' => $imageUrl
 
 									];	
 									
