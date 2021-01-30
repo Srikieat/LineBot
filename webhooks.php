@@ -302,6 +302,12 @@ if (!is_null($events['events'])) {
 
 									$completeProcess=$str_arr[0];
 									$fileName = $str_arr[1];
+						
+						$messages = [
+										'type' => 'text',
+										'text' => $paymentDetails
+
+									];	
 									
 						if ($completeProcess === "1")
 						{
