@@ -303,31 +303,31 @@ if (!is_null($events['events'])) {
 									$completeProcess=$str_arr[0];
 									$fileName = $str_arr[1];
 						
-						//$imageUrl = 'https://www.okplus.co.th/RegCopy/' + $fileName + '.jpg'
+						//$imageUrl = 'https://www.okplus.co.th/RegCopy/'.$fileName.'.jpg'
 						
+				//		$messages = [
+					//					'type' => 'text',
+						//				'text' => $imageUrl
+
+//									];	
+									
+						if ($completeProcess === "1")
+						{
 						$messages = [
+										'type' => 'image',
+										'originalContentUrl' => 'https://www.okplus.co.th/RegCopy/'.$fileName.'.jpg',
+    									'previewImageUrl' => 'https://www.okplus.co.th/RegCopy/'.$fileName.'.jpg'
+
+									];		
+						}
+						else
+						{
+							$messages = [
 										'type' => 'text',
-										'text' => $fileName
+										'text' => 'ระบบไม่สามารถทำงานได้ โปรดติดต่อเจ้าหน้าที่'
 
 									];	
-									
-					//	if ($completeProcess === "1")
-					//	{
-					//	$messages = [
-						//				'type' => 'image',
-							//			'originalContentUrl' => 'https://www.okplus.co.th/RegCopy/' + $fileName + '.jpg',
-    							//		'previewImageUrl' => 'https://www.okplus.co.th/RegCopy/' + $fileName + '.jpg'
-
-							//		];		
-					//	}
-				//		else
-					//	{
-						//	$messages = [
-							//			'type' => 'text',
-								//		'text' => 'ระบบไม่สามารถทำงานได้ โปรดติดต่อเจ้าหน้าที่'
-
-								//	];	
-					//	}
+						}
 						 
 						
 						
