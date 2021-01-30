@@ -277,12 +277,55 @@ if (!is_null($events['events'])) {
 				// car copy	
 				case "สำเนารถ":
 					
-					 $messages = [
+					
+					$isRegister = file_get_contents('http://okplus.ddns.net/okplus/bot/CheckRegister.aspx?u='.$text);
+			
+					//$isRegister = "0";
+					$isRegister = substr($isRegister, 0, 1);
+					
+					if ($isRegister === "2")
+					{
+						
+						// ลูกค้าลงทะเบียนแล้ว รอลงสัญญาในระบบ	
+					  $messages = [
+										'type' => 'text',
+										'text' => 'ลงทะเบียนสำเร็จแล้ว แต่ระบบยังตรวจสอบข้อมูลอยู่'."\n"."\n".'(รหัสอ้างอิง:'.$text.')'
+									];	
+						
+					}
+					
+					if ($isRegister === "0")
+					{
+						
+							$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getRegCopy.aspx?u='.$text);;
+									$str_arr = explode (":", $paymentDetails);  
+
+									$completeProcess=$str_arr[0];
+									$fileName = $str_arr[1];
+									
+						if ($completeProcess === "1")
+						{
+						$messages = [
 										'type' => 'image',
-										'originalContentUrl' => 'https://www.okplus.co.th/RegCopy/132563776786646137.jpg',
-    									'previewImageUrl' => 'https://www.okplus.co.th/RegCopy/132563776786646137.jpg'
+										'originalContentUrl' => 'https://www.okplus.co.th/RegCopy/' + $fileName + '.jpg',
+    									'previewImageUrl' => 'https://www.okplus.co.th/RegCopy/' + $fileName + '.jpg'
+
+									];		
+						}
+						else
+						{
+							$messages = [
+										'type' => 'text',
+										'text' => 'ระบบไม่สามารถทำงานได้ โปรดติดต่อเจ้าหน้าที่'
 
 									];	
+						}
+						 
+						
+						
+					}
+					
+					
 					
 					break;
 					
