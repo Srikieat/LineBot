@@ -861,6 +861,8 @@ if (!is_null($events['events'])) {
 										'text' => $xxxx	
 									];	
 					break;
+				// appointment
+					
 				case "นัดชำระค่างวด":
 					
 					// check register or not
@@ -931,6 +933,7 @@ if (!is_null($events['events'])) {
 						$contractId = $str_arr[2];
 						$dt = $str_arr[3];
 						
+						// already appointment
 						if ($isAppoint == "1")
 						{
 							   $messages = [
@@ -939,8 +942,22 @@ if (!is_null($events['events'])) {
 									];	
 						}
 						
+						// not allow to appointment
+						if ($isAppoint == "2")
+						{
+							   $messages = [
+										'type' => 'text',
+										'text' => 'ชื่อ : '	. $name . ''."\n".'เลขที่สัญญา :' . $contractId . ''."\n".'ท่านมีค่างวดต้างชำระ กรุณาติดต่อ 023311798 เพื่อทำการนัดชำระค่างวด'
+									];	
+						}
+						
+						
+						// allow to appointment
 						if ($isAppoint == "0")
 						{
+							
+							
+							
 							 //start message
 							$messages = [
 						'type' => 'template', // 訊息類型 (模板)
