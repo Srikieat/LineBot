@@ -304,7 +304,7 @@ if (!is_null($events['events'])) {
 									$fileName = $str_arr[1];
 						
 						
-									
+						// find reg copy	
 						if ($completeProcess === "1")
 						{
 						$messages = [
@@ -314,7 +314,19 @@ if (!is_null($events['events'])) {
 
 									];		
 						}
-						else
+						
+						// cannot find reg copy
+						if ($completeProcess === "0")
+						{
+							$messages = [
+										'type' => 'text',
+										'text' => 'มีข้อผิดพลาดในระบบ โปรดติดต่อเจ้าหน้าที่'
+
+									];	
+						}
+						 
+						// not allow to process reg copy
+						if ($completeProcess === "2")
 						{
 							$messages = [
 										'type' => 'text',
@@ -322,7 +334,6 @@ if (!is_null($events['events'])) {
 
 									];	
 						}
-						 
 						
 						
 					}
@@ -947,8 +958,8 @@ if (!is_null($events['events'])) {
 						{
 							   $messages = [
 										'type' => 'text',
-										//'text' => 'ชื่อ : '	. $name . ''."\n".'เลขที่สัญญา :' . $contractId . ''."\n".'ท่านมีค่างวดต้างชำระ กรุณาติดต่อ 023311798 เพื่อทำการนัดชำระค่างวด'
-								   		'text' => 'ท่านมีค่างวดต้างชำระ กรุณาติดต่อ 023311798 เพื่อทำการนัดชำระค่างวด'
+										'text' => 'ชื่อ : '	. $name . ''."\n".'เลขที่สัญญา :' . $contractId . ''."\n".'ท่านมีค่างวดต้างชำระ กรุณาติดต่อ 023311798 เพื่อทำการนัดชำระค่างวด'
+								   		//'text' => 'ท่านมีค่างวดต้างชำระ กรุณาติดต่อ 023311798 เพื่อทำการนัดชำระค่างวด'
 									];	
 						}
 						
