@@ -8,9 +8,9 @@
   	 $id = "U44e90a4578cb725ccc9ed09d2cdc18e9";
 	//$id= $_GET['u'];
 	
-//$text = $_GET['t'];
+	//$images = $_GET['i'];
    echo($id);
-//echo($text);
+//echo($images);
 			//$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentList.aspx?u='.$id);
 			//		$paymentDetails = "1,430:Big C:14 เมษายน 2563:ชำระค่างวดรถจักรยานยนต์:ราณี สายใจ:8กร 2513:62RC-06200:62/0147:621478";
 			//		$str_arr = explode (":", $text);  
@@ -33,7 +33,7 @@
 				// Build message to reply back
 				$messages = [
 										'type' => 'image',
-										'originalContentUrl' => 'https://www.okplus.co.th/RegCopy/132564484499877552.jpg',
+										'originalContentUrl' => 'https://lin.ee/6D052q8',
     									'previewImageUrl' => 'https://www.okplus.co.th/RegCopy/132564484499877552.jpg'
 
 									];	
