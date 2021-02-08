@@ -19,7 +19,7 @@
 			//		$channel = $str_arr[1];
 			//		$dt = $str_arr[2];
 			//		$detail = $str_arr[3];
-			//		$name = $str_arr[4];
+					$name = "รารา";
 			//		$plate = $str_arr[5];
 			//		$receiptId = $str_arr[6];
 			//		$contractId = $str_arr[7];
@@ -44,7 +44,7 @@
 					
 					
 						 "type" => "flex",
-    "altText" => "ใบเสร็จรับเงิน",
+    "altText" => "โปรโมชั่น ลูกค้าเก่า",
     "contents" => [
       "type" => "bubble",
       "direction" => "ltr",
@@ -54,19 +54,30 @@
         "contents" => [
           [
             "type" => "text",
-            "text" => "ใบเสร็จรับเงิน",
+            "text" => "โปรโมชั่น ลูกค้าเก่า",
             "size" => "lg",
             "align" => "start",
             "weight" => "bold",
             "color" => "#009813"
           ],
-          [
-            "type" => "text",
-            "text" => "฿500",
-            "size" => "3xl",
-            "weight" => "bold",
-            "color" => "#000000"
-          ],
+          
+                [
+			   "type"=> "image",
+    "url"=> "https://www.okplus.co.th/LineAdPics/AD1.jpg",
+    "size"=> "full",
+    "aspectRatio"=> "1:1",
+            
+            
+            
+            
+            
+            "action" => [
+              "type" => "uri",
+              "label" => "View Details",
+              "uri" => "https://www.okplus.co.th"
+            ]
+          ]
+          ,
           [
             "type" => "text",
             "text" => "name",
