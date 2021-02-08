@@ -74,7 +74,7 @@
             "action" => [
               "type" => "uri",
               "label" => "View Details",
-              "uri" => "https://www.okplus.co.th"
+              "uri" => "https://lin.ee/6D052q8"
             ]
           ]
           ,
