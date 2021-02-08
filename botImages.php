@@ -80,156 +80,21 @@
           ,
           [
             "type" => "text",
-            "text" => "name",
+            "text" => "ลูกค้าเก่าเหลือไม่เกิน 3 งวด ขอใหม่ได้เลย",
             "size" => "lg",
             "weight" => "bold",
             "color" => "#000000"
           ],
           [
             "type" => "text",
-            "text" => "name",
-            "size" => "xs",
-            "color" => "#B2B2B2"
-          ],
-          [
-            "type" => "text",
-            "text" => "name",
-            "margin" => "lg",
+            "text" => "สนใจ ทักเลย ",
             "size" => "lg",
-            "color" => "#000000"
+            "color" => "#B2B2B2"
           ]
         ]
       ],
-      "body" => [
-        "type" => "box",
-        "layout" => "vertical",
-        "contents" => [
-          [
-            "type" => "separator",
-            "color" => "#C3C3C3"
-          ],
-          [
-            "type" => "box",
-            "layout" => "baseline",
-            "margin" => "lg",
-            "contents" => [
-              [
-                "type" => "text",
-                "text" => "เลขที่ใบเสร็จรับเงิน",
-                "align" => "start",
-                "color" => "#C3C3C3"
-              ],
-              [
-                "type" => "text",
-                "text" => "name",
-                "align" => "end",
-                "color" => "#000000"
-              ]
-            ]
-          ],
-          [
-            "type" => "box",
-            "layout" => "baseline",
-            "margin" => "lg",
-            "contents" => [
-              [
-                "type" => "text",
-                "text" => "สัญญาเลขที่",
-                "color" => "#C3C3C3"
-              ],
-              [
-                "type" => "text",
-                "text" => "name",
-                "align" => "end"
-              ]
-            ]
-          ],
-		
-		
-		 [
-            "type" => "box",
-            "layout" => "baseline",
-            "margin" => "lg",
-            "contents" => [
-              [
-                "type" => "text",
-                "text" => "เลขที่อ้างอิง",
-                "color" => "#C3C3C3"
-              ],
-              [
-                "type" => "text",
-                "text" => "name",
-                "align" => "end"
-              ]
-            ]
-          ],
-		 [
-            "type" => "box",
-            "layout" => "baseline",
-            "margin" => "lg",
-            "contents" => [
-              [
-                "type" => "text",
-                "text" => "ชำระทาง",
-                "color" => "#C3C3C3"
-              ],
-              [
-                "type" => "text",
-                "text" => "name",
-                "align" => "end"
-              ]
-            ]
-          ],
-		
-		 [
-            "type" => "box",
-            "layout" => "baseline",
-            "margin" => "lg",
-            "contents" => [
-              [
-                "type" => "text",
-                "text" => "ทะเบียนรถ",
-                "color" => "#C3C3C3"
-              ],
-              [
-                "type" => "text",
-                "text" => "name",
-                "align" => "end"
-              ]
-            ]
-          ],
-		
-		
-		
-          [
-            "type" => "separator",
-            "margin" => "lg",
-            "color" => "#C3C3C3"
-          ]
-        ]
-      ],
-      "footer" => [
-        "type" => "box",
-        "layout" => "horizontal",
-        "contents" => [
-          [
-			   "type"=> "image",
-    "url"=> "https://www.okplus.co.th/LineAdPics/AD1.jpg",
-    "size"=> "full",
-    "aspectRatio"=> "1:1",
-            
-            
-            
-            
-            
-            "action" => [
-              "type" => "uri",
-              "label" => "View Details",
-              "uri" => "https://www.okplus.co.th"
-            ]
-          ]
-        ]
-      ]
+    
+    
     ]
 					
 					
