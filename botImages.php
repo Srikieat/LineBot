@@ -40,7 +40,12 @@
 					
 				
 $messages = [
-  "type" => "bubble",
+	"type" => "flex",
+	"contents" => [
+		
+		
+		
+		  "type" => "bubble",
   "hero"=> [
     "type"=> "image",
     "url"=> "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_2_restaurant.png",
@@ -72,6 +77,9 @@ $messages = [
       ]
     ]
   ]
+		
+	]
+
 ];
 
 
