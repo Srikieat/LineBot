@@ -33,8 +33,8 @@
 				// Build message to reply back
 				$messages = [
 										'type' => 'image',
-										'originalContentUrl' => 'https://www.okplus.co.th/RegCopy/'.$fileName.'.jpg',
-    									'previewImageUrl' => 'https://www.okplus.co.th/RegCopy/'.$fileName.'.jpg'
+										'originalContentUrl' => 'https://www.okplus.co.th/RegCopy/132564484499877552.jpg',
+    									'previewImageUrl' => 'https://www.okplus.co.th/RegCopy/132564484499877552.jpg'
 
 									];	
 					
