@@ -203,7 +203,7 @@
         "contents" => [
           [
 			   "type"=> "image",
-    "url"=> "https://www.linefriends.com/img/img_sec.jpg",
+    "url"=> "https://www.okplus.co.th/LineAdPics/AD1.jpg",
     "size"=> "full",
     "aspectRatio"=> "2:1",
             
