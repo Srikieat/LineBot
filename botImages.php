@@ -39,49 +39,188 @@
 						//			];	
 					
 				
-$messages = [
-	"type" => "flex",
-	"contents" => [
-		
-		
-		
-		  "type" => "bubble",
-  "hero"=> [
-    "type"=> "image",
-    "url"=> "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_2_restaurant.png",
-    "size"=> "full",
-    "aspectRatio"=> "20:13",
-    "aspectMode"=> "cover"
-  ],
-  "footer"=> [
-    "type"=> "box",
-    "layout"=> "vertical",
-    "contents"=> [
-      [
-        "type"=> "spacer",
-        "size"=>"xxl"
-      ],
-      [
-        "type"=> "button",
-        "style"=> "primary",
-        "color"=> "#905c44",
-        "action"=> [
-          "type"=>"uri",
-          "label"=> "Add to Cart",
-          "uri"=>"https://linecorp.com"
+	$messages = [
+					
+					
+					
+						 "type" => "flex",
+    "altText" => "ใบเสร็จรับเงิน",
+    "contents" => [
+      "type" => "bubble",
+      "direction" => "ltr",
+      "header" => [
+        "type" => "box",
+        "layout" => "vertical",
+        "contents" => [
+          [
+            "type" => "text",
+            "text" => "ใบเสร็จรับเงิน",
+            "size" => "lg",
+            "align" => "start",
+            "weight" => "bold",
+            "color" => "#009813"
+          ],
+          [
+            "type" => "text",
+            "text" => "฿".$amount,
+            "size" => "3xl",
+            "weight" => "bold",
+            "color" => "#000000"
+          ],
+          [
+            "type" => "text",
+            "text" => $name,
+            "size" => "lg",
+            "weight" => "bold",
+            "color" => "#000000"
+          ],
+          [
+            "type" => "text",
+            "text" => $dt,
+            "size" => "xs",
+            "color" => "#B2B2B2"
+          ],
+          [
+            "type" => "text",
+            "text" => $detail,
+            "margin" => "lg",
+            "size" => "lg",
+            "color" => "#000000"
+          ]
         ]
       ],
-      [
-        "type": "spacer",
-        "size": "xxl"
+      "body" => [
+        "type" => "box",
+        "layout" => "vertical",
+        "contents" => [
+          [
+            "type" => "separator",
+            "color" => "#C3C3C3"
+          ],
+          [
+            "type" => "box",
+            "layout" => "baseline",
+            "margin" => "lg",
+            "contents" => [
+              [
+                "type" => "text",
+                "text" => "เลขที่ใบเสร็จรับเงิน",
+                "align" => "start",
+                "color" => "#C3C3C3"
+              ],
+              [
+                "type" => "text",
+                "text" => $receiptId,
+                "align" => "end",
+                "color" => "#000000"
+              ]
+            ]
+          ],
+          [
+            "type" => "box",
+            "layout" => "baseline",
+            "margin" => "lg",
+            "contents" => [
+              [
+                "type" => "text",
+                "text" => "สัญญาเลขที่",
+                "color" => "#C3C3C3"
+              ],
+              [
+                "type" => "text",
+                "text" => $contractId,
+                "align" => "end"
+              ]
+            ]
+          ],
+		
+		
+		 [
+            "type" => "box",
+            "layout" => "baseline",
+            "margin" => "lg",
+            "contents" => [
+              [
+                "type" => "text",
+                "text" => "เลขที่อ้างอิง",
+                "color" => "#C3C3C3"
+              ],
+              [
+                "type" => "text",
+                "text" => $reference,
+                "align" => "end"
+              ]
+            ]
+          ],
+		 [
+            "type" => "box",
+            "layout" => "baseline",
+            "margin" => "lg",
+            "contents" => [
+              [
+                "type" => "text",
+                "text" => "ชำระทาง",
+                "color" => "#C3C3C3"
+              ],
+              [
+                "type" => "text",
+                "text" => $channel,
+                "align" => "end"
+              ]
+            ]
+          ],
+		
+		 [
+            "type" => "box",
+            "layout" => "baseline",
+            "margin" => "lg",
+            "contents" => [
+              [
+                "type" => "text",
+                "text" => "ทะเบียนรถ",
+                "color" => "#C3C3C3"
+              ],
+              [
+                "type" => "text",
+                "text" => $plate,
+                "align" => "end"
+              ]
+            ]
+          ],
+		
+		
+		
+          [
+            "type" => "separator",
+            "margin" => "lg",
+            "color" => "#C3C3C3"
+          ]
+        ]
+      ],
+      "footer" => [
+        "type" => "box",
+        "layout" => "horizontal",
+        "contents" => [
+          [
+            "type" => "text",
+            "text" => "จ่ายตรงวัน ลดงวดละ 100 บาท",
+            "size" => "lg",
+            "align" => "start",
+            "color" => "#0084B6",
+            "action" => [
+              "type" => "uri",
+              "label" => "View Details",
+              "uri" => "https://www.okplus.co.th"
+            ]
+          ]
+        ]
       ]
     ]
-  ]
-		
-	]
-
-];
-
+					
+					
+					
+					
+					    ];	
 
 
 
