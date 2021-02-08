@@ -202,11 +202,15 @@
         "layout" => "horizontal",
         "contents" => [
           [
-            "type" => "text",
-            "text" => "จ่ายตรงวัน ลดงวดละ 100 บาท",
-            "size" => "lg",
-            "align" => "start",
-            "color" => "#0084B6",
+			   "type"=> "image",
+    "url"=> "https://www.linefriends.com/img/img_sec.jpg",
+    "size"=> "full",
+    "aspectRatio"=> "2:1",
+            
+            
+            
+            
+            
             "action" => [
               "type" => "uri",
               "label" => "View Details",
