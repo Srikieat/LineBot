@@ -100,7 +100,7 @@
 			  "weight" => "bold",
             "color" => "#000000"
             
-          ]
+          ],
 			
 			[
             "type" => "text",
