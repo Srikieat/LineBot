@@ -62,27 +62,27 @@
           ],
           [
             "type" => "text",
-            "text" => "฿".$amount,
+            "text" => "฿500",
             "size" => "3xl",
             "weight" => "bold",
             "color" => "#000000"
           ],
           [
             "type" => "text",
-            "text" => $name,
+            "text" => "name",
             "size" => "lg",
             "weight" => "bold",
             "color" => "#000000"
           ],
           [
             "type" => "text",
-            "text" => $dt,
+            "text" => "name",
             "size" => "xs",
             "color" => "#B2B2B2"
           ],
           [
             "type" => "text",
-            "text" => $detail,
+            "text" => "name",
             "margin" => "lg",
             "size" => "lg",
             "color" => "#000000"
@@ -110,7 +110,7 @@
               ],
               [
                 "type" => "text",
-                "text" => $receiptId,
+                "text" => "name",
                 "align" => "end",
                 "color" => "#000000"
               ]
@@ -128,7 +128,7 @@
               ],
               [
                 "type" => "text",
-                "text" => $contractId,
+                "text" => "name",
                 "align" => "end"
               ]
             ]
@@ -147,7 +147,7 @@
               ],
               [
                 "type" => "text",
-                "text" => $reference,
+                "text" => "name",
                 "align" => "end"
               ]
             ]
@@ -164,7 +164,7 @@
               ],
               [
                 "type" => "text",
-                "text" => $channel,
+                "text" => "name",
                 "align" => "end"
               ]
             ]
@@ -182,7 +182,7 @@
               ],
               [
                 "type" => "text",
-                "text" => $plate,
+                "text" => "name",
                 "align" => "end"
               ]
             ]
