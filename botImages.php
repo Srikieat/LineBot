@@ -205,7 +205,7 @@
 			   "type"=> "image",
     "url"=> "https://www.okplus.co.th/LineAdPics/AD1.jpg",
     "size"=> "full",
-    "aspectRatio"=> "2:1",
+    "aspectRatio"=> "1:1",
             
             
             
