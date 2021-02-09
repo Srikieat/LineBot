@@ -5,12 +5,17 @@
    $arrayHeader[] = "Authorization: Bearer {$accessToken}";
    
    	//รับ id ของผู้ใช้
-  	 $id = "U44e90a4578cb725ccc9ed09d2cdc18e9";
-	//$id= $_GET['u'];
+
+  	//$id = ;
+	$id= $_GET['u'];
 	
-	//$images = $_GET['i'];
-   echo($id);
-//echo($images);
+	$images = $_GET['i'];
+
+	$text = $_GET['t'];
+
+   	echo($id);
+	echo($images);
+	echo($text);
 			//$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentList.aspx?u='.$id);
 			//		$paymentDetails = "1,430:Big C:14 เมษายน 2563:ชำระค่างวดรถจักรยานยนต์:ราณี สายใจ:8กร 2513:62RC-06200:62/0147:621478";
 			//		$str_arr = explode (":", $text);  
@@ -19,7 +24,7 @@
 			//		$channel = $str_arr[1];
 			//		$dt = $str_arr[2];
 			//		$detail = $str_arr[3];
-					$name = "รารา";
+			//		$name = "รารา";
 			//		$plate = $str_arr[5];
 			//		$receiptId = $str_arr[6];
 			//		$contractId = $str_arr[7];
@@ -44,7 +49,7 @@
 					
 					
 						 "type" => "flex",
-    "altText" => "โปรโมชั่น ลูกค้าเก่า",
+    "altText" => $text,
     "contents" => [
       "type" => "bubble",
       "direction" => "ltr",
@@ -54,7 +59,7 @@
         "contents" => [
           [
             "type" => "text",
-            "text" => "โปรโมชั่น ลูกค้าเก่า",
+            "text" => $text,
             "size" => "lg",
             "align" => "start",
             "weight" => "bold",
@@ -63,7 +68,7 @@
           
                 [
 			   "type"=> "image",
-    "url"=> "https://www.okplus.co.th/LineAdPics/AD1.jpg",
+    "url"=> $images,
     "size"=> "full",
     "aspectRatio"=> "1:1",
             
