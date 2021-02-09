@@ -4,9 +4,14 @@
    $arrayHeader[] = "Content-Type: application/json";
    $arrayHeader[] = "Authorization: Bearer {$accessToken}";
    
-   	//รับ id ของผู้ใช้
+
+	//https://okplusbot.herokuapp.com/botImages.php?u=U44e90a4578cb725ccc9ed09d2cdc18e9&i=https://www.okplus.co.th/LineAdPics/AD1.jpg&t=พิเศษ! ท่านได้รับสิทธิ์
+
+	//รับ id ของผู้ใช้
 
   	//$id = ;
+
+
 	$id= $_GET['u'];
 	
 	$images = $_GET['i'];
@@ -14,7 +19,9 @@
 	$text = $_GET['t'];
 
    	echo($id);
+
 	echo($images);
+	
 	echo($text);
 			//$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentList.aspx?u='.$id);
 			//		$paymentDetails = "1,430:Big C:14 เมษายน 2563:ชำระค่างวดรถจักรยานยนต์:ราณี สายใจ:8กร 2513:62RC-06200:62/0147:621478";
