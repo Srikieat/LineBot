@@ -137,9 +137,9 @@ if (!is_null($events['events'])) {
       			//	$success = file_put_contents($file, $results['response']);
 				
 				
-				$fileFullSavePath = 'slip/'.$date_file.'.jpg';
+				$fileFullSavePath = $date_file.'.jpg';
 				
-				file_put_contents('ftp://okplusc1:2A3w7tFm7j@119.59.120.23:2002/public_html/RegCopy/', $results['response']);
+				file_put_contents('ftp://okplusc1:2A3w7tFm7j@119.59.120.23:2002/public_html/RegCopy/'.$fileFullSavePath, $results['response']);
 				
 				//file_put_contents($fileFullSavePath,$results['response']);
 				
