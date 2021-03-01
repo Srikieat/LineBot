@@ -122,8 +122,10 @@ if (!is_null($events['events'])) {
 			//$date_file = date("Y-m-d-H-i-s");
 			$date_file = uniqid();
 			
+			$aaa = '1';
 			
 			if ($response->isSucceeded()) {
+				$aaa = '2';
 					// save image
 					$dataBinary = $response->getRawBody();
 					//$fileFullSavePath = 'uploadImages/'.$date_file.'.jpg';
@@ -192,7 +194,7 @@ if (!is_null($events['events'])) {
       				curl_close ($ch);
 					
 				
-					
+					$aaa = '3';
 				
 				
 
@@ -207,7 +209,7 @@ if (!is_null($events['events'])) {
 			 $messages = [
 										'type' => 'text',
 										//'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
-				 						'text' => 'ขอบคุณค่ะ'
+				 						'text' => 'ขอบคุณค่ะ'.$aaa
 									];	
 			
 			
