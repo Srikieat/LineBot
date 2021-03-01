@@ -142,47 +142,37 @@ if (!is_null($events['events'])) {
    					$arrayHeader[] = "Authorization: Bearer {$accessToken}";
 					
 					// Bow lek
-					$pushID = 'Uf55473a52212b163dd7508653ec5bbd8';
+					//$pushID = 'Uf55473a52212b163dd7508653ec5bbd8';
 					
 					//srikieat
-					//$pushID = 'U44e90a4578cb725ccc9ed09d2cdc18e9';
+					$pushID = 'U44e90a4578cb725ccc9ed09d2cdc18e9';
 					
+				$messages = [
+					
+					
+										'type' => 'text',
+										//'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
+				 						'text' =>$urlImage
+				]
 				
-				
-					$messages = [
-						 		 'type' => 'template', //訊息類型 (模板)
-                					'altText' => 'ลูกค้าส่งสลิป', //替代文字
-                					'template' => array(
-                    					'type' => 'image_carousel', //類型 (圖片輪播)
-                    					'columns' => array(
-                        							//	array(
-                            					//			'imageUrl' => 'hhttps://okplusbot.herokuapp.com/uploadImages/test.jpg', //圖片網址
-                            				//				'action' => array
-											//					(
-										//					'type' => 'postback', //類型 (回傳)
-										//					'label' => 'Pb example', //標籤
-										//					'data' => 'action=buy&itemid=123' //資料
-                            				//					)
-                        					//				),
-                      //  array(
-                      //      'imageUrl' => 'https://api.reh.tw/line/bot/example/assets/images/example_1-1.jpg', //圖片網址
-                       //     'action' => array(
-                       //         'type' => 'message', //類型 (訊息)
-                       //         'label' => 'Msg example', //標籤
-                       //         'text' => 'Message example' //用戶發送文字
-                       //     )
-                       // ),
-                        array(
-                            'imageUrl' => $urlImage , //圖片網址
-                            'action' => array(
-                                'type' => 'message', //類型 (連結)
-                                'label' => $contractId, //標籤
-                                'text' => $urlImage //連結網址
-                            )
-						)
-    )
-										)
-						];	
+					//$messages = [
+				//		 		 'type' => 'template', //訊息類型 (模板)
+                	//				'altText' => 'ลูกค้าส่งสลิป', //替代文字
+                		//			'template' => array(
+                    		//			'type' => 'image_carousel', //類型 (圖片輪播)
+                    			//		'columns' => array(
+                        							
+                        //array(
+                          //  'imageUrl' => $urlImage , //圖片網址
+                          //  'action' => array(
+                            //    'type' => 'message', //類型 (連結)
+                              //  'label' => $contractId, //標籤
+                            //    'text' => $urlImage //連結網址
+                           // )
+				//		)
+   // )
+	//									)
+		//				];	
 					$data = [
 						'to' => $pushID,
 						'messages' => [$messages],
