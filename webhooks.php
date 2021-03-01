@@ -137,7 +137,7 @@ if (!is_null($events['events'])) {
       			//	$success = file_put_contents($file, $results['response']);
 				
 				
-				$fileFullSavePath = 'uploadImages/'.$date_file.'.jpg';
+				$fileFullSavePath = 'slip/'.$date_file.'.jpg';
 				
 				file_put_contents($fileFullSavePath,$results['response']);
 				
