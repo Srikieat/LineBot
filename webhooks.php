@@ -130,9 +130,21 @@ if (!is_null($events['events'])) {
 			$LINEDatas['messageId'] = $deCode['events'][0]['message']['id'];
 			
 			$results = getContent($LINEDatas);
+			
+			if($results['result'] == 'S')
+			{
+      			//$file = UPLOAD_DIR . uniqid() . '.png';
+      			//	$success = file_put_contents($file, $results['response']);
+				
+				
+				$fileFullSavePath = 'uploadImages/'.$date_file.'.jpg';
+				
+				file_put_contents($fileFullSavePath,$results['response']);
+				$aaa = '2';
+    		}
 
 			//if ($response->isSucceeded()) {
-				$aaa = '2';
+				
 					// save image
 					$dataBinary = $response->getRawBody();
 					$fileFullSavePath = 'uploadImages/'.$date_file.'.jpg';
@@ -201,7 +213,7 @@ if (!is_null($events['events'])) {
       				curl_close ($ch);
 					
 				
-					$aaa = '3';
+					//$aaa = '3';
 				
 				
 
