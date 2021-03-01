@@ -125,7 +125,10 @@ if (!is_null($events['events'])) {
 			$aaa = '1';
 			
 			
+			$LINEDatas['token'] = $access_token;
 			
+			//$LINEDatas['messageId'] = $deCode['events'][0]['message']['id'];
+
 			//if ($response->isSucceeded()) {
 				$aaa = '2';
 					// save image
