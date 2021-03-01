@@ -126,7 +126,7 @@ if (!is_null($events['events'])) {
 			
 			
 			
-			if ($response->isSucceeded()) {
+			//if ($response->isSucceeded()) {
 				$aaa = '2';
 					// save image
 					$dataBinary = $response->getRawBody();
@@ -201,7 +201,7 @@ if (!is_null($events['events'])) {
 				
 
 				
-			}
+			//}
 				// Get text sent
 			$text = $event['source']['userId'];
 			// Get replyToken
@@ -211,8 +211,8 @@ if (!is_null($events['events'])) {
 			 $messages = [
 										'type' => 'text',
 										//'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
-				 						//'text' => 'ขอบคุณค่ะ'.$aaa
-				 'text' => $response
+				 						'text' => 'ขอบคุณค่ะ'.$aaa
+				// 'text' => $response
 									];	
 			
 			
