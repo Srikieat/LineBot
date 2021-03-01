@@ -150,9 +150,9 @@ if (!is_null($events['events'])) {
 				
 					// save image
 					$dataBinary = $response->getRawBody();
-					$fileFullSavePath = 'uploadImages/'.$date_file.'.jpg';
+					//$fileFullSavePath = 'uploadImages/'.$date_file.'.jpg';
 					//$fileFullSavePath = 'uploadImages/test.jpg';
-					file_put_contents($fileFullSavePath,$dataBinary);
+					//file_put_contents($fileFullSavePath,$dataBinary);
 				
 					$id = $event['source']['userId'];
 				
