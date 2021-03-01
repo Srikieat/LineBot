@@ -128,6 +128,8 @@ if (!is_null($events['events'])) {
 			$LINEDatas['token'] = $access_token;
 			
 			$LINEDatas['messageId'] = $deCode['events'][0]['message']['id'];
+			
+			$results = getContent($LINEDatas);
 
 			//if ($response->isSucceeded()) {
 				$aaa = '2';
