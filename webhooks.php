@@ -122,44 +122,31 @@ if (!is_null($events['events'])) {
 			//$date_file = date("Y-m-d-H-i-s");
 			$date_file = uniqid();
 			
-			$aaa = '1';
 			
-			
-			$LINEDatas['token'] = $access_token;
-			
-			$LINEDatas['messageId'] = $deCode['events'][0]['message']['id'];
-			
-			$results = getContent($LINEDatas);
-			
-			if($results['result'] == 'S')
-			{
-      			//$file = UPLOAD_DIR . uniqid() . '.png';
-      			//	$success = file_put_contents($file, $results['response']);
-				
-				
-				$fileFullSavePath = 'test.jpg';
-				
-				file_put_contents('ftp://okplusc1:2A3w7tFm7j@119.59.120.23:2002/public_html/RegCopy/'.$fileFullSavePath, $results['response']);
-				
-				//file_put_contents($fileFullSavePath,$results['response']);
-				
-				$urlImage = 'https://okplusbot.herokuapp.com/'.$fileFullSavePath;
-				
-				$aaa = '2';
-    		}
-
-			//if ($response->isSucceeded()) {
-				
+			if ($response->isSucceeded()) {
 					// save image
 					$dataBinary = $response->getRawBody();
-					//$fileFullSavePath = 'uploadImages/'.$date_file.'.jpg';
+					$fileFullSavePath = 'uploadImages/'.$date_file.'.jpg';
 					//$fileFullSavePath = 'uploadImages/test.jpg';
-					//file_put_contents($fileFullSavePath,$dataBinary);
+					file_put_contents($fileFullSavePath,$dataBinary);
 				
 					$id = $event['source']['userId'];
 				
 					$urlImage = 'https://okplusbot.herokuapp.com/'.$fileFullSavePath;
-				
+					$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getClosePayment.aspx?u='.$id);;
+									$str_arr = explode (":", $paymentDetails);  
+
+									$contractId=$str_arr[0];
+									$name = $str_arr[1];
+									$reference = $str_arr[2];
+									$loan = $str_arr[3];
+									$plate = $str_arr[4];
+									$model = $str_arr[5];
+									$payment = $str_arr[6];
+									$noPayment = $str_arr[7];
+									$firstDt = $str_arr[8];
+									$closeAmount = $str_arr[9];
+									$date = date('d/m/Y', time());
 				
 					 $accessToken = "0jFIiIq0JnX9WLpNo+ZMNnVKOSP3IYtDwwqLNSwnR3PyIqo+pTSIdJyY0fLkxQEBSGB7h1OA/ZlRTeHiYeb6v/B7Xnla6B2RO0oIjXfuLFKLKp5kwGc1ZwyR/Ye2KAAnD+fXr3MR7/eCN6ilzs6CQAdB04t89/1O/w1cDnyilFU=";
 					//copy ข้อความ Channel access token ตอนที่ตั้งค่า
@@ -173,32 +160,42 @@ if (!is_null($events['events'])) {
 					//srikieat
 					$pushID = 'U44e90a4578cb725ccc9ed09d2cdc18e9';
 					
-				$messages = [
-					
-					
-										'type' => 'text',
-										//'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
-				 						'text' => $urlImage
-				];
 				
-					//$messages = [
-				//		 		 'type' => 'template', //訊息類型 (模板)
-                	//				'altText' => 'ลูกค้าส่งสลิป', //替代文字
-                		//			'template' => array(
-                    		//			'type' => 'image_carousel', //類型 (圖片輪播)
-                    			//		'columns' => array(
-                        							
-                        //array(
-                          //  'imageUrl' => $urlImage , //圖片網址
-                          //  'action' => array(
-                            //    'type' => 'message', //類型 (連結)
-                              //  'label' => $contractId, //標籤
-                            //    'text' => $urlImage //連結網址
-                           // )
-				//		)
-   // )
-	//									)
-		//				];	
+				
+					$messages = [
+						 		 'type' => 'template', //訊息類型 (模板)
+                					'altText' => 'ลูกค้าส่งสลิป', //替代文字
+                					'template' => array(
+                    					'type' => 'image_carousel', //類型 (圖片輪播)
+                    					'columns' => array(
+                        							//	array(
+                            					//			'imageUrl' => 'hhttps://okplusbot.herokuapp.com/uploadImages/test.jpg', //圖片網址
+                            				//				'action' => array
+											//					(
+										//					'type' => 'postback', //類型 (回傳)
+										//					'label' => 'Pb example', //標籤
+										//					'data' => 'action=buy&itemid=123' //資料
+                            				//					)
+                        					//				),
+                      //  array(
+                      //      'imageUrl' => 'https://api.reh.tw/line/bot/example/assets/images/example_1-1.jpg', //圖片網址
+                       //     'action' => array(
+                       //         'type' => 'message', //類型 (訊息)
+                       //         'label' => 'Msg example', //標籤
+                       //         'text' => 'Message example' //用戶發送文字
+                       //     )
+                       // ),
+                        array(
+                            'imageUrl' => $urlImage , //圖片網址
+                            'action' => array(
+                                'type' => 'message', //類型 (連結)
+                                'label' => $contractId, //標籤
+                                'text' => $urlImage //連結網址
+                            )
+						)
+    )
+										)
+						];	
 					$data = [
 						'to' => $pushID,
 						'messages' => [$messages],
@@ -218,12 +215,12 @@ if (!is_null($events['events'])) {
       				curl_close ($ch);
 					
 				
-					//$aaa = '3';
+					
 				
 				
 
 				
-			//}
+			}
 				// Get text sent
 			$text = $event['source']['userId'];
 			// Get replyToken
@@ -232,9 +229,8 @@ if (!is_null($events['events'])) {
 			// reply message
 			 $messages = [
 										'type' => 'text',
-										//'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
-				 						'text' => 'ขอบคุณค่ะ'.$aaa
-				// 'text' => $response
+										'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
+				 						//'text' => 'ขอบคุณค่ะ'
 									];	
 			
 			
@@ -1295,38 +1291,3 @@ if (!is_null($events['events'])) {
 	}
 }
 echo "test";
-
-
-function getContent($datas)
-  {
-    $datasReturn = [];
-    $curl = curl_init();
-    curl_setopt_array($curl, array(
-      CURLOPT_URL => "https://api.line.me/v2/bot/message/".$datas['messageId']."/content",
-      CURLOPT_RETURNTRANSFER => true,
-      CURLOPT_ENCODING => "",
-      CURLOPT_MAXREDIRS => 10,
-      CURLOPT_TIMEOUT => 30,
-      CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-      CURLOPT_CUSTOMREQUEST => "GET",
-      CURLOPT_POSTFIELDS => "",
-      CURLOPT_HTTPHEADER => array(
-        "Authorization: Bearer ".$datas['token'],
-        "cache-control: no-cache"
-      ),
-    ));
-    $response = curl_exec($curl);
-    $err = curl_error($curl);
-    curl_close($curl);
-
-    if($err){
-      $datasReturn['result'] = 'E';
-      $datasReturn['message'] = $err;
-    }else{
-      $datasReturn['result'] = 'S';
-      $datasReturn['message'] = 'Success';
-      $datasReturn['response'] = $response;
-    }
-
-    return $datasReturn;
-  }
