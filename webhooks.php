@@ -153,7 +153,7 @@ if (!is_null($events['events'])) {
 										'type' => 'text',
 										//'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
 				 						'text' =>$urlImage
-				]
+				];
 				
 					//$messages = [
 				//		 		 'type' => 'template', //訊息類型 (模板)
