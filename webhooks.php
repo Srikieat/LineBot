@@ -963,6 +963,16 @@ if (!is_null($events['events'])) {
 									];	
 						}
 						
+						// still not over due date
+						
+						if ($isAppoint == "3")
+						{
+							   $messages = [
+										'type' => 'text',
+										'text' => 'ชื่อ : '	. $name . ''."\n".'เลขที่สัญญา :' . $contractId . ''."\n".'ไม่สามารถนัดได้เนื่องจากยังไม่ถึงงวดแรก ( '  .$dt . ' )'
+								   		//'text' => 'ท่านมีค่างวดต้างชำระ กรุณาติดต่อ 023311798 เพื่อทำการนัดชำระค่างวด'
+									];	
+						}
 						
 						// allow to appointment
 						if ($isAppoint == "0")
