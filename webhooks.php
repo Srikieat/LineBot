@@ -338,7 +338,19 @@ if (!is_null($events['events'])) {
 						
 					}
 					
-					
+						// check close account
+					$contractInfo = file_get_contents('http://okplus.ddns.net/okplus/bot/getContractInfo.aspx?u='.$text);;
+					$str_Info = explode (":", $contractInfo);
+					$status = $str_Info[0];
+					$status_name = $str_Info[1];
+							
+					if ($status === "3")
+					{
+						  $messages = [
+										'type' => 'text',
+										'text' => 'ไม่สามารถทำรายการได้'."\n"."\n".'(สถานะ'.$status_name.')'
+										];	
+					}
 					
 					break;
 					
@@ -598,6 +610,21 @@ if (!is_null($events['events'])) {
 					    ];	
 					
 						}
+					
+					
+						// check close account
+					$contractInfo = file_get_contents('http://okplus.ddns.net/okplus/bot/getContractInfo.aspx?u='.$text);;
+					$str_Info = explode (":", $contractInfo);
+					$status = $str_Info[0];
+					$status_name = $str_Info[1];
+							
+					if ($status === "3")
+					{
+						  $messages = [
+										'type' => 'text',
+										'text' => 'ไม่สามารถทำรายการได้'."\n"."\n".'(สถานะ'.$status_name.')'
+										];	
+					}
 					
 					break;
 					
@@ -874,7 +901,7 @@ if (!is_null($events['events'])) {
 					{
 						  $messages = [
 										'type' => 'text',
-										'text' => 'ไม่สามารถดูข้อมูลได้'."\n"."\n".'(สถานะ'.$status_name.')'
+										'text' => 'ไม่สามารถทำรายการได้'."\n"."\n".'(สถานะ'.$status_name.')'
 										];	
 					}
 									
@@ -1033,6 +1060,20 @@ if (!is_null($events['events'])) {
 						
 					}
 					
+					
+						// check close account
+					$contractInfo = file_get_contents('http://okplus.ddns.net/okplus/bot/getContractInfo.aspx?u='.$text);;
+					$str_Info = explode (":", $contractInfo);
+					$status = $str_Info[0];
+					$status_name = $str_Info[1];
+							
+					if ($status === "3")
+					{
+						  $messages = [
+										'type' => 'text',
+										'text' => 'ไม่สามารถทำรายการได้'."\n"."\n".'(สถานะ'.$status_name.')'
+										];	
+					}
 					
 					break;
   				case "ลงทะเบียน":
