@@ -660,6 +660,7 @@ if (!is_null($events['events'])) {
 						{
 									//$paymentDetails = "63/0516:นาย นิคม สมบรูณ์:621401:10,000:3กน 6787:ZOOMER-X:1,240:12:6:6:3 กรกฎาคม 2020:26 ธันวาคม 2020";
 							
+									
 									$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentDetail.aspx?u='.$text);;
 									$str_arr = explode (":", $paymentDetails);  
 
@@ -862,6 +863,23 @@ if (!is_null($events['events'])) {
 						}
 					
 			
+					
+					// check close account
+					$contractInfo = file_get_contents('http://okplus.ddns.net/okplus/bot/getContractInfo.aspx?u='.$text);;
+					$str_Info = explode (":", $contractInfo);
+					$status = $str_Info[0];
+					$status_name = $str_Info[1];
+							
+					if ($status === "3")
+					{
+						  $messages = [
+										'type' => 'text',
+										'text' => 'ไม่สามารถดูข้อมูลได้'."\n"."\n".'(สถานะ'.$status_name.')'
+										];	
+					}
+									
+					
+					
 					break;
 					
 				case "Myid":
