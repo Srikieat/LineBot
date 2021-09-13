@@ -123,49 +123,9 @@ if (!is_null($events['events'])) {
  			$message_id = $event['message']['id'];
 			
 			
-			try 
-				{
-    				// run your code here
-					$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
-				}
-				catch (Exception $err) 
-				{
-    				$err->getMessage();
-					$content = $err;
-						$text = $event['source']['userId'];
-			// Get replyToken
-			$replyToken = $event['replyToken'];
+			// run your code here
+				//	$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 			
-			// reply message
-			 $messages = [
-										'type' => 'text',
-				 						'text' => $content
-										//'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
-				 						//'text' => 'ขอบคุณค่ะ'
-									];	
-			
-			
-			
-				// Make a POST Request to Messaging API to reply to sender
-			$url = 'https://api.line.me/v2/bot/message/reply';
-			$data = [
-				'replyToken' => $replyToken,
-				'messages' => [$messages],
-			];
-			$post = json_encode($data);
-			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-
-			$ch = curl_init($url);
-			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-			$result = curl_exec($ch);
-			curl_close($ch);
-
-			echo "Reply : " .$result . "\r\n";
-				}
 			
 	//		$message_id = $array1['events'][0]['message']['id'];
 			
