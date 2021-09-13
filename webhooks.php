@@ -138,7 +138,8 @@ if (!is_null($events['events'])) {
 			
 			//$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channel_secret]);
 			
-			$response = $bot->getMessageContent($message_id);
+			//$response = $bot->getMessageContent($message_id);
+			$response = $bot->getMessageContent('14739060600863');
 			//$date_file = date("Y-m-d-H-i-s");
 		//	$date_file = uniqid();
 			
