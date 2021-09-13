@@ -131,7 +131,7 @@ if (!is_null($events['events'])) {
 			
 			
 			
-		//	$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channel_secret]);
+			$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channel_secret]);
 			
 			
 			//$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
