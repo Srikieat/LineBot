@@ -9,7 +9,7 @@
 </body>
 </html><?php // callback.php
 
-//require "vendor/autoload.php";
+require "vendor/autoload.php";
 //require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
 
 
