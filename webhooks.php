@@ -124,9 +124,9 @@ if (!is_null($events['events'])) {
 			
 	//		$message_id = $array1['events'][0]['message']['id'];
 			
-			$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
+		//	$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 			
-			$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channel_secret]);
+		//	$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channel_secret]);
 			
 			
 			//$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
@@ -135,7 +135,7 @@ if (!is_null($events['events'])) {
 			
 		//	$response = $bot->getMessageContent($message_id);
 			//$date_file = date("Y-m-d-H-i-s");
-			$date_file = uniqid();
+		//	$date_file = uniqid();
 			
 			
 		//	if ($response->isSucceeded()) 
