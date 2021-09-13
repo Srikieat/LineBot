@@ -148,7 +148,9 @@ if (!is_null($events['events'])) {
 			}
 			else
 			{
-				$content = 'not ok';
+				
+				$response->getHTTPStatus(); 
+				$content = $response;
 			}
 		//	if ($response->isSucceeded()) 
 		//	{
