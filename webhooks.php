@@ -113,10 +113,14 @@ if (!is_null($events['events'])) {
 
  			$message_id = $event['message']['id'];
 			
-			
 			$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 			
 			$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channel_secret]);
+			
+			
+			//$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
+			
+			//$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channel_secret]);
 			
 			$response = $bot->getMessageContent($message_id);
 			//$date_file = date("Y-m-d-H-i-s");
