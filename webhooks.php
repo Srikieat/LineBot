@@ -12,6 +12,8 @@
 require "vendor/autoload.php";
 require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
 
+
+
 $access_token = '0jFIiIq0JnX9WLpNo+ZMNnVKOSP3IYtDwwqLNSwnR3PyIqo+pTSIdJyY0fLkxQEBSGB7h1OA/ZlRTeHiYeb6v/B7Xnla6B2RO0oIjXfuLFKLKp5kwGc1ZwyR/Ye2KAAnD+fXr3MR7/eCN6ilzs6CQAdB04t89/1O/w1cDnyilFU=';
 
 // Get POST body content
@@ -20,6 +22,13 @@ $content = file_get_contents('php://input');
 $events = json_decode($content, true);
 
 $array = json_decode(json_encode($content), true);
+
+
+$json_string = file_get_contents('php://input');
+$jsonObj = json_decode($json_string); //รับ JSON มา decode เป็น StdObj
+$array1 = json_decode(json_encode($jsonObj), true);
+
+
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
 	// Loop through each event
@@ -111,19 +120,27 @@ if (!is_null($events['events'])) {
    
         	// IMXX
 
- 			$message_id = $event['message']['id'];
+ 			//$message_id = $event['message']['id'];
 			
+			$message_id = $array1['events'][0]['message']['id'];
 			
 			$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 			
 			$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channel_secret]);
+			
+			
+			//$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
+			
+			//$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channel_secret]);
 			
 			$response = $bot->getMessageContent($message_id);
 			//$date_file = date("Y-m-d-H-i-s");
 			$date_file = uniqid();
 			
 			
-			if ($response->isSucceeded()) {
+			if ($response->isSucceeded()) 
+			{
+					$message_id = 'i am image';
 					// save image
 					$dataBinary = $response->getRawBody();
 					$fileFullSavePath = 'uploadImages/'.$date_file.'.jpg';
@@ -229,7 +246,8 @@ if (!is_null($events['events'])) {
 			// reply message
 			 $messages = [
 										'type' => 'text',
-										'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
+				 						'text' => $content
+										//'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
 				 						//'text' => 'ขอบคุณค่ะ'
 									];	
 			
