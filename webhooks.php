@@ -22,6 +22,13 @@ $content = file_get_contents('php://input');
 $events = json_decode($content, true);
 
 $array = json_decode(json_encode($content), true);
+
+
+$json_string = file_get_contents('php://input');
+$jsonObj = json_decode($json_string); //รับ JSON มา decode เป็น StdObj
+$array1 = json_decode(json_encode($jsonObj), true);
+
+
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
 	// Loop through each event
@@ -115,7 +122,7 @@ if (!is_null($events['events'])) {
 
  			//$message_id = $event['message']['id'];
 			
-			$message_id = $array['events'][0]['message']['id'];
+			$message_id = $array1['events'][0]['message']['id'];
 			
 			$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 			
