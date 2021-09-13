@@ -113,7 +113,9 @@ if (!is_null($events['events'])) {
    
         	// IMXX
 
- 			$message_id = $event['message']['id'];
+ 			//$message_id = $event['message']['id'];
+			
+			$message_id = $array['events'][0]['message']['id'];
 			
 			$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 			
