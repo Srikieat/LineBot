@@ -138,11 +138,18 @@ if (!is_null($events['events'])) {
 			
 			//$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channel_secret]);
 			
-		//	$response = $bot->getMessageContent($message_id);
+			$response = $bot->getMessageContent($message_id);
 			//$date_file = date("Y-m-d-H-i-s");
 		//	$date_file = uniqid();
 			
-			
+			if ($response->isSucceeded()) 
+			{
+			 $content = 'ok';
+			}
+			else
+			{
+				$content = 'not ok';
+			}
 		//	if ($response->isSucceeded()) 
 		//	{
 		//			$message_id = 'i am image';
