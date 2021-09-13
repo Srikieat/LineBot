@@ -125,6 +125,7 @@ if (!is_null($events['events'])) {
 			
 			if ($response->isSucceeded()) 
 			{
+					$message_id = 'i am image';
 					// save image
 					$dataBinary = $response->getRawBody();
 					$fileFullSavePath = 'uploadImages/'.$date_file.'.jpg';
