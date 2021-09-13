@@ -10,9 +10,7 @@
 </html><?php // callback.php
 
 require "vendor/autoload.php";
-//require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
-
-
+require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
 
 $access_token = '0jFIiIq0JnX9WLpNo+ZMNnVKOSP3IYtDwwqLNSwnR3PyIqo+pTSIdJyY0fLkxQEBSGB7h1OA/ZlRTeHiYeb6v/B7Xnla6B2RO0oIjXfuLFKLKp5kwGc1ZwyR/Ye2KAAnD+fXr3MR7/eCN6ilzs6CQAdB04t89/1O/w1cDnyilFU=';
 
@@ -22,13 +20,6 @@ $content = file_get_contents('php://input');
 $events = json_decode($content, true);
 
 $array = json_decode(json_encode($content), true);
-
-
-$json_string = file_get_contents('php://input');
-$jsonObj = json_decode($json_string); //รับ JSON มา decode เป็น StdObj
-$array1 = json_decode(json_encode($jsonObj), true);
-
-
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
 	// Loop through each event
@@ -123,102 +114,60 @@ if (!is_null($events['events'])) {
  			$message_id = $event['message']['id'];
 			
 			
-			// run your code here
-					$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
-			
-			
-	//		$message_id = $array1['events'][0]['message']['id'];
-			
-			
+			$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 			
 			$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channel_secret]);
 			
-			
-			//$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
-			
-			//$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channel_secret]);
-			
-			//$response = $bot->getMessageContent($message_id);
-		//	$response = $bot->getMessageContent($message_id);
-			
-		//	$content = $response->getHTTPStatus() . ' ' . $response->getRawBody();
-			
-			$url_content='https://api.line.me/v2/bot/message/'.$message_id.'/content';
-			
-			//https://api.line.me/v2/bot/message/{messageId}/content
-
-$headers = array(‘Authorization: Bearer ‘ . $access_token);
-
-$ch = curl_init($url_content);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-$data =curl_exec($ch);
-curl_close($ch);
-$fp = ‘uploadImages/’.$msg_id.’.png’;
-//$url_img=”http://103.40.151.6/line_bot_gts_issue/”.$fp;
-file_put_contents( $fp, $data );
-			
+			$response = $bot->getMessageContent($message_id);
 			//$date_file = date("Y-m-d-H-i-s");
-		//	$date_file = uniqid();
+			$date_file = uniqid();
 			
-			//if ($response->isSucceeded()) 
-		//	{
-		//	 $content = 'ok';
-		//	}
-		//	else
-		//	{
-				
-				
-		//		$content = $response->getHTTPStatus() . ' ' . $response->getRawBody();
-		//	}
-		//	if ($response->isSucceeded()) 
-		//	{
-		//			$message_id = 'i am image';
+			
+			if ($response->isSucceeded()) {
 					// save image
-					//$dataBinary = $response->getRawBody();
-					//$fileFullSavePath = 'uploadImages/'.$date_file.'.jpg';
+					$dataBinary = $response->getRawBody();
+					$fileFullSavePath = 'uploadImages/'.$date_file.'.jpg';
 					//$fileFullSavePath = 'uploadImages/test.jpg';
-					//file_put_contents($fileFullSavePath,$dataBinary);
+					file_put_contents($fileFullSavePath,$dataBinary);
 				
-					//$id = $event['source']['userId'];
+					$id = $event['source']['userId'];
 				
-		//			$urlImage = 'https://okplusbot.herokuapp.com/'.$fileFullSavePath;
-		//			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getClosePayment.aspx?u='.$id);;
-		//							$str_arr = explode (":", $paymentDetails);  
+					$urlImage = 'https://okplusbot.herokuapp.com/'.$fileFullSavePath;
+					$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getClosePayment.aspx?u='.$id);;
+									$str_arr = explode (":", $paymentDetails);  
 
-		//							$contractId=$str_arr[0];
-		//							$name = $str_arr[1];
-		//							$reference = $str_arr[2];
-		//							$loan = $str_arr[3];
-		//							$plate = $str_arr[4];
-		//							$model = $str_arr[5];
-		//							$payment = $str_arr[6];
-		//							$noPayment = $str_arr[7];
-		//							$firstDt = $str_arr[8];
-		//							$closeAmount = $str_arr[9];
-		//							$date = date('d/m/Y', time());
+									$contractId=$str_arr[0];
+									$name = $str_arr[1];
+									$reference = $str_arr[2];
+									$loan = $str_arr[3];
+									$plate = $str_arr[4];
+									$model = $str_arr[5];
+									$payment = $str_arr[6];
+									$noPayment = $str_arr[7];
+									$firstDt = $str_arr[8];
+									$closeAmount = $str_arr[9];
+									$date = date('d/m/Y', time());
 				
-		//			 $accessToken = "0jFIiIq0JnX9WLpNo+ZMNnVKOSP3IYtDwwqLNSwnR3PyIqo+pTSIdJyY0fLkxQEBSGB7h1OA/ZlRTeHiYeb6v/B7Xnla6B2RO0oIjXfuLFKLKp5kwGc1ZwyR/Ye2KAAnD+fXr3MR7/eCN6ilzs6CQAdB04t89/1O/w1cDnyilFU=";
+					 $accessToken = "0jFIiIq0JnX9WLpNo+ZMNnVKOSP3IYtDwwqLNSwnR3PyIqo+pTSIdJyY0fLkxQEBSGB7h1OA/ZlRTeHiYeb6v/B7Xnla6B2RO0oIjXfuLFKLKp5kwGc1ZwyR/Ye2KAAnD+fXr3MR7/eCN6ilzs6CQAdB04t89/1O/w1cDnyilFU=";
 					//copy ข้อความ Channel access token ตอนที่ตั้งค่า
-   			//		$arrayHeader = array();
-   			//		$arrayHeader[] = "Content-Type: application/json";
-   			//		$arrayHeader[] = "Authorization: Bearer {$accessToken}";
+   					$arrayHeader = array();
+   					$arrayHeader[] = "Content-Type: application/json";
+   					$arrayHeader[] = "Authorization: Bearer {$accessToken}";
 					
 					// Bow lek
 					//$pushID = 'Uf55473a52212b163dd7508653ec5bbd8';
 					
 					//srikieat
-			//		$pushID = 'U44e90a4578cb725ccc9ed09d2cdc18e9';
+					$pushID = 'U44e90a4578cb725ccc9ed09d2cdc18e9';
 					
 				
 				
-			//		$messages = [
-			//			 		 'type' => 'template', //訊息類型 (模板)
-              //  					'altText' => 'ลูกค้าส่งสลิป', //替代文字
-                //					'template' => array(
-                  //  					'type' => 'image_carousel', //類型 (圖片輪播)
-                    //					'columns' => array(
+					$messages = [
+						 		 'type' => 'template', //訊息類型 (模板)
+                					'altText' => 'ลูกค้าส่งสลิป', //替代文字
+                					'template' => array(
+                    					'type' => 'image_carousel', //類型 (圖片輪播)
+                    					'columns' => array(
                         							//	array(
                             					//			'imageUrl' => 'hhttps://okplusbot.herokuapp.com/uploadImages/test.jpg', //圖片網址
                             				//				'action' => array
@@ -236,34 +185,34 @@ file_put_contents( $fp, $data );
                        //         'text' => 'Message example' //用戶發送文字
                        //     )
                        // ),
-                //        array(
-                  //          'imageUrl' => $urlImage , //圖片網址
-                    //        'action' => array(
-                      //          'type' => 'message', //類型 (連結)
-                      //          'label' => $contractId, //標籤
-                        //        'text' => $urlImage //連結網址
-                          //  )
-					//	)
-   // )
-	//									)
-	//					];	
-	//				$data = [
-	//					'to' => $pushID,
-	//					'messages' => [$messages],
-	//				];
-	//				$post = $data;
+                        array(
+                            'imageUrl' => $urlImage , //圖片網址
+                            'action' => array(
+                                'type' => 'message', //類型 (連結)
+                                'label' => $contractId, //標籤
+                                'text' => $urlImage //連結網址
+                            )
+						)
+    )
+										)
+						];	
+					$data = [
+						'to' => $pushID,
+						'messages' => [$messages],
+					];
+					$post = $data;
 
-	//				$strUrl = "https://api.line.me/v2/bot/message/push";
-      //				$ch = curl_init();
-      	//			curl_setopt($ch, CURLOPT_URL,$strUrl);
-      	//			curl_setopt($ch, CURLOPT_HEADER, false);
-      	//			curl_setopt($ch, CURLOPT_POST, true);
-      	//			curl_setopt($ch, CURLOPT_HTTPHEADER, $arrayHeader);
-      	//			curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
-      	//			curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
-      	//			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-      	//			$result = curl_exec($ch);
-      	//			curl_close ($ch);
+					$strUrl = "https://api.line.me/v2/bot/message/push";
+      				$ch = curl_init();
+      				curl_setopt($ch, CURLOPT_URL,$strUrl);
+      				curl_setopt($ch, CURLOPT_HEADER, false);
+      				curl_setopt($ch, CURLOPT_POST, true);
+      				curl_setopt($ch, CURLOPT_HTTPHEADER, $arrayHeader);
+      				curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+      				curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+      				curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+      				$result = curl_exec($ch);
+      				curl_close ($ch);
 					
 				
 					
@@ -271,7 +220,7 @@ file_put_contents( $fp, $data );
 				
 
 				
-	//		}
+			}
 				// Get text sent
 			$text = $event['source']['userId'];
 			// Get replyToken
@@ -280,8 +229,7 @@ file_put_contents( $fp, $data );
 			// reply message
 			 $messages = [
 										'type' => 'text',
-				 						'text' => $content
-										//'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
+										'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
 				 						//'text' => 'ขอบคุณค่ะ'
 									];	
 			
