@@ -124,7 +124,7 @@ if (!is_null($events['events'])) {
 			
 			
 			// run your code here
-				//	$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
+					$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 			
 			
 	//		$message_id = $array1['events'][0]['message']['id'];
