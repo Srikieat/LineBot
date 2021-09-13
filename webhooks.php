@@ -120,13 +120,13 @@ if (!is_null($events['events'])) {
    
         	// IMXX
 
- 			//$message_id = $event['message']['id'];
+ 			$message_id = $event['message']['id'];
 			
-			$message_id = $array1['events'][0]['message']['id'];
+	//		$message_id = $array1['events'][0]['message']['id'];
 			
-			$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
+	//		$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 			
-			$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channel_secret]);
+	//		$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channel_secret]);
 			
 			
 			//$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
