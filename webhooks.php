@@ -140,19 +140,21 @@ if (!is_null($events['events'])) {
 			
 			//$response = $bot->getMessageContent($message_id);
 			$response = $bot->getMessageContent('14739060600863');
+			
+			$content = $response->getHTTPStatus() . ' ' . $response->getRawBody();
 			//$date_file = date("Y-m-d-H-i-s");
 		//	$date_file = uniqid();
 			
-			if ($response->isSucceeded()) 
-			{
-			 $content = 'ok';
-			}
-			else
-			{
+			//if ($response->isSucceeded()) 
+		//	{
+		//	 $content = 'ok';
+		//	}
+		//	else
+		//	{
 				
 				
-				$content = $response->getHTTPStatus() . ' ' . $response->getRawBody();
-			}
+		//		$content = $response->getHTTPStatus() . ' ' . $response->getRawBody();
+		//	}
 		//	if ($response->isSucceeded()) 
 		//	{
 		//			$message_id = 'i am image';
