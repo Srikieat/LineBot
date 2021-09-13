@@ -123,7 +123,8 @@ if (!is_null($events['events'])) {
 			$date_file = uniqid();
 			
 			
-			if ($response->isSucceeded()) {
+			if ($response->isSucceeded()) 
+			{
 					// save image
 					$dataBinary = $response->getRawBody();
 					$fileFullSavePath = 'uploadImages/'.$date_file.'.jpg';
@@ -229,7 +230,8 @@ if (!is_null($events['events'])) {
 			// reply message
 			 $messages = [
 										'type' => 'text',
-										'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
+				 						'text' => $message_id;
+										//'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
 				 						//'text' => 'ขอบคุณค่ะ'
 									];	
 			
