@@ -133,14 +133,14 @@ if (!is_null($events['events'])) {
 			
 			//$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channel_secret]);
 			
-			$response = $bot->getMessageContent($message_id);
+		//	$response = $bot->getMessageContent($message_id);
 			//$date_file = date("Y-m-d-H-i-s");
 			$date_file = uniqid();
 			
 			
-			if ($response->isSucceeded()) 
-			{
-					$message_id = 'i am image';
+		//	if ($response->isSucceeded()) 
+		//	{
+		//			$message_id = 'i am image';
 					// save image
 					//$dataBinary = $response->getRawBody();
 					//$fileFullSavePath = 'uploadImages/'.$date_file.'.jpg';
@@ -237,7 +237,7 @@ if (!is_null($events['events'])) {
 				
 
 				
-			}
+	//		}
 				// Get text sent
 			$text = $event['source']['userId'];
 			// Get replyToken
