@@ -122,9 +122,21 @@ if (!is_null($events['events'])) {
 
  			$message_id = $event['message']['id'];
 			
+			
+			try 
+				{
+    				// run your code here
+					$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
+				}
+				catch (Exception $e) 
+				{
+    				$e->getMessage();
+					$content = $e;
+				}
+			
 	//		$message_id = $array1['events'][0]['message']['id'];
 			
-			$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
+			
 			
 		//	$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channel_secret]);
 			
