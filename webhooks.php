@@ -149,8 +149,8 @@ if (!is_null($events['events'])) {
 			else
 			{
 				
-				$response->getHTTPStatus(); 
-				$content = $response;
+				
+				$content = $response->getHTTPStatus() . ' ' . $response->getRawBody();
 			}
 		//	if ($response->isSucceeded()) 
 		//	{
