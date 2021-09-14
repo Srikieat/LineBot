@@ -12,6 +12,9 @@ curl_setopt($ch, CURLOPT_INFILE, $fp);
 curl_setopt($ch, CURLOPT_INFILESIZE, filesize($localfile));
 curl_exec ($ch);
 $error_no = curl_errno($ch);
+
+echo $error_no;
+
 curl_close ($ch);
 if ($error_no == 0) {
     $error = 'File uploaded succesfully.';
