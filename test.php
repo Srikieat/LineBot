@@ -1,6 +1,6 @@
 <?php
 
-echo 'test';
+echo 'test333';
 
 $ftp_server="119.59.120.23";
  $ftp_user_name="okplusc1";
