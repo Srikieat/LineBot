@@ -146,6 +146,9 @@ if (!is_null($events['events'])) {
 			$str_arr = explode (":", $paymentDetails);  
 			$contractId=$str_arr[0];
 			
+			
+			$contractId = 0;
+			
 			if ($contractId != 0)
 			{
 								//copy ข้อความ Channel access token ตอนที่ตั้งค่า
