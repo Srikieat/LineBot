@@ -40,6 +40,8 @@ $ftp_user_name = "okplusc1"; // Username
 $ftp_user_pass = '2A3w7tFm7j'; // Password
 $destination_file = "/public_html/RegCopy/image.png"; //where you want to throw the file on the webserver (relative to your login dir)
 
+echo '854444';
+
 $conn_id = ftp_connect($ftp_server) or die("<span style='color:#FF0000'><h2>Couldn't connect to $ftp_server</h2></span>");        // set up basic connection
 
 echo '852';
