@@ -2,6 +2,25 @@
 
 echo 'test333';
 
+$ch = curl_init();
+$localfile = '/uploadImages/image.png';
+$remotefile = 'filename.zip';
+$fp = fopen($localfile, 'r');
+curl_setopt($ch, CURLOPT_URL, 'ftp://okplusc1:2A3w7tFm7j@119.59.120.23:2002/'.$remotefile);
+curl_setopt($ch, CURLOPT_UPLOAD, 1);
+curl_setopt($ch, CURLOPT_INFILE, $fp);
+curl_setopt($ch, CURLOPT_INFILESIZE, filesize($localfile));
+curl_exec ($ch);
+$error_no = curl_errno($ch);
+curl_close ($ch);
+if ($error_no == 0) {
+    $error = 'File uploaded succesfully.';
+} else {
+    $error = 'File upload error.';
+}
+
+
+
 //$ftp_server="119.59.120.23";
  //$ftp_user_name="okplusc1";
  //$ftp_user_pass="2A3w7tFm7j";
@@ -30,32 +49,32 @@ echo 'test333';
 
 // Ref : http://php.net/manual/en/function.ftp-put.php
 
-$name = "image.png";
-$filename = "uploadImages/image.png";
+//$name = "image.png";
+//$filename = "uploadImages/image.png";
 
 //-- Code to Transfer File on Server Dt: 06-03-2008 by Aditya Bhatt --//
 //-- Connection Settings
-$ftp_server = "119.59.120.23"; // Address of FTP server.
-$ftp_user_name = "okplusc1"; // Username
-$ftp_user_pass = '2A3w7tFm7j'; // Password
-$destination_file = "/public_html/RegCopy/image.png"; //where you want to throw the file on the webserver (relative to your login dir)
+//$ftp_server = "119.59.120.23"; // Address of FTP server.
+//$ftp_user_name = "okplusc1"; // Username
+//$ftp_user_pass = '2A3w7tFm7j'; // Password
+//$destination_file = "/public_html/RegCopy/image.png"; //where you want to throw the file on the webserver (relative to your login dir)
 
-echo '<br>854444';
+//echo '<br>854444';
 
-$conn_id = ftp_connect($ftp_server,2002,30) or die("<span style='color:#FF0000'><h2>Couldn't connect to $ftp_server</h2></span>");        // set up basic connection
+//$conn_id = ftp_connect($ftp_server,2002,30) or die("<span style='color:#FF0000'><h2>Couldn't connect to $ftp_server</h2></span>");        // set up basic connection
 
-echo $conn_id;
+//echo $conn_id;
 
-$login_result = ftp_login($conn_id, $ftp_user_name, $ftp_user_pass) or die("<span style='color:#FF0000'><h2>You do not have access to this ftp server!</h2></span>");   // login with username and password, or give invalid user message
+//$login_result = ftp_login($conn_id, $ftp_user_name, $ftp_user_pass) or die("<span style='color:#FF0000'><h2>You do not have access to this ftp server!</h2></span>");   // login with username and password, or give invalid user message
 
-if ((!$conn_id) || (!$login_result)) {  // check connection
+//if ((!$conn_id) || (!$login_result)) {  // check connection
     // wont ever hit this, b/c of the die call on ftp_login
-    echo "<span style='color:#FF0000'><h2>FTP connection has failed! <br />";
-    echo "Attempted to connect to $ftp_server for user $ftp_user_name</h2></span>";
-    exit;
-} else {
-    echo "Connected to $ftp_server, for user $ftp_user_name <br />";
-}
+  //  echo "<span style='color:#FF0000'><h2>FTP connection has failed! <br />";
+   // echo "Attempted to connect to $ftp_server for user $ftp_user_name</h2></span>";
+    //exit;
+//} else {
+//    echo "Connected to $ftp_server, for user $ftp_user_name <br />";
+//}
 
 //$upload = ftp_put($conn_id, $destination_file.$name, $filename, FTP_BINARY);  // upload the file
 //if (!$upload) {  // check upload status
