@@ -4,7 +4,7 @@ echo 'test333';
 
 $ch = curl_init();
 $localfile = '/uploadImages/image.png';
-$remotefile = 'filename.zip';
+$remotefile = 'public_html/RegCopy/image.png';
 $fp = fopen($localfile, 'r');
 curl_setopt($ch, CURLOPT_URL, 'ftp://okplusc1:2A3w7tFm7j@119.59.120.23:2002/'.$remotefile);
 curl_setopt($ch, CURLOPT_UPLOAD, 1);
