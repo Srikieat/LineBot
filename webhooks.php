@@ -146,17 +146,18 @@ if (!is_null($events['events'])) {
 			$str_arr = explode (":", $paymentDetails);  
 			$contractId=$str_arr[0];
 			
-			
-			//copy ข้อความ Channel access token ตอนที่ตั้งค่า
-   			$arrayHeader = array();
-   			$arrayHeader[] = "Content-Type: application/json";
-   			$arrayHeader[] = "Authorization: Bearer {$access_token}";
+			if ($contractId != 0)
+			{
+								//copy ข้อความ Channel access token ตอนที่ตั้งค่า
+   						$arrayHeader = array();
+   						$arrayHeader[] = "Content-Type: application/json";
+   						$arrayHeader[] = "Authorization: Bearer {$access_token}";
 					
-			// Bow lek
-			//$pushID = 'Uf55473a52212b163dd7508653ec5bbd8';
+						// Bow lek
+						//$pushID = 'Uf55473a52212b163dd7508653ec5bbd8';
 					
-			//srikieat
-			$pushID = 'U44e90a4578cb725ccc9ed09d2cdc18e9';
+						//srikieat
+						$pushID = 'U44e90a4578cb725ccc9ed09d2cdc18e9';
 			
 			
 			
@@ -175,7 +176,7 @@ if (!is_null($events['events'])) {
                                 'text' => $urlImage //連結網址
                             )
 						)
-    )
+    				)
 										)
 						];	
 					$data = [
@@ -196,6 +197,8 @@ if (!is_null($events['events'])) {
       				$result = curl_exec($ch);
       				curl_close ($ch);
 			
+				
+			}
 					
 
 				
