@@ -2,11 +2,11 @@
 
 echo 'test';
 
-$ftp_server="119.59.120.23";
- $ftp_user_name="okplusc1";
- $ftp_user_pass="2A3w7tFm7j";
- $file = "uploadImages/image.png";//tobe uploaded
- $remote_file = "public_html/RegCopy/image.png";
+//$ftp_server="119.59.120.23";
+ //$ftp_user_name="okplusc1";
+ //$ftp_user_pass="2A3w7tFm7j";
+ //$file = "uploadImages/image.png";//tobe uploaded
+ //$remote_file = "public_html/RegCopy/image.png";
 
  // set up basic connection
  //$conn_id = ftp_connect($ftp_server);
