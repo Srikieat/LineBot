@@ -48,14 +48,14 @@ echo '<br>852';
 
 $login_result = ftp_login($conn_id, $ftp_user_name, $ftp_user_pass) or die("<span style='color:#FF0000'><h2>You do not have access to this ftp server!</h2></span>");   // login with username and password, or give invalid user message
 
-//if ((!$conn_id) || (!$login_result)) {  // check connection
+if ((!$conn_id) || (!$login_result)) {  // check connection
     // wont ever hit this, b/c of the die call on ftp_login
-  //  echo "<span style='color:#FF0000'><h2>FTP connection has failed! <br />";
-    //echo "Attempted to connect to $ftp_server for user $ftp_user_name</h2></span>";
-    //exit;
-//} else {
-    //echo "Connected to $ftp_server, for user $ftp_user_name <br />";
-//}
+    echo "<span style='color:#FF0000'><h2>FTP connection has failed! <br />";
+    echo "Attempted to connect to $ftp_server for user $ftp_user_name</h2></span>";
+    exit;
+} else {
+    echo "Connected to $ftp_server, for user $ftp_user_name <br />";
+}
 
 //$upload = ftp_put($conn_id, $destination_file.$name, $filename, FTP_BINARY);  // upload the file
 //if (!$upload) {  // check upload status
