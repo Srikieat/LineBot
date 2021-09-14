@@ -162,32 +162,48 @@ if (!is_null($events['events'])) {
 			
 					$messages = [
 						 		 'type' => 'template', //訊息類型 (模板)
-              					'altText' => 'ลูกค้าส่งสลิป', //替代文字
-             					'template' => array(
-               					'type' => 'image_carousel', //類型 (圖片輪播)
-             					'columns' => array(
-													array(
-                           							'imageUrl' => $urlImage , //圖片網址
-                            							'action' => array(
-                                							'type' => 'message', //類型 (連結)
-                                							'label' => $contractId, //標籤
-                                							'text' => $urlImage //連結網址
-                            											 )
-														 )
-    												)
-													)
-								];	
+                					'altText' => 'ลูกค้าส่งสลิป', //替代文字
+                					'template' => array(
+                    					'type' => 'image_carousel', //類型 (圖片輪播)
+                    					'columns' => array(
+                        							//	array(
+                            					//			'imageUrl' => 'hhttps://okplusbot.herokuapp.com/uploadImages/test.jpg', //圖片網址
+                            				//				'action' => array
+											//					(
+										//					'type' => 'postback', //類型 (回傳)
+										//					'label' => 'Pb example', //標籤
+										//					'data' => 'action=buy&itemid=123' //資料
+                            				//					)
+                        					//				),
+                      //  array(
+                      //      'imageUrl' => 'https://api.reh.tw/line/bot/example/assets/images/example_1-1.jpg', //圖片網址
+                       //     'action' => array(
+                       //         'type' => 'message', //類型 (訊息)
+                       //         'label' => 'Msg example', //標籤
+                       //         'text' => 'Message example' //用戶發送文字
+                       //     )
+                       // ),
+                        array(
+                            'imageUrl' => $urlImage , //圖片網址
+                            'action' => array(
+                                'type' => 'message', //類型 (連結)
+                                'label' => $contractId, //標籤
+                                'text' => $urlImage //連結網址
+                            )
+						)
+    )
+										)
+						];	
 					$data = [
 						'to' => $pushID,
 						'messages' => [$messages],
 					];
-			
 					$post = $data;
 
-					$strUrl = "https://api-data.line.me/v2/bot/message/push";
-					$ch = curl_init();
+					$strUrl = "https://api.line.me/v2/bot/message/push";
+      				$ch = curl_init();
       				curl_setopt($ch, CURLOPT_URL,$strUrl);
-     				curl_setopt($ch, CURLOPT_HEADER, false);
+      				curl_setopt($ch, CURLOPT_HEADER, false);
       				curl_setopt($ch, CURLOPT_POST, true);
       				curl_setopt($ch, CURLOPT_HTTPHEADER, $arrayHeader);
       				curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
