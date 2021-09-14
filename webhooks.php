@@ -1341,10 +1341,7 @@ if (!is_null($events['events'])) {
   				         default:
 								if (strpos($sendMessage,'http') !== false)
 								{
-							    $messages = [
-										'type' => 'text',
-										'text' => 'กดที่ Link เพื่อดูรูปใหญ่'	
-									];	
+							   			// รูป slip 
 								}
 								else
 								{
