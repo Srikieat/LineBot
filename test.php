@@ -67,7 +67,7 @@ $destination_file = "/public_html/RegCopy/image.png"; //where you want to throw 
 
 $conn_id = ftp_connect($ftp_server,2002) or die("<span style='color:#FF0000'><h2>Couldn't connect to $ftp_server</h2></span>");        // set up basic connection
 
-//echo $conn_id;
+echo 'see me';
 
 //$login_result = ftp_login($conn_id, $ftp_user_name, $ftp_user_pass) or die("<span style='color:#FF0000'><h2>You do not have access to this ftp server!</h2></span>");   // login with username and password, or give invalid user message
 
