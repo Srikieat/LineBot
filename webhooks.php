@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>OKPLUS BOT</title>
+<title>Untitled Document</title>
 </head>
 
 <body>
