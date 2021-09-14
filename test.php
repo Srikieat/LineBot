@@ -11,9 +11,10 @@ echo '1';
 
 // set up basic connection
  $conn_id = ftp_connect($ftp_server);
-
+echo '2';
  // login with username and password
- //$login_result = ftp_login($conn_id, $ftp_user_name, $ftp_user_pass);
+ $login_result = ftp_login($conn_id, $ftp_user_name, $ftp_user_pass);
+echo '3';
 
  // upload a file
  //if (ftp_put($conn_id, $remote_file, $file, FTP_ASCII)) {
