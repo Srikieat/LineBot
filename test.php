@@ -46,7 +46,7 @@ $conn_id = ftp_connect($ftp_server,2002) or die("<span style='color:#FF0000'><h2
 
 echo '<br>852';
 
-//$login_result = ftp_login($conn_id, $ftp_user_name, $ftp_user_pass) or die("<span style='color:#FF0000'><h2>You do not have access to this ftp server!</h2></span>");   // login with username and password, or give invalid user message
+$login_result = ftp_login($conn_id, $ftp_user_name, $ftp_user_pass) or die("<span style='color:#FF0000'><h2>You do not have access to this ftp server!</h2></span>");   // login with username and password, or give invalid user message
 
 //if ((!$conn_id) || (!$login_result)) {  // check connection
     // wont ever hit this, b/c of the die call on ftp_login
