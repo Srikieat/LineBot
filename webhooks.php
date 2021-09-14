@@ -166,23 +166,7 @@ if (!is_null($events['events'])) {
                 					'template' => array(
                     					'type' => 'image_carousel', //類型 (圖片輪播)
                     					'columns' => array(
-                        							//	array(
-                            					//			'imageUrl' => 'hhttps://okplusbot.herokuapp.com/uploadImages/test.jpg', //圖片網址
-                            				//				'action' => array
-											//					(
-										//					'type' => 'postback', //類型 (回傳)
-										//					'label' => 'Pb example', //標籤
-										//					'data' => 'action=buy&itemid=123' //資料
-                            				//					)
-                        					//				),
-                      //  array(
-                      //      'imageUrl' => 'https://api.reh.tw/line/bot/example/assets/images/example_1-1.jpg', //圖片網址
-                       //     'action' => array(
-                       //         'type' => 'message', //類型 (訊息)
-                       //         'label' => 'Msg example', //標籤
-                       //         'text' => 'Message example' //用戶發送文字
-                       //     )
-                       // ),
+                        						
                         array(
                             'imageUrl' => $urlImage , //圖片網址
                             'action' => array(
@@ -213,42 +197,9 @@ if (!is_null($events['events'])) {
       				curl_close ($ch);
 			
 					
-			//if ($response->isSucceeded()) 
-		//	{
-		//	 $content = 'ok';
-		//	}
-		//	else
-		//	{
-				
-				
-		//		$content = $response->getHTTPStatus() . ' ' . $response->getRawBody();
-		//	}
-		//	if ($response->isSucceeded()) 
-		//	{
-		//			$message_id = 'i am image';
-					// save image
-					//$dataBinary = $response->getRawBody();
-					//$fileFullSavePath = 'uploadImages/'.$date_file.'.jpg';
-					//$fileFullSavePath = 'uploadImages/test.jpg';
-					//file_put_contents($fileFullSavePath,$dataBinary);
-				
-					//$id = $event['source']['userId'];
-				
-		//			$urlImage = 'https://okplusbot.herokuapp.com/'.$fileFullSavePath;
-	
-				
-		
-				
-				
-		
-					
-				
-					
-				
-				
 
 				
-	//		}
+		
 				// Get text sent
 			$text = $event['source']['userId'];
 			// Get replyToken
@@ -257,9 +208,9 @@ if (!is_null($events['events'])) {
 			// reply message
 			 $messages = [
 										'type' => 'text',
-				 						'text' => $contractId
+				 						//'text' => $contractId
 										//'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
-				 						//'text' => 'ขอบคุณค่ะ'
+				 						'text' => 'ขอบคุณค่ะ'
 									];	
 			
 			
