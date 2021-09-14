@@ -20,7 +20,7 @@ $ftp_server="119.59.120.23";
     //exit;
  //} else {
    // echo "There was a problem while uploading $file\n";
-    /exit;
+  //exit;
     }
  // close the connection
  //ftp_close($conn_id);
