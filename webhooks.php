@@ -208,6 +208,9 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			
+			if ($contractId != 0)
+			{
+			
 			// reply message
 			 $messages = [
 										'type' => 'text',
@@ -216,7 +219,16 @@ if (!is_null($events['events'])) {
 				 						'text' => 'ขอบคุณค่ะ'
 									];	
 			
-			
+			}
+			else
+			{
+				$messages = [
+										'type' => 'text',
+				 						//'text' => $contractId
+										'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
+				 						
+							];	
+			}
 			
 				// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
