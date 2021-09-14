@@ -156,7 +156,7 @@ curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 $data =curl_exec($ch);
 
 curl_close($ch);
-$fp = 'uploadImages/'.$msg_id.'.png';
+$fp = 'uploadImages/'.$message_id.'.png';
 //$url_img=”http://103.40.151.6/line_bot_gts_issue/”.$fp;
 file_put_contents( $fp, $data );
 			$urlImage = 'https://okplusbot.herokuapp.com/'.$fp;
