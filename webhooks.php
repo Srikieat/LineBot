@@ -143,7 +143,7 @@ if (!is_null($events['events'])) {
 			
 		//	$content = $response->getHTTPStatus() . ' ' . $response->getRawBody();
 			
-			$url_content='https://api.line.me/v2/bot/message/'.$message_id.'/content';
+			$url_content='https://api-data.line.me/v2/bot/message/'.$message_id.'/content';
 			
 			//https://api.line.me/v2/bot/message/{messageId}/content
 
