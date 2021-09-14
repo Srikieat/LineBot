@@ -123,48 +123,78 @@ if (!is_null($events['events'])) {
  			$message_id = $event['message']['id'];
 			
 			
-			// run your code here
-			//		$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
-			
-			
-	//		$message_id = $array1['events'][0]['message']['id'];
-			
-			
-			
-	//		$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channel_secret]);
-			
-			
-			//$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
-			
-			//$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channel_secret]);
-			
-			//$response = $bot->getMessageContent($message_id);
-		//	$response = $bot->getMessageContent($message_id);
-			
-		//	$content = $response->getHTTPStatus() . ' ' . $response->getRawBody();
-			
 			$url_content='https://api-data.line.me/v2/bot/message/'.$message_id.'/content';
 			
-			//https://api.line.me/v2/bot/message/{messageId}/content
+			$headers = array('Authorization: Bearer ' . $access_token);
 
-$headers = array('Authorization: Bearer ' . $access_token);
+			$ch = curl_init($url_content);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+			$data_image =curl_exec($ch);
 
-$ch = curl_init($url_content);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-$data =curl_exec($ch);
+			curl_close($ch);
+			$fp = 'uploadImages/'.$message_id.'.png';
 
-curl_close($ch);
-$fp = 'uploadImages/'.$message_id.'.png';
-//$url_img=”http://103.40.151.6/line_bot_gts_issue/”.$fp;
-file_put_contents( $fp, $data );
+			file_put_contents( $fp, $data_image );
+			
 			$urlImage = 'https://okplusbot.herokuapp.com/'.$fp;
-						$content = $urlImage;
 			
-			//$date_file = date("Y-m-d-H-i-s");
-		//	$date_file = uniqid();
+			// get okplus data
+			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getClosePayment.aspx?u='.$id);
+			$str_arr = explode (":", $paymentDetails);  
+			$contractId=$str_arr[0];
 			
+			
+			//copy ข้อความ Channel access token ตอนที่ตั้งค่า
+   			$arrayHeader = array();
+   			$arrayHeader[] = "Content-Type: application/json";
+   			$arrayHeader[] = "Authorization: Bearer {$accessToken}";
+					
+			// Bow lek
+			//$pushID = 'Uf55473a52212b163dd7508653ec5bbd8';
+					
+			//srikieat
+			$pushID = 'U44e90a4578cb725ccc9ed09d2cdc18e9';
+			
+			
+			
+					$messages = [
+						 		 'type' => 'template', //訊息類型 (模板)
+              					'altText' => 'ลูกค้าส่งสลิป', //替代文字
+             					'template' => array(
+               					'type' => 'image_carousel', //類型 (圖片輪播)
+             					'columns' => array(
+													array(
+                            							'imageUrl' => $urlImage , //圖片網址
+                            							'action' => array(
+                                							'type' => 'message', //類型 (連結)
+                                							'label' => $contractId, //標籤
+                                							'text' => $urlImage //連結網址
+                            											 )
+														 )
+    												)
+													)
+								];	
+					$data = [
+						'to' => $pushID,
+						'messages' => [$messages],
+					];
+					$post = $data;
+
+					$strUrl = "https://api.line.me/v2/bot/message/push";
+     				$ch = curl_init();
+      				curl_setopt($ch, CURLOPT_URL,$strUrl);
+      				curl_setopt($ch, CURLOPT_HEADER, false);
+      				curl_setopt($ch, CURLOPT_POST, true);
+      				curl_setopt($ch, CURLOPT_HTTPHEADER, $arrayHeader);
+      				curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+      				curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+      				curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+      				$result = curl_exec($ch);
+      				curl_close ($ch);
+			
+					
 			//if ($response->isSucceeded()) 
 		//	{
 		//	 $content = 'ok';
@@ -187,86 +217,12 @@ file_put_contents( $fp, $data );
 					//$id = $event['source']['userId'];
 				
 		//			$urlImage = 'https://okplusbot.herokuapp.com/'.$fileFullSavePath;
-		//			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getClosePayment.aspx?u='.$id);;
-		//							$str_arr = explode (":", $paymentDetails);  
-
-		//							$contractId=$str_arr[0];
-		//							$name = $str_arr[1];
-		//							$reference = $str_arr[2];
-		//							$loan = $str_arr[3];
-		//							$plate = $str_arr[4];
-		//							$model = $str_arr[5];
-		//							$payment = $str_arr[6];
-		//							$noPayment = $str_arr[7];
-		//							$firstDt = $str_arr[8];
-		//							$closeAmount = $str_arr[9];
-		//							$date = date('d/m/Y', time());
+	
 				
-		//			 $accessToken = "0jFIiIq0JnX9WLpNo+ZMNnVKOSP3IYtDwwqLNSwnR3PyIqo+pTSIdJyY0fLkxQEBSGB7h1OA/ZlRTeHiYeb6v/B7Xnla6B2RO0oIjXfuLFKLKp5kwGc1ZwyR/Ye2KAAnD+fXr3MR7/eCN6ilzs6CQAdB04t89/1O/w1cDnyilFU=";
-					//copy ข้อความ Channel access token ตอนที่ตั้งค่า
-   			//		$arrayHeader = array();
-   			//		$arrayHeader[] = "Content-Type: application/json";
-   			//		$arrayHeader[] = "Authorization: Bearer {$accessToken}";
-					
-					// Bow lek
-					//$pushID = 'Uf55473a52212b163dd7508653ec5bbd8';
-					
-					//srikieat
-			//		$pushID = 'U44e90a4578cb725ccc9ed09d2cdc18e9';
-					
+		
 				
 				
-			//		$messages = [
-			//			 		 'type' => 'template', //訊息類型 (模板)
-              //  					'altText' => 'ลูกค้าส่งสลิป', //替代文字
-                //					'template' => array(
-                  //  					'type' => 'image_carousel', //類型 (圖片輪播)
-                    //					'columns' => array(
-                        							//	array(
-                            					//			'imageUrl' => 'hhttps://okplusbot.herokuapp.com/uploadImages/test.jpg', //圖片網址
-                            				//				'action' => array
-											//					(
-										//					'type' => 'postback', //類型 (回傳)
-										//					'label' => 'Pb example', //標籤
-										//					'data' => 'action=buy&itemid=123' //資料
-                            				//					)
-                        					//				),
-                      //  array(
-                      //      'imageUrl' => 'https://api.reh.tw/line/bot/example/assets/images/example_1-1.jpg', //圖片網址
-                       //     'action' => array(
-                       //         'type' => 'message', //類型 (訊息)
-                       //         'label' => 'Msg example', //標籤
-                       //         'text' => 'Message example' //用戶發送文字
-                       //     )
-                       // ),
-                //        array(
-                  //          'imageUrl' => $urlImage , //圖片網址
-                    //        'action' => array(
-                      //          'type' => 'message', //類型 (連結)
-                      //          'label' => $contractId, //標籤
-                        //        'text' => $urlImage //連結網址
-                          //  )
-					//	)
-   // )
-	//									)
-	//					];	
-	//				$data = [
-	//					'to' => $pushID,
-	//					'messages' => [$messages],
-	//				];
-	//				$post = $data;
-
-	//				$strUrl = "https://api.line.me/v2/bot/message/push";
-      //				$ch = curl_init();
-      	//			curl_setopt($ch, CURLOPT_URL,$strUrl);
-      	//			curl_setopt($ch, CURLOPT_HEADER, false);
-      	//			curl_setopt($ch, CURLOPT_POST, true);
-      	//			curl_setopt($ch, CURLOPT_HTTPHEADER, $arrayHeader);
-      	//			curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
-      	//			curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
-      	//			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-      	//			$result = curl_exec($ch);
-      	//			curl_close ($ch);
+		
 					
 				
 					
