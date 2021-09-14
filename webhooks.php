@@ -147,7 +147,7 @@ if (!is_null($events['events'])) {
 			
 			//https://api.line.me/v2/bot/message/{messageId}/content
 
-$headers = array(‘Authorization: Bearer ‘ . $access_token);
+//$headers = array(‘Authorization: Bearer ‘ . $access_token);
 
 //$ch = curl_init($url_content);
 //curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
