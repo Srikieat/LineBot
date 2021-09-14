@@ -141,6 +141,7 @@ if (!is_null($events['events'])) {
 			$urlImage = 'https://okplusbot.herokuapp.com/'.$fp;
 			
 			// get okplus data
+			$id = $event['source']['userId'];
 			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getClosePayment.aspx?u='.$id);
 			$str_arr = explode (":", $paymentDetails);  
 			$contractId=$str_arr[0];
