@@ -147,14 +147,14 @@ if (!is_null($events['events'])) {
 			
 			//https://api.line.me/v2/bot/message/{messageId}/content
 
-$headers = array(‘Authorization: Bearer ‘ . $access_token);
+//$headers = array(‘Authorization: Bearer ‘ . $access_token);
 
-$ch = curl_init($url_content);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-$data =curl_exec($ch);
-curl_close($ch);
+//$ch = curl_init($url_content);
+//curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+//curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+//curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+//$data =curl_exec($ch);
+//curl_close($ch);
 //$fp = ‘uploadImages/’.$msg_id.’.png’;
 //$url_img=”http://103.40.151.6/line_bot_gts_issue/”.$fp;
 //file_put_contents( $fp, $data );
