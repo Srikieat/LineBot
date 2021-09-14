@@ -23,7 +23,7 @@ echo 'test333';
  //} else {
    // echo "There was a problem while uploading $file\n";
   //exit;
-    }
+  //  }
  // close the connection
  //ftp_close($conn_id);
 
