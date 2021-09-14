@@ -65,7 +65,7 @@ $destination_file = "/public_html/RegCopy/image.png"; //where you want to throw 
 
 //echo '<br>854444';
 
-$conn_id = ftp_connect($ftp_server,2002) ;        // set up basic connection
+$conn_id = ftp_ssl_connect($ftp_server,2002) ;        // set up basic connection
 
 echo 'see me';
 
