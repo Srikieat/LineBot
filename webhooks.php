@@ -147,8 +147,6 @@ if (!is_null($events['events'])) {
 			$contractId=$str_arr[0];
 			
 			
-			$contractId = 0;
-			
 			if ($contractId != 0)
 			{
 								//copy ข้อความ Channel access token ตอนที่ตั้งค่า
@@ -1341,10 +1339,20 @@ if (!is_null($events['events'])) {
 					
 					 break;
   				         default:
+								if (strpos($sendMessage,'http') !== false)
+								{
 							    $messages = [
+										'type' => 'text',
+										'text' => 'Do nothing'	
+									];	
+								}
+								else
+								{
+						$messages = [
 										'type' => 'text',
 										'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n".'หากต้องการติดต่อพนักงาน โปรดติดต่อที่ https://lin.ee/6D052q8'	
 									];	
+								}
 				// end case				
 				}
 				
