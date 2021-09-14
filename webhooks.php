@@ -148,52 +148,52 @@ if (!is_null($events['events'])) {
 			
 			
 			//copy ข้อความ Channel access token ตอนที่ตั้งค่า
-   			//$arrayHeader = array();
-   			//$arrayHeader[] = "Content-Type: application/json";
-   			//$arrayHeader[] = "Authorization: Bearer {$accessToken}";
+   			$arrayHeader = array();
+   			$arrayHeader[] = "Content-Type: application/json";
+   			$arrayHeader[] = "Authorization: Bearer {$accessToken}";
 					
 			// Bow lek
 			//$pushID = 'Uf55473a52212b163dd7508653ec5bbd8';
 					
 			//srikieat
-			//$pushID = 'U44e90a4578cb725ccc9ed09d2cdc18e9';
+			$pushID = 'U44e90a4578cb725ccc9ed09d2cdc18e9';
 			
 			
 			
-				//	$messages = [
-					//	 		 'type' => 'template', //訊息類型 (模板)
-              		//			'altText' => 'ลูกค้าส่งสลิป', //替代文字
-             		//			'template' => array(
-               		//			'type' => 'image_carousel', //類型 (圖片輪播)
-             		//			'columns' => array(
-					//								array(
-                      //      							'imageUrl' => $urlImage , //圖片網址
-                        //    							'action' => array(
-                          //      							'type' => 'message', //類型 (連結)
-                            //    							'label' => $contractId, //標籤
-                              //  							'text' => $urlImage //連結網址
-                            	//										 )
-								//						 )
-    								//				)
-									//				)
-								//];	
-					//$data = [
-//						'to' => $pushID,
-//						'messages' => [$messages],
-//					];
-//					$post = $data;
+					$messages = [
+						 		 'type' => 'template', //訊息類型 (模板)
+              					'altText' => 'ลูกค้าส่งสลิป', //替代文字
+             					'template' => array(
+               					'type' => 'image_carousel', //類型 (圖片輪播)
+             					'columns' => array(
+													array(
+                           							'imageUrl' => $urlImage , //圖片網址
+                            							'action' => array(
+                                							'type' => 'message', //類型 (連結)
+                                							'label' => $contractId, //標籤
+                                							'text' => $urlImage //連結網址
+                            											 )
+														 )
+    												)
+													)
+								];	
+					$data = [
+						'to' => $pushID,
+						'messages' => [$messages],
+					];
+					$post = $data;
 
-//					$strUrl = "https://api.line.me/v2/bot/message/push";
-  //   				$ch = curl_init();
-    //  				curl_setopt($ch, CURLOPT_URL,$strUrl);
-      //				curl_setopt($ch, CURLOPT_HEADER, false);
-      	//			curl_setopt($ch, CURLOPT_POST, true);
-      	//			curl_setopt($ch, CURLOPT_HTTPHEADER, $arrayHeader);
-      	//			curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
-      	//			curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
-      	//			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-      	//			$result = curl_exec($ch);
-      	//			curl_close ($ch);
+					$strUrl = "https://api.line.me/v2/bot/message/push";
+					$ch = curl_init();
+      				curl_setopt($ch, CURLOPT_URL,$strUrl);
+     				curl_setopt($ch, CURLOPT_HEADER, false);
+      				curl_setopt($ch, CURLOPT_POST, true);
+      				curl_setopt($ch, CURLOPT_HTTPHEADER, $arrayHeader);
+      				curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+      				curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+      				curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+      				$result = curl_exec($ch);
+      				curl_close ($ch);
 			
 					
 			//if ($response->isSucceeded()) 
