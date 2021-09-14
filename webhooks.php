@@ -150,7 +150,7 @@ if (!is_null($events['events'])) {
 			//copy ข้อความ Channel access token ตอนที่ตั้งค่า
    			$arrayHeader = array();
    			$arrayHeader[] = "Content-Type: application/json";
-   			$arrayHeader[] = "Authorization: Bearer {$accessToken}";
+   			$arrayHeader[] = "Authorization: Bearer {$access_token}";
 					
 			// Bow lek
 			//$pushID = 'Uf55473a52212b163dd7508653ec5bbd8';
