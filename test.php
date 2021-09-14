@@ -17,14 +17,14 @@ echo '2';
 echo '3';
 
  // upload a file
- //if (ftp_put($conn_id, $remote_file, $file, FTP_ASCII)) {
-   // echo "successfully uploaded $file\n";
-    //exit;
- //} else {
-   // echo "There was a problem while uploading $file\n";
-  //exit;
-  //  }
+ if (ftp_put($conn_id, $remote_file, $file, FTP_ASCII)) {
+    echo "successfully uploaded $file\n";
+    exit;
+ } else {
+    echo "There was a problem while uploading $file\n";
+  exit;
+    }
  // close the connection
- //ftp_close($conn_id);
+ ftp_close($conn_id);
 
 ?>
