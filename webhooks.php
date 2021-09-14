@@ -141,10 +141,10 @@ if (!is_null($events['events'])) {
 			$urlImage = 'https://okplusbot.herokuapp.com/'.$fp;
 			
 			// get okplus data
-			//$id = $event['source']['userId'];
-			//$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getClosePayment.aspx?u='.$id);
-			//$str_arr = explode (":", $paymentDetails);  
-			//$contractId=$str_arr[0];
+			$id = $event['source']['userId'];
+			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getClosePayment.aspx?u='.$id);
+			$str_arr = explode (":", $paymentDetails);  
+			$contractId=$str_arr[0];
 			
 			
 			//copy ข้อความ Channel access token ตอนที่ตั้งค่า
