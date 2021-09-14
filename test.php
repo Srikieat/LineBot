@@ -1,6 +1,6 @@
 <?php
 
-echo 'test333';
+echo 'test33311';
 
 $ch = curl_init();
 $localfile = '/uploadImages/image.png';
@@ -23,6 +23,7 @@ if ($error_no == 0) {
 }
 
 
+echo $error;
 
 //$ftp_server="119.59.120.23";
  //$ftp_user_name="okplusc1";
