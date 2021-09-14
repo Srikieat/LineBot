@@ -7,6 +7,7 @@ $ftp_server="119.59.120.23";
  $ftp_user_pass="2A3w7tFm7j";
  $file = "uploadImages/image.png";//tobe uploaded
  $remote_file = "public_html/RegCopy/image.png";
+echo = '1';
 
 // set up basic connection
  //$conn_id = ftp_connect($ftp_server);
