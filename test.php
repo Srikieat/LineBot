@@ -1,29 +1,29 @@
 <?php
 
-echo 'test33311';
+echo 'ftp';
 
-$ch = curl_init();
-$localfile = '/uploadImages/image.png';
-$remotefile = 'public_html/RegCopy/image.png';
-$fp = fopen($localfile, 'r');
-curl_setopt($ch, CURLOPT_URL, 'ftp://okplusc1:2A3w7tFm7j@119.59.120.23:2002/'.$remotefile);
-curl_setopt($ch, CURLOPT_UPLOAD, 1);
-curl_setopt($ch, CURLOPT_INFILE, $fp);
-curl_setopt($ch, CURLOPT_INFILESIZE, filesize($localfile));
-curl_exec ($ch);
-$error_no = curl_errno($ch);
+//$ch = curl_init();
+//$localfile = '/uploadImages/image.png';
+//$remotefile = 'public_html/RegCopy/image.png';
+//$fp = fopen($localfile, 'r');
+//curl_setopt($ch, CURLOPT_URL, 'ftp://okplusc1:2A3w7tFm7j@119.59.120.23:2002/'.$remotefile);
+//curl_setopt($ch, CURLOPT_UPLOAD, 1);
+//curl_setopt($ch, CURLOPT_INFILE, $fp);
+//curl_setopt($ch, CURLOPT_INFILESIZE, filesize($localfile));
+//curl_exec ($ch);
+//$error_no = curl_errno($ch);
 
-echo $error_no;
+//echo $error_no;
 
-curl_close ($ch);
-if ($error_no == 0) {
-    $error = 'File uploaded succesfully.';
-} else {
-    $error = 'File upload error.';
-}
+//curl_close ($ch);
+//if ($error_no == 0) {
+//    $error = 'File uploaded succesfully.';
+//} else {
+//    $error = 'File upload error.';
+//}
 
 
-echo $error;
+//echo $error;
 
 //$ftp_server="119.59.120.23";
  //$ftp_user_name="okplusc1";
@@ -53,19 +53,19 @@ echo $error;
 
 // Ref : http://php.net/manual/en/function.ftp-put.php
 
-//$name = "image.png";
-//$filename = "uploadImages/image.png";
+$name = "image.png";
+$filename = "uploadImages/image.png";
 
 //-- Code to Transfer File on Server Dt: 06-03-2008 by Aditya Bhatt --//
 //-- Connection Settings
-//$ftp_server = "119.59.120.23"; // Address of FTP server.
-//$ftp_user_name = "okplusc1"; // Username
-//$ftp_user_pass = '2A3w7tFm7j'; // Password
-//$destination_file = "/public_html/RegCopy/image.png"; //where you want to throw the file on the webserver (relative to your login dir)
+$ftp_server = "119.59.120.23"; // Address of FTP server.
+$ftp_user_name = "okplusc1"; // Username
+$ftp_user_pass = '2A3w7tFm7j'; // Password
+$destination_file = "/public_html/RegCopy/image.png"; //where you want to throw the file on the webserver (relative to your login dir)
 
 //echo '<br>854444';
 
-//$conn_id = ftp_connect($ftp_server,2002,30) or die("<span style='color:#FF0000'><h2>Couldn't connect to $ftp_server</h2></span>");        // set up basic connection
+$conn_id = ftp_connect($ftp_server,2002) or die("<span style='color:#FF0000'><h2>Couldn't connect to $ftp_server</h2></span>");        // set up basic connection
 
 //echo $conn_id;
 
