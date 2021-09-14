@@ -149,10 +149,10 @@ if (!is_null($events['events'])) {
 
 $headers = array(‘Authorization: Bearer ‘ . $access_token);
 
-$ch = curl_init($url_content);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+//$ch = curl_init($url_content);
+//curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+//curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+//curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 //$data =curl_exec($ch);
 //curl_close($ch);
 //$fp = ‘uploadImages/’.$msg_id.’.png’;
