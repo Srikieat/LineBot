@@ -1095,7 +1095,24 @@ if (!is_null($events['events'])) {
 					break;
   				case "ลงทะเบียน":
    					// start message
-					$messages = [
+					
+						$isRegister = file_get_contents('http://okplus.ddns.net/okplus/bot/CheckRegister.aspx?u='.$text);
+			
+					//$isRegister = "0";
+					$isRegister = substr($isRegister, 0, 1);
+					
+					if ($isRegister === "2")
+					{
+						// ลูกค้าลงทะเบียนแล้ว รอลงสัญญาในระบบ	
+					  $messages = [
+										'type' => 'text',
+										'text' => 'ลงทะเบียนสำเร็จแล้ว แต่ระบบยังตรวจสอบข้อมูลอยู่'."\n"."\n".'(รหัสอ้างอิง:'.$text.')'
+									];	
+						
+					}
+					else
+					{
+							$messages = [
 						'type' => 'template', // 訊息類型 (模板)
                 				'altText' => 'ลงทะเบียน', // 替代文字
                 				'template' => array(
@@ -1123,6 +1140,9 @@ if (!is_null($events['events'])) {
 		                					)
 					
 						];	
+					}
+					
+				
 						// end message
    					 break;
   					 case "ใบเสร็จ":
