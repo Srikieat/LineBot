@@ -134,11 +134,22 @@ if (!is_null($events['events'])) {
 			$data_image =curl_exec($ch);
 
 			curl_close($ch);
-			$fp = 'uploadImages/'.$message_id.'.png';
+			
+			$imageName = .$message_id.'.png';
+			
+			$fp = 'uploadImages/'.$imageName;
 
 			file_put_contents( $fp, $data_image );
 			
 			$urlImage = 'https://okplusbot.herokuapp.com/'.$fp;
+			
+			//download to okplus server
+			
+			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/downloadImage.aspx?m='.$urlImage.'&n='.$imageName);
+			
+					
+			$urlImage_okplus = 'http://okplus.ddns.net/okplus/TempImages/Slips/'.$imageName;
+			
 			
 			// get okplus data
 			$id = $event['source']['userId'];
@@ -170,11 +181,11 @@ if (!is_null($events['events'])) {
                     					'columns' => array(
                         						
                         array(
-                            'imageUrl' => $urlImage , //圖片網址
+                            'imageUrl' => $urlImage_okplus , //圖片網址
                             'action' => array(
                                 'type' => 'message', //類型 (連結)
                                 'label' => $contractId, //標籤
-                                'text' => $urlImage //連結網址
+                                'text' => $urlImage_okplus //連結網址
                             )
 						)
     				)
