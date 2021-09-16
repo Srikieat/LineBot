@@ -135,7 +135,7 @@ if (!is_null($events['events'])) {
 
 			curl_close($ch);
 			
-			$imageName = .$message_id.'.png';
+			$imageName = $message_id.'.png';
 			
 			$fp = 'uploadImages/'.$imageName;
 
