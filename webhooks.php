@@ -141,7 +141,7 @@ if (!is_null($events['events'])) {
 
 			file_put_contents( $fp, $data_image );
 			
-			$urlImage = 'https://okplusbot.herokuapp.com/'.$fp;
+			$urlImage = 'http://okplusbot.herokuapp.com/'.$fp;
 			
 			
 			
@@ -177,22 +177,32 @@ if (!is_null($events['events'])) {
 			
 			
 					$messages = [
-						 		 'type' => 'template', //訊息類型 (模板)
-                					'altText' => 'ลูกค้าส่งสลิป', //替代文字
-                					'template' => array(
-                    					'type' => 'image_carousel', //類型 (圖片輪播)
-                    					'columns' => array(
+						
+						
+						
+						'type' => 'text',
+				 						
+						'text' => 'ลูกค้าส่งสลิปมา'."\n"."\n". $contractId . "\n"."\n" . $urlImage_okplus
+				 						
+						
+						
+						
+						 	//	 'type' => 'template', //訊息類型 (模板)
+//                					'altText' => 'ลูกค้าส่งสลิป', //替代文字
+  //              					'template' => array(
+    //                					'type' => 'image_carousel', //類型 (圖片輪播)
+      //              					'columns' => array(
                         						
-                        array(
-                            'imageUrl' => $urlImage_okplus , //圖片網址
-                            'action' => array(
-                                'type' => 'message', //類型 (連結)
-                                'label' => $contractId, //標籤
-                                'text' => $urlImage_okplus //連結網址
-                            )
-						)
-    				)
-										)
+        //                array(
+          //                  'imageUrl' => $urlImage_okplus , //圖片網址
+            //                'action' => array(
+              //                  'type' => 'message', //類型 (連結)
+                //                'label' => $contractId, //標籤
+                  //              'text' => $urlImage_okplus //連結網址
+                    //        )
+					//	)
+    				//)
+					//					)
 						];	
 					$data = [
 						'to' => $pushID,
