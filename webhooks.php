@@ -158,7 +158,7 @@ if (!is_null($events['events'])) {
 			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/downloadImage.aspx?m='.$urlImage.'&n='.$imageName);
 			
 					
-			$urlImage_okplus = 'https://okplus.ddns.net/okplus/TempImages/Slips/'.$imageName;
+			$urlImage_okplus = 'http://okplus.ddns.net/okplus/TempImages/Slips/'.$imageName;
 			
 			
 			if ($contractId != 0)
