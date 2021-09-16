@@ -158,7 +158,7 @@ if (!is_null($events['events'])) {
 			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/downloadImage.aspx?m='.$urlImage.'&n='.$imageName);
 			
 					
-			$urlImage_okplus = 'http://okplus.ddns.net/okplus/TempImages/Slips/'.$imageName;
+			$urlImage_okplus = 'https://okplus.ddns.net/okplus/TempImages/Slips/'.$imageName;
 			
 			
 			if ($contractId != 0)
@@ -184,11 +184,11 @@ if (!is_null($events['events'])) {
                     					'columns' => array(
                         						
                         array(
-                            'imageUrl' => $urlImage , //圖片網址
+                            'imageUrl' => $urlImage_okplus , //圖片網址
                             'action' => array(
                                 'type' => 'message', //類型 (連結)
                                 'label' => $contractId, //標籤
-                                'text' => $urlImage //連結網址
+                                'text' => $urlImage_okplus //連結網址
                             )
 						)
     				)
