@@ -159,13 +159,16 @@ if (!is_null($events['events'])) {
 			
             $str_arr = explode (":", $paymentDetails); 
             
-            $scan_result=$str_arr[0] . '-' . $str_arr[1];
+            $scan_id = $str_arr[0];
+            $scan_text = $str_arr[1];
+            
+            $scan_result=$scan_id . '-' . $scan_text;
             
             // 0 : billpayment
             // 1 : kbank 
             // 3 : Lotus Big C
             // 2 : Cannot scan
-            $scan_id = $str_arr[0];
+            
 					
 			$urlImage_okplus = 'http://okplus.ddns.net/okplus/TempImages/Slips/'.$imageName;
 			
@@ -232,8 +235,8 @@ if (!is_null($events['events'])) {
                                     $messages = [
 										'type' => 'text',
 				 						//'text' => $contractId
-										'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
-				 						//'text' => 'ขอบคุณค่ะ'
+										//'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
+				 						'text' => 'ขอบคุณค่ะ'
 									           ];	            
                      }
                     else
@@ -241,8 +244,8 @@ if (!is_null($events['events'])) {
                                     $messages = [
 										'type' => 'text',
 				 						//'text' => $contractId
-										//'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
-				 						'text' => 'ขอบคุณค่ะ'
+										'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
+				 						//'text' => 'ขอบคุณค่ะ'
 									];	
                     }
 			// reply message
