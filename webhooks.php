@@ -157,6 +157,9 @@ if (!is_null($events['events'])) {
 			
 			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/downloadImage.aspx?m='.$urlImage.'&n='.$imageName);
 			
+            $str_arr = explode (":", $paymentDetails); 
+            
+            $scan_result=$str_arr[0] . '-' . $str_arr[1];
 					
 			$urlImage_okplus = 'http://okplus.ddns.net/okplus/TempImages/Slips/'.$imageName;
 			
@@ -184,7 +187,7 @@ if (!is_null($events['events'])) {
 						
 						'type' => 'text',
 				 						
-						'text' => 'ลูกค้าส่งสลิปมา'."\n"."\n". $contractId . "\n"."\n" . $urlImage_okplus . "\n"."\n" . $paymentDetails
+						'text' => 'ลูกค้าส่งสลิปมา'."\n"."\n". $contractId . "\n"."\n" . $urlImage_okplus . "\n"."\n" . $scan_result
 				 						
 						
 						
