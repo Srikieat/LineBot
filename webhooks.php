@@ -184,7 +184,7 @@ if (!is_null($events['events'])) {
 						
 						'type' => 'text',
 				 						
-						'text' => 'ลูกค้าส่งสลิปมา'."\n"."\n". $contractId . "\n"."\n" . $urlImage_okplus
+						'text' => 'ลูกค้าส่งสลิปมา'."\n"."\n". $contractId . "\n"."\n" . $urlImage_okplus . "\n"."\n" . $paymentDetails
 				 						
 						
 						
