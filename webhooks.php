@@ -151,6 +151,8 @@ if (!is_null($events['events'])) {
 			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getClosePayment.aspx?u='.$id);
 			$str_arr = explode (":", $paymentDetails);  
 			$contractId=$str_arr[0];
+            $name = $str_arr[1];
+            $reference = $str_arr[2];
 			
 			
 			//download to okplus server
@@ -196,7 +198,7 @@ if (!is_null($events['events'])) {
 						
 						'type' => 'text',
 				 						
-						'text' => 'ลูกค้าส่งสลิปมา'."\n"."\n". $contractId . "\n"."\n" . $urlImage_okplus . "\n"."\n" . $scan_result
+						'text' => 'ลูกค้าส่งสลิปมา'."\n"."\n". $contractId . "\n"."\n" . $name . "\n"."\n" . $reference . "\n"."\n" . $urlImage_okplus . "\n"."\n" . $scan_result
 				 		
 						];	
 					$data = [
