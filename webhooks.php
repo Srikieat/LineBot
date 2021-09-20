@@ -160,6 +160,12 @@ if (!is_null($events['events'])) {
             $str_arr = explode (":", $paymentDetails); 
             
             $scan_result=$str_arr[0] . '-' . $str_arr[1];
+            
+            // 0 : billpayment
+            // 1 : kbank 
+            // 3 : Lotus Big C
+            // 2 : Cannot scan
+            $scan_id = $str_arr[0];
 					
 			$urlImage_okplus = 'http://okplus.ddns.net/okplus/TempImages/Slips/'.$imageName;
 			
@@ -188,26 +194,7 @@ if (!is_null($events['events'])) {
 						'type' => 'text',
 				 						
 						'text' => 'ลูกค้าส่งสลิปมา'."\n"."\n". $contractId . "\n"."\n" . $urlImage_okplus . "\n"."\n" . $scan_result
-				 						
-						
-						
-						
-						 	//	 'type' => 'template', //訊息類型 (模板)
-//                					'altText' => 'ลูกค้าส่งสลิป', //替代文字
-  //              					'template' => array(
-    //                					'type' => 'image_carousel', //類型 (圖片輪播)
-      //              					'columns' => array(
-                        						
-        //                array(
-          //                  'imageUrl' => $urlImage_okplus , //圖片網址
-            //                'action' => array(
-              //                  'type' => 'message', //類型 (連結)
-                //                'label' => $contractId, //標籤
-                  //              'text' => $urlImage_okplus //連結網址
-                    //        )
-					//	)
-    				//)
-					//					)
+				 		
 						];	
 					$data = [
 						'to' => $pushID,
@@ -240,14 +227,26 @@ if (!is_null($events['events'])) {
 			
 			if ($contractId != 0)
 			{
-			
-			// reply message
-			 $messages = [
+			         if ($scan_id == "0")
+                     {
+                                    $messages = [
 										'type' => 'text',
 				 						//'text' => $contractId
 										'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
 				 						//'text' => 'ขอบคุณค่ะ'
+									           ];	            
+                     }
+                    else
+                    {
+                                    $messages = [
+										'type' => 'text',
+				 						//'text' => $contractId
+										//'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
+				 						'text' => 'ขอบคุณค่ะ'
 									];	
+                    }
+			// reply message
+			 
 			
 			}
 			else
