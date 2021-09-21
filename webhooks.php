@@ -166,10 +166,7 @@ if (!is_null($events['events'])) {
             
             $scan_result=$scan_id . '-' . $scan_text;
             
-            // 0 : billpayment
-            // 1 : kbank 
-            // 3 : Lotus Big C
-            // 2 : Cannot scan
+       
             
 					
 			$urlImage_okplus = 'http://okplus.ddns.net/okplus/TempImages/Slips/'.$imageName;
@@ -198,7 +195,7 @@ if (!is_null($events['events'])) {
 						
 						'type' => 'text',
 				 						
-						'text' => 'ลูกค้าส่งสลิปมา'."\n"."\n". $contractId . "\n"."\n" . $name . "\n"."\n" . $reference . "\n"."\n" . $urlImage_okplus . "\n"."\n" . $scan_result
+						'text' => 'ลูกค้าส่งสลิปมา'."\n"."\n". $contractId . "\n"."\n" . $name . "\n"."\n" . $reference . "\n"."\n" . $id  . "\n"."\n" . $urlImage_okplus . "\n"."\n" . $scan_result
 				 		
 						];	
 					$data = [
