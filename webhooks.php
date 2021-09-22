@@ -243,8 +243,8 @@ if (!is_null($events['events'])) {
 			
 					
 			// scan_id
-			// 0 KBANK OLD
-			// 1 BILL PAYMENT
+			// 0 BILL PAYMENT
+			// 1 KBANK OLD
 			// 2 Picture no text found
 			// 3 Lotus big c with ref number
 			// 4 Lotus big c without ref number 
