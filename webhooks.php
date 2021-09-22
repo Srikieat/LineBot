@@ -157,16 +157,35 @@ if (!is_null($events['events'])) {
 			
 			//download to okplus server
 			
-			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/downloadImage.aspx?m='.$urlImage.'&n='.$imageName);
+			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/downloadImage.aspx?m='.$urlImage.'&n='.$imageName.'&uid='.$id);
 			
             $str_arr = explode (":", $paymentDetails); 
             
             $scan_id = $str_arr[0];
             $scan_text = $str_arr[1];
+			$ref_number = $str_arr[2];
+			$amount = $str_arr[3];
+			$paid_date = $str_arr[4];
             
-            $scan_result=$scan_id . '-' . $scan_text;
+          
+			
+			
+				//update refence number	and save contract note
+			if ($ref_number!="000000")
+			{
+				$updateRefNumber = file_get_contents('http://okplus.ddns.net/okplus/bot/updateRefnumber.aspx?uid='.$id.'&ref='.$ref_number);
+			}
+			
+			
+			// save to contract_note
+			if ($contractId != 0)
+			{
+				$saveNote = file_get_contents('http://okplus.ddns.net/okplus/bot/saveNote.aspx?ref='.$ref_number.'&a='.$amount.'&d='.$paid_date.'&i='.$imageName.'&c='.$contractId.'&s='.$scan_id);	
+			}
+			
+			
             
-       
+         	$scan_result=$scan_id . '-' . $scan_text . '-' . $ref_number . '-' . $amount . '-' . $paid_date . '-' . $updateRefNumber .'-'.$saveNote;
             
 					
 			$urlImage_okplus = 'http://okplus.ddns.net/okplus/TempImages/Slips/'.$imageName;
@@ -210,10 +229,13 @@ if (!is_null($events['events'])) {
       		$result = curl_exec($ch);
       		curl_close ($ch);
 			
-				
+			
+			
+		
 			
 					
-
+			
+			
 				
 		
 				// Get text sent
@@ -221,21 +243,7 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			
-			
-			if ($contractId == 0)
-			{
-				// to be continue:
-				
-				// unknow user (cannot find contract_id) 
-				
-				// if find ref number
-					// save to okplus server
-					// send uuid and ref number for saving (insert and update data)
-				
-				// if not find ref number support help in herer do nothing.
-				
-			}
-			
+					
 			// scan_id
 			// 0 KBANK OLD
 			// 1 BILL PAYMENT
