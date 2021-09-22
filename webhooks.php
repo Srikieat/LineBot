@@ -170,7 +170,10 @@ if (!is_null($events['events'])) {
           
 			
 			
-				//update refence number	and save contract note
+			//update refence number	and save contract note
+			
+			$updateRefNumber = "updateRef(-1)";
+			
 			if ($ref_number!="000000")
 			{
 				$updateRefNumber = file_get_contents('http://okplus.ddns.net/okplus/bot/updateRefnumber.aspx?uid='.$id.'&ref='.$ref_number);
@@ -178,6 +181,7 @@ if (!is_null($events['events'])) {
 			
 			
 			// save to contract_note
+			$saveNote = "saveNote(-1)";
 			if ($contractId != 0)
 			{
 				$saveNote = file_get_contents('http://okplus.ddns.net/okplus/bot/saveNote.aspx?ref='.$ref_number.'&a='.$amount.'&d='.$paid_date.'&i='.$imageName.'&c='.$contractId.'&s='.$scan_id);	
