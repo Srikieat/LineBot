@@ -181,7 +181,7 @@ if (!is_null($events['events'])) {
 			
 			
 			// save to contract_note
-			$saveNote = file_get_contents('http://okplus.ddns.net/okplus/bot/saveNote.aspx?ref='.$ref_number.'&a='.$amount.'&d='.$paid_date.'&i='.$imageName.'&c='.$contractId.'&s='.$scan_id);	
+			$saveNote = file_get_contents('http://okplus.ddns.net/okplus/bot/saveNote.aspx?ref='.$ref_number.'&a='.$amount.'&d='.$paid_date.'&i='.$imageName.'&uid='.$id.'&s='.$scan_id);	
 			
          	$scan_result=$scan_id . '-' . $scan_text . '-' . $ref_number . '-' . $amount . '-' . $paid_date . '-' . $updateRefNumber .'-'.$saveNote;
             
