@@ -172,52 +172,46 @@ if (!is_null($events['events'])) {
 			$urlImage_okplus = 'http://okplus.ddns.net/okplus/TempImages/Slips/'.$imageName;
 			
 			
-			if ($contractId != 0)
-			{
-								//copy ข้อความ Channel access token ตอนที่ตั้งค่า
-   						$arrayHeader = array();
-   						$arrayHeader[] = "Content-Type: application/json";
-   						$arrayHeader[] = "Authorization: Bearer {$access_token}";
+			// send all image to support
+   			$arrayHeader = array();
+   			$arrayHeader[] = "Content-Type: application/json";
+   			$arrayHeader[] = "Authorization: Bearer {$access_token}";
 					
-						// Bow lek
-						//$pushID = 'Uf55473a52212b163dd7508653ec5bbd8';
+			// Bow lek
+			//$pushID = 'Uf55473a52212b163dd7508653ec5bbd8';
 					
-						//srikieat
-						$pushID = 'U44e90a4578cb725ccc9ed09d2cdc18e9';
-						
-						// OKPLUS
-						//$pushID = 'U8d6c9a3e00fd54ae56669e03c099247f';
+			//srikieat
+			$pushID = 'U44e90a4578cb725ccc9ed09d2cdc18e9';
+				
+			// OKPLUS
+			//$pushID = 'U8d6c9a3e00fd54ae56669e03c099247f';
 			
 			
-					$messages = [
+			$messages = [
 						
-						
-						
-						'type' => 'text',
-				 						
-						'text' => 'ลูกค้าส่งสลิปมา'."\n"."\n". $contractId . "\n"."\n" . $name . "\n"."\n" . $reference . "\n"."\n" . $id  . "\n"."\n" . $urlImage_okplus . "\n"."\n" . $scan_result
-				 		
+				'type' => 'text',
+				'text' => 'ลูกค้าส่งสลิปมา'."\n"."\n". $contractId . "\n"."\n" . $name . "\n"."\n" . $reference . "\n"."\n" . $id  . "\n"."\n" . $urlImage_okplus . "\n"."\n" . $scan_result
 						];	
-					$data = [
-						'to' => $pushID,
-						'messages' => [$messages],
-					];
-					$post = $data;
+			$data = [
+					'to' => $pushID,
+					'messages' => [$messages],
+			];
+			$post = $data;
 
-					$strUrl = "https://api.line.me/v2/bot/message/push";
-      				$ch = curl_init();
-      				curl_setopt($ch, CURLOPT_URL,$strUrl);
-      				curl_setopt($ch, CURLOPT_HEADER, false);
-      				curl_setopt($ch, CURLOPT_POST, true);
-      				curl_setopt($ch, CURLOPT_HTTPHEADER, $arrayHeader);
-      				curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
-      				curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
-      				curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-      				$result = curl_exec($ch);
-      				curl_close ($ch);
+			$strUrl = "https://api.line.me/v2/bot/message/push";
+      		$ch = curl_init();
+      		curl_setopt($ch, CURLOPT_URL,$strUrl);
+      		curl_setopt($ch, CURLOPT_HEADER, false);
+      		curl_setopt($ch, CURLOPT_POST, true);
+      		curl_setopt($ch, CURLOPT_HTTPHEADER, $arrayHeader);
+      		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+      		curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+      		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+      		$result = curl_exec($ch);
+      		curl_close ($ch);
 			
 				
-			}
+			
 					
 
 				
@@ -227,39 +221,48 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			
-			if ($contractId != 0)
+			
+			if ($contractId == 0)
 			{
-			         if ($scan_id == "0")
-                     {
-                                    $messages = [
+				// to be continue:
+				
+				// unknow user (cannot find contract_id) 
+				
+				// if find ref number
+					// save to okplus server
+					// send uuid and ref number for saving (insert and update data)
+				
+				// if not find ref number support help in herer do nothing.
+				
+			}
+			
+			// scan_id
+			// 0 KBANK OLD
+			// 1 BILL PAYMENT
+			// 2 Picture no text found
+			// 3 Lotus big c with ref number
+			// 4 Lotus big c without ref number 
+			
+			
+			if ($scan_id == 2)
+			{
+				  $messages = [
 										'type' => 'text',
 				 						//'text' => $contractId
 										//'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
-				 						'text' => 'ขอบคุณค่ะ'
-									           ];	            
-                     }
-                    else
-                    {
-                                    $messages = [
-										'type' => 'text',
-				 						//'text' => $contractId
-										'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
-				 						//'text' => 'ขอบคุณค่ะ'
-									];	
-                    }
-			// reply message
-			 
-			
+				 						'text' => 'ขออภัย ระบบไม่สามารถตรวจสอบข้อมูลได้' ."\n"."\n".'ขอบคุณค่ะ'
+									           ];	  
 			}
 			else
 			{
-				$messages = [
+			   $messages = [
 										'type' => 'text',
 				 						//'text' => $contractId
-										'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
-				 						
-							];	
+										//'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
+				 						'text' => 'ระบบได้รับข้อมูลของลูกค้าแล้ว' ."\n"."\n".'ขอบคุณค่ะ'
+									           ];	  
 			}
+			
 			
 				// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
