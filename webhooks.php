@@ -146,13 +146,7 @@ if (!is_null($events['events'])) {
 			
 			
 			
-			// get okplus data
-			$id = $event['source']['userId'];
-			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getClosePayment.aspx?u='.$id);
-			$str_arr = explode (":", $paymentDetails);  
-			$contractId=$str_arr[0];
-            $name = $str_arr[1];
-            $reference = $str_arr[2];
+		    $id = $event['source']['userId'];
 			
 			
 			//download to okplus server
@@ -179,7 +173,14 @@ if (!is_null($events['events'])) {
 				$updateRefNumber = file_get_contents('http://okplus.ddns.net/okplus/bot/updateRefnumber.aspx?uid='.$id.'&ref='.$ref_number);
 			}
 			
-			
+	        // get okplus data
+			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getClosePayment.aspx?u='.$id);
+			$str_arr = explode (":", $paymentDetails);  
+			$contractId=$str_arr[0];
+            $name = $str_arr[1];
+            $reference = $str_arr[2];
+
+
 			// save to contract_note
 			$saveNote = file_get_contents('http://okplus.ddns.net/okplus/bot/saveNote.aspx?ref='.$ref_number.'&a='.$amount.'&d='.$paid_date.'&i='.$imageName.'&uid='.$id.'&s='.$scan_id);	
 			
@@ -261,12 +262,34 @@ if (!is_null($events['events'])) {
 			}
 			else
 			{
-			   $messages = [
-										'type' => 'text',
-				 						//'text' => $contractId
-										//'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
-				 						'text' => 'ระบบได้รับข้อมูลของท่านแล้ว' ."\n"."\n".'ขอบคุณค่ะ'
-									           ];	  
+                if($scan_id == 0 || $scan_id == 1)
+                {
+                    $messages = [
+                        'type' => 'text',
+                         //'text' => $contractId
+                        //'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
+                         'text' => 'ระบบได้บันทึกข้อมูลของท่านแล้ว' ."\n"."\n".
+                         'เลขที่สัญญา : '.$contractId."\n"."\n".
+                         'ชื่อ : '.$name."\n".
+                         'วันที่ชำระเงิน : '.$paid_date."\n".
+                         'จำนวนเงิน : '.$amount."\n".
+                         'reference : '.$ref_number."\n"."\n".
+                         'ขอบคุณค่ะ'
+                               
+                        ];	  
+                }
+                else
+                {
+                    $messages = [
+                        'type' => 'text',
+                         //'text' => $contractId
+                        //'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
+                         'text' => 'ระบบได้บันทึกข้อมูลของท่านแล้ว' ."\n"."\n".
+                         'ขอบคุณค่ะ'
+                               
+                        ];	  
+                }
+			   
 			}
 			
 			
