@@ -185,7 +185,7 @@ if (!is_null($events['events'])) {
 			
 			if ($ref_number!="000000")
 			{
-                if (strlen($refnumber) ==6)
+                if (strlen($ref_number) ==6)
                 {
                     $updateRefNumber = file_get_contents('http://okplus.ddns.net/okplus/bot/updateRefnumber.aspx?uid='.$id.'&ref='.$ref_number.'&ref2='.$ref_number2);
                 }
