@@ -149,7 +149,7 @@ if (!is_null($events['events'])) {
 		    $id = $event['source']['userId'];
 			
 			
-			//download to okplus server
+			//download and scan image on okplus server
 			
 			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/downloadImage.aspx?m='.$urlImage.'&n='.$imageName.'&uid='.$id);
 			
@@ -160,9 +160,24 @@ if (!is_null($events['events'])) {
 			$ref_number = $str_arr[2];
 			$amount = $str_arr[3];
 			$paid_date = $str_arr[4];
+            $ref_number2 = $str_arr[5];
             
-          
+            $sendNotice = 0;
+
+            if ($scan_id > 1)
+            {
+                $sendNotice = 1;
+            }
+
+            if ($ref_number != $ref_number2)
+            {
+                $sendNotice = 1;
+            }
 			
+            if (strlen($paid_date) != 8)
+            {
+                $sendNotice = 1;
+            }
 			
 			//update refence number	and save contract note
 			
@@ -170,8 +185,11 @@ if (!is_null($events['events'])) {
 			
 			if ($ref_number!="000000")
 			{
-				$updateRefNumber = file_get_contents('http://okplus.ddns.net/okplus/bot/updateRefnumber.aspx?uid='.$id.'&ref='.$ref_number);
-			}
+                if (strlen($refnumber) ==6)
+                {
+                    $updateRefNumber = file_get_contents('http://okplus.ddns.net/okplus/bot/updateRefnumber.aspx?uid='.$id.'&ref='.$ref_number.'&ref2='.$ref_number2);
+                }
+            }
 			
 	        // get okplus data
 			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getClosePayment.aspx?u='.$id);
@@ -182,9 +200,9 @@ if (!is_null($events['events'])) {
 
 
 			// save to contract_note
-			$saveNote = file_get_contents('http://okplus.ddns.net/okplus/bot/saveNote.aspx?ref='.$ref_number.'&a='.$amount.'&d='.$paid_date.'&i='.$imageName.'&uid='.$id.'&s='.$scan_id);	
+			$saveNote = file_get_contents('http://okplus.ddns.net/okplus/bot/saveNote.aspx?ref='.$ref_number.'&ref2='.$ref_number2.'&a='.$amount.'&d='.$paid_date.'&i='.$imageName.'&uid='.$id.'&s='.$scan_id);	
 			
-         	$scan_result=$scan_id . '-' . $scan_text   . "\n" . $ref_number . "\n" . $amount . "\n" . $paid_date . "\n" . $updateRefNumber ."\n" .$saveNote;
+         	$scan_result=$scan_id . '-' . $scan_text   . "\n" . $ref_number . "\n" . $ref_number2 ."\n" . $amount . "\n" . $paid_date . "\n" . $updateRefNumber ."\n" .$saveNote."\n".$sendNotice;
             
 					
 			$urlImage_okplus = 'http://okplus.ddns.net/okplus/TempImages/Slips/'.$imageName;
@@ -208,7 +226,7 @@ if (!is_null($events['events'])) {
 			$messages = [
 						
 				'type' => 'text',
-				'text' => 'ลูกค้าส่งสลิปมา'."\n"."\n". $contractId . "\n"."\n" . $name . "\n"."\n" . $reference . "\n"."\n" . $id  . "\n"."\n" . $urlImage_okplus . "\n"."\n" . $scan_result
+				'text' => 'ลูกค้าส่งสลิปมา'."\n"."\n". $contractId . "\n"."\n" . $name . "\n"."\n" . $reference . "\n"."\n" . $id  . "\n"."\n" . $urlImage_okplus . "\n"."\n" . $scan_result 
 						];	
 			$data = [
 					'to' => $pushID,
