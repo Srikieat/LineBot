@@ -162,7 +162,22 @@ if (!is_null($events['events'])) {
 			$paid_date = $str_arr[4];
             $ref_number2 = $str_arr[5];
             
-          
+            $sendNotice = 0;
+
+            if ($scan_id > 1)
+            {
+                $sendNotice = 1;
+            }
+
+            if ($ref_number != $ref_number2)
+            {
+                $sendNotice = 1;
+            }
+			
+            if (strlen($paid_date) != 8)
+            {
+                $sendNotice = 1;
+            }
 			
 			//update refence number	and save contract note
 			
@@ -187,13 +202,7 @@ if (!is_null($events['events'])) {
 			// save to contract_note
 			$saveNote = file_get_contents('http://okplus.ddns.net/okplus/bot/saveNote.aspx?ref='.$ref_number.'&ref2='.$ref_number2.'&a='.$amount.'&d='.$paid_date.'&i='.$imageName.'&uid='.$id.'&s='.$scan_id);	
 			
-			$str_arr = explode (":", $saveNote); 
-			$alert = $str_arr[0];
-			$saveNotedata = $str_arr[1];
-			
-         	$scan_result=$scan_id . '-' . $scan_text   . "\n" . $ref_number . "\n" . $ref_number2 ."\n" . $amount . "\n" . $paid_date . "\n" . $updateRefNumber ."\n" . "alert:" . $alert ."\n" .$saveNotedata
-
-
+         	$scan_result=$scan_id . '-' . $scan_text   . "\n" . $ref_number . "\n" . $ref_number2 ."\n" . $amount . "\n" . $paid_date . "\n" . $updateRefNumber ."\n" .$saveNote."\n".$sendNotice;
             
 					
 			$urlImage_okplus = 'http://okplus.ddns.net/okplus/TempImages/Slips/'.$imageName;
