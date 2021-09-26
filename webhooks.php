@@ -185,8 +185,14 @@ if (!is_null($events['events'])) {
 
 			// save to contract_note
 			$saveNote = file_get_contents('http://okplus.ddns.net/okplus/bot/saveNote.aspx?ref='.$ref_number.'&ref2='.$ref_number2.'&a='.$amount.'&d='.$paid_date.'&i='.$imageName.'&uid='.$id.'&s='.$scan_id);	
+			$str_arr = explode (":", $saveNote);  
+			$alert=$str_arr[0];
+            $alert_text= $str_arr[1];
+            
+
+
 			
-         	$scan_result=$scan_id . '-' . $scan_text   . "\n" . $ref_number . "\n" . $ref_number2 ."\n" . $amount . "\n" . $paid_date . "\n" . $updateRefNumber ."\n" .$saveNote;
+         	$scan_result=$scan_id . '-' . $scan_text   . "\n" . $ref_number . "\n" . $ref_number2 ."\n" . $amount . "\n" . $paid_date . "\n" . $updateRefNumber ."\n" .$alert "\n" .$alert_text;
             
 					
 			$urlImage_okplus = 'http://okplus.ddns.net/okplus/TempImages/Slips/'.$imageName;
