@@ -192,7 +192,7 @@ if (!is_null($events['events'])) {
 
 
 			
-         	$scan_result=$scan_id . '-' . $scan_text   . "\n" . $ref_number . "\n" . $ref_number2 ."\n" . $amount . "\n" . $paid_date . "\n" . $updateRefNumber ."\n" .$alert. "\n" .$alert_text;
+         	$scan_result="รายละเอียด\nScanID:" . $scan_id . '-' . $scan_text   . "\nเลขอ้างอิง1:" . $ref_number . "\nเลขอ้างอิง2:" . $ref_number2 ."\nจำนวนเงิน:" . $amount . "\nวันที่ชำระเงิน:" . $paid_date . "\n" . $updateRefNumber ."\n" .$alert. "\n" .$alert_text;
             
 					
 			$urlImage_okplus = 'http://okplus.ddns.net/okplus/TempImages/Slips/'.$imageName;
