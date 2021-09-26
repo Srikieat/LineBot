@@ -171,6 +171,7 @@ if (!is_null($events['events'])) {
 			// 4 Lotus big c without ref number 
 
             $updateRefNumber="-1:CANNOT_FIND_REF_NUMBER";
+            //UPDATE ONLY BILL PAYMENT SLIP
            if ($scan_id == 0)
            {
 			    //update refence number	and save contract note
@@ -185,6 +186,7 @@ if (!is_null($events['events'])) {
             $reference = $str_arr[2];
             
             $saveNote = "1:CANNOT FIND CONTRACT ID";
+            //ALERT WHEN CANNOT SAVE PAYMENT
             if (strlen($contractId)>0)
             {
 			    // save to contract_note
@@ -195,10 +197,20 @@ if (!is_null($events['events'])) {
     	    $alert=$str_arr[0];
             $alert_text= $str_arr[1];
 
+            if ($scan_id > 1)
+            {
+                // LOTUS BIG C , UNKNOW IMAGE:
+                
+         	    $scan_result="รายละเอียด\nScanID:" . $scan_id . "\nโอนมาจาก: LOTUS/BIG C\nเตือน:" . $alert. "\nNote:" . $alert_text . " - " .$updateRefNumber;
 
+            }
+            else
+            {
 			
-         	$scan_result="รายละเอียด\nScanID:" . $scan_id . "\nเลขอ้างอิง1:" . $ref_number . "\nเลขอ้างอิง2:" . $ref_number2 ."\nจำนวนเงิน:" . $amount . "\nวันที่ชำระเงิน:" . $paid_date . 
-			 "\nโอนมาจาก:" . $Source ."\nเข้าบัญชี:" . $ToAcc. "\nเตือน:" .$alert. "\nNote:" . $alert_text . " - " .$updateRefNumber;
+         	    $scan_result="รายละเอียด\nScanID:" . $scan_id . "\nเลขอ้างอิง1:" . $ref_number . "\nเลขอ้างอิง2:" . $ref_number2 ."\nจำนวนเงิน:" . $amount . "\nวันที่ชำระเงิน:" . $paid_date . 
+			    "\nโอนมาจาก:" . $Source ."\nเข้าบัญชี:" . $ToAcc. "\nเตือน:" .$alert. "\nNote:" . $alert_text . " - " .$updateRefNumber;
+            }
+
             
 					
 			$urlImage_okplus = 'http://okplus.ddns.net/okplus/TempImages/Slips/'.$imageName;
