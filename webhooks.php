@@ -170,7 +170,7 @@ if (!is_null($events['events'])) {
 			// 3 Lotus big c with ref number
 			// 4 Lotus big c without ref number 
 
-            $updateRefNumber="-1:CANNOT_FIND_REF_NUMBER"
+            $updateRefNumber="-1:CANNOT_FIND_REF_NUMBER";
            if ($scan_id == 0)
            {
 			    //update refence number	and save contract note
@@ -184,7 +184,7 @@ if (!is_null($events['events'])) {
             $name = $str_arr[1];
             $reference = $str_arr[2];
             
-            $saveNote = "1:CANNOT FIND CONTRACT ID"
+            $saveNote = "1:CANNOT FIND CONTRACT ID";
             if (strlen($contractId)>0)
             {
 			    // save to contract_note
