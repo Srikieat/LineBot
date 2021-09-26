@@ -163,19 +163,19 @@ if (!is_null($events['events'])) {
             $ref_number2 = $str_arr[5];
 			$Source = "N/A";
 			
-            
-           
-			//update refence number	and save contract note
-			
-			$updateRefNumber = "updateRef(-1)";
-			
-			if ($ref_number!="000000")
-			{
-                if (strlen($ref_number) ==6)
-                {
-                    $updateRefNumber = file_get_contents('http://okplus.ddns.net/okplus/bot/updateRefnumber.aspx?uid='.$id.'&ref='.$ref_number.'&ref2='.$ref_number2);
-                }
-            }
+            // scan_id
+			// 0 BILL PAYMENT
+			// 1 KBANK OLD
+			// 2 Picture no text found
+			// 3 Lotus big c with ref number
+			// 4 Lotus big c without ref number 
+
+            $updateRefNumber="-1:CANNOT_FIND_REF_NUMBER"
+           if ($scan_id == 0)
+           {
+			    //update refence number	and save contract note
+                $updateRefNumber = file_get_contents('http://okplus.ddns.net/okplus/bot/updateRefnumber.aspx?uid='.$id.'&ref='.$ref_number.'&ref2='.$ref_number2.'&s='.$scan_id);
+           }
 			
 	        // get okplus data
 			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getClosePayment.aspx?u='.$id);
@@ -183,14 +183,17 @@ if (!is_null($events['events'])) {
 			$contractId=$str_arr[0];
             $name = $str_arr[1];
             $reference = $str_arr[2];
-
-
-			// save to contract_note
-			$saveNote = file_get_contents('http://okplus.ddns.net/okplus/bot/saveNote.aspx?ref='.$ref_number.'&ref2='.$ref_number2.'&a='.$amount.'&d='.$paid_date.'&i='.$imageName.'&uid='.$id.'&s='.$scan_id);	
-			$str_arr = explode (":", $saveNote);  
-			$alert=$str_arr[0];
-            $alert_text= $str_arr[1];
             
+            $saveNote = "1:CANNOT FIND CONTRACT ID"
+            if (strlen($contractId)>0)
+            {
+			    // save to contract_note
+			    $saveNote = file_get_contents('http://okplus.ddns.net/okplus/bot/saveNote.aspx?ref='.$ref_number.'&ref2='.$ref_number2.'&a='.$amount.'&d='.$paid_date.'&i='.$imageName.'&uid='.$id.'&s='.$scan_id);	
+            }
+            
+            $str_arr = explode (":", $saveNote);  
+    	    $alert=$str_arr[0];
+            $alert_text= $str_arr[1];
 
 
 			
