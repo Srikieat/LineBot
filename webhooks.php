@@ -161,6 +161,8 @@ if (!is_null($events['events'])) {
 			$amount = $str_arr[3];
 			$paid_date = $str_arr[4];
             $ref_number2 = $str_arr[5];
+			$Source = "N/A";
+			$ToAcc = "N/A";
             
            
 			//update refence number	and save contract note
@@ -192,7 +194,8 @@ if (!is_null($events['events'])) {
 
 
 			
-         	$scan_result="รายละเอียด\nScanID:" . $scan_id . '-' . $scan_text   . "\nเลขอ้างอิง1:" . $ref_number . "\nเลขอ้างอิง2:" . $ref_number2 ."\nจำนวนเงิน:" . $amount . "\nวันที่ชำระเงิน:" . $paid_date . "\n" . $updateRefNumber ."\n" .$alert. "\n" .$alert_text;
+         	$scan_result="รายละเอียด\nScanID:" . $scan_id . '-' . $scan_text   . "\nเลขอ้างอิง1:" . $ref_number . "\nเลขอ้างอิง2:" . $ref_number2 ."\nจำนวนเงิน:" . $amount . "\nวันที่ชำระเงิน:" . $paid_date . 
+			 "\nโอนมาจาก:" . $Source ."\nเข้าบัญชี:" . $ToAcc. "\nเตือน:" .$alert. "\nNote:" . $alert_text . $updateRefNumber;
             
 					
 			$urlImage_okplus = 'http://okplus.ddns.net/okplus/TempImages/Slips/'.$imageName;
