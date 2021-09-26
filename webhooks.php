@@ -216,7 +216,7 @@ if (!is_null($events['events'])) {
 			$messages = [
 						
 				'type' => 'text',
-				'text' => 'ลูกค้าส่งสลิปมา'."\n"."\n". $contractId . "\n"."\n" . $name . "\n"."\n" . $reference . "\n"."\n" . $id  . "\n"."\n" . $urlImage_okplus . "\n"."\n" . $scan_result 
+				'text' => 'ลูกค้าส่งสลิปมา'."\n"."\nเลขที่สัญญา:". $contractId . "\nชื่อ:". $name . "\nLineID:".  $id  . "\nสลิป:". $urlImage_okplus . "\n"."\n" . $scan_result 
 						];	
 			$data = [
 					'to' => $pushID,
