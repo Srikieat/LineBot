@@ -156,13 +156,13 @@ if (!is_null($events['events'])) {
             $str_arr = explode (":", $paymentDetails); 
             
             $scan_id = $str_arr[0];
-            $scan_text = $str_arr[1];
+            $ToAcc = $str_arr[1];
 			$ref_number = $str_arr[2];
 			$amount = $str_arr[3];
 			$paid_date = $str_arr[4];
             $ref_number2 = $str_arr[5];
 			$Source = "N/A";
-			$ToAcc = "N/A";
+			
             
            
 			//update refence number	and save contract note
@@ -194,8 +194,8 @@ if (!is_null($events['events'])) {
 
 
 			
-         	$scan_result="รายละเอียด\nScanID:" . $scan_id . '-' . $scan_text   . "\nเลขอ้างอิง1:" . $ref_number . "\nเลขอ้างอิง2:" . $ref_number2 ."\nจำนวนเงิน:" . $amount . "\nวันที่ชำระเงิน:" . $paid_date . 
-			 "\nโอนมาจาก:" . $Source ."\nเข้าบัญชี:" . $ToAcc. "\nเตือน:" .$alert. "\nNote:" . $alert_text . $updateRefNumber;
+         	$scan_result="รายละเอียด\nScanID:" . $scan_id . "\nเลขอ้างอิง1:" . $ref_number . "\nเลขอ้างอิง2:" . $ref_number2 ."\nจำนวนเงิน:" . $amount . "\nวันที่ชำระเงิน:" . $paid_date . 
+			 "\nโอนมาจาก:" . $Source ."\nเข้าบัญชี:" . $ToAcc. "\nเตือน:" .$alert. "\nNote:" . $alert_text . " - " .$updateRefNumber;
             
 					
 			$urlImage_okplus = 'http://okplus.ddns.net/okplus/TempImages/Slips/'.$imageName;
