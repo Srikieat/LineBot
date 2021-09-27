@@ -208,7 +208,7 @@ if (!is_null($events['events'])) {
             else
             {
 			
-         	    $scan_result="รายละเอียด\nโอนจาก : " . $Source ."\nเข้า : " . $ToAcc."(" + $scan_id + ")\nเลขอ้างอิง1:" . $ref_number . "\nเลขอ้างอิง2:" . $ref_number2 ."\nจำนวนเงิน:" . $amount . "\nวันที่ชำระเงิน:" . $paid_date . 
+         	    $scan_result="รายละเอียด\nโอนจาก : " . $Source ."\nเข้า : " . $ToAcc."(".$scan_id.")\nเลขอ้างอิง1:" . $ref_number . "\nเลขอ้างอิง2:" . $ref_number2 ."\nจำนวนเงิน:" . $amount . "\nวันที่ชำระเงิน:" . $paid_date . 
 				 "\nเตือน:" .$alert. "\nNote:" . $alert_text . " \n " .$updateRefNumber;
             }
 
