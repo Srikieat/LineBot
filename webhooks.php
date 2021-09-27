@@ -154,14 +154,14 @@ if (!is_null($events['events'])) {
 			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/downloadImage.aspx?m='.$urlImage.'&n='.$imageName.'&uid='.$id);
 			
             $str_arr = explode (":", $paymentDetails); 
-            
+            //0:BillPayment(SCB):623770:1190:15/09/2021:623770:Unknown
             $scan_id = $str_arr[0];
             $ToAcc = $str_arr[1];
 			$ref_number = $str_arr[2];
 			$amount = $str_arr[3];
 			$paid_date = $str_arr[4];
             $ref_number2 = $str_arr[5];
-			$Source = "N/A";
+			$Source = $str_arr[6];
 			
             // scan_id
 			// 0 BILL PAYMENT
