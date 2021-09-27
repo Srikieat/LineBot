@@ -170,7 +170,7 @@ if (!is_null($events['events'])) {
 			// 3 Lotus big c with ref number
 			// 4 Lotus big c without ref number 
 
-            $updateRefNumber="-1:CANNOT_FIND_REF_NUMBER";
+            $updateRefNumber="1:CANNOT_FIND_REF_NUMBER";
             //UPDATE ONLY BILL PAYMENT SLIP
            if ($scan_id == 0)
            {
@@ -192,7 +192,8 @@ if (!is_null($events['events'])) {
 			    // save to contract_note
 			    $saveNote = file_get_contents('http://okplus.ddns.net/okplus/bot/saveNote.aspx?ref='.$ref_number.'&ref2='.$ref_number2.'&a='.$amount.'&d='.$paid_date.'&i='.$imageName.'&uid='.$id.'&s='.$scan_id);	
             }
-            
+
+            //return [alert:detail]
             $str_arr = explode (":", $saveNote);  
     	    $alert=$str_arr[0];
             $alert_text= $str_arr[1];
