@@ -161,7 +161,7 @@ if (!is_null($events['events'])) {
 			$paid_date = $str_arr[4];
             $ref_number2 = $str_arr[5];
 			$Source = $str_arr[6];
-			$isScanError = 1;
+			$isScanError = 0;
 
 			if (strlen($paid_date) < 10)
 			{
@@ -214,7 +214,7 @@ if (!is_null($events['events'])) {
             {
 			
          	    $scan_result="รายละเอียด\nโอนจาก : " . $Source ."\nเข้า : " . $ToAcc."(".$scan_id.")\nเลขอ้างอิง1:" . $ref_number . "\nเลขอ้างอิง2:" . $ref_number2 ."\nจำนวนเงิน:" . $amount . "\nวันที่ชำระเงิน:" . $paid_date . 
-				 "\nเตือน:" .$alert. "\nNote:" . $alert_text . " \n " .$updateRefNumber. " \n " .$isScanError;
+				 "\nเตือน:" .$alert. "\nNote:" . $alert_text . " \nupdateRef : " .$updateRefNumber. " \n scanError : " .$isScanError;
             }
 
             
