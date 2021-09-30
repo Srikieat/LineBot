@@ -148,7 +148,6 @@ if (!is_null($events['events'])) {
 			
 		    $id = $event['source']['userId'];
 			
-			
 			//download and scan image on okplus server
 			
 			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/downloadImage.aspx?m='.$urlImage.'&n='.$imageName.'&uid='.$id);
@@ -231,13 +230,24 @@ if (!is_null($events['events'])) {
 			// OKPLUS
 			//$pushID = 'U8d6c9a3e00fd54ae56669e03c099247f';
 			
-			
-			$messages = [
+			if (strlen($scan_id) == 0)
+			{
+				$messages = [
 						
 				'type' => 'text',
-				//'text' => 'ลูกค้าส่งสลิปมา'."\n"."\nเลขที่สัญญา:". $contractId . "\nชื่อ:". $name . "\nLineID:".  $id  . "\nสลิป:". $urlImage_okplus . "\n"."\n" . $scan_result 
-				'text' => 'scan id = ' .strlen($scan_id)
+				'text' => 'Error! Website Down : ' . date("Y-m-d H:i:s") . "\n". 'ลูกค้าส่งสลิปมา'."\n"."\nLineID:".  $id  . "\nสลิป:". $urlImage_okplus 
+				//'text' => 'scan id = ' .strlen($scan_id)
 						];	
+			}
+			else
+			{
+				$messages = [
+						
+				'type' => 'text',
+				'text' => 'ลูกค้าส่งสลิปมา'."\n"."\nเลขที่สัญญา:". $contractId . "\nชื่อ:". $name . "\nLineID:".  $id  . "\nสลิป:". $urlImage_okplus . "\n"."\n" . $scan_result 
+				//'text' => 'scan id = ' .strlen($scan_id)
+						];	
+			}
 			$data = [
 					'to' => $pushID,
 					'messages' => [$messages],
