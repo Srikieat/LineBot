@@ -308,7 +308,9 @@ if (!is_null($events['events'])) {
 			{
                 if($scan_id == 0 || $scan_id == 1)
                 {
-                    $messages = [
+					if ($isScanError == 0)
+					{
+						$messages = [
                         'type' => 'text',
                          //'text' => $contractId
                         //'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
@@ -321,6 +323,20 @@ if (!is_null($events['events'])) {
                         
                                
                         ];	  
+
+					}
+					else
+					{
+						 $messages = [
+                        'type' => 'text',
+                         //'text' => $contractId
+                        //'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
+                         'text' => 'ขอบคุณค่ะ' ."\n". 'บริษัทได้บันทึกข้อมูลของท่านแล้ว' ."\n"."\n".
+                         'ขอบคุณค่ะ'
+                               
+                        ];	  
+					}
+                    
                 }
                 else
                 {
