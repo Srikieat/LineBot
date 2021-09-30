@@ -235,7 +235,7 @@ if (!is_null($events['events'])) {
 				$messages = [
 						
 				'type' => 'text',
-				'text' => 'Error! Website Down : ' . date("Y-m-d H:i:s", strtotime('+7 hours')) . "\n". 'ลูกค้าส่งสลิปมา'."\n"."\nLineID:".  $id  . "\nสลิป:". $urlImage_okplus 
+				'text' => 'Error! Website Down : ' . date("Y-m-d H:i:s", strtotime('+7 hours')) . "\n". 'ลูกค้าส่งสลิปมา'."\n"."\nLineID:".  $id  . "\nสลิป:". $urlImage 
 				//'text' => 'scan id = ' .strlen($scan_id)
 						];	
 			}
