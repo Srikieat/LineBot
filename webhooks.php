@@ -161,7 +161,7 @@ if (!is_null($events['events'])) {
 			$paid_date = $str_arr[4];
             $ref_number2 = $str_arr[5];
 			$Source = $str_arr[6];
-			$isScanError = 0;
+			$isScanError = 1;
 
 			if (strlen($paid_date) < 10)
 			{
