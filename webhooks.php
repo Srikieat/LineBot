@@ -162,11 +162,11 @@ if (!is_null($events['events'])) {
             $ref_number2 = $str_arr[5];
 			$Source = $str_arr[6];
 
-			$isScanError = 0;
+			$isScanError = "0";
 
 			if (strlen($paid_date) < 10)
 			{
-				$isScanError = 1
+				$isScanError = "1"
 			}
 			
             // scan_id
@@ -309,7 +309,7 @@ if (!is_null($events['events'])) {
 			{
                 if($scan_id == 0 || $scan_id == 1)
                 {
-					if ($isScanError == 0)
+					if ($isScanError == "0")
 					{
 
 					
