@@ -163,6 +163,10 @@ if (!is_null($events['events'])) {
 			$Source = $str_arr[6];
 			$isScanError = 0;
 
+			if (strlen($paid_date) < 10)
+			{
+				$isScanError = 1;
+			}
 
             // scan_id
 			// 0 BILL PAYMENT
