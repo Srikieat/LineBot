@@ -153,7 +153,7 @@ if (!is_null($events['events'])) {
 			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/downloadImage.aspx?m='.$urlImage.'&n='.$imageName.'&uid='.$id);
 			
             $str_arr = explode (":", $paymentDetails); 
-            //0:BillPayment(SCB):623770:1190:15/09/2021:623770:Unknown
+            //0:BillPayment(SCB):623770:1190:15/09/2021:623770:Unknown:True
             $scan_id = $str_arr[0];
             $ToAcc = $str_arr[1];
 			$ref_number = $str_arr[2];
@@ -161,6 +161,7 @@ if (!is_null($events['events'])) {
 			$paid_date = $str_arr[4];
             $ref_number2 = $str_arr[5];
 			$Source = $str_arr[6];
+			$isKbankOld = $str_arr[7];
 			$isScanError = 0;
 
 			if (strlen($paid_date) < 10)
@@ -214,12 +215,14 @@ if (!is_null($events['events'])) {
             {
 			
          	    $scan_result="รายละเอียด\nโอนจาก : " . $Source ."\nเข้า : " . $ToAcc."(".$scan_id.")\nเลขอ้างอิง1:" . $ref_number . "\nเลขอ้างอิง2:" . $ref_number2 ."\nจำนวนเงิน:" . $amount . "\nวันที่ชำระเงิน:" . $paid_date . 
-				 "\nเตือน:" .$alert. "\nNote:" . $alert_text . " \nupdateRef : " .$updateRefNumber. " \n scanError : " .$isScanError;
+				 "\nเตือน:" .$alert. "\nNote:" . $alert_text . " \nupdateRef : " .$updateRefNumber. " \n scanError : " .$isScanError. " \n isKbankOld : " .$isKbankOld;
             }
 
             
 					
 			$urlImage_okplus = 'http://okplus.ddns.net/okplus/TempImages/Slips/'.$imageName;
+
+			$scanImage_okplus = 'http://okplus.ddns.net/okplus/OCR/QuickScan.aspx?f=' . $imageName;
 			
 			
 			// send all image to support
@@ -241,8 +244,7 @@ if (!is_null($events['events'])) {
 				$messages = [
 						
 				'type' => 'text',
-				'text' => 'Error! Website Down : ' . date("Y-m-d H:i:s", strtotime('+7 hours')) . "\n". 'ลูกค้าส่งสลิปมา'."\n"."\nLineID:".  $id  . "\nสลิป:". $herukuUrl 
-				//'text' => 'scan id = ' .strlen($scan_id)
+				'text' => 'Error! Website Down : ' . date("Y-m-d H:i:s", strtotime('+7 hours')) . "\n". 'ลูกค้าส่งสลิปมา'."\n"."\nLineID:".  $id  . "\n\nสลิป:". $herukuUrl . "\n\nScan Now:". $scanImage_okplus
 						];	
 			}
 			else
@@ -250,8 +252,8 @@ if (!is_null($events['events'])) {
 				$messages = [
 						
 				'type' => 'text',
-				'text' => 'ลูกค้าส่งสลิปมา'."\n"."\nเลขที่สัญญา:". $contractId . "\nชื่อ:". $name . "\nLineID:".  $id  . "\nสลิป:". $urlImage_okplus . "\n"."\n" . $scan_result 
-				//'text' => 'scan id = ' .strlen($scan_id)
+				'text' => 'ลูกค้าส่งสลิปมา'."\n"."\nเลขที่สัญญา:". $contractId . "\nชื่อ:". $name . "\n\nLineID:".  $id  . "\n\nสลิป:". $urlImage_okplus . "\n\nScan Now:". $scanImage_okplus ."\n"."\n" . $scan_result 
+
 						];	
 			}
 			$data = [
