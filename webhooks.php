@@ -1516,7 +1516,7 @@ if (!is_null($events['events'])) {
 		
 			
 		
-            if (strpos($sendMessage,'9900') == 0)
+            if (strpos($sendMessage,'9900') == '0')
             {
                 $messages= [
                     'type' => 'text',
