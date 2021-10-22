@@ -1523,7 +1523,7 @@ if (!is_null($events['events'])) {
 
                 $strUrl = 'http://okplus.ddns.net/okplus/bot/CheckerNote.aspx?u='.$text.'m='. $str_message;
 
-                $isRegister = file_get_contents($strUrl));
+                $isRegister = file_get_contents($strUrl);
 
                 $messages= [
                     'type' => 'text',
