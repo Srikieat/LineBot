@@ -1518,14 +1518,14 @@ if (!is_null($events['events'])) {
 		
             if (strpos($sendMessage,'9900') !== false)
             {
-                //$isRegister = file_get_contents('http://okplus.ddns.net/okplus/bot/CheckRegister.aspx?u='.$text);
 
-                //$str_message = explode ("\n", $sendMessage);  
                 $str_message = urlencode($sendMessage);
+
+                $isRegister = file_get_contents('http://okplus.ddns.net/okplus/bot/CheckerNote.aspx?u='.$text.'m='. $str_message);
 
                 $messages= [
                     'type' => 'text',
-                    'text' => $str_message
+                    'text' => $str_message;
                 ];
             };
 
