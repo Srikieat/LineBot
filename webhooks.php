@@ -1525,7 +1525,7 @@ if (!is_null($events['events'])) {
 
                 $messages= [
                     'type' => 'text',
-                    'text' => $str_message;
+                    'text' => $str_message
                 ];
             };
 
