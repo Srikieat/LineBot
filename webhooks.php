@@ -399,7 +399,8 @@ if (!is_null($events['events'])) {
 			
 			 $sendMessage = $event['message']['text'];
 			
-			
+			//
+          
 			// Build message to reply back
 			
 			switch ($sendMessage) {
@@ -1512,10 +1513,20 @@ if (!is_null($events['events'])) {
 					
 							
 			
-			
+		
 			
 		
+            $strNoteOK = "9900";
 
+
+            if (strpos($sendMessage,$strNoteOK) == true)
+            {
+                $messages= [
+                    'type' => 'text',
+                    'text' => 'OKPLUS'	
+                ];
+            }
+    
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
