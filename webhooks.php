@@ -1516,16 +1516,16 @@ if (!is_null($events['events'])) {
 		
 			
 		
-            $strNoteOK = strpos($sendMessage,'9900');
-
-
-            //if (strpos($sendMessage,'9900') == true)
-            //{
+            if (strpos($sendMessage,'9900') == 0)
+            {
                 $messages= [
                     'type' => 'text',
-                    'text' => $strNoteOK	
+                    'text' => 'OKPLUS'
                 ];
-            //}
+            };
+
+
+         
     
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
