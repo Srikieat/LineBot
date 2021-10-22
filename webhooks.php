@@ -1516,7 +1516,7 @@ if (!is_null($events['events'])) {
 		
 			
 		
-            if (strpos($sendMessage,'9900') !== false)
+            if (strpos($sendMessage,'5061') !== false)
             {
 
                 $str_message = urlencode($sendMessage);
