@@ -1512,10 +1512,7 @@ if (!is_null($events['events'])) {
 					
 							
 			
-			//checker note
-            $Line_checker_message = $sendMessage;
-
-            $messages = $Line_checker_message;
+			
 			
 		
 
