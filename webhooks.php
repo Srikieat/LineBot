@@ -1518,9 +1518,11 @@ if (!is_null($events['events'])) {
 		
             if (strpos($sendMessage,'9900') !== false)
             {
+                $str_message = explode ("\n", $sendMessage);  
+
                 $messages= [
                     'type' => 'text',
-                    'text' => 'OKPLUS'
+                    'text' => $str_message[0]
                 ];
             };
 
