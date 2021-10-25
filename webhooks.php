@@ -403,7 +403,7 @@ if (!is_null($events['events'])) {
 			
 			$messages=  [
 							'type' => 'text',
-							'text' => $strurl
+							'text' => $strUrl
 						];	
 			
 			
