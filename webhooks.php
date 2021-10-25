@@ -1585,7 +1585,7 @@ if (!is_null($events['events'])) {
 
                 $messages= [
                     'type' => 'text',
-                    'text' => $strUrl
+                    'text' => $isRegister
                 ];
             };		
 	
