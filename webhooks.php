@@ -1579,13 +1579,13 @@ if (!is_null($events['events'])) {
 
                 $str_message = urlencode($sendMessage);
 
-                $strUrl = 'http://okplus.ddns.net/okplus/bot/LineLocaiton.aspx?u='.$text.'&m='. $str_message;
+                $strUrl = 'http://okplus.ddns.net/okplus/BOT/LineLocation.aspx?u='.$text.'&m='. $str_message;
 
-                $isRegister = file_get_contents($strUrl);
+                $Location1 = file_get_contents($strUrl);
 
                 $messages= [
                     'type' => 'text',
-                    'text' => $isRegister
+                    'text' => $Location1
                 ];
             };		
 	
