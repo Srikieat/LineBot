@@ -396,12 +396,14 @@ if (!is_null($events['events'])) {
 			
 			$lat = $event['message']['latitude'];
 			$long = $event['message']['longitude'];
+
+			$strurl = 'http://okplus.ddns.net/okplus/bot/LineLocation2.aspx?u='.$id.'&lat='.$lat.'&lon='.$long;
 			
-			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/LineLocation2.aspx?u='.$id.'&lat='.$lat.'&lon='.$long);
+			$paymentDetails = file_get_contents($strUrl);
 			
 			$messages=  [
 							'type' => 'text',
-							'text' => $paymentDetails
+							'text' => $strurl
 						];	
 			
 			
