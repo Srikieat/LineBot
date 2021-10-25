@@ -386,6 +386,47 @@ if (!is_null($events['events'])) {
 
 			echo "Reply : " .$result . "\r\n";
 		}
+
+		// for check map
+		if ($event['message']['type'] == 'location')
+		{
+			$id = $event['source']['userId'];
+			// Get replyToken
+			$replyToken = $event['replyToken'];
+			
+			$lat = $event['message']['latitude'];
+			$long = $event['message']['longitude'];
+			
+			//$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetDistance.aspx?u='.$id.'&d='.$distance);
+			
+			$messages=  [
+							'type' => 'text',
+                			//'text' => 'ติดไม่เกินแสน ออกได้ค่ะ มีไฟแนนท์รองรับ'	
+							'text' => 'บันทึกตำแหน่งเรียบร้อยแล้ว'	
+						];	
+			
+			
+			
+			// Make a POST Request to Messaging API to reply to sender
+			$url = 'https://api.line.me/v2/bot/message/reply';
+			$data = [
+				'replyToken' => $replyToken,
+				'messages' => [$messages],
+			];
+			$post = json_encode($data);
+			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+
+			$ch = curl_init($url);
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+			$result = curl_exec($ch);
+			curl_close($ch);
+			
+		}
+
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			
@@ -1515,7 +1556,7 @@ if (!is_null($events['events'])) {
 			
 		
 			
-		
+			// checker note
             if (strpos($sendMessage,'5061') !== false)
             {
 
@@ -1531,7 +1572,9 @@ if (!is_null($events['events'])) {
                 ];
             };
 
-
+			
+					
+	
          
     
 			// Make a POST Request to Messaging API to reply to sender
