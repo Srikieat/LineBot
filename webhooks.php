@@ -387,7 +387,7 @@ if (!is_null($events['events'])) {
 			echo "Reply : " .$result . "\r\n";
 		}
 
-		// for check map
+		// for checker map
 		if ($event['message']['type'] == 'location')
 		{
 			$id = $event['source']['userId'];
@@ -397,12 +397,11 @@ if (!is_null($events['events'])) {
 			$lat = $event['message']['latitude'];
 			$long = $event['message']['longitude'];
 			
-			//$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorSetDistance.aspx?u='.$id.'&d='.$distance);
+			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/LineLocation2.aspx?u='.$id.'&lat='.$lat.'&lon='.$long);
 			
 			$messages=  [
 							'type' => 'text',
-                			//'text' => 'ติดไม่เกินแสน ออกได้ค่ะ มีไฟแนนท์รองรับ'	
-							'text' => 'บันทึกตำแหน่งเรียบร้อยแล้ว'	
+							'text' => $paymentDetails
 						];	
 			
 			
@@ -1572,8 +1571,21 @@ if (!is_null($events['events'])) {
                 ];
             };
 
-			
-					
+			// Send Location step 1
+			if (strpos($sendMessage,'6061') !== false)
+            {
+
+                $str_message = urlencode($sendMessage);
+
+                $strUrl = 'http://okplus.ddns.net/okplus/bot/LineLocaiton.aspx?u='.$text.'&m='. $str_message;
+
+                $isRegister = file_get_contents($strUrl);
+
+                $messages= [
+                    'type' => 'text',
+                    'text' => $isRegister
+                ];
+            };		
 	
          
     
