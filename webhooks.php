@@ -1569,7 +1569,7 @@ if (!is_null($events['events'])) {
 
                 $messages= [
                     'type' => 'text',
-                    'text' => $isRegister
+                    'text' => $strUrl
                 ];
             };
 
