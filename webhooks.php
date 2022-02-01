@@ -224,6 +224,7 @@ if (!is_null($events['events'])) {
 
 			$scanImage_okplus = 'http://okplus.ddns.net/okplus/OCR/QuickScan.aspx?f=' . $imageName;
 			
+            $urlSavePayment = 'http://okplus.ddns.net/okplus/OKMO/pm.aspx?id='.$contractId;
 			
 			// send all image to support
    			$arrayHeader = array();
@@ -253,7 +254,7 @@ if (!is_null($events['events'])) {
 				$messages = [
 						
 				'type' => 'text',
-				'text' => 'ลูกค้าส่งสลิปมา'."\n"."\nเลขที่สัญญา:". $contractId . "\nชื่อ:". $name . "\n\nLineID:".  $id  . "\n\nสลิป:". $urlImage_okplus . "\n\nScan Now:". $scanImage_okplus ."\n"."\n" . $scan_result 
+				'text' => 'ลูกค้าส่งสลิปมา'."\n"."\nเลขที่สัญญา:". $contractId . "\nชื่อ:". $name . "\n\nLineID:".  $id  . "\n\nสลิป:". $urlImage_okplus . "\n\nScan Now:". $scanImage_okplus ."\n\nSave Payment:". $urlSavePayment."\n"."\n" . $scan_result 
 
 						];	
 			}
