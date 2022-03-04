@@ -218,7 +218,19 @@ if (!is_null($events['events'])) {
 				 "\nเตือน:" .$alert. "\nNote:" . $alert_text . " \nupdateRef : " .$updateRefNumber. " \n scanError : " .$isScanError. " \n isKbankOld : " .$isKbankOld;
             }
 
-            
+            // not alert when LOTUS or bigC [SCAN ID = 3 AND 4]
+			if ($alert == "1")
+			{
+				if ($scan_id == "3") 
+				{
+					$alert = "0";
+				}
+
+				if ($scan_id == "4") 
+				{
+					$alert = "0";
+				}
+			}
 					
 			$urlImage_okplus = 'http://okplus.ddns.net/okplus/TempImages/Slips/'.$imageName;
 
