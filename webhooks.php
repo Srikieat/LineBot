@@ -273,7 +273,7 @@ if (!is_null($events['events'])) {
 				$messages = [
 						
 				'type' => 'text',
-				'text' => 'ลูกค้าส่งสลิปมา'."\n"."\nเลขที่สัญญา:". $contractId . "\nชื่อ:". $name . "\n\nLineID:".  $id  . "\n\nสลิป:". $urlImage_okplus . "\n\nScan Now:". $scanImage_okplus ."\n\nSave Payment:". $urlSavePayment."\n"."\n" . $scan_result 
+				'text' => '1ลูกค้าส่งสลิปมา'."\n"."\nเลขที่สัญญา:". $contractId . "\nชื่อ:". $name . "\n\nLineID:".  $id  . "\n\nสลิป:". $urlImage_okplus . "\n\nScan Now:". $scanImage_okplus ."\n\nSave Payment:". $urlSavePayment."\n"."\n" . $scan_result 
 
 						];	
 			}
