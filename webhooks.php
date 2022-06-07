@@ -273,7 +273,7 @@ if (!is_null($events['events'])) {
 				$messages = [
 						
 				'type' => 'text',
-				'text' => '1ลูกค้าส่งสลิปมา'."\n"."\nเลขที่สัญญา:". $contractId . "\nชื่อ:". $name . "\n\nLineID:".  $id  . "\n\nสลิป:". $urlImage_okplus . "\n\nScan Now:". $scanImage_okplus ."\n\nSave Payment:". $urlSavePayment."\n"."\n" . $scan_result 
+				'text' => 'ลูกค้าส่งสลิปมา'."\n"."\nเลขที่สัญญา:". $contractId . "\nชื่อ:". $name . "\n\nLineID:".  $id  . "\n\nสลิป:". $urlImage_okplus . "\n\nScan Now:". $scanImage_okplus ."\n\nSave Payment:". $urlSavePayment."\n"."\n" . $scan_result 
 
 						];	
 			}
@@ -342,7 +342,7 @@ if (!is_null($events['events'])) {
                         'type' => 'text',
                          //'text' => $contractId
                         //'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
-                         'text' => '1ขอบคุณค่ะ' ."\n". 'บริษัทได้บันทึกข้อมูลของท่านแล้ว' ."\n"."\n". date("Y-m-d H:i:s", strtotime('+7 hours')) 
+                         'text' => 'ขอบคุณค่ะ' ."\n". 'บริษัทได้บันทึกข้อมูลของท่านแล้ว' ."\n"."\n". date("Y-m-d H:i:s", strtotime('+7 hours')) 
                          
                                
                         ];	  
@@ -369,7 +369,7 @@ if (!is_null($events['events'])) {
                         'type' => 'text',
                          //'text' => $contractId
                         //'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
-                         'text' => '1ขอบคุณค่ะ' ."\n". 'บริษัทได้บันทึกข้อมูลของท่านแล้ว' ."\n"."\n". date("Y-m-d H:i:s", strtotime('+7 hours')) 
+                         'text' => 'ขอบคุณค่ะ' ."\n". 'บริษัทได้บันทึกข้อมูลของท่านแล้ว' ."\n"."\n". date("Y-m-d H:i:s", strtotime('+7 hours')) 
                          
                                
                         ];	  
@@ -382,7 +382,7 @@ if (!is_null($events['events'])) {
                         'type' => 'text',
                          //'text' => $contractId
                         //'text' => 'Line นี้เป็นระบบอัตโนมัติ'."\n"."\n".'หากต้องการส่งสลิปการชำระค่างวด โปรดส่งสลิปมาที่ Line ด้านล่างนี้ค่ะ  https://lin.ee/6D052q8'."\n"."\n".'ขอบคุณค่ะ'
-                         'text' => '1ขอบคุณค่ะ' ."\n". 'บริษัทได้บันทึกข้อมูลของท่านแล้ว' ."\n"."\n". date("Y-m-d H:i:s", strtotime('+7 hours')) 
+                         'text' => 'ขอบคุณค่ะ' ."\n". 'บริษัทได้บันทึกข้อมูลของท่านแล้ว' ."\n"."\n". date("Y-m-d H:i:s", strtotime('+7 hours')) 
                          
                                
                         ];	  
