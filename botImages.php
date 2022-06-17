@@ -18,6 +18,10 @@
 
 	$text = $_GET['t'];
 
+	$detail1 = $_GET['d1'];
+
+	$detail2 = $_GET['d2'];
+
    	echo($id);
 
 	echo($images);
@@ -93,7 +97,7 @@
         
 			[
             "type" => "text",
-            "text" => "สนใจ กดที่รูป",
+            "text" => $detail1,
             "size" => "lg",
 			  "weight" => "bold",
             "color" => "#000000"
@@ -102,7 +106,7 @@
 			
 			[
             "type" => "text",
-            "text" => "เพื่อติดต่อพนักงาน",
+            "text" => $detail2,
             "size" => "lg",
 			  "weight" => "bold",
             "color" => "#000000"
