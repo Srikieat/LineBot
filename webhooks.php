@@ -1277,6 +1277,12 @@ if (!is_null($events['events'])) {
 						// end message
 
                         $isAllowAppointment = file_get_contents('http://okplus.ddns.net/okplus/bot/checkAllowAppointment.aspx?u='.$text);
+
+                        $messages = [
+                            'type' => 'text',
+                            'text' => $isAllowAppointment
+                        ];	
+
                         if($isAllowAppointment == "1")
                         {
                           // ไม่สามารถนัดได้ เนื่องจากมีการผิดนัดชำระ
