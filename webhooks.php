@@ -1275,6 +1275,18 @@ if (!is_null($events['events'])) {
 					
 						];	
 						// end message
+
+                        $isAllowAppointment = file_get_contents('http://okplus.ddns.net/okplus/bot/checkAllowAppointment.aspx?u='.$text);
+                        if($isAllowAppointment == "1")
+                        {
+                          // ไม่สามารถนัดได้ เนื่องจากมีการผิดนัดชำระ
+                                      $messages = [
+                                            'type' => 'text',
+                                            'text' => 'ขออภัย ท่านไม่สามารถทำรายการได้ โปรดติดต่อพนักงาน เพื่อทำการนัดหมาย 02 331 1798'
+                                        ];	
+                        }
+
+
 						}
 						
 						
@@ -1295,15 +1307,7 @@ if (!is_null($events['events'])) {
 										];	
 					}
 					
-                    $isAllowAppointment = file_get_contents('http://okplus.ddns.net/okplus/bot/checkAllowAppointment.aspx?u='.$text);
-                    if($isAllowAppointment == "1")
-                    {
-                      // ไม่สามารถนัดได้ เนื่องจากมีการผิดนัดชำระ
-                                  $messages = [
-                                        'type' => 'text',
-                                        'text' => 'ขออภัย ท่านไม่สามารถทำรายการได้ โปรดติดต่อพนักงาน เพื่อทำการนัดหมาย 02 331 1798'
-                                    ];	
-                    }
+                   
 
 					break;
   				case "ลงทะเบียน":
