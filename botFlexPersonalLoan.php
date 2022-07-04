@@ -194,7 +194,7 @@ echo($text);
         "contents" => [
           [
             "type" => "text",
-            "text" => "",
+            "text" => " ",
             "size" => "lg",
             "align" => "start",
             "color" => "#0084B6",
