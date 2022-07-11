@@ -73,7 +73,7 @@ echo($text);
           ],
           [
             "type" => "text",
-            "text" => $detail,
+            "text" => "ชำระค่าสินเชื่อส่วนบุคคล",
             "margin" => "lg",
             "size" => "lg",
             "color" => "#000000"
