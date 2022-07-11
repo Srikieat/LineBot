@@ -161,23 +161,7 @@ echo($text);
             ]
           ],
 		
-		 [
-            "type" => "box",
-            "layout" => "baseline",
-            "margin" => "lg",
-            "contents" => [
-              [
-                "type" => "text",
-                "text" => "ทะเบียนรถ",
-                "color" => "#C3C3C3"
-              ],
-              [
-                "type" => "text",
-                "text" => $plate,
-                "align" => "end"
-              ]
-            ]
-          ],
+	
 		
 		
 		
