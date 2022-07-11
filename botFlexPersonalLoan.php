@@ -73,7 +73,7 @@ echo($text);
           ],
           [
             "type" => "text",
-            "text" => "ชำระค่าสินเชื่อส่วนบุคคล",
+            "text" => "ชำระค่างวดสินเชื่อส่วนบุคคล",
             "margin" => "lg",
             "size" => "lg",
             "color" => "#000000"
@@ -178,7 +178,7 @@ echo($text);
         "contents" => [
           [
             "type" => "text",
-            "text" => "จ่ายตรงวัน ลดงวดละ 100 บาท",
+            "text" => " ",
             "size" => "lg",
             "align" => "start",
             "color" => "#0084B6",
