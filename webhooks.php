@@ -230,14 +230,10 @@ if (!is_null($events['events'])) {
 				{
 					$alert = "0";
 				}
+
 			}
 
-			// alert only isKbankOld is True
-			$alert = "0";
-			if ($isKbankOld == "True")
-			{
-				$alert = "1";
-			}
+			
 					
 			$urlImage_okplus = 'http://okplus.ddns.net/okplus/TempImages/Slips/'.$imageName;
 
