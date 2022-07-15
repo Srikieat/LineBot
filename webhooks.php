@@ -221,11 +221,25 @@ if (!is_null($events['events'])) {
             // not alert when LOTUS or bigC [SCAN ID = 3 AND 4]
 			if ($alert == "1")
 			{
+				// Bill Payment
+				if ($scan_id == "0") 
+				{
+					$alert = "0";
+				}
+				
+				// Image 
+				if ($scan_id == "2") 
+				{
+					$alert = "0";
+				}
+				
+				// Lotus
 				if ($scan_id == "3") 
 				{
 					$alert = "0";
 				}
 
+				// Big C
 				if ($scan_id == "4") 
 				{
 					$alert = "0";
