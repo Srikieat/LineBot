@@ -41,7 +41,7 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == "unfollow") 
 		{
 			$id = $event['source']['userId'];
-			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/unfollowLine.aspx?u='.$id);
+			$paymentDetails = file_get_contents('http://okplus.thddns.net:9330/okplus/bot/unfollowLine.aspx?u='.$id);
 		}
 	
 		
@@ -81,7 +81,7 @@ if (!is_null($events['events'])) {
 			                        				   array(
                         				 				'type' => 'uri', // 類型 (連結)
 				                         				'label' => 'ลงทะเบียน', // 標籤 3
-				                         				'uri' => 'http://okplus.ddns.net/okplus/OKMO/Bot.aspx?u='.$text // 連結網址
+				                         				'uri' => 'http://okplus.thddns.net:9330/okplus/OKMO/Bot.aspx?u='.$text // 連結網址
 				                       				         )
 			                       					   )
 		                					)
@@ -150,7 +150,7 @@ if (!is_null($events['events'])) {
 			
 			//download and scan image on okplus server
 			
-			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/downloadImage.aspx?m='.$urlImage.'&n='.$imageName.'&uid='.$id);
+			$paymentDetails = file_get_contents('http://okplus.thddns.net:9330/okplus/downloadImage.aspx?m='.$urlImage.'&n='.$imageName.'&uid='.$id);
 			
             $str_arr = explode (":", $paymentDetails); 
             //0:BillPayment(SCB):623770:1190:15/09/2021:623770:Unknown:True
@@ -181,11 +181,11 @@ if (!is_null($events['events'])) {
            if ($scan_id == 0)
            {
 			    //update refence number	and save contract note
-                $updateRefNumber = file_get_contents('http://okplus.ddns.net/okplus/bot/updateRefnumber.aspx?uid='.$id.'&ref='.$ref_number.'&ref2='.$ref_number2.'&s='.$scan_id);
+                $updateRefNumber = file_get_contents('http://okplus.thddns.net:9330/okplus/bot/updateRefnumber.aspx?uid='.$id.'&ref='.$ref_number.'&ref2='.$ref_number2.'&s='.$scan_id);
            }
 			
 	        // get okplus data
-			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getClosePayment.aspx?u='.$id);
+			$paymentDetails = file_get_contents('http://okplus.thddns.net:9330/okplus/bot/getClosePayment.aspx?u='.$id);
 			$str_arr = explode (":", $paymentDetails);  
 			$contractId=$str_arr[0];
             $name = $str_arr[1];
@@ -196,7 +196,7 @@ if (!is_null($events['events'])) {
             if (strlen($contractId)>0)
             {
 			    // save to contract_note
-			    $saveNote = file_get_contents('http://okplus.ddns.net/okplus/bot/saveNote.aspx?ref='.$ref_number.'&ref2='.$ref_number2.'&a='.$amount.'&d='.$paid_date.'&i='.$imageName.'&uid='.$id.'&s='.$scan_id);	
+			    $saveNote = file_get_contents('http://okplus.thddns.net:9330/okplus/bot/saveNote.aspx?ref='.$ref_number.'&ref2='.$ref_number2.'&a='.$amount.'&d='.$paid_date.'&i='.$imageName.'&uid='.$id.'&s='.$scan_id);	
             }
 
             //return [alert:detail]
@@ -249,11 +249,11 @@ if (!is_null($events['events'])) {
 
 			
 					
-			$urlImage_okplus = 'http://okplus.ddns.net/okplus/TempImages/Slips/'.$imageName;
+			$urlImage_okplus = 'http://okplus.thddns.net:9330/okplus/TempImages/Slips/'.$imageName;
 
-			$scanImage_okplus = 'http://okplus.ddns.net/okplus/OCR/QuickScan.aspx?f=' . $imageName;
+			$scanImage_okplus = 'http://okplus.thddns.net:9330/okplus/OCR/QuickScan.aspx?f=' . $imageName;
 			
-            $urlSavePayment = 'http://okplus.ddns.net/okplus/OKMO/pm.aspx?id='.$contractId;
+            $urlSavePayment = 'http://okplus.thddns.net:9330/okplus/OKMO/pm.aspx?id='.$contractId;
 			
 			// send all image to support
    			$arrayHeader = array();
@@ -432,7 +432,7 @@ if (!is_null($events['events'])) {
 			$lat = $event['message']['latitude'];
 			$long = $event['message']['longitude'];
 
-			$strUrl = 'http://okplus.ddns.net/okplus/bot/LineLocation2.aspx?u='.$id.'&lat='.$lat.'&lon='.$long;
+			$strUrl = 'http://okplus.thddns.net:9330/okplus/bot/LineLocation2.aspx?u='.$id.'&lat='.$lat.'&lon='.$long;
 			
 			$paymentDetails = file_get_contents($strUrl);
 			
@@ -487,7 +487,7 @@ if (!is_null($events['events'])) {
 				case "สำเนารถ":
 					
 					
-					$isRegister = file_get_contents('http://okplus.ddns.net/okplus/bot/CheckRegister.aspx?u='.$text);
+					$isRegister = file_get_contents('http://okplus.thddns.net:9330/okplus/bot/CheckRegister.aspx?u='.$text);
 			
 					//$isRegister = "0";
 					$isRegister = substr($isRegister, 0, 1);
@@ -506,7 +506,7 @@ if (!is_null($events['events'])) {
 					if ($isRegister === "1")
 					{
 						
-							$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getRegCopy.aspx?u='.$text);;
+							$paymentDetails = file_get_contents('http://okplus.thddns.net:9330/okplus/bot/getRegCopy.aspx?u='.$text);;
 									$str_arr = explode (":", $paymentDetails);  
 
 									$completeProcess=$str_arr[0];
@@ -548,7 +548,7 @@ if (!is_null($events['events'])) {
 					}
 					
 						// check close account
-					$contractInfo = file_get_contents('http://okplus.ddns.net/okplus/bot/getContractInfo.aspx?u='.$text);;
+					$contractInfo = file_get_contents('http://okplus.thddns.net:9330/okplus/bot/getContractInfo.aspx?u='.$text);;
 					$str_Info = explode (":", $contractInfo);
 					$status = $str_Info[0];
 					$status_name = $str_Info[1];
@@ -579,7 +579,7 @@ if (!is_null($events['events'])) {
 					
 						// check register or not
 					
-					$isRegister = file_get_contents('http://okplus.ddns.net/okplus/bot/CheckRegister.aspx?u='.$text);
+					$isRegister = file_get_contents('http://okplus.thddns.net:9330/okplus/bot/CheckRegister.aspx?u='.$text);
 			
 					//$isRegister = "0";
 					$isRegister = substr($isRegister, 0, 1);
@@ -619,7 +619,7 @@ if (!is_null($events['events'])) {
 			                        				   array(
                         				 				'type' => 'uri', // 類型 (連結)
 				                         				'label' => 'ลงทะเบียน', // 標籤 3
-				                         				'uri' => 'http://okplus.ddns.net/okplus/OKMO/Bot.aspx?u='.$text // 連結網址
+				                         				'uri' => 'http://okplus.thddns.net:9330/okplus/OKMO/Bot.aspx?u='.$text // 連結網址
 				                       				         )
 			                       					   )
 		                					)
@@ -631,7 +631,7 @@ if (!is_null($events['events'])) {
 						if ($isRegister === "1")
 						{
 									//$paymentDetails = "63/0457:นาย นิคม สมบรูณ์:621401:10,000:3กน 6787:ZOOMER-X:2,370:12:3 มิถุนายน 2020:24,583";
-									$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getClosePayment.aspx?u='.$text);;
+									$paymentDetails = file_get_contents('http://okplus.thddns.net:9330/okplus/bot/getClosePayment.aspx?u='.$text);;
 									$str_arr = explode (":", $paymentDetails);  
 
 									$contractId=$str_arr[0];
@@ -822,7 +822,7 @@ if (!is_null($events['events'])) {
 					
 					
 						// check close account
-					$contractInfo = file_get_contents('http://okplus.ddns.net/okplus/bot/getContractInfo.aspx?u='.$text);;
+					$contractInfo = file_get_contents('http://okplus.thddns.net:9330/okplus/bot/getContractInfo.aspx?u='.$text);;
 					$str_Info = explode (":", $contractInfo);
 					$status = $str_Info[0];
 					$status_name = $str_Info[1];
@@ -843,7 +843,7 @@ if (!is_null($events['events'])) {
 					
 						// check register or not
 					
-					$isRegister = file_get_contents('http://okplus.ddns.net/okplus/bot/CheckRegister.aspx?u='.$text);
+					$isRegister = file_get_contents('http://okplus.thddns.net:9330/okplus/bot/CheckRegister.aspx?u='.$text);
 			
 					//$isRegister = "0";
 					$isRegister = substr($isRegister, 0, 1);
@@ -883,7 +883,7 @@ if (!is_null($events['events'])) {
 			                        				   array(
                         				 				'type' => 'uri', // 類型 (連結)
 				                         				'label' => 'ลงทะเบียน', // 標籤 3
-				                         				'uri' => 'http://okplus.ddns.net/okplus/OKMO/Bot.aspx?u='.$text // 連結網址
+				                         				'uri' => 'http://okplus.thddns.net:9330/okplus/OKMO/Bot.aspx?u='.$text // 連結網址
 				                       				         )
 			                       					   )
 		                					)
@@ -897,7 +897,7 @@ if (!is_null($events['events'])) {
 									//$paymentDetails = "63/0516:นาย นิคม สมบรูณ์:621401:10,000:3กน 6787:ZOOMER-X:1,240:12:6:6:3 กรกฎาคม 2020:26 ธันวาคม 2020";
 							
 									
-									$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentDetail.aspx?u='.$text);;
+									$paymentDetails = file_get_contents('http://okplus.thddns.net:9330/okplus/bot/getPaymentDetail.aspx?u='.$text);;
 									$str_arr = explode (":", $paymentDetails);  
 
 									$contractId=$str_arr[0];
@@ -1101,7 +1101,7 @@ if (!is_null($events['events'])) {
 			
 					
 					// check close account
-					$contractInfo = file_get_contents('http://okplus.ddns.net/okplus/bot/getContractInfo.aspx?u='.$text);;
+					$contractInfo = file_get_contents('http://okplus.thddns.net:9330/okplus/bot/getContractInfo.aspx?u='.$text);;
 					$str_Info = explode (":", $contractInfo);
 					$status = $str_Info[0];
 					$status_name = $str_Info[1];
@@ -1132,7 +1132,7 @@ if (!is_null($events['events'])) {
 					
 					// check register or not
 					
-					$isRegister = file_get_contents('http://okplus.ddns.net/okplus/bot/CheckRegister.aspx?u='.$text);
+					$isRegister = file_get_contents('http://okplus.thddns.net:9330/okplus/bot/CheckRegister.aspx?u='.$text);
 			
 					//$isRegister = "0";
 					$isRegister = substr($isRegister, 0, 1);
@@ -1172,7 +1172,7 @@ if (!is_null($events['events'])) {
 			                        				   array(
                         				 				'type' => 'uri', // 類型 (連結)
 				                         				'label' => 'ลงทะเบียน', // 標籤 3
-				                         				'uri' => 'http://okplus.ddns.net/okplus/OKMO/Bot.aspx?u='.$text // 連結網址
+				                         				'uri' => 'http://okplus.thddns.net:9330/okplus/OKMO/Bot.aspx?u='.$text // 連結網址
 				                       				         )
 			                       					   )
 		                					)
@@ -1185,7 +1185,7 @@ if (!is_null($events['events'])) {
 						
 						
 						// check already appointment
-						$serverData = file_get_contents('http://okplus.ddns.net/okplus/bot/CheckAppointment.aspx?u='.$text);
+						$serverData = file_get_contents('http://okplus.thddns.net:9330/okplus/bot/CheckAppointment.aspx?u='.$text);
 						//$serverData = "1:srikieat:12/45263:16April2020;";
 						//$serverData = "0:0:0:0;";
 						$pos = strpos($serverData, ";");
@@ -1278,7 +1278,7 @@ if (!is_null($events['events'])) {
 			                        				   array(
                         				 				'type' => 'uri', // 類型 (連結)
 				                         				'label' => 'ดำเนินการ', // 標籤 3
-				                         				'uri' => 'http://okplus.ddns.net/okplus/OKMO/BotAppoint.aspx?u='.$text // 連結網址
+				                         				'uri' => 'http://okplus.thddns.net:9330/okplus/OKMO/BotAppoint.aspx?u='.$text // 連結網址
 				                       				         )
 			                       					   )
 		                					)
@@ -1295,7 +1295,7 @@ if (!is_null($events['events'])) {
 					
 					
 						// check close account
-					$contractInfo = file_get_contents('http://okplus.ddns.net/okplus/bot/getContractInfo.aspx?u='.$text);;
+					$contractInfo = file_get_contents('http://okplus.thddns.net:9330/okplus/bot/getContractInfo.aspx?u='.$text);;
 					$str_Info = explode (":", $contractInfo);
 					$status = $str_Info[0];
 					$status_name = $str_Info[1];
@@ -1308,7 +1308,7 @@ if (!is_null($events['events'])) {
 										];	
 					}
 					
-                    $isAllowAppointment = file_get_contents('http://okplus.ddns.net/okplus/bot/checkAllowAppointment.aspx?u='.$text);
+                    $isAllowAppointment = file_get_contents('http://okplus.thddns.net:9330/okplus/bot/checkAllowAppointment.aspx?u='.$text);
 
                      
 
@@ -1326,7 +1326,7 @@ if (!is_null($events['events'])) {
   				case "ลงทะเบียน":
    					// start message
 					
-						$isRegister = file_get_contents('http://okplus.ddns.net/okplus/bot/CheckRegister.aspx?u='.$text);
+						$isRegister = file_get_contents('http://okplus.thddns.net:9330/okplus/bot/CheckRegister.aspx?u='.$text);
 			
 					//$isRegister = "0";
 					$isRegister = substr($isRegister, 0, 1);
@@ -1364,7 +1364,7 @@ if (!is_null($events['events'])) {
 			                        				   array(
                         				 				'type' => 'uri', // 類型 (連結)
 				                         				'label' => 'ลงทะเบียน', // 標籤 3
-				                         				'uri' => 'http://okplus.ddns.net/okplus/OKMO/Bot.aspx?u='.$text // 連結網址
+				                         				'uri' => 'http://okplus.thddns.net:9330/okplus/OKMO/Bot.aspx?u='.$text // 連結網址
 				                       				         )
 			                       					   )
 		                					)
@@ -1377,7 +1377,7 @@ if (!is_null($events['events'])) {
    					 break;
   					 case "ใบเสร็จ":
    							
-					//$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentList.aspx');
+					//$paymentDetails = file_get_contents('http://okplus.thddns.net:9330/okplus/bot/getPaymentList.aspx');
 					$paymentDetails = "1,430:Big C:14 เมษายน 2563:ชำระค่างวดรถจักรยานยนต์:ราณี สายใจ:8กร 2513:62RC-06200:62/0147:621478";
 					$str_arr = explode (":", $paymentDetails);  
 					
@@ -1615,7 +1615,7 @@ if (!is_null($events['events'])) {
 
                 $str_message = urlencode($sendMessage);
 
-                $strUrl = 'http://okplus.ddns.net/okplus/bot/CheckerNote.aspx?u='.$text.'&m='. $str_message;
+                $strUrl = 'http://okplus.thddns.net:9330/okplus/bot/CheckerNote.aspx?u='.$text.'&m='. $str_message;
 
                 $isRegister = file_get_contents($strUrl);
 
@@ -1631,7 +1631,7 @@ if (!is_null($events['events'])) {
 
                 $str_message = urlencode($sendMessage);
 
-                $strUrl = 'http://okplus.ddns.net/okplus/BOT/LineLocation.aspx?u='.$text.'&m='. $str_message;
+                $strUrl = 'http://okplus.thddns.net:9330/okplus/BOT/LineLocation.aspx?u='.$text.'&m='. $str_message;
 
                 $Location1 = file_get_contents($strUrl);
 
