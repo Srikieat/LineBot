@@ -10,7 +10,7 @@
 	$text = $_GET['t'];
    echo($id);
 echo($text);
-			//$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/getPaymentList.aspx?u='.$id);
+			//$paymentDetails = file_get_contents('http://okplus.thddns.net:9330/okplus/bot/getPaymentList.aspx?u='.$id);
 			//		$paymentDetails = "1,430:Big C:14 เมษายน 2563:ชำระค่างวดรถจักรยานยนต์:ราณี สายใจ:8กร 2513:62RC-06200:62/0147:621478";
 					$str_arr = explode (":", $text);  
 					
