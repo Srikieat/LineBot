@@ -1,5 +1,5 @@
 {
- aa   "require": {
+    "require": {
         "linecorp/line-bot-sdk": "^2.3",
          "ext-ftp": "*"
     }
