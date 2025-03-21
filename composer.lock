@@ -21,7 +21,7 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.4"
+                "php": ">=8.3.19"
             },
             "require-dev": {
                 "apigen/apigen": "~4.1",
