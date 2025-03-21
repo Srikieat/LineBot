@@ -5,6 +5,7 @@ $filename = "uploadImages\image.png";
 
 //-- Code to Transfer File on Server Dt: 06-03-2008 by Aditya Bhatt --//
 //-- Connection Settings
+// TEST
 $ftp_server = "119.59.120.23"; // Address of FTP server.
 $ftp_user_name = "okplusc1"; // Username
 $ftp_user_pass = '2A3w7tFm7j'; // Password
