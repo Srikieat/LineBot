@@ -114,17 +114,17 @@ if (!is_null($events['events'])) {
 			$userName = getDisplayName($id);
 			$paymentDetails = file_get_contents('http:///okplus.thddns.net:9330/okplus/bot/okplusMotorFollow.aspx?u='.$id.'&n='.$userName);
 			
-			//  $messages = [
-            //    'type' => 'text',
-             //   'text' => $userName . $id
-            //		];	
+			  $messages = [
+                'type' => 'text',
+               'text' => 'สวัสดีค่ะ คุณ '$userName . ' ยินดีให้บริการ'
+            		];	
 			
-			//$url = 'https://api.line.me/v2/bot/message/reply';
+			$url = 'https://api.line.me/v2/bot/message/reply';
 		
-			//	$data = [
-			// 	'replyToken' => $replyToken,
-			//	'messages' => [$messages]
-			// 	];	
+				$data = [
+			 	'replyToken' => $replyToken,
+				'messages' => [$messages]
+			 	];	
 			
 			
 		
