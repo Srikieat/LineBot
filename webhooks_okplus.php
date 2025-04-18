@@ -114,9 +114,9 @@ if (!is_null($events['events'])) {
 			$userName = getDisplayName($id);
 			$url = 'http:///okplus.thddns.net:9330/okplus/bot/okplusMotorFollow.aspx?u='.$id.'&n='.$userName
 			
-			//$paymentDetails = file_get_contents('http:///okplus.thddns.net:9330/okplus/bot/okplusMotorFollow.aspx?u='.$id.'&n='.$userName);
+			$paymentDetails = file_get_contents('http:///okplus.thddns.net:9330/okplus/bot/okplusMotorFollow.aspx?u='.$id.'&n='.$userName);
 			
-			curl_init($url);
+			//curl_init($url);
 			
 			$messages = [
                 'type' => 'text',
