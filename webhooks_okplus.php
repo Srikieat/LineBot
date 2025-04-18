@@ -117,13 +117,8 @@ if (!is_null($events['events'])) {
 			
 			$paymentDetails = file_get_contents($url);
 			
-			$ch = curl_init($url);
-				curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-			//curl_exec($ch);
+			curl_init($url);
+		
 			$messages = [
                 'type' => 'text',
                'text' => $url
