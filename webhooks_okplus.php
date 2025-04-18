@@ -115,7 +115,7 @@ if (!is_null($events['events'])) {
 			
 			$url = 'http:///okplus.thddns.net:9330/okplus/bot/okplusMotorFollow.aspx?u='.$id.'&n='.$userName;
 			
-			$paymentDetails = file_get_contents('http:///okplus.thddns.net:9330/okplus/bot/okplusMotorFollow.aspx?u='.$id.'&n='.$userName);
+			$paymentDetails = file_get_contents($url);
 			
 			curl_init($url);
 			
