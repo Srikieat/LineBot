@@ -99,7 +99,10 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == "unfollow") 
 		{
 			$id = $event['source']['userId'];
-			$paymentDetails = file_get_contents('http:///okplus.thddns.net:9330/okplus/bot/okplusMotorUnfollow.aspx?u='.$id);
+			
+			$url = 'http:///okplus.thddns.net:9330/okplus/bot/okplusMotorUnfollow.aspx?u='.$id;
+			$ch = curl_init($url);
+			$result = curl_exec($ch);
 		}
 	
 		
