@@ -117,8 +117,9 @@ if (!is_null($events['events'])) {
 			
 			$paymentDetails = file_get_contents($url);
 			
-			curl_init($url);
-		
+			$ch = curl_init($url);
+			$result = curl_exec($ch);
+			
 			$messages = [
                 'type' => 'text',
                'text' => $url
