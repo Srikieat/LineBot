@@ -169,20 +169,12 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			
-			 $sendMessage = $event['message']['text'];
+			$sendMessage = $event['message']['text'];
 			
 			$userName = getDisplayName($text);
 			
 			
 			
-			$setInitial = file_get_contents('http:///okplus.thddns.net:9330/okplus/bot/okplusMotorFollow.aspx?u='.$id.'&n='.$userName);
-			
-			$setLastMessage = file_get_contents('http:///okplus.thddns.net:9330/okplus/bot/okplusMotorLastMessage.aspx?u='.$id.'&m='.$sendMessage);
-						
-			
-			// Build message to reply back
-		 	
-			$Info = file_get_contents('http:///okplus.thddns.net:9330/okplus/bot/OkplusMotorGetInfo.aspx?u='.$id);
 
             //$messages = [
             //   'type' => 'text',
@@ -196,9 +188,30 @@ if (!is_null($events['events'])) {
 			// 	'replyToken' => $replyToken,
 			//	'messages' => [$messages]
 			// 	];	
+			
+			
+			$url = 'http:///okplus.thddns.net:9330/okplus/bot/okplusMotorFollow.aspx?u='.$id.'&n='.$userName;
+			$ch = curl_init($url);
+			$result = curl_exec($ch);
+			
+			$url = 'http:///okplus.thddns.net:9330/okplus/bot/okplusMotorLastMessage.aspx?u='.$id.'&m='.$sendMessage;
+			$ch = curl_init($url);
+			$result = curl_exec($ch);
 		
-			 
-		
+			// this below code is for sending message.
+			//$post = json_encode($data);
+			//$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+
+			//$ch = curl_init($url);
+			//curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+			//curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			//curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+			//curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+			//curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+			//$result = curl_exec($ch);
+			//curl_close($ch);
+
+			//echo "Your ID is : ".$result . "\r\n";
 				
 			
 			
