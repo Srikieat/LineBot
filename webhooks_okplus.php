@@ -1,22 +1,5 @@
 <?php // callback.php
 
-// state
-//0 follow
-//1 รุ่น
-//2 สนใจ
-//4 check blacklist
-//3 000
-//5 reject
-
-
-// release note
-// version 2 : check location morethan 5 reject
-// version 3 : check black list then reject 29/5/2563
-// version 4 : fix check black list 30/5/2563
-// version 5 : add price and payment info 1/6/2563
-// version 6 : fix blacklist 4/5/2563
-// version 7 : moreDown 5/5/2563
-// version 8 : Admin Command SET5 5/6/2563
 
 require "vendor/autoload.php";
 require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
@@ -59,7 +42,7 @@ function checkExactMessage($arrKeyword, $message)
 }
 function getDisplayName($id)
 {
-	$access_token = '9qdNZtBI6urLTohgjHLutRo/5gELhmrx7PukSdauW8fsFBwcdN+ozxNH1XVj4kkCNu/T30nl2oITOMvdQ6QlcLOqgO+Ji+JSnH+rRXUtC1Xg5vx32G8vseS4VZ+Mc83SBp2IPpuAzcH+aOBgzgEuhQdB04t89/1O/w1cDnyilFU=';
+	$access_token = '0c1mevGh8lDmxa4wmhr0g52tTduTLEBlV2cu8Mcyc8ZinK0b5GhELE68eB5LX5ph9Rtc0cg2eWaRPlk/dCwZi1XvNncQTG7cqzVkgQq9LiOE4zf328tQaqRT3JcVv0HWHjE2oY5JHGdgoEwz3viJewdB04t89/1O/w1cDnyilFU=';
 	$url = 'https://api.line.me/v2/bot/profile/'.$id;
 	$headers = array('Authorization: Bearer ' . $access_token);
 
@@ -128,12 +111,12 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			
 			$id = $event['source']['userId'];
-			$userName = getDisplayName($text);
+			$userName = getDisplayName($id);
 			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorFollow.aspx?u='.$id.'&n='.$userName);
 			
 			  $messages = [
                 'type' => 'text',
-                'text' => $id
+                'text' => $userName
             		];	
 			
 			$url = 'https://api.line.me/v2/bot/message/reply';
