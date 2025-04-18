@@ -99,7 +99,7 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == "unfollow") 
 		{
 			$id = $event['source']['userId'];
-			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorUnfollow.aspx?u='.$id);
+			$paymentDetails = file_get_contents('http:///okplus.thddns.net:9330/okplus/bot/okplusMotorUnfollow.aspx?u='.$id);
 		}
 	
 		
@@ -112,7 +112,7 @@ if (!is_null($events['events'])) {
 			
 			$id = $event['source']['userId'];
 			$userName = getDisplayName($id);
-			$paymentDetails = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorFollow.aspx?u='.$id.'&n='.$userName);
+			$paymentDetails = file_get_contents('http:///okplus.thddns.net:9330/okplus/bot/okplusMotorFollow.aspx?u='.$id.'&n='.$userName);
 			
 			  $messages = [
                 'type' => 'text',
@@ -169,14 +169,14 @@ if (!is_null($events['events'])) {
 			
 			
 			
-			$setInitial = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorFollow.aspx?u='.$id.'&n='.$userName);
+			$setInitial = file_get_contents('http:///okplus.thddns.net:9330/okplus/bot/okplusMotorFollow.aspx?u='.$id.'&n='.$userName);
 			
-			$setLastMessage = file_get_contents('http://okplus.ddns.net/okplus/bot/okplusMotorLastMessage.aspx?u='.$id.'&m='.$sendMessage);
+			$setLastMessage = file_get_contents('http:///okplus.thddns.net:9330/okplus/bot/okplusMotorLastMessage.aspx?u='.$id.'&m='.$sendMessage);
 						
 			
 			// Build message to reply back
 		 	
-			$Info = file_get_contents('http://okplus.ddns.net/okplus/bot/OkplusMotorGetInfo.aspx?u='.$id);
+			$Info = file_get_contents('http:///okplus.thddns.net:9330/okplus/bot/OkplusMotorGetInfo.aspx?u='.$id);
 
             $messages = [
                 'type' => 'text',
