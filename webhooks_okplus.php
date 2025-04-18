@@ -116,7 +116,7 @@ if (!is_null($events['events'])) {
 			
 			//$paymentDetails = file_get_contents('http:///okplus.thddns.net:9330/okplus/bot/okplusMotorFollow.aspx?u='.$id.'&n='.$userName);
 			
-			curl_init($url)
+			curl_init($url);
 			
 			$messages = [
                 'type' => 'text',
