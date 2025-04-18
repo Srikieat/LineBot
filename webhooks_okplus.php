@@ -169,11 +169,11 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			
-			$sendMessage = http_build_query($event['message']['text']);
+			$sendMessage = $event['message']['text'];
 			
 			$userName = getDisplayName($text);
 			
-			
+			$sendMessage = rawurlencode($sendMessage);
 			
 
             $messages = [
