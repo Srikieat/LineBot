@@ -119,7 +119,7 @@ if (!is_null($events['events'])) {
 			
 			$messages = [
                 'type' => 'text',
-               'text' => $url
+               'text' => 'สวัสดีค่ะ ยินดีให้บริการค่ะ'
             		];	
 			
 			$url = 'https://api.line.me/v2/bot/message/reply';
