@@ -114,17 +114,17 @@ if (!is_null($events['events'])) {
 			$userName = getDisplayName($id);
 			$paymentDetails = file_get_contents('http:///okplus.thddns.net:9330/okplus/bot/okplusMotorFollow.aspx?u='.$id.'&n='.$userName);
 			
-			  $messages = [
-                'type' => 'text',
-                'text' => $userName . $id
-            		];	
+			//  $messages = [
+            //    'type' => 'text',
+             //   'text' => $userName . $id
+            //		];	
 			
-			$url = 'https://api.line.me/v2/bot/message/reply';
+			//$url = 'https://api.line.me/v2/bot/message/reply';
 		
-				$data = [
-			 	'replyToken' => $replyToken,
-				'messages' => [$messages]
-			 	];	
+			//	$data = [
+			// 	'replyToken' => $replyToken,
+			//	'messages' => [$messages]
+			// 	];	
 			
 			
 		
@@ -178,18 +178,18 @@ if (!is_null($events['events'])) {
 		 	
 			$Info = file_get_contents('http:///okplus.thddns.net:9330/okplus/bot/OkplusMotorGetInfo.aspx?u='.$id);
 
-            $messages = [
-                'type' => 'text',
-                'text' => 'กรุณารอสักครู่นะค่ะ'
-            		];	
+            //$messages = [
+            //   'type' => 'text',
+            //    'text' => 'กรุณารอสักครู่นะค่ะ'
+            //		];	
 							
 			// Make a POST Request to Messaging API to reply to sender
-			$url = 'https://api.line.me/v2/bot/message/reply';
+			//$url = 'https://api.line.me/v2/bot/message/reply';
 		
-				$data = [
-			 	'replyToken' => $replyToken,
-				'messages' => [$messages]
-			 	];	
+			//	$data = [
+			// 	'replyToken' => $replyToken,
+			//	'messages' => [$messages]
+			// 	];	
 		
 			 
 		
