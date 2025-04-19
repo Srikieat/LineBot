@@ -1401,11 +1401,12 @@ if (!is_null($events['events'])) {
    					 break;
   					 case "ใบเสร็จ":
    							
-					//$paymentDetails = file_get_contents('http://okplus.thddns.net:9330/okplus/bot/getPaymentList.aspx');
-					$url = 'http://okplus.thddns.net:9330/okplus/bot/getPaymentList.aspx';
-					$ch = curl_init($url);
-					$paymentDetails = curl_exec($ch);
+					$paymentDetails = file_get_contents('http://okplus.thddns.net:9330/okplus/bot/getPaymentList.aspx');
+					//$url = 'http://okplus.thddns.net:9330/okplus/bot/getPaymentList.aspx';
+					//$ch = curl_init($url);
+					//$paymentDetails = curl_exec($ch);
 					//$paymentDetails = "1,430:Big C:14 เมษายน 2563:ชำระค่างวดรถจักรยานยนต์:ราณี สายใจ:8กร 2513:62RC-06200:62/0147:621478";
+					//1,430:Big C:14 เมษายน 2563:ชำระค่างวดรถจักรยานยนต์:ราณี สายใจ:8กร 2513:62RC-06200:62/0147:621478
 					$str_arr = explode (":", $paymentDetails);  
 					
 					$amount=$str_arr[0];
