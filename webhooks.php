@@ -9,6 +9,7 @@
 </body>
 </html><?php // callback.php
 
+
 require "vendor/autoload.php";
 //require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
 
@@ -27,6 +28,27 @@ $array = json_decode(json_encode($content), true);
 $json_string = file_get_contents('php://input');
 $jsonObj = json_decode($json_string); //รับ JSON มา decode เป็น StdObj
 $array1 = json_decode(json_encode($jsonObj), true);
+
+
+function getDisplayName($id)
+{
+	$access_token = '0jFIiIq0JnX9WLpNo+ZMNnVKOSP3IYtDwwqLNSwnR3PyIqo+pTSIdJyY0fLkxQEBSGB7h1OA/ZlRTeHiYeb6v/B7Xnla6B2RO0oIjXfuLFKLKp5kwGc1ZwyR/Ye2KAAnD+fXr3MR7/eCN6ilzs6CQAdB04t89/1O/w1cDnyilFU=';
+	$url = 'https://api.line.me/v2/bot/profile/'.$id;
+	$headers = array('Authorization: Bearer ' . $access_token);
+
+	$ch = curl_init($url);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+	$result = curl_exec($ch);
+	curl_close($ch);
+	//echo $result
+	$profile = json_decode($result, true);
+	$displayName =  $profile['displayName'];
+	$pictureUrl = $profile['pictureUrl'];
+	
+	return $displayName;
+}
 
 
 // Validate parsed JSON data
@@ -53,7 +75,7 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			
 			
-			
+			$userName = getDisplayName($text);
 			
 			
 			
@@ -81,7 +103,7 @@ if (!is_null($events['events'])) {
 			                        				   array(
                         				 				'type' => 'uri', // 類型 (連結)
 				                         				'label' => 'ลงทะเบียน', // 標籤 3
-				                         				'uri' => 'http://okplus.thddns.net:9330/okplus/OKMO/Bot.aspx?u='.$text // 連結網址
+				                         				'uri' => 'http://okplus.thddns.net:9330/okplus/OKMO/Bot.aspx?u='.$text.'&n='.$userName;
 				                       				         )
 			                       					   )
 		                					)
