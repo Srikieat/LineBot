@@ -103,7 +103,7 @@ if (!is_null($events['events'])) {
 			                        				   array(
                         				 				'type' => 'uri', // 類型 (連結)
 				                         				'label' => 'ลงทะเบียน', // 標籤 3
-				                         				'uri' => 'http://okplus.thddns.net:9330/okplus/OKMO/Bot.aspx?u='.$text.'&n='.$userName;
+				                         				'uri' => 'http://okplus.thddns.net:9330/okplus/OKMO/Bot.aspx?u='.$text.'&n='.$userName
 				                       				         )
 			                       					   )
 		                					)
