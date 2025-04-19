@@ -618,6 +618,7 @@ if (!is_null($events['events'])) {
 					
 					if ($isRegister === "0")
 					{
+						$userName = getDisplayName($text);
 						
 						$messages = [
 						'type' => 'template', // 訊息類型 (模板)
@@ -882,7 +883,7 @@ if (!is_null($events['events'])) {
 					
 					if ($isRegister === "0")
 					{
-						
+						$userName = getDisplayName($text);
 						$messages = [
 						'type' => 'template', // 訊息類型 (模板)
                 				'altText' => 'ลงทะเบียน', // 替代文字
@@ -1171,7 +1172,7 @@ if (!is_null($events['events'])) {
 					
 					if ($isRegister === "0")
 					{
-						
+						$userName = getDisplayName($text);
 						$messages = [
 						'type' => 'template', // 訊息類型 (模板)
                 				'altText' => 'ลงทะเบียน', // 替代文字
@@ -1364,6 +1365,7 @@ if (!is_null($events['events'])) {
 					}
 					else
 					{
+					$userName = getDisplayName($text);
 							$messages = [
 						'type' => 'template', // 訊息類型 (模板)
                 				'altText' => 'ลงทะเบียน', // 替代文字
