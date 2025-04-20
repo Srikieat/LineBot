@@ -218,5 +218,32 @@ if (!is_null($events['events'])) {
 
 			
 		}
+		if ($event['type'] == 'message' && $event['message']['type'] == 'image') 
+		{
+			
+		}
+		
+		if ($event['type'] == 'message' && $event['message']['type'] == 'sticker') 
+		{
+			// Get text sent
+			$text = $event['source']['userId'];
+			$id = $event['source']['userId'];
+			// Get replyToken
+			$replyToken = $event['replyToken'];
+			
+			$sendMessage = 'สติกเกอร์';
+			
+			$userName = getDisplayName($text);
+			
+			
+			
+			$url = 'http:///okplus.thddns.net:9330/okplus/bot/okplusMotorFollow.aspx?u='.$id.'&n='.$userName;
+			$ch = curl_init($url);
+			$result = curl_exec($ch);
+			
+			$url = 'http:///okplus.thddns.net:9330/okplus/bot/okplusMotorLastMessage.aspx?u='.$id.'&m='.$sendMessage;
+			$ch = curl_init($url);
+			$result = curl_exec($ch);
+		}
 	}
 }
