@@ -57,7 +57,7 @@ function getDisplayName($id)
 	$displayName =  $profile['displayName'];
 	$pictureUrl = $profile['pictureUrl'];
 	
-	return $displayName;
+	return rawurlencode($displayName);
 }
 
 function distance($lat1, $lon1, $lat2, $lon2, $unit) 
