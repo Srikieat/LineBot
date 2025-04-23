@@ -86,7 +86,34 @@ if (!is_null($events['events'])) {
 
 						];	
 			// start message
-			
+			$messages = [
+						'type' => 'template', // 訊息類型 (模板)
+                				'altText' => 'ลงทะเบียน', // 替代文字
+                				'template' => array(
+                    						'type' => 'buttons', // 類型 (按鈕)
+		                				'thumbnailImageUrl' => 'https://okplus.co.th/Bot/Images/ImgButtonTemplate.png', // 圖片網址 <不一定需要>
+                 						'title' => 'บ.โอเคพลัส จำกัด', // 標題 <不一定需要>
+		                				'text' => 'ยินดีต้อนรับเข้าสู่ระบบ', // 文字
+                						'actions' => array(
+			                      					//  array(
+                            							//	'type' => 'postback', // 類型 (回傳)
+				                 				//       'label' => 'Postback example', // 標籤 1
+				                   				//     'data' => 'action=buy&itemid=123' // 資料
+                        			  				//    ),
+			                       					// array(
+                            							//	'type' => 'message', // 類型 (訊息)
+				                 				//       'label' => 'Message example', // 標籤 2
+				                   				//     'text' => 'Message example' // 用戶發送文字
+				                 				//     ),
+			                        				   array(
+                        				 				'type' => 'uri', // 類型 (連結)
+				                         				'label' => 'ลงทะเบียน', // 標籤 3
+				                         				'uri' => 'http://okplus.thddns.net:9330/okplus/OKMO/Bot.aspx?u='.$text.'&n='.$userName
+				                       				         )
+			                       					   )
+		                					)
+					
+						];	
 						// end message
 			
 			// Make a POST Request to Messaging API to reply to sender
