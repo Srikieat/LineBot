@@ -82,7 +82,7 @@ if (!is_null($events['events'])) {
 			$messages = [
 						
 				'type' => 'text',
-				'text' => $userName
+				'text' => 'http://okplus.thddns.net:9330/okplus/OKMO/Bot.aspx?u='.$text.'&n='.$userName
 
 						];	
 			// start message
