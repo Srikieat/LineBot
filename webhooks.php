@@ -47,7 +47,7 @@ function getDisplayName($id)
 	$displayName =  $profile['displayName'];
 	$pictureUrl = $profile['pictureUrl'];
 	
-	return $displayName;
+	return rawurlencode($displayName);
 }
 
 
