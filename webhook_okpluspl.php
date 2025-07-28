@@ -116,7 +116,7 @@ if (!is_null($events['events'])) {
 			$id = $event['source']['userId'];
 			$userName = getDisplayName($id);
 			
-			$url = 'http:///okplus.thddns.net:9330/okplus/bot/okplusMotorFollow.aspx?u='.$id.'&n='.$userName;
+			$url = 'http:///okplus.thddns.net:9330/okplus/bot/okplusMotorFollow.aspx?s=okplus01&u='.$id.'&n='.$userName;
 			$ch = curl_init($url);
 			$result = curl_exec($ch);
 			
