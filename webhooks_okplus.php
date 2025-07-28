@@ -194,7 +194,7 @@ if (!is_null($events['events'])) {
 			$ch = curl_init($url);
 			$result = curl_exec($ch);
 			
-			$url = 'http:///okplus.thddns.net:9330/okplus/bot/okplusMotorLastMessage.aspx?u='.$id.'&m='.$sendMessage;
+			$url = 'http:///okplus.thddns.net:9330/okplus/bot/okplusMotorLastMessage.aspx?s=okplus&u='.$id.'&m='.$sendMessage;
 			$ch = curl_init($url);
 			$result = curl_exec($ch);
 		
@@ -236,7 +236,7 @@ if (!is_null($events['events'])) {
 			$ch = curl_init($url);
 			$result = curl_exec($ch);
 			
-			$url = 'http:///okplus.thddns.net:9330/okplus/bot/okplusMotorLastMessage.aspx?u='.$id.'&m='.$sendMessage;
+			$url = 'http:///okplus.thddns.net:9330/okplus/bot/okplusMotorLastMessage.aspx?s=okplus&u='.$id.'&m='.$sendMessage;
 			$ch = curl_init($url);
 			$result = curl_exec($ch);
 		}
@@ -259,7 +259,7 @@ if (!is_null($events['events'])) {
 			$ch = curl_init($url);
 			$result = curl_exec($ch);
 			
-			$url = 'http:///okplus.thddns.net:9330/okplus/bot/okplusMotorLastMessage.aspx?u='.$id.'&m='.$sendMessage;
+			$url = 'http:///okplus.thddns.net:9330/okplus/bot/okplusMotorLastMessage.aspx?s=okplus&u='.$id.'&m='.$sendMessage;
 			$ch = curl_init($url);
 			$result = curl_exec($ch);
 		}
