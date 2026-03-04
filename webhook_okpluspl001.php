@@ -4,7 +4,7 @@
 require "vendor/autoload.php";
 //require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
 
-$access_token = '+oKBKxWOfWnpUnD3jrTUoFcuNe8hiMnhM1Frt6IzFc1q/2G6YU2htmyfShoqXVA8gvfeGV/lZPDLVndTHWmp7HiQ37lux/8l5In9aq/P6DARhewukKCNe2gqUmbBorOrSFF0WyklJRvDI3YeCeiFPQdB04t89/1O/w1cDnyilFU=';
+$access_token = 'EkEA9VXwzxTKkE4Rm7R0EHmLS9HUjCI+4EhkP1ykLvoBYFCxup1xzjo4DRPsd11cBCF01vzK4hADnjcaQ4nspx3hMa1pX3P+6pD03rjwuTzxYeqSSuBvfkLezaJT9j3sO20KO0/TFlJJYSs2M05svgdB04t89/1O/w1cDnyilFU=';
 
 // Get POST body content
 $content = file_get_contents('php://input');
@@ -42,7 +42,7 @@ function checkExactMessage($arrKeyword, $message)
 }
 function getDisplayName($id)
 {
-	$access_token = '+oKBKxWOfWnpUnD3jrTUoFcuNe8hiMnhM1Frt6IzFc1q/2G6YU2htmyfShoqXVA8gvfeGV/lZPDLVndTHWmp7HiQ37lux/8l5In9aq/P6DARhewukKCNe2gqUmbBorOrSFF0WyklJRvDI3YeCeiFPQdB04t89/1O/w1cDnyilFU=';
+	$access_token = 'EkEA9VXwzxTKkE4Rm7R0EHmLS9HUjCI+4EhkP1ykLvoBYFCxup1xzjo4DRPsd11cBCF01vzK4hADnjcaQ4nspx3hMa1pX3P+6pD03rjwuTzxYeqSSuBvfkLezaJT9j3sO20KO0/TFlJJYSs2M05svgdB04t89/1O/w1cDnyilFU=';
 	$url = 'https://api.line.me/v2/bot/profile/'.$id;
 	$headers = array('Authorization: Bearer ' . $access_token);
 
